@@ -64,3 +64,23 @@ export function el(tag, classe, html) {
   if (html !== undefined) e.innerHTML = html;
   return e;
 }
+
+/**
+ * Adia a montagem de um bloco pesado até ele se aproximar da janela
+ * (800 px antes). Até lá o bloco fica invisível com altura reservada,
+ * o que poupa o processamento inicial da página sem deslocar o layout.
+ */
+export function adiar(block, montar) {
+  if (!('IntersectionObserver' in window)) {
+    montar();
+    return;
+  }
+  block.setAttribute('data-adiado', '');
+  const obs = new IntersectionObserver((es) => {
+    if (!es[0].isIntersecting) return;
+    obs.disconnect();
+    block.removeAttribute('data-adiado');
+    montar();
+  }, { rootMargin: '800px 0px' });
+  obs.observe(block);
+}

@@ -24,8 +24,14 @@ header .header-barra {
   max-width: var(--max-width);
   margin: auto;
   padding: 12px var(--gutter);
-  background: rgb(11 12 15 / 72%);
-  backdrop-filter: blur(10px);
+  background: rgb(11 12 15 / 92%);
+}
+
+@media (width >= 900px) {
+  header .header-barra {
+    background: rgb(11 12 15 / 72%);
+    backdrop-filter: blur(10px);
+  }
 }
 
 header .header::after {

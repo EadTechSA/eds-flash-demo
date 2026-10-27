@@ -73,6 +73,12 @@
   }
 }
 
+/* blocos pesados abaixo da dobra só são montados quando se aproximam */
+.block[data-adiado] {
+  visibility: hidden;
+  min-height: 60vh;
+}
+
 /* utilitários compartilhados pelos blocos de demo */
 .selo {
   display: inline-flex;
@@ -108,14 +114,20 @@
   animation: pulso 1.6s infinite;
 }
 
+@media (width < 900px) {
+  .selo.alerta::before {
+    animation: none;
+  }
+}
+
 .selo.piscar {
   border-color: var(--ok);
 }
 
 @keyframes pulso {
   0%,
-  100% { box-shadow: 0 0 0 0 rgb(250 15 0 / 50%); }
-  60% { box-shadow: 0 0 0 7px rgb(250 15 0 / 0%); }
+  100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
 
 .painel {

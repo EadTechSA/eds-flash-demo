@@ -30,25 +30,47 @@
   color: var(--text-muted);
 }
 
-/* 1. iceberg por rolagem */
+/* 1. iceberg por rolagem (no celular, lista estática) */
 .valor .valor-iceberg {
-  --p: 0;
+  --p: 1;
 
   position: relative;
-  height: calc((var(--n, 5) + 1.5) * 60vh);
   margin-top: 32px;
 }
 
 .valor .valor-iceberg-fixo {
-  position: sticky;
-  top: var(--nav-height);
-  height: calc(100vh - var(--nav-height));
-  height: calc(100svh - var(--nav-height));
+  position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr auto;
   gap: 16px;
   padding-block: 24px;
+}
+
+@media (width >= 900px) {
+  .valor .valor-iceberg {
+    --p: 0;
+
+    height: calc((var(--n, 5) + 1.5) * 60vh);
+  }
+
+  .valor .valor-iceberg-fixo {
+    position: sticky;
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+    height: calc(100svh - var(--nav-height));
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+@media (width < 900px) {
+  .valor .valor-camada {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .valor .valor-camadas {
+    transform: none !important;
+  }
 }
 
 /* a água desce conforme a rolagem revela o que está submerso */

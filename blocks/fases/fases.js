@@ -5,11 +5,11 @@
  * Linhas: abertura (1 célula), fases (sigla | título | texto), rótulos.
  */
 import {
-  el, linhas, rotulos, texto,
+  el, linhas, rotulos, texto, adiar,
 } from '../../scripts/demo.js';
 import { aoRolar } from '../../scripts/motion.js';
 
-export default function decorate(block) {
+function montar(block) {
   const r = rotulos(block);
   const todas = linhas(block);
   const abertura = todas.find((c) => c.length === 1);
@@ -53,4 +53,8 @@ export default function decorate(block) {
     block.dataset.etapa = etapa;
     block.style.setProperty('--p', p);
   });
+}
+
+export default function decorate(block) {
+  adiar(block, () => montar(block));
 }

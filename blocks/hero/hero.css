@@ -144,8 +144,14 @@
 }
 
 .hero .hero-gate[data-gate='ativo'] {
-  background: rgb(11 12 15 / 50%);
-  backdrop-filter: blur(8px);
+  background: rgb(11 12 15 / 72%);
+}
+
+@media (width >= 900px) {
+  .hero .hero-gate[data-gate='ativo'] {
+    background: rgb(11 12 15 / 50%);
+    backdrop-filter: blur(8px);
+  }
 }
 
 .hero .hero-gate .consent-gate {

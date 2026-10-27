@@ -5,6 +5,7 @@
  */
 
 export const reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+export const largo = () => window.matchMedia('(min-width: 900px)').matches;
 
 const io = ('IntersectionObserver' in window)
   ? new IntersectionObserver((entradas) => {
@@ -114,7 +115,8 @@ export function aoRolar(pai, fn) {
       requestAnimationFrame(medir);
     }
   };
-  if (reduzido) {
+  // sem movimento reduzido e em tela larga: no celular as seções fixadas viram estáticas
+  if (reduzido || !largo()) {
     fn(1);
     return;
   }

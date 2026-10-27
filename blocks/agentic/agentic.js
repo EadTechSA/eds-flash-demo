@@ -5,7 +5,7 @@
  * Linhas: abertura (1 célula), verificações (texto | estado), rótulos.
  */
 import {
-  el, linhas, rotulos, texto,
+  el, linhas, rotulos, texto, adiar,
 } from '../../scripts/demo.js';
 import { aoAparecer, contar, revelar } from '../../scripts/motion.js';
 
@@ -13,7 +13,7 @@ function escapar(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-export default function decorate(block) {
+function montar(block) {
   const r = rotulos(block);
   const todas = linhas(block);
   const abertura = todas.find((c) => c.length === 1);
@@ -95,4 +95,8 @@ export default function decorate(block) {
   block.append(grade);
   revelar(p1);
   revelar(p2, 100);
+}
+
+export default function decorate(block) {
+  adiar(block, () => montar(block));
 }

@@ -6,7 +6,9 @@
  * Function (chamada real quando há URL, simulada quando não), A/B,
  * telemetria. Linhas: tipo | rótulo | texto | dados | largura.
  */
-import { el, linhas, texto } from '../../scripts/demo.js';
+import {
+  el, linhas, texto, adiar,
+} from '../../scripts/demo.js';
 import { aoAparecer, contar, revelar } from '../../scripts/motion.js';
 
 function dados(s) {
@@ -142,7 +144,7 @@ const widgets = {
 
 };
 
-export default function decorate(block) {
+function montar(block) {
   const itens = linhas(block).filter((c) => c.length >= 3).map((c) => ({
     tipo: texto(c[0]).toLowerCase(),
     rotulo: texto(c[1]),
@@ -174,4 +176,8 @@ export default function decorate(block) {
     revelar(cel, (i % 3) * 80);
   });
   block.append(grade);
+}
+
+export default function decorate(block) {
+  adiar(block, () => montar(block));
 }

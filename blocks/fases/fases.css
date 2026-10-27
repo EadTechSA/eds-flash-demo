@@ -1,19 +1,29 @@
 .fases {
-  --p: 0;
+  --p: 1;
 
   position: relative;
-  height: 260vh;
 }
 
 .fases .fases-fixo {
-  position: sticky;
-  top: var(--nav-height);
-  height: calc(100vh - var(--nav-height));
-  height: calc(100svh - var(--nav-height));
   display: grid;
   gap: 32px;
   align-content: center;
   padding-block: 24px;
+}
+
+@media (width >= 900px) {
+  .fases {
+    --p: 0;
+
+    height: 260vh;
+  }
+
+  .fases .fases-fixo {
+    position: sticky;
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+    height: calc(100svh - var(--nav-height));
+  }
 }
 
 .fases .fases-texto {

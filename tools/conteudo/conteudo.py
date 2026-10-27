@@ -381,7 +381,7 @@ def consent_doc(t):
     ]
     for codigo, opcional, nome, desc in t['cc_cats']:
         secs.append(section([('texto', text(f'<h3>{nome}</h3><p>{desc}</p>'))], nome=nome, papel='categoria', codigo=codigo, opcional=opcional))
-    secs.append(section([('texto', text(f'<h3>{g[0]}</h3><p>{g[1]}</p><p><a href="#permitir">{g[2]}</a></p><p><a href="#abrir">{g[3]}</a></p>'))], nome='Gate', papel='gate'))
+    secs.append(section([('texto', text(f'<h2>{g[0]}</h2><p>{g[1]}</p><p><a href="#permitir">{g[2]}</a></p><p><a href="#abrir">{g[3]}</a></p>'))], nome='Gate', papel='gate'))
     origens = block('Consent Origens', 'consent-origens', {}, [
         ('origem_0', 'consent-origem', {'origem': 'video.tv.adobe.com', 'categoria': 'CC_MEDIA'}),
         ('origem_1', 'consent-origem', {'origem': 'youtube.com', 'categoria': 'CC_MEDIA'}),

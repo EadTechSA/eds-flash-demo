@@ -8,13 +8,13 @@
  * mais rótulos `chave | texto`.
  */
 import {
-  agora, el, linhas, rotulos, texto,
+  agora, el, linhas, rotulos, texto, adiar,
 } from '../../scripts/demo.js';
 import { revelar } from '../../scripts/motion.js';
 
 const FATOR = { avif: 0.055, webp: 0.085, jpg: 0.13 };
 
-export default function decorate(block) {
+function montar(block) {
   const r = rotulos(block);
   const [imagemCel, urlCel, originalCel] = linhas(block).map((c) => c[0]);
   const pic = imagemCel && imagemCel.querySelector('picture');
@@ -145,4 +145,8 @@ export default function decorate(block) {
   block.append(grade);
   revelar(p1);
   revelar(p2, 100);
+}
+
+export default function decorate(block) {
+  adiar(block, () => montar(block));
 }

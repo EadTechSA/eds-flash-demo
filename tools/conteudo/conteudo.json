@@ -1266,7 +1266,7 @@
     "texto": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<h3>Vídeo da Adobe: precisa de \"Mídia e vídeo\"</h3><p>O bloco de vídeo não carrega nem um byte antes de você permitir esta categoria. A escolha fica no navegador por 12 meses, ou até a política mudar.</p><p><a href=\"#permitir\">Permitir e assistir</a></p><p><a href=\"#abrir\">Abrir em nova aba</a></p>"
+     "text": "<h2>Vídeo da Adobe: precisa de \"Mídia e vídeo\"</h2><p>O bloco de vídeo não carrega nem um byte antes de você permitir esta categoria. A escolha fica no navegador por 12 meses, ou até a política mudar.</p><p><a href=\"#permitir\">Permitir e assistir</a></p><p><a href=\"#abrir\">Abrir em nova aba</a></p>"
     }
    },
    "section_6": {
@@ -2575,7 +2575,7 @@
     "texto": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<h3>Video de Adobe: necesita \"Medios y video\"</h3><p>El bloque de video no carga ni un byte antes de que permita esta categoría. La elección queda en el navegador por 12 meses, o hasta que cambie la política.</p><p><a href=\"#permitir\">Permitir y ver</a></p><p><a href=\"#abrir\">Abrir en nueva pestaña</a></p>"
+     "text": "<h2>Video de Adobe: necesita \"Medios y video\"</h2><p>El bloque de video no carga ni un byte antes de que permita esta categoría. La elección queda en el navegador por 12 meses, o hasta que cambie la política.</p><p><a href=\"#permitir\">Permitir y ver</a></p><p><a href=\"#abrir\">Abrir en nueva pestaña</a></p>"
     }
    },
    "section_6": {
@@ -3884,7 +3884,7 @@
     "texto": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<h3>Adobe video: needs \"Media & video\"</h3><p>The video block does not load a single byte before you allow this category. The choice stays in your browser for 12 months, or until the policy changes.</p><p><a href=\"#permitir\">Allow and watch</a></p><p><a href=\"#abrir\">Open in a new tab</a></p>"
+     "text": "<h2>Adobe video: needs \"Media & video\"</h2><p>The video block does not load a single byte before you allow this category. The choice stays in your browser for 12 months, or until the policy changes.</p><p><a href=\"#permitir\">Allow and watch</a></p><p><a href=\"#abrir\">Open in a new tab</a></p>"
     }
    },
    "section_6": {

@@ -11,7 +11,7 @@
  * (tipo | título | texto | a | b) e rótulos `chave | texto`.
  */
 import {
-  el, linhas, rotulos, texto,
+  el, linhas, rotulos, texto, adiar,
 } from '../../scripts/demo.js';
 import {
   aoRolar, contar, palavras, reduzido, revelar,
@@ -160,7 +160,7 @@ function entregas(itens) {
   return grade;
 }
 
-export default function decorate(block) {
+function montar(block) {
   const r = rotulos(block);
   const todas = linhas(block);
   const aberturas = todas.filter((c) => c.length === 1).map((c) => c[0]);
@@ -181,4 +181,8 @@ export default function decorate(block) {
   const p3 = el('section', 'valor-parte valor-parte-entregas');
   p3.append(abertura(aberturas[2], 'valor-abertura-entregas'), entregas(por('entrega')));
   block.append(p1, p2, p3);
+}
+
+export default function decorate(block) {
+  adiar(block, () => montar(block));
 }

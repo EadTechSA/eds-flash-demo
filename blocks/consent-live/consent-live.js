@@ -5,7 +5,7 @@
  * Linhas: texto de abertura (1 célula) + rótulos `chave | texto`.
  */
 import {
-  agora, categoriasAceitas, el, escolhaGravada, linhas, rotulos,
+  agora, categoriasAceitas, el, escolhaGravada, linhas, rotulos, adiar,
 } from '../../scripts/demo.js';
 import { revelar } from '../../scripts/motion.js';
 
@@ -80,7 +80,7 @@ function cascata(container, r) {
   return presos.length;
 }
 
-export default function decorate(block) {
+function montar(block) {
   const r = rotulos(block);
   const [aberturaCel] = linhas(block).map((c) => c[0]);
   block.textContent = '';
@@ -189,4 +189,8 @@ export default function decorate(block) {
   estado();
   // a cascata ganha as entradas da fase delayed quando elas chegam
   window.setTimeout(estado, 4200);
+}
+
+export default function decorate(block) {
+  adiar(block, () => montar(block));
 }
