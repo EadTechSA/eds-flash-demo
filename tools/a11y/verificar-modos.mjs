@@ -20,6 +20,16 @@ const { chromium } = cr(import.meta.url)('playwright');
 
 const require = cr(import.meta.url);
 
+// cada modo liga TODAS as classes conhecidas das três gerações do widget
+// (Prodesp 1ª geração, painel novo Prodesp/d10, CRECI); o site responde às suas
+const SINONIMOS = {
+  contrast: ['contrast', 'a11y-contraste'],
+  'a11y-grayscale': ['a11y-grayscale', 'a11y-pb'],
+  'a11y-invert': ['a11y-invert', 'a11y-inverter'],
+  'a11y-links': ['a11y-links'],
+  'font-size-2': ['font-size-2', 'a11y-fonte-2'],
+};
+const TODAS_CLASSES = [...new Set(Object.values(SINONIMOS).flat()), 'font-size-1', 'a11y-fonte-1', 'a11y-fonte-3'];
 const MODOS = {
   normal: [],
   contrast: ['contrast'],
@@ -40,13 +50,14 @@ const VIEWPORTS = [
 // botão do widget que liga cada modo: 1ª geração (utility-*) e painel novo
 // (a11y-acao[data-chave], Portal de Normas / Prodesp desde 21/10/2026)
 const BOTOES = {
-  contrast: '.utility-contrast, .a11y-acao[data-chave="contraste"]',
-  'a11y-grayscale': '.utility-grayscale, .a11y-acao[data-chave="pb"]',
-  'a11y-invert': '.utility-invert, .a11y-acao[data-chave="inverter"]',
-  'a11y-links': '.utility-links, .a11y-acao[data-chave="links"]',
+  contrast: '.utility-contrast, .a11y-acao[data-chave="contraste"], .a11y-painel input[name="contraste"]',
+  'a11y-grayscale': '.utility-grayscale, .a11y-acao[data-chave="pb"], .a11y-painel input[name="pb"]',
+  'a11y-invert': '.utility-invert, .a11y-acao[data-chave="inverter"], .a11y-painel input[name="inverter"]',
+  'a11y-links': '.utility-links, .a11y-acao[data-chave="links"], .a11y-painel input[name="links"]',
 };
-const BOTAO_MAIS = '.utility-font-increase, .a11y-tamanho-botao:last-of-type';
-const CHAVES_STORAGE = ['aem-a11y', 'prodesp:acessibilidade', 'a11y-contrast', 'a11y-grayscale', 'a11y-invert', 'a11y-links', 'a11y-font-level'];
+const BOTAO_MAIS = '.utility-font-increase, .a11y-tamanho-botao:last-of-type, .a11y-painel input[name="a11y-fonte"][value="2"]';
+const ABRIR_WIDGET = '.a11y-widget-alternar, .a11y-widget > button, .a11y-botao';
+const CHAVES_STORAGE = ['aem-a11y', 'prodesp:acessibilidade', 'creci-acessibilidade', 'a11y-contrast', 'a11y-grayscale', 'a11y-invert', 'a11y-links', 'a11y-font-level'];
 
 function args() {
   const a = process.argv.slice(2);
@@ -109,14 +120,15 @@ async (modo) => {
       }
     });
   }
-  return { violacoes, fonte, comFundo: comFundo.slice(0, 30), classesRaiz: document.documentElement.className };
+  const filtro = getComputedStyle(document.body).filter;
+  return { violacoes, fonte, filtro, comFundo: comFundo.slice(0, 30), classesRaiz: document.documentElement.className };
 }`;
 
 async function provarWidget(page, modo, classes) {
-  const widget = await page.$('.a11y-widget');
+  const widget = await page.$('.a11y-widget, .a11y-botao');
   if (!widget) return { existe: false };
   const res = { existe: true, passos: [] };
-  const alternar = await page.$('.a11y-widget-alternar, .a11y-widget > button');
+  const alternar = await page.$(ABRIR_WIDGET);
   // fecha o painel se já estava aberto
   if (alternar && (await alternar.getAttribute('aria-expanded')) === 'true') { await page.keyboard.press('Escape').catch(() => {}); await page.waitForTimeout(200); }
   if (alternar) {
@@ -142,8 +154,8 @@ async function provarWidget(page, modo, classes) {
     if (!b) { res.passos.push({ botao: sel, ausente: true }); continue; }
     await b.click().catch(() => {});
     await page.waitForTimeout(200);
-    const pressed = (await b.getAttribute('aria-pressed')) || (await b.getAttribute('aria-checked'));
-    const temClasse = await page.evaluate((cl) => document.documentElement.classList.contains(cl), c);
+    const pressed = (await b.getAttribute('aria-pressed')) || (await b.getAttribute('aria-checked')) || String(await b.evaluate((e) => ('checked' in e ? e.checked : '')));
+    const temClasse = await page.evaluate((cls) => cls.some((cl) => document.documentElement.classList.contains(cl)), SINONIMOS[c]);
     const storage = await page.evaluate((ks) => { try { return ks.map((k) => [k, localStorage.getItem(k)]).filter((x) => x[1]).map((x) => `${x[0]}=${x[1]}`).join(' ') || null; } catch (e) { return null; } }, CHAVES_STORAGE);
     res.passos.push({
       botao: sel, ariaPressed: pressed, classe: temClasse, storage,
@@ -172,13 +184,14 @@ async function verificarUrl(browser, url, opts, axeSrc) {
       }).catch(() => {});
       let widget = null;
       if (opts.widget && vp.nome === 'desktop' && classes.length) widget = await provarWidget(page, modo, classes);
-      await page.evaluate((cls) => {
-        ['contrast', 'a11y-grayscale', 'a11y-invert', 'a11y-links', 'font-size-1', 'font-size-2'].forEach((c) => document.documentElement.classList.remove(c));
+      const fonteNormal = await page.evaluate(() => parseFloat(getComputedStyle(document.body).fontSize));
+      await page.evaluate(([cls, todas, sin]) => {
+        todas.forEach((c) => document.documentElement.classList.remove(c));
         document.documentElement.removeAttribute('data-font-size');
-        cls.forEach((c) => document.documentElement.classList.add(c));
+        cls.forEach((c) => sin[c].forEach((k) => document.documentElement.classList.add(k)));
         // painel novo (Prodesp/d10): o tamanho é atributo, 85–120 %
         if (cls.includes('font-size-2')) document.documentElement.setAttribute('data-font-size', '120');
-      }, classes);
+      }, [classes, TODAS_CLASSES, SINONIMOS]);
       await page.waitForTimeout(800);
       // rola a página inteira para montar blocos adiados e revelar conteúdo
       await page.evaluate(async () => {
@@ -189,10 +202,15 @@ async function verificarUrl(browser, url, opts, axeSrc) {
       await page.waitForTimeout(600);
       await page.addScriptTag({ content: axeSrc });
       const dados = await page.evaluate(`(${SCRIPT_PAGINA})(${JSON.stringify(modo)})`);
-      if (modo.includes('font-size-2') && dados.fonte < 19) {
+      const fonteModo = await page.evaluate(() => parseFloat(getComputedStyle(document.body).fontSize));
+      dados.fonteCorpo = fonteModo;
+      if (modo.includes('font-size-2') && fonteModo < fonteNormal * 1.15) {
         dados.violacoes.push({
-          regra: 'font-size-2', impacto: 'serious', bloco: 'html', seletor: 'html', texto: '', detalhe: `font-size da raiz ${dados.fonte}px (< 19px): o modo não aumenta a fonte`, cores: '',
+          regra: 'font-size-2', impacto: 'serious', bloco: 'html', seletor: 'html', texto: '', detalhe: `texto do corpo ${fonteModo}px contra ${fonteNormal}px no normal: o modo não aumenta a fonte (esperado ≥ 15 %)`, cores: '',
         });
+      }
+      if ((modo === 'a11y-grayscale' || modo === 'a11y-invert') && dados.filtro === 'none') {
+        dados.avisos = [`modo ${modo}: nenhum filtro aplicado ao body — o site não oferece este modo`];
       }
       resultado.modos[`${modo}@${vp.nome}`] = dados;
       if (widget) resultado.widget[modo] = widget;
@@ -230,7 +248,8 @@ function relatorio(slug, r) {
   md += '## Violações\n\n';
   modos.forEach((m) => {
     const d = r.modos[m];
-    md += `### ${m} (classes: \`${d.classesRaiz || '—'}\`, fonte da raiz ${d.fonte}px)\n\n`;
+    md += `### ${m} (classes: \`${d.classesRaiz || '—'}\`, fonte da raiz ${d.fonte}px, corpo ${d.fonteCorpo}px)\n\n`;
+    (d.avisos || []).forEach((a) => { md += `> ${a}\n\n`; });
     if (!d.violacoes.length) md += 'Nenhuma.\n\n';
     const porBloco = {};
     d.violacoes.forEach((v) => { (porBloco[v.bloco] = porBloco[v.bloco] || []).push(v); });
