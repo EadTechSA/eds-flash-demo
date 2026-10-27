@@ -1,0 +1,23 @@
+{
+  "definitions": [],
+  "models": [
+    {
+      "id": "rotulo",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "chave",
+          "label": "Chave (ex.: hud-bloqueado)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "texto",
+          "label": "Texto exibido"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

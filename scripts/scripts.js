@@ -9,6 +9,7 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  getMetadata,
 } from './aem.js';
 
 /**
@@ -127,7 +128,8 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-  document.documentElement.lang = 'en';
+  // o idioma é metadado da página (pt-BR na raiz, es e en nas cópias)
+  document.documentElement.lang = getMetadata('lang') || 'pt-BR';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {
@@ -164,6 +166,9 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+
+  // revelações por rolagem e pontos laterais (sem biblioteca)
+  import('./motion.js').then((m) => m.iniciar(main));
 }
 
 /**
@@ -173,7 +178,9 @@ async function loadLazy(doc) {
 function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
   window.setTimeout(() => import('./delayed.js'), 3000);
-  // load anything that can be postponed to the latest here
+  // consentimento: banner, painel e gates (pacote EadTech), só depois do LCP
+  // eslint-disable-next-line import/no-cycle
+  window.setTimeout(() => import('./consent-check.js'), 3000);
 }
 
 async function loadPage() {

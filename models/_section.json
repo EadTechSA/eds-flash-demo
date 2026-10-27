@@ -21,20 +21,60 @@
       "fields": [
         {
           "component": "text",
+          "valueType": "string",
           "name": "name",
-          "label": "Section Name",
-          "description": "The label shown for this section in the Content Tree"
+          "label": "Nome da seção",
+          "description": "Como a seção aparece na árvore do editor"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "id",
+          "label": "Âncora (id)",
+          "description": "Para os links do menu e os pontos laterais, ex.: consentimento"
         },
         {
           "component": "multiselect",
           "name": "style",
-          "label": "Style",
+          "label": "Estilo",
           "options": [
             {
-              "name": "Highlight",
-              "value": "highlight"
+              "name": "Compacta (sem respiro)",
+              "value": "compacta"
+            },
+            {
+              "name": "Faixa do aviso",
+              "value": "faixa-aviso"
             }
           ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "papel",
+          "label": "Papel (consentimento)",
+          "description": "Só no documento de consentimento: banner, preferencias, categoria, gate ou origens"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "codigo",
+          "label": "Código da categoria",
+          "description": "Só no consentimento, seção categoria: ex.: CC_ANALYTICS"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "opcional",
+          "label": "Categoria opcional",
+          "description": "Só no consentimento: sim ou não"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "versao-politica",
+          "label": "Versão da política",
+          "description": "Só no consentimento, seção banner: ex.: 2026-10-27"
         }
       ]
     }
@@ -48,9 +88,18 @@
         "button",
         "title",
         "hero",
+        "valor",
+        "consent-live",
+        "fases",
+        "dm-showcase",
+        "bento",
+        "agentic",
+        "passos",
+        "aviso",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "consent-origens"
       ]
     }
   ]

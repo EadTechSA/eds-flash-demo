@@ -1,0 +1,147 @@
+.bento .bento-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.bento .bento-celula {
+  --mx: 50%;
+  --my: 50%;
+
+  grid-column: span 2;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  background: var(--surface-1);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  min-width: 0;
+  transition: border-color 0.3s;
+}
+
+.bento .bento-celula::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(240px 160px at var(--mx) var(--my), rgb(255 106 61 / 12%), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.bento .bento-celula:hover {
+  border-color: var(--line-strong);
+}
+
+.bento .bento-celula:hover::before {
+  opacity: 1;
+}
+
+.bento .bento-rotulo {
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.bento .bento-texto p {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  color: var(--text-muted);
+}
+
+.bento .bento-texto .button {
+  margin: 8px 0 0;
+}
+
+.bento .bento-texto > p:first-child:has(a.button) {
+  margin-top: auto;
+}
+
+/* medidores do Lighthouse */
+.bento .bento-medidores {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.bento .bento-medidor {
+  width: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono-font-family);
+  font-size: 10px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.bento .bento-medidor-c {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.bento .bento-medidor svg {
+  width: 84px;
+  height: 84px;
+  transform: rotate(-90deg);
+}
+
+.bento .bento-medidor circle {
+  fill: none;
+  stroke-width: 6;
+}
+
+.bento .bento-medidor .fundo {
+  stroke: var(--surface-3);
+}
+
+.bento .bento-medidor .arco {
+  stroke: var(--ok);
+  stroke-linecap: round;
+  stroke-dasharray: 226;
+  stroke-dashoffset: 226;
+  transition: stroke-dashoffset 1.4s var(--ease);
+}
+
+.bento .bento-medidor b {
+  position: absolute;
+  font: 500 22px/1 var(--heading-font-family);
+  letter-spacing: -0.03em;
+  color: var(--text-color);
+}
+
+.bento .bento-edge,
+.bento .bento-ab {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.bento .bento-edge .button {
+  margin: 0;
+}
+
+.bento .codigo .dim {
+  color: var(--text-dim);
+}
+
+@media (width >= 900px) {
+  .bento .bento-grade {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .bento .bento-l2 { grid-column: span 2; }
+  .bento .bento-l3 { grid-column: span 3; }
+  .bento .bento-l4 { grid-column: span 4; }
+  .bento .bento-l6 { grid-column: span 6; }
+}

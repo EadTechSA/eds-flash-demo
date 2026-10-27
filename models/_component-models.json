@@ -18,6 +18,9 @@
     "...": "./_section.json#/models"
   },
   {
+    "...": "./_rotulo.json#/models"
+  },
+  {
     "...": "../blocks/*/_*.json#/models"
   }
 ]

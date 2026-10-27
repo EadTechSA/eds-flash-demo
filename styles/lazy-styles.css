@@ -1,1 +1,272 @@
-/* add global styles that can be loaded post LCP here */
+/* Carregado depois do LCP: revelações, pontos laterais, utilitários de demo */
+
+/* revelação por rolagem (motion.js põe data-revelar e troca para data-visivel) */
+[data-revelar] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transition-delay: var(--atraso, 0s);
+}
+
+[data-revelar][data-visivel] {
+  opacity: 1;
+  transform: none;
+}
+
+/* títulos revelados palavra a palavra */
+.palavra {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.palavra > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.8s var(--ease);
+  transition-delay: calc(var(--i, 0) * 50ms);
+}
+
+[data-visivel] .palavra > span {
+  transform: none;
+}
+
+/* pontos de navegação lateral */
+.pontos {
+  position: fixed;
+  right: max(14px, env(safe-area-inset-right, 0));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 35;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pontos a {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+}
+
+.pontos a::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  transition: transform 0.3s var(--ease), background 0.3s;
+}
+
+.pontos a.ativo::after {
+  background: var(--warm);
+  transform: scale(1.7);
+}
+
+@media (width >= 900px) {
+  .pontos {
+    display: flex;
+  }
+}
+
+/* utilitários compartilhados pelos blocos de demo */
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface-1);
+  color: var(--text-muted);
+  transition: border-color 0.3s;
+}
+
+.selo::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ok);
+  flex: none;
+}
+
+.selo.inativo::before {
+  background: var(--text-dim);
+}
+
+.selo.alerta::before {
+  background: var(--accent);
+  animation: pulso 1.6s infinite;
+}
+
+.selo.piscar {
+  border-color: var(--ok);
+}
+
+@keyframes pulso {
+  0%,
+  100% { box-shadow: 0 0 0 0 rgb(250 15 0 / 50%); }
+  60% { box-shadow: 0 0 0 7px rgb(250 15 0 / 0%); }
+}
+
+.painel {
+  background: var(--surface-1);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  transition: border-color 0.3s;
+}
+
+.painel:hover {
+  border-color: var(--line-strong);
+}
+
+.painel > h3,
+.painel > h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0;
+  font-size: var(--heading-font-size-m);
+}
+
+.painel p {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  color: var(--text-muted);
+}
+
+.codigo {
+  font-family: var(--mono-font-family);
+  font-size: 12px;
+  line-height: 1.55;
+  background: var(--background-color);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  white-space: pre-wrap;
+  color: var(--text-muted);
+  overflow: auto;
+  max-height: 260px;
+  margin: 0;
+}
+
+.codigo .h { color: var(--text-color); }
+.codigo .g { color: var(--ok); }
+.codigo .b { color: var(--info); }
+
+.codigo .cursor::after {
+  content: '▍';
+  color: var(--warm);
+  animation: piscar 1s steps(2) infinite;
+}
+
+@keyframes piscar {
+  50% { opacity: 0; }
+}
+
+.segmentos {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.segmentos button {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.segmentos button.ativo {
+  background: var(--text-color);
+  color: var(--background-color);
+}
+
+.grande {
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.grande small {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0;
+  margin-left: 8px;
+}
+
+.barras {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+}
+
+.barras .linha {
+  display: grid;
+  grid-template-columns: 72px 1fr 64px;
+  gap: 10px;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.barras .trilho {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--surface-3);
+  overflow: hidden;
+  position: relative;
+}
+
+.barras .trilho i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--info);
+  transition: width 1s var(--ease);
+}
+
+.barras .linha.e .trilho i { background: var(--ok); }
+.barras .linha.d .trilho i { background: var(--text-dim); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-revelar],
+  .palavra > span {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .selo.alerta::before,
+  .codigo .cursor::after {
+    animation: none;
+  }
+}

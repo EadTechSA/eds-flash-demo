@@ -13,9 +13,31 @@
       "button",
       "title",
       "hero",
+      "valor",
+      "consent-live",
+      "fases",
+      "dm-showcase",
+      "bento",
+      "agentic",
+      "passos",
+      "aviso",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "consent-origens"
+    ]
+  },
+  {
+    "id": "agentic",
+    "components": [
+      "agentic-verificacao",
+      "agentic-rotulo"
+    ]
+  },
+  {
+    "id": "bento",
+    "components": [
+      "bento-celula"
     ]
   },
   {
@@ -37,6 +59,51 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "consent-live",
+    "components": [
+      "consent-live-rotulo"
+    ]
+  },
+  {
+    "id": "consent-origens",
+    "components": [
+      "consent-origem"
+    ]
+  },
+  {
+    "id": "dm-showcase",
+    "components": [
+      "dm-showcase-rotulo"
+    ]
+  },
+  {
+    "id": "fases",
+    "components": [
+      "fases-fase",
+      "fases-rotulo"
+    ]
+  },
+  {
+    "id": "hero",
+    "components": [
+      "hero-rotulo"
+    ]
+  },
+  {
+    "id": "passos",
+    "components": [
+      "passos-passo",
+      "passos-rotulo"
+    ]
+  },
+  {
+    "id": "valor",
+    "components": [
+      "valor-item",
+      "valor-rotulo"
     ]
   }
 ]

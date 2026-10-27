@@ -124,20 +124,205 @@
     "fields": [
       {
         "component": "text",
+        "valueType": "string",
         "name": "name",
-        "label": "Section Name",
-        "description": "The label shown for this section in the Content Tree"
+        "label": "Nome da seção",
+        "description": "Como a seção aparece na árvore do editor"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "id",
+        "label": "Âncora (id)",
+        "description": "Para os links do menu e os pontos laterais, ex.: consentimento"
       },
       {
         "component": "multiselect",
         "name": "style",
-        "label": "Style",
+        "label": "Estilo",
         "options": [
           {
-            "name": "Highlight",
-            "value": "highlight"
+            "name": "Compacta (sem respiro)",
+            "value": "compacta"
+          },
+          {
+            "name": "Faixa do aviso",
+            "value": "faixa-aviso"
           }
         ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "papel",
+        "label": "Papel (consentimento)",
+        "description": "Só no documento de consentimento: banner, preferencias, categoria, gate ou origens"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "codigo",
+        "label": "Código da categoria",
+        "description": "Só no consentimento, seção categoria: ex.: CC_ANALYTICS"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "opcional",
+        "label": "Categoria opcional",
+        "description": "Só no consentimento: sim ou não"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "versao-politica",
+        "label": "Versão da política",
+        "description": "Só no consentimento, seção banner: ex.: 2026-10-27"
+      }
+    ]
+  },
+  {
+    "id": "rotulo",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "chave",
+        "label": "Chave (ex.: hud-bloqueado)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "texto",
+        "label": "Texto exibido"
+      }
+    ]
+  },
+  {
+    "id": "agentic",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Abertura",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "verificacao",
+    "fields": [
+      {
+        "component": "text",
+        "name": "texto",
+        "label": "Verificação",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "estado",
+        "label": "Estado",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Atende",
+            "value": "ok"
+          },
+          {
+            "name": "Pendente",
+            "value": "pendente"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aviso",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Aviso",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "idiomas",
+        "label": "Links dos idiomas (um por linha, ex.: PT, ES, EN)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "bento",
+    "fields": []
+  },
+  {
+    "id": "celula",
+    "fields": [
+      {
+        "component": "select",
+        "name": "tipo",
+        "label": "Tipo",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Lighthouse (medidores)",
+            "value": "lighthouse"
+          },
+          {
+            "name": "Fases medidas nesta página",
+            "value": "fases"
+          },
+          {
+            "name": "query-index.json ao vivo",
+            "value": "indice"
+          },
+          {
+            "name": "Cabeçalhos de segurança",
+            "value": "cabecalhos"
+          },
+          {
+            "name": "Edge Function",
+            "value": "edge"
+          },
+          {
+            "name": "Experimentação A/B",
+            "value": "ab"
+          },
+          {
+            "name": "Telemetria operacional",
+            "value": "telemetria"
+          },
+          {
+            "name": "Texto e link",
+            "value": "texto"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "rotulo",
+        "label": "Rótulo (mono, em cima)",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Texto",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "dados",
+        "label": "Dados (depende do tipo: valores separados por |)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "largura",
+        "label": "Largura (2, 3, 4 ou 6 colunas)",
+        "valueType": "string"
       }
     ]
   },
@@ -180,6 +365,100 @@
     ]
   },
   {
+    "id": "consent-live",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Texto de abertura (opcional)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "consent-origem",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "origem",
+        "label": "Origem",
+        "description": "Domínio, ex.: youtube.com"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "categoria",
+        "label": "Categoria",
+        "description": "Código da categoria, ex.: CC_FUNCTIONAL"
+      }
+    ]
+  },
+  {
+    "id": "dm-showcase",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Imagem do Assets (smart crop)",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Texto alternativo",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "urlBase",
+        "label": "URL base da entrega (Dynamic Media com OpenAPI), sem parâmetros",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "original",
+        "label": "Tamanho do original em KB",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "fases",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Abertura (mono, título)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "fase",
+    "fields": [
+      {
+        "component": "text",
+        "name": "sigla",
+        "label": "Sigla (E, L, D)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "titulo",
+        "label": "Título",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Texto",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
@@ -193,25 +472,162 @@
     "id": "hero",
     "fields": [
       {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Variante",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Padrão (imagem)",
+            "value": ""
+          },
+          {
+            "name": "Vídeo com consentimento",
+            "value": "video"
+          }
+        ]
+      },
+      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Imagem (pôster, do Assets)",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Alt",
+        "label": "Texto alternativo",
         "value": ""
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Text",
+        "label": "Texto (abertura em mono, título com <em> para a palavra rotativa, lead)",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "video",
+        "label": "Vídeo (URL do mp4 no Assets/Dynamic Media ou embed da Adobe)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "categoria",
+        "label": "Categoria de consentimento exigida pelo vídeo",
+        "value": "CC_MEDIA"
+      }
+    ]
+  },
+  {
+    "id": "passos",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Abertura",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "passo",
+    "fields": [
+      {
+        "component": "text",
+        "name": "icone",
+        "label": "Ícone (um caractere)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "titulo",
+        "label": "Título",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Texto",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "valor",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "camadas",
+        "label": "Abertura do iceberg (abertura em mono, título, parágrafo)",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "comparacao",
+        "label": "Abertura da comparação difícil × rápido",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "entregas",
+        "label": "Abertura do que a semana entrega",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "valor-item",
+    "fields": [
+      {
+        "component": "select",
+        "name": "tipo",
+        "label": "Tipo",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Camada do iceberg (investimento antes)",
+            "value": "camada"
+          },
+          {
+            "name": "Comparação difícil × rápido",
+            "value": "comparacao"
+          },
+          {
+            "name": "Entrega da semana",
+            "value": "entrega"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "texto",
+        "label": "Texto"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "a",
+        "label": "Valor A (camada: número investido; comparação: caminho difícil; entrega: número)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "b",
+        "label": "Valor B (camada: unidade; comparação: Migração Express; entrega: unidade)"
       }
     ]
   }

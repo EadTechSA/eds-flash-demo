@@ -1,0 +1,50 @@
+.aviso {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-block: 9px;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.aviso .aviso-texto p {
+  margin: 0;
+}
+
+.aviso .aviso-texto strong {
+  color: var(--warm);
+  font-weight: 500;
+}
+
+.aviso .aviso-idiomas {
+  display: inline-flex;
+  gap: 2px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.aviso .aviso-idiomas a {
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: background 0.2s, color 0.2s;
+}
+
+.aviso .aviso-idiomas a[aria-current='page'] {
+  background: var(--text-color);
+  color: var(--background-color);
+}
+
+/* a seção do aviso é uma faixa colada no topo */
+main > .section.faixa-aviso {
+  padding: 0;
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--line);
+}
