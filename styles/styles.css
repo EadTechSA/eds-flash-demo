@@ -269,6 +269,12 @@ main > .section:first-of-type {
   padding-top: clamp(40px, 6vw, 80px);
 }
 
+/* as seções abaixo da dobra só são renderizadas quando se aproximam */
+main > .section:not(:first-of-type) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 main > .section.compacta {
   padding-block: 0;
 }
