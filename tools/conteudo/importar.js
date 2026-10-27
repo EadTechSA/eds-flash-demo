@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*
  * Importa o conteúdo gerado por conteudo.py no author, pela sessão logada
  * do navegador. Cole no console de uma aba do author
