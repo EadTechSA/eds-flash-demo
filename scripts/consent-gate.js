@@ -25,8 +25,10 @@ function host(url) {
 }
 
 function origens(doc) {
-  const linhas = doc ? doc.querySelectorAll('.consent-origens > div') : [];
-  return [...linhas].map((l) => {
+  // a seção `papel: cmp` usa o mesmo bloco para mapear códigos de CMP; fica fora
+  const linhas = doc ? [...doc.querySelectorAll('.consent-origens > div')]
+    .filter((l) => !l.closest('[data-papel="cmp"]')) : [];
+  return linhas.map((l) => {
     const [o, c] = [...l.children].map((d) => d.textContent.trim().toLowerCase());
     return { origem: o, codigo: c && c.toUpperCase() };
   }).filter((x) => x.origem && x.codigo);

@@ -1,11 +1,14 @@
 /*
- * Gancho de consentimento do aem-boilerplate (fase delayed), ligado ao
- * módulo scripts/consent.js, que mostra o banner e guarda a escolha.
+ * Gancho de consentimento (fase delayed), ligado ao módulo scripts/consent.js,
+ * que mostra o banner e guarda a escolha.
  *
- * O módulo anuncia a escolha em `consent.update` (detail.categories).
- * consented.js (Web SDK: Analytics e AJO) só carrega quando a categoria de
- * desempenho (CC_ANALYTICS) está aceita — e carrega uma vez só.
+ * Com o metadado de página `cmp` (onetrust | cookiebot | tcf), o banner
+ * próprio NÃO aparece: o adaptador scripts/consent-cmp.js escuta o CMP do
+ * site e anuncia os mesmos eventos. Em qualquer caso, consented.js (martech)
+ * só carrega quando a categoria CC_ANALYTICS está aceita, uma vez só.
  */
+import { getMetadata } from './aem.js';
+
 const CATEGORIA_MARTECH = 'CC_ANALYTICS';
 let consentedLoaded = false;
 
@@ -18,8 +21,17 @@ function aoAtualizar(e) {
 
 window.addEventListener('consent.update', aoAtualizar);
 
-// eslint-disable-next-line import/no-cycle
-import('./consent.js').then((m) => {
-  m.init();
-  m.ligarLinkPreferencias();
-});
+const cmp = getMetadata('cmp');
+if (cmp) {
+  // eslint-disable-next-line import/no-cycle
+  import('./consent-cmp.js').then((m) => m.default(cmp)).then((ligou) => {
+    if (ligou) return;
+    import('./consent.js').then((c) => { c.init(); c.ligarLinkPreferencias(); });
+  });
+} else {
+  // eslint-disable-next-line import/no-cycle
+  import('./consent.js').then((m) => {
+    m.init();
+    m.ligarLinkPreferencias();
+  });
+}

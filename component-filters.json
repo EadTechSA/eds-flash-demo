@@ -18,6 +18,7 @@
       "fases",
       "dm-showcase",
       "acessibilidade",
+      "a11y-painel",
       "bento",
       "agentic",
       "passos",
@@ -26,6 +27,12 @@
       "columns",
       "fragment",
       "consent-origens"
+    ]
+  },
+  {
+    "id": "a11y-painel",
+    "components": [
+      "a11y-painel-rotulo"
     ]
   },
   {

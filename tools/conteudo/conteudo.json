@@ -25,7 +25,7 @@
      "filter": "hero",
      "image": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
      "imageAlt": "Pôster do vídeo: grade escura com brilho quente, EDS Flash Demo",
-     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimento nativo</p><h1>O site que <em>pede permissão | carrega em 0,4 s | recorta por IA | fala com agentes | publica sem TI</em> antes de carregar qualquer coisa.</h1><p>Esta página é uma demonstração ao vivo: o vídeo abaixo só carrega depois do consentimento, nenhum script de terceiro entra antes do \"Aceitar\", e cada seção mostra um recurso do EDS e do Assets funcionando de verdade.</p>",
+     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimento nativo</p><h1>O site que <em>carrega em 0,4 s | é acessível por bloco | recorta por IA | fala com agentes | pede permissão | publica sem TI</em> em uma semana de migração.</h1><p>Esta página é uma demonstração ao vivo, não um slide: cada seção mostra um recurso do EDS, do Assets e do método da EadTech funcionando de verdade. Acessibilidade que vale para todo bloco, Lighthouse 100, agentes de IA, consentimento nativo. O vídeo da Adobe abaixo é o primeiro exemplo: só carrega depois do seu sim.</p>",
      "video": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12",
      "categoria": "CC_MEDIA",
      "item_0": {
@@ -42,7 +42,7 @@
       "name": "rotulo-selo-2",
       "model": "rotulo",
       "chave": "selo-2",
-      "texto": "0 scripts de terceiros antes do sim"
+      "texto": "acessível por bloco · 6 ferramentas"
      },
      "item_2": {
       "jcr:primaryType": "nt:unstructured",
@@ -120,7 +120,7 @@
     "como": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>Como usar na apresentação</p><p>1. Abra o inspetor de rede e mostre que nada de terceiro carregou.</p><p>2. Tente dar play. O vídeo pede consentimento. Aceite e ele carrega na hora.</p><p>3. Abra \"Definições de cookies\", desligue \"Mídia e vídeo\" e veja o bloqueio voltar sem recarregar.</p>"
+     "text": "<p>Como usar na apresentação</p><p>1. Clique no botão de acessibilidade à direita e ligue o alto contraste: a página inteira muda, bloco a bloco.</p><p>2. Role até \"Rápido não é fácil\" e deixe o iceberg contar o investimento.</p><p>3. Dê play no vídeo: ele pede consentimento, carrega na hora e some ao revogar, sem recarregar.</p>"
     }
    },
    "section_1": {
@@ -391,6 +391,485 @@
    "section_2": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Acessibilidade",
+    "id": "acessibilidade",
+    "a11y": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "A11y Painel",
+     "model": "a11y-painel",
+     "filter": "a11y-painel",
+     "texto": "<p>Acessibilidade por bloco · LBI, eMAG 3.1, WCAG 2.2 AA</p><h2>Um botão. Todo bloco responde.</h2><p>O botão de acessibilidade só liga uma classe na raiz da página; o tema troca os tokens e cada bloco traz a própria regra de contraste. A tabela abaixo mede, agora, o contraste do texto de cada bloco desta página. Troque o modo e veja os números mudarem.</p>",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modos-titulo",
+      "model": "rotulo",
+      "chave": "modos-titulo",
+      "texto": "Modos"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modo-normal",
+      "model": "rotulo",
+      "chave": "modo-normal",
+      "texto": "normal"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modos",
+      "model": "rotulo",
+      "chave": "modos",
+      "texto": "Aumentar fonte|Diminuir fonte|Alto contraste|Preto e branco|Inverter cores|Destacar links"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modos-nota",
+      "model": "rotulo",
+      "chave": "modos-nota",
+      "texto": "Os mesmos botões do widget à direita: a escolha fica no navegador e vale para o site inteiro, sem script de terceiro."
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tabela-titulo",
+      "model": "rotulo",
+      "chave": "tabela-titulo",
+      "texto": "Blocos desta página, medidos agora"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-bloco",
+      "model": "rotulo",
+      "chave": "col-bloco",
+      "texto": "bloco"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-cores",
+      "model": "rotulo",
+      "chave": "col-cores",
+      "texto": "texto / fundo"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-contraste",
+      "model": "rotulo",
+      "chave": "col-contraste",
+      "texto": "contraste"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-regra",
+      "model": "rotulo",
+      "chave": "col-regra",
+      "texto": "regra de contraste"
+     },
+     "item_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-regra-propria",
+      "model": "rotulo",
+      "chave": "regra-propria",
+      "texto": "própria + tokens"
+     },
+     "item_10": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-regra-tokens",
+      "model": "rotulo",
+      "chave": "regra-tokens",
+      "texto": "tokens do tema"
+     },
+     "item_11": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-aa",
+      "model": "rotulo",
+      "chave": "aa",
+      "texto": "AA"
+     },
+     "item_12": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-em-contraste",
+      "model": "rotulo",
+      "chave": "em-contraste",
+      "texto": "alto contraste ligado"
+     },
+     "item_13": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tabela-nota",
+      "model": "rotulo",
+      "chave": "tabela-nota",
+      "texto": "Mínimo WCAG AA: 4,5:1 (3:1 para texto grande). \"Própria\" quer dizer que o CSS do bloco tem regra sob html.contrast; \"tokens\" quer dizer que o bloco só usa as cores do tema e já responde."
+     }
+    }
+   },
+   "section_3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Assets e Dynamic Media",
+    "id": "midia",
+    "abertura": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/text/v1/text",
+     "text": "<p>AEM Assets · Dynamic Media com OpenAPI</p><h2>Uma imagem no DAM, infinitas entregas na borda.</h2><p>Toda mídia desta página mora no Assets e é referenciada de lá. Com Dynamic Media, a mesma foto sai recortada por IA para cada proporção e otimizada por URL, sem ninguém gerar arquivo.</p>"
+    },
+    "dm": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "DM Showcase",
+     "model": "dm-showcase",
+     "filter": "dm-showcase",
+     "image": "/content/dam/eds-flash-demo/smart-crop-eds-flash-demo.webp",
+     "imageAlt": "Imagem de demonstração do smart crop",
+     "original": "2400",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-titulo",
+      "model": "rotulo",
+      "chave": "recorte-titulo",
+      "texto": "Smart Crop por IA"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-real",
+      "model": "rotulo",
+      "chave": "recorte-real",
+      "texto": "Dynamic Media"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-simulado",
+      "model": "rotulo",
+      "chave": "recorte-simulado",
+      "texto": "simulação · liga com DM no sandbox"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-hero",
+      "model": "rotulo",
+      "chave": "recorte-hero",
+      "texto": "hero"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-card",
+      "model": "rotulo",
+      "chave": "recorte-card",
+      "texto": "card"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-stories",
+      "model": "rotulo",
+      "chave": "recorte-stories",
+      "texto": "stories"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-sujeito",
+      "model": "rotulo",
+      "chave": "sujeito",
+      "texto": "Ponto de interesse"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar",
+      "model": "rotulo",
+      "chave": "trocar",
+      "texto": "Trocar a imagem no DAM"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar-nota",
+      "model": "rotulo",
+      "chave": "trocar-nota",
+      "texto": "reaprova no Assets → a página troca sem republicar"
+     },
+     "item_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar-feito",
+      "model": "rotulo",
+      "chave": "trocar-feito",
+      "texto": "ativo reaprovado às"
+     },
+     "item_10": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar-log",
+      "model": "rotulo",
+      "chave": "trocar-log",
+      "texto": "Assets: ativo reaprovado → entrega atualizada, 0 republicação"
+     },
+     "item_11": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-nota",
+      "model": "rotulo",
+      "chave": "recorte-nota",
+      "texto": "Arraste: o ponto de interesse muda e os três recortes o seguem. No Dynamic Media isso é o perfil de smart crop aplicado no upload."
+     },
+     "item_12": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-url-titulo",
+      "model": "rotulo",
+      "chave": "url-titulo",
+      "texto": "Rendition por URL"
+     },
+     "item_13": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-largura",
+      "model": "rotulo",
+      "chave": "largura",
+      "texto": "Largura"
+     },
+     "item_14": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-qualidade",
+      "model": "rotulo",
+      "chave": "qualidade",
+      "texto": "Qualidade"
+     },
+     "item_15": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-formato",
+      "model": "rotulo",
+      "chave": "formato",
+      "texto": "Formato"
+     },
+     "item_16": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-kb",
+      "model": "rotulo",
+      "chave": "kb",
+      "texto": "KB estimados"
+     },
+     "item_17": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-original",
+      "model": "rotulo",
+      "chave": "original",
+      "texto": "· o original tem"
+     },
+     "item_18": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-url-nota",
+      "model": "rotulo",
+      "chave": "url-nota",
+      "texto": "Só ativos aprovados no Assets são entregues. A URL é o contrato: largura, qualidade, formato e perfil de recorte."
+     }
+    }
+   },
+   "section_4": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "compacta",
+    "name": "Três fases",
+    "id": "fases",
+    "fases": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Fases",
+     "model": "fases",
+     "filter": "fases",
+     "texto": "<p>Carregamento em três fases · role para ver</p><h2>Por que dá 100 no celular.</h2>",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "fase_0",
+      "model": "fase",
+      "sigla": "E",
+      "titulo": "Eager",
+      "texto": "<p>HTML, CSS e a primeira imagem: só o que pinta o LCP. Nada de terceiro.</p>"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "fase_1",
+      "model": "fase",
+      "sigla": "L",
+      "titulo": "Lazy",
+      "texto": "<p>Os blocos entram em ordem, cada um com o próprio CSS e JS. Fontes e imagens fora da tela esperam.</p>"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "fase_2",
+      "model": "fase",
+      "sigla": "D",
+      "titulo": "Delayed",
+      "texto": "<p>Três segundos depois: consentimento, e só então martech. O Lighthouse já terminou de medir.</p>"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-url",
+      "model": "rotulo",
+      "chave": "url",
+      "texto": "https://demo.eadtech…/"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-lcp",
+      "model": "rotulo",
+      "chave": "lcp",
+      "texto": "LCP 0,4 s"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cookies",
+      "model": "rotulo",
+      "chave": "cookies",
+      "texto": "cookies · aceitar / recusar"
+     }
+    }
+   },
+   "section_5": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "EDS",
+    "id": "eds",
+    "abertura": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/text/v1/text",
+     "text": "<p>Edge Delivery Services · o que esta página usa</p><h2>Cada caixa é um recurso real, medido nesta página.</h2>"
+    },
+    "bento": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Bento",
+     "model": "bento",
+     "filter": "bento",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_0",
+      "model": "celula",
+      "tipo": "lighthouse",
+      "rotulo": "Lighthouse · celular",
+      "texto": "<p>Medido na publicação, a cada mudança, pelo portão de qualidade. Agentic 5/5 com o llms.txt desta demo.</p>",
+      "dados": "Desempenho:100|Acessibilidade:100|Práticas:100|SEO:100",
+      "largura": "3"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_1",
+      "model": "celula",
+      "tipo": "fases",
+      "rotulo": "Fases medidas nesta página",
+      "texto": "<p>Navigation Timing do seu navegador, agora. Primeiro o LCP, depois os blocos, por último martech e consentimento.</p>",
+      "dados": "eager|lazy|delayed",
+      "largura": "3"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_2",
+      "model": "celula",
+      "tipo": "indice",
+      "rotulo": "query-index.json",
+      "texto": "<p>Índice publicado automaticamente; alimenta listas, cards e agentes.</p>",
+      "largura": "2"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_3",
+      "model": "celula",
+      "tipo": "cabecalhos",
+      "rotulo": "Cabeçalhos de segurança",
+      "texto": "<p>Versionados no serviço de configuração, conferidos a cada publicação.</p>",
+      "dados": "content-security-policy=default-src 'self' …|cross-origin-opener-policy=same-origin|x-content-type-options=nosniff|permissions-policy=camera=(), geolocation=()|strict-transport-security=max-age=31557600",
+      "largura": "2"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_4",
+      "model": "celula",
+      "tipo": "edge",
+      "rotulo": "Edge Functions",
+      "texto": "<p>Dado público via função na borda da Adobe: a chave da API nunca chega ao navegador. Demonstração: cotação do dia, cache de 120 s.</p>",
+      "dados": "/api/cotacao|Chamar /api/cotacao|nunca sai do cofre",
+      "largura": "2"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_5",
+      "model": "celula",
+      "tipo": "ab",
+      "rotulo": "Experimentação",
+      "texto": "<p>A/B por metadado de página, com variantes como URLs e resultado na telemetria operacional. Target entra pelo mesmo Web SDK quando o cliente tem.</p>",
+      "dados": "Variante A|Variante B|Permitir e assistir|Ver o vídeo (12 s)",
+      "largura": "2"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_6",
+      "model": "celula",
+      "tipo": "texto",
+      "rotulo": "Autoria",
+      "texto": "<p>Universal Editor com catálogo de blocos em português. Variante é escolha do autor, nunca regra de caminho no código.</p><p><a href=\"#autoria\">Ver o fluxo</a></p>",
+      "largura": "2"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_7",
+      "model": "celula",
+      "tipo": "telemetria",
+      "rotulo": "Operational Telemetry",
+      "texto": "<p>Core Web Vitals de usuários reais, por página e dispositivo, sem script de terceiro.</p>",
+      "dados": "LCP:0,4 s:22|INP:48 ms:12|CLS:0,00:4",
+      "largura": "2"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_8",
+      "model": "celula",
+      "tipo": "texto",
+      "rotulo": "Acessibilidade por bloco",
+      "texto": "<p>Abra o botão de acessibilidade à direita e ligue o alto contraste: a página inteira muda na hora, inclusive o gate do vídeo, o banner de cookies e estes painéis. O botão só troca uma classe na raiz; o tema troca os tokens e cada bloco traz a própria regra. Nenhum bloco precisa saber do botão.</p>",
+      "largura": "6"
+     }
+    }
+   },
+   "section_6": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
     "name": "Consentimento",
     "id": "consentimento",
     "consent": {
@@ -399,7 +878,7 @@
      "name": "Consent Live",
      "model": "consent-live",
      "filter": "consent-live",
-     "texto": "<p>Consentimento nativo em EDS · bloco EadTech</p><h2>Nada carrega antes do sim. E o não vale na hora.</h2><p>O banner, as categorias e os textos são conteúdo autorado no Universal Editor. O código só faz o gate: troca o player por um aviso até a categoria ser aceita, e devolve o aviso quando ela é revogada, sem recarregar a página.</p>",
+     "texto": "<p>Consentimento nativo em EDS · bloco EadTech</p><h2>Consentimento nativo, sem CMP pesado. E pronto para o CMP do cliente.</h2><p>Banner e categorias são conteúdo autorado; o código só faz o gate. Cada bloco que precisa de permissão leva a categoria no HTML (<code>data-consent-category</code>), e um adaptador traduz OneTrust, Cookiebot ou TCF para os mesmos eventos. Abaixo, a rede desta página em tempo real.</p>",
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -602,360 +1081,7 @@
      }
     }
    },
-   "section_3": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "core/franklin/components/section/v1/section",
-    "style": "compacta",
-    "name": "Três fases",
-    "id": "fases",
-    "fases": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Fases",
-     "model": "fases",
-     "filter": "fases",
-     "texto": "<p>Carregamento em três fases · role para ver</p><h2>Por que dá 100 no celular.</h2>",
-     "item_0": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "fase_0",
-      "model": "fase",
-      "sigla": "E",
-      "titulo": "Eager",
-      "texto": "<p>HTML, CSS e a primeira imagem: só o que pinta o LCP. Nada de terceiro.</p>"
-     },
-     "item_1": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "fase_1",
-      "model": "fase",
-      "sigla": "L",
-      "titulo": "Lazy",
-      "texto": "<p>Os blocos entram em ordem, cada um com o próprio CSS e JS. Fontes e imagens fora da tela esperam.</p>"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "fase_2",
-      "model": "fase",
-      "sigla": "D",
-      "titulo": "Delayed",
-      "texto": "<p>Três segundos depois: consentimento, e só então martech. O Lighthouse já terminou de medir.</p>"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-url",
-      "model": "rotulo",
-      "chave": "url",
-      "texto": "https://demo.eadtech…/"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-lcp",
-      "model": "rotulo",
-      "chave": "lcp",
-      "texto": "LCP 0,4 s"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-cookies",
-      "model": "rotulo",
-      "chave": "cookies",
-      "texto": "cookies · aceitar / recusar"
-     }
-    }
-   },
-   "section_4": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "core/franklin/components/section/v1/section",
-    "name": "Assets e Dynamic Media",
-    "id": "midia",
-    "abertura": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>AEM Assets · Dynamic Media com OpenAPI</p><h2>Uma imagem no DAM, infinitas entregas na borda.</h2><p>Toda mídia desta página mora no Assets e é referenciada de lá. Com Dynamic Media, a mesma foto sai recortada por IA para cada proporção e otimizada por URL, sem ninguém gerar arquivo.</p>"
-    },
-    "dm": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "DM Showcase",
-     "model": "dm-showcase",
-     "filter": "dm-showcase",
-     "image": "/content/dam/eds-flash-demo/smart-crop-eds-flash-demo.webp",
-     "imageAlt": "Imagem de demonstração do smart crop",
-     "original": "2400",
-     "item_0": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-titulo",
-      "model": "rotulo",
-      "chave": "recorte-titulo",
-      "texto": "Smart Crop por IA"
-     },
-     "item_1": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-real",
-      "model": "rotulo",
-      "chave": "recorte-real",
-      "texto": "Dynamic Media"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-simulado",
-      "model": "rotulo",
-      "chave": "recorte-simulado",
-      "texto": "simulação · liga com DM no sandbox"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-hero",
-      "model": "rotulo",
-      "chave": "recorte-hero",
-      "texto": "hero"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-card",
-      "model": "rotulo",
-      "chave": "recorte-card",
-      "texto": "card"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-stories",
-      "model": "rotulo",
-      "chave": "recorte-stories",
-      "texto": "stories"
-     },
-     "item_6": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-sujeito",
-      "model": "rotulo",
-      "chave": "sujeito",
-      "texto": "Ponto de interesse"
-     },
-     "item_7": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar",
-      "model": "rotulo",
-      "chave": "trocar",
-      "texto": "Trocar a imagem no DAM"
-     },
-     "item_8": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar-nota",
-      "model": "rotulo",
-      "chave": "trocar-nota",
-      "texto": "reaprova no Assets → a página troca sem republicar"
-     },
-     "item_9": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar-feito",
-      "model": "rotulo",
-      "chave": "trocar-feito",
-      "texto": "ativo reaprovado às"
-     },
-     "item_10": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar-log",
-      "model": "rotulo",
-      "chave": "trocar-log",
-      "texto": "Assets: ativo reaprovado → entrega atualizada, 0 republicação"
-     },
-     "item_11": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-nota",
-      "model": "rotulo",
-      "chave": "recorte-nota",
-      "texto": "Arraste: o ponto de interesse muda e os três recortes o seguem. No Dynamic Media isso é o perfil de smart crop aplicado no upload."
-     },
-     "item_12": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-url-titulo",
-      "model": "rotulo",
-      "chave": "url-titulo",
-      "texto": "Rendition por URL"
-     },
-     "item_13": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-largura",
-      "model": "rotulo",
-      "chave": "largura",
-      "texto": "Largura"
-     },
-     "item_14": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-qualidade",
-      "model": "rotulo",
-      "chave": "qualidade",
-      "texto": "Qualidade"
-     },
-     "item_15": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-formato",
-      "model": "rotulo",
-      "chave": "formato",
-      "texto": "Formato"
-     },
-     "item_16": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-kb",
-      "model": "rotulo",
-      "chave": "kb",
-      "texto": "KB estimados"
-     },
-     "item_17": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-original",
-      "model": "rotulo",
-      "chave": "original",
-      "texto": "· o original tem"
-     },
-     "item_18": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-url-nota",
-      "model": "rotulo",
-      "chave": "url-nota",
-      "texto": "Só ativos aprovados no Assets são entregues. A URL é o contrato: largura, qualidade, formato e perfil de recorte."
-     }
-    }
-   },
-   "section_5": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "core/franklin/components/section/v1/section",
-    "name": "EDS",
-    "id": "eds",
-    "abertura": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>Edge Delivery Services · o que esta página usa</p><h2>Cada caixa é um recurso real, medido nesta página.</h2>"
-    },
-    "bento": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Bento",
-     "model": "bento",
-     "filter": "bento",
-     "item_0": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_0",
-      "model": "celula",
-      "tipo": "lighthouse",
-      "rotulo": "Lighthouse · celular",
-      "texto": "<p>Medido na publicação, a cada mudança, pelo portão de qualidade. Agentic 5/5 com o llms.txt desta demo.</p>",
-      "dados": "Desempenho:100|Acessibilidade:100|Práticas:100|SEO:100",
-      "largura": "3"
-     },
-     "item_1": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_1",
-      "model": "celula",
-      "tipo": "fases",
-      "rotulo": "Fases medidas nesta página",
-      "texto": "<p>Navigation Timing do seu navegador, agora. Primeiro o LCP, depois os blocos, por último martech e consentimento.</p>",
-      "dados": "eager|lazy|delayed",
-      "largura": "3"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_2",
-      "model": "celula",
-      "tipo": "indice",
-      "rotulo": "query-index.json",
-      "texto": "<p>Índice publicado automaticamente; alimenta listas, cards e agentes.</p>",
-      "largura": "2"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_3",
-      "model": "celula",
-      "tipo": "cabecalhos",
-      "rotulo": "Cabeçalhos de segurança",
-      "texto": "<p>Versionados no serviço de configuração, conferidos a cada publicação.</p>",
-      "dados": "content-security-policy=default-src 'self' …|cross-origin-opener-policy=same-origin|x-content-type-options=nosniff|permissions-policy=camera=(), geolocation=()|strict-transport-security=max-age=31557600",
-      "largura": "2"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_4",
-      "model": "celula",
-      "tipo": "edge",
-      "rotulo": "Edge Functions",
-      "texto": "<p>Dado público via função na borda da Adobe: a chave da API nunca chega ao navegador. Demonstração: cotação do dia, cache de 120 s.</p>",
-      "dados": "/api/cotacao|Chamar /api/cotacao|nunca sai do cofre",
-      "largura": "2"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_5",
-      "model": "celula",
-      "tipo": "ab",
-      "rotulo": "Experimentação",
-      "texto": "<p>A/B por metadado de página, com variantes como URLs e resultado na telemetria operacional. Target entra pelo mesmo Web SDK quando o cliente tem.</p>",
-      "dados": "Variante A|Variante B|Permitir e assistir|Ver o vídeo (12 s)",
-      "largura": "2"
-     },
-     "item_6": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_6",
-      "model": "celula",
-      "tipo": "texto",
-      "rotulo": "Autoria",
-      "texto": "<p>Universal Editor com catálogo de blocos em português. Variante é escolha do autor, nunca regra de caminho no código.</p><p><a href=\"#autoria\">Ver o fluxo</a></p>",
-      "largura": "2"
-     },
-     "item_7": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_7",
-      "model": "celula",
-      "tipo": "telemetria",
-      "rotulo": "Operational Telemetry",
-      "texto": "<p>Core Web Vitals de usuários reais, por página e dispositivo, sem script de terceiro.</p>",
-      "dados": "LCP:0,4 s:22|INP:48 ms:12|CLS:0,00:4",
-      "largura": "2"
-     },
-     "item_8": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_8",
-      "model": "celula",
-      "tipo": "texto",
-      "rotulo": "Acessibilidade por bloco",
-      "texto": "<p>Abra o botão de acessibilidade à direita e ligue o alto contraste: a página inteira muda na hora, inclusive o gate do vídeo, o banner de cookies e estes painéis. O botão só troca uma classe na raiz; o tema troca os tokens e cada bloco traz a própria regra. Nenhum bloco precisa saber do botão.</p>",
-      "largura": "6"
-     }
-    }
-   },
-   "section_6": {
+   "section_7": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
     "name": "Agentic",
@@ -1041,7 +1167,7 @@
      }
     }
    },
-   "section_7": {
+   "section_8": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
     "style": "compacta",
@@ -1150,7 +1276,7 @@
     "links": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<ul><li><a href=\"#valor\">Rápido não é fácil</a></li><li><a href=\"#consentimento\">Consentimento</a></li><li><a href=\"#fases\">Três fases</a></li><li><a href=\"#midia\">Assets e Dynamic Media</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#autoria\">Autoria</a></li></ul>"
+     "text": "<ul><li><a href=\"#valor\">Rápido não é fácil</a></li><li><a href=\"#acessibilidade\">Acessibilidade</a></li><li><a href=\"#midia\">Assets e Dynamic Media</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#consentimento\">Consentimento</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#autoria\">Autoria</a></li></ul>"
     }
    },
    "section_3": {
@@ -1379,6 +1505,91 @@
       "categoria": "CC_ANALYTICS"
      }
     }
+   },
+   "section_7": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Mapa de CMP",
+    "papel": "cmp",
+    "cmp": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Consent Origens",
+     "model": "consent-origens",
+     "filter": "consent-origens",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_0",
+      "model": "consent-origem",
+      "origem": "C0001",
+      "categoria": "CC_ESSENTIAL"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_1",
+      "model": "consent-origem",
+      "origem": "C0002",
+      "categoria": "CC_ANALYTICS"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_2",
+      "model": "consent-origem",
+      "origem": "C0004",
+      "categoria": "CC_MEDIA"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_3",
+      "model": "consent-origem",
+      "origem": "necessary",
+      "categoria": "CC_ESSENTIAL"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_4",
+      "model": "consent-origem",
+      "origem": "statistics",
+      "categoria": "CC_ANALYTICS"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_5",
+      "model": "consent-origem",
+      "origem": "marketing",
+      "categoria": "CC_MEDIA"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_6",
+      "model": "consent-origem",
+      "origem": "tcf:1",
+      "categoria": "CC_ESSENTIAL"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_7",
+      "model": "consent-origem",
+      "origem": "tcf:8",
+      "categoria": "CC_ANALYTICS"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_8",
+      "model": "consent-origem",
+      "origem": "tcf:4",
+      "categoria": "CC_MEDIA"
+     }
+    }
    }
   }
  },
@@ -1408,7 +1619,7 @@
      "filter": "hero",
      "image": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
      "imageAlt": "Pôster do vídeo: grade escura com brilho quente, EDS Flash Demo",
-     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimiento nativo</p><h1>El sitio que <em>pide permiso | carga en 0,4 s | recorta con IA | habla con agentes | publica sin TI</em> antes de cargar cualquier cosa.</h1><p>Esta página es una demostración en vivo: el video de abajo solo carga después del consentimiento, ningún script de terceros entra antes del \"Aceptar\", y cada sección muestra un recurso de EDS y de Assets funcionando de verdad.</p>",
+     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimiento nativo</p><h1>El sitio que <em>carga en 0,4 s | es accesible por bloque | recorta con IA | habla con agentes | pide permiso | publica sin TI</em> en una semana de migración.</h1><p>Esta página es una demostración en vivo, no una diapositiva: cada sección muestra un recurso de EDS, de Assets y del método de EadTech funcionando de verdad. Accesibilidad que vale para todo bloque, Lighthouse 100, agentes de IA, consentimiento nativo. El video de Adobe de abajo es el primer ejemplo: solo carga después de su sí.</p>",
      "video": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12",
      "categoria": "CC_MEDIA",
      "item_0": {
@@ -1425,7 +1636,7 @@
       "name": "rotulo-selo-2",
       "model": "rotulo",
       "chave": "selo-2",
-      "texto": "0 scripts de terceros antes del sí"
+      "texto": "accesible por bloque · 6 herramientas"
      },
      "item_2": {
       "jcr:primaryType": "nt:unstructured",
@@ -1503,7 +1714,7 @@
     "como": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>Cómo usar en la presentación</p><p>1. Abra el inspector de red y muestre que nada de terceros cargó.</p><p>2. Intente dar play. El video pide consentimiento. Acepte y carga al instante.</p><p>3. Abra \"Configuración de cookies\", apague \"Medios y video\" y vea el bloqueo volver sin recargar.</p>"
+     "text": "<p>Cómo usar en la presentación</p><p>1. Pulse el botón de accesibilidad a la derecha y active el alto contraste: toda la página cambia, bloque a bloque.</p><p>2. Desplace hasta \"Rápido no es fácil\" y deje que el iceberg cuente la inversión.</p><p>3. Dé play al video: pide consentimiento, carga al instante y desaparece al revocar, sin recargar.</p>"
     }
    },
    "section_1": {
@@ -1774,6 +1985,485 @@
    "section_2": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Acessibilidade",
+    "id": "accesibilidad",
+    "a11y": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "A11y Painel",
+     "model": "a11y-painel",
+     "filter": "a11y-painel",
+     "texto": "<p>Accesibilidad por bloque · WCAG 2.2 AA</p><h2>Un botón. Todo bloque responde.</h2><p>El botón de accesibilidad solo activa una clase en la raíz de la página; el tema cambia los tokens y cada bloque trae su propia regla de contraste. La tabla de abajo mide, ahora, el contraste del texto de cada bloque de esta página. Cambie el modo y vea los números cambiar.</p>",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modos-titulo",
+      "model": "rotulo",
+      "chave": "modos-titulo",
+      "texto": "Modos"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modo-normal",
+      "model": "rotulo",
+      "chave": "modo-normal",
+      "texto": "normal"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modos",
+      "model": "rotulo",
+      "chave": "modos",
+      "texto": "Aumentar fuente|Disminuir fuente|Alto contraste|Blanco y negro|Invertir colores|Destacar enlaces"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modos-nota",
+      "model": "rotulo",
+      "chave": "modos-nota",
+      "texto": "Los mismos botones del widget de la derecha: la elección queda en el navegador y vale para todo el sitio, sin scripts de terceros."
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tabela-titulo",
+      "model": "rotulo",
+      "chave": "tabela-titulo",
+      "texto": "Bloques de esta página, medidos ahora"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-bloco",
+      "model": "rotulo",
+      "chave": "col-bloco",
+      "texto": "bloque"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-cores",
+      "model": "rotulo",
+      "chave": "col-cores",
+      "texto": "texto / fondo"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-contraste",
+      "model": "rotulo",
+      "chave": "col-contraste",
+      "texto": "contraste"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-regra",
+      "model": "rotulo",
+      "chave": "col-regra",
+      "texto": "regla de contraste"
+     },
+     "item_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-regra-propria",
+      "model": "rotulo",
+      "chave": "regra-propria",
+      "texto": "propia + tokens"
+     },
+     "item_10": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-regra-tokens",
+      "model": "rotulo",
+      "chave": "regra-tokens",
+      "texto": "tokens del tema"
+     },
+     "item_11": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-aa",
+      "model": "rotulo",
+      "chave": "aa",
+      "texto": "AA"
+     },
+     "item_12": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-em-contraste",
+      "model": "rotulo",
+      "chave": "em-contraste",
+      "texto": "alto contraste activo"
+     },
+     "item_13": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tabela-nota",
+      "model": "rotulo",
+      "chave": "tabela-nota",
+      "texto": "Mínimo WCAG AA: 4,5:1 (3:1 para texto grande). \"Propia\" significa que el CSS del bloque tiene regla bajo html.contrast; \"tokens\" significa que el bloque solo usa los colores del tema y ya responde."
+     }
+    }
+   },
+   "section_3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Assets e Dynamic Media",
+    "id": "medios",
+    "abertura": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/text/v1/text",
+     "text": "<p>AEM Assets · Dynamic Media con OpenAPI</p><h2>Una imagen en el DAM, infinitas entregas en el borde.</h2><p>Todo medio de esta página vive en Assets y se referencia desde ahí. Con Dynamic Media, la misma foto sale recortada por IA para cada proporción y optimizada por URL, sin que nadie genere archivos.</p>"
+    },
+    "dm": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "DM Showcase",
+     "model": "dm-showcase",
+     "filter": "dm-showcase",
+     "image": "/content/dam/eds-flash-demo/smart-crop-eds-flash-demo.webp",
+     "imageAlt": "Imagem de demonstração do smart crop",
+     "original": "2400",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-titulo",
+      "model": "rotulo",
+      "chave": "recorte-titulo",
+      "texto": "Smart Crop con IA"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-real",
+      "model": "rotulo",
+      "chave": "recorte-real",
+      "texto": "Dynamic Media"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-simulado",
+      "model": "rotulo",
+      "chave": "recorte-simulado",
+      "texto": "simulación · se activa con DM en el sandbox"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-hero",
+      "model": "rotulo",
+      "chave": "recorte-hero",
+      "texto": "hero"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-card",
+      "model": "rotulo",
+      "chave": "recorte-card",
+      "texto": "card"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-stories",
+      "model": "rotulo",
+      "chave": "recorte-stories",
+      "texto": "stories"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-sujeito",
+      "model": "rotulo",
+      "chave": "sujeito",
+      "texto": "Punto de interés"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar",
+      "model": "rotulo",
+      "chave": "trocar",
+      "texto": "Cambiar la imagen en el DAM"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar-nota",
+      "model": "rotulo",
+      "chave": "trocar-nota",
+      "texto": "se reaprueba en Assets → la página cambia sin republicar"
+     },
+     "item_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar-feito",
+      "model": "rotulo",
+      "chave": "trocar-feito",
+      "texto": "activo reaprobado a las"
+     },
+     "item_10": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar-log",
+      "model": "rotulo",
+      "chave": "trocar-log",
+      "texto": "Assets: activo reaprobado → entrega actualizada, 0 republicación"
+     },
+     "item_11": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-nota",
+      "model": "rotulo",
+      "chave": "recorte-nota",
+      "texto": "Arrastre: el punto de interés cambia y los tres recortes lo siguen. En Dynamic Media esto es el perfil de smart crop aplicado al subir."
+     },
+     "item_12": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-url-titulo",
+      "model": "rotulo",
+      "chave": "url-titulo",
+      "texto": "Rendition por URL"
+     },
+     "item_13": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-largura",
+      "model": "rotulo",
+      "chave": "largura",
+      "texto": "Ancho"
+     },
+     "item_14": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-qualidade",
+      "model": "rotulo",
+      "chave": "qualidade",
+      "texto": "Calidad"
+     },
+     "item_15": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-formato",
+      "model": "rotulo",
+      "chave": "formato",
+      "texto": "Formato"
+     },
+     "item_16": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-kb",
+      "model": "rotulo",
+      "chave": "kb",
+      "texto": "KB estimados"
+     },
+     "item_17": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-original",
+      "model": "rotulo",
+      "chave": "original",
+      "texto": "· el original pesa"
+     },
+     "item_18": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-url-nota",
+      "model": "rotulo",
+      "chave": "url-nota",
+      "texto": "Solo los activos aprobados en Assets se entregan. La URL es el contrato: ancho, calidad, formato y perfil de recorte."
+     }
+    }
+   },
+   "section_4": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "compacta",
+    "name": "Três fases",
+    "id": "fases",
+    "fases": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Fases",
+     "model": "fases",
+     "filter": "fases",
+     "texto": "<p>Carga en tres fases · desplace para ver</p><h2>Por qué da 100 en el móvil.</h2>",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "fase_0",
+      "model": "fase",
+      "sigla": "E",
+      "titulo": "Eager",
+      "texto": "<p>HTML, CSS y la primera imagen: solo lo que pinta el LCP. Nada de terceros.</p>"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "fase_1",
+      "model": "fase",
+      "sigla": "L",
+      "titulo": "Lazy",
+      "texto": "<p>Los bloques entran en orden, cada uno con su propio CSS y JS. Fuentes e imágenes fuera de pantalla esperan.</p>"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "fase_2",
+      "model": "fase",
+      "sigla": "D",
+      "titulo": "Delayed",
+      "texto": "<p>Tres segundos después: consentimiento, y solo entonces martech. Lighthouse ya terminó de medir.</p>"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-url",
+      "model": "rotulo",
+      "chave": "url",
+      "texto": "https://demo.eadtech…/"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-lcp",
+      "model": "rotulo",
+      "chave": "lcp",
+      "texto": "LCP 0,4 s"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cookies",
+      "model": "rotulo",
+      "chave": "cookies",
+      "texto": "cookies · aceptar / rechazar"
+     }
+    }
+   },
+   "section_5": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "EDS",
+    "id": "eds",
+    "abertura": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/text/v1/text",
+     "text": "<p>Edge Delivery Services · lo que usa esta página</p><h2>Cada caja es un recurso real, medido en esta página.</h2>"
+    },
+    "bento": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Bento",
+     "model": "bento",
+     "filter": "bento",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_0",
+      "model": "celula",
+      "tipo": "lighthouse",
+      "rotulo": "Lighthouse · móvil",
+      "texto": "<p>Medido en la publicación, en cada cambio, por la compuerta de calidad. Agentic 5/5 con el llms.txt de esta demo.</p>",
+      "dados": "Rendimiento:100|Accesibilidad:100|Prácticas:100|SEO:100",
+      "largura": "3"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_1",
+      "model": "celula",
+      "tipo": "fases",
+      "rotulo": "Fases medidas en esta página",
+      "texto": "<p>Navigation Timing de su navegador, ahora. Primero el LCP, luego los bloques, al final martech y consentimiento.</p>",
+      "dados": "eager|lazy|delayed",
+      "largura": "3"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_2",
+      "model": "celula",
+      "tipo": "indice",
+      "rotulo": "query-index.json",
+      "texto": "<p>Índice publicado automáticamente; alimenta listas, tarjetas y agentes.</p>",
+      "largura": "2"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_3",
+      "model": "celula",
+      "tipo": "cabecalhos",
+      "rotulo": "Cabeceras de seguridad",
+      "texto": "<p>Versionadas en el servicio de configuración, verificadas en cada publicación.</p>",
+      "dados": "content-security-policy=default-src 'self' …|cross-origin-opener-policy=same-origin|x-content-type-options=nosniff|permissions-policy=camera=(), geolocation=()|strict-transport-security=max-age=31557600",
+      "largura": "2"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_4",
+      "model": "celula",
+      "tipo": "edge",
+      "rotulo": "Edge Functions",
+      "texto": "<p>Dato público vía función en el borde de Adobe: la clave de la API nunca llega al navegador. Demostración: cotización del día, caché de 120 s.</p>",
+      "dados": "/api/cotacao|Llamar /api/cotacao|nunca sale de la bóveda",
+      "largura": "2"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_5",
+      "model": "celula",
+      "tipo": "ab",
+      "rotulo": "Experimentación",
+      "texto": "<p>A/B por metadato de página, con variantes como URLs y resultado en la telemetría operacional. Target entra por el mismo Web SDK cuando el cliente lo tiene.</p>",
+      "dados": "Variante A|Variante B|Permitir y ver|Ver el video (12 s)",
+      "largura": "2"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_6",
+      "model": "celula",
+      "tipo": "texto",
+      "rotulo": "Autoría",
+      "texto": "<p>Universal Editor con catálogo de bloques en el idioma del cliente. La variante la elige el autor, nunca una regla de ruta en el código.</p><p><a href=\"#autoria\">Ver el flujo</a></p>",
+      "largura": "2"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_7",
+      "model": "celula",
+      "tipo": "telemetria",
+      "rotulo": "Operational Telemetry",
+      "texto": "<p>Core Web Vitals de usuarios reales, por página y dispositivo, sin scripts de terceros.</p>",
+      "dados": "LCP:0,4 s:22|INP:48 ms:12|CLS:0,00:4",
+      "largura": "2"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_8",
+      "model": "celula",
+      "tipo": "texto",
+      "rotulo": "Accesibilidad por bloque",
+      "texto": "<p>Abra el botón de accesibilidad a la derecha y active el alto contraste: toda la página cambia al instante, incluidos el gate del video, el banner de cookies y estos paneles. El botón solo cambia una clase en la raíz; el tema cambia los tokens y cada bloque trae su propia regla. Ningún bloque necesita saber del botón.</p>",
+      "largura": "6"
+     }
+    }
+   },
+   "section_6": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
     "name": "Consentimento",
     "id": "consentimiento",
     "consent": {
@@ -1782,7 +2472,7 @@
      "name": "Consent Live",
      "model": "consent-live",
      "filter": "consent-live",
-     "texto": "<p>Consentimiento nativo en EDS · bloque EadTech</p><h2>Nada carga antes del sí. Y el no vale al instante.</h2><p>El banner, las categorías y los textos son contenido autorado en el Universal Editor. El código solo hace el gate: reemplaza el player por un aviso hasta que la categoría sea aceptada, y devuelve el aviso cuando se revoca, sin recargar la página.</p>",
+     "texto": "<p>Consentimiento nativo en EDS · bloque EadTech</p><h2>Consentimiento nativo, sin CMP pesado. Y listo para el CMP del cliente.</h2><p>Banner y categorías son contenido autorado; el código solo hace el gate. Cada bloque que necesita permiso lleva la categoría en el HTML (<code>data-consent-category</code>), y un adaptador traduce OneTrust, Cookiebot o TCF a los mismos eventos. Abajo, la red de esta página en tiempo real.</p>",
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -1985,360 +2675,7 @@
      }
     }
    },
-   "section_3": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "core/franklin/components/section/v1/section",
-    "style": "compacta",
-    "name": "Três fases",
-    "id": "fases",
-    "fases": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Fases",
-     "model": "fases",
-     "filter": "fases",
-     "texto": "<p>Carga en tres fases · desplace para ver</p><h2>Por qué da 100 en el móvil.</h2>",
-     "item_0": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "fase_0",
-      "model": "fase",
-      "sigla": "E",
-      "titulo": "Eager",
-      "texto": "<p>HTML, CSS y la primera imagen: solo lo que pinta el LCP. Nada de terceros.</p>"
-     },
-     "item_1": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "fase_1",
-      "model": "fase",
-      "sigla": "L",
-      "titulo": "Lazy",
-      "texto": "<p>Los bloques entran en orden, cada uno con su propio CSS y JS. Fuentes e imágenes fuera de pantalla esperan.</p>"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "fase_2",
-      "model": "fase",
-      "sigla": "D",
-      "titulo": "Delayed",
-      "texto": "<p>Tres segundos después: consentimiento, y solo entonces martech. Lighthouse ya terminó de medir.</p>"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-url",
-      "model": "rotulo",
-      "chave": "url",
-      "texto": "https://demo.eadtech…/"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-lcp",
-      "model": "rotulo",
-      "chave": "lcp",
-      "texto": "LCP 0,4 s"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-cookies",
-      "model": "rotulo",
-      "chave": "cookies",
-      "texto": "cookies · aceptar / rechazar"
-     }
-    }
-   },
-   "section_4": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "core/franklin/components/section/v1/section",
-    "name": "Assets e Dynamic Media",
-    "id": "medios",
-    "abertura": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>AEM Assets · Dynamic Media con OpenAPI</p><h2>Una imagen en el DAM, infinitas entregas en el borde.</h2><p>Todo medio de esta página vive en Assets y se referencia desde ahí. Con Dynamic Media, la misma foto sale recortada por IA para cada proporción y optimizada por URL, sin que nadie genere archivos.</p>"
-    },
-    "dm": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "DM Showcase",
-     "model": "dm-showcase",
-     "filter": "dm-showcase",
-     "image": "/content/dam/eds-flash-demo/smart-crop-eds-flash-demo.webp",
-     "imageAlt": "Imagem de demonstração do smart crop",
-     "original": "2400",
-     "item_0": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-titulo",
-      "model": "rotulo",
-      "chave": "recorte-titulo",
-      "texto": "Smart Crop con IA"
-     },
-     "item_1": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-real",
-      "model": "rotulo",
-      "chave": "recorte-real",
-      "texto": "Dynamic Media"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-simulado",
-      "model": "rotulo",
-      "chave": "recorte-simulado",
-      "texto": "simulación · se activa con DM en el sandbox"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-hero",
-      "model": "rotulo",
-      "chave": "recorte-hero",
-      "texto": "hero"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-card",
-      "model": "rotulo",
-      "chave": "recorte-card",
-      "texto": "card"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-stories",
-      "model": "rotulo",
-      "chave": "recorte-stories",
-      "texto": "stories"
-     },
-     "item_6": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-sujeito",
-      "model": "rotulo",
-      "chave": "sujeito",
-      "texto": "Punto de interés"
-     },
-     "item_7": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar",
-      "model": "rotulo",
-      "chave": "trocar",
-      "texto": "Cambiar la imagen en el DAM"
-     },
-     "item_8": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar-nota",
-      "model": "rotulo",
-      "chave": "trocar-nota",
-      "texto": "se reaprueba en Assets → la página cambia sin republicar"
-     },
-     "item_9": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar-feito",
-      "model": "rotulo",
-      "chave": "trocar-feito",
-      "texto": "activo reaprobado a las"
-     },
-     "item_10": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar-log",
-      "model": "rotulo",
-      "chave": "trocar-log",
-      "texto": "Assets: activo reaprobado → entrega actualizada, 0 republicación"
-     },
-     "item_11": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-nota",
-      "model": "rotulo",
-      "chave": "recorte-nota",
-      "texto": "Arrastre: el punto de interés cambia y los tres recortes lo siguen. En Dynamic Media esto es el perfil de smart crop aplicado al subir."
-     },
-     "item_12": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-url-titulo",
-      "model": "rotulo",
-      "chave": "url-titulo",
-      "texto": "Rendition por URL"
-     },
-     "item_13": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-largura",
-      "model": "rotulo",
-      "chave": "largura",
-      "texto": "Ancho"
-     },
-     "item_14": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-qualidade",
-      "model": "rotulo",
-      "chave": "qualidade",
-      "texto": "Calidad"
-     },
-     "item_15": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-formato",
-      "model": "rotulo",
-      "chave": "formato",
-      "texto": "Formato"
-     },
-     "item_16": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-kb",
-      "model": "rotulo",
-      "chave": "kb",
-      "texto": "KB estimados"
-     },
-     "item_17": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-original",
-      "model": "rotulo",
-      "chave": "original",
-      "texto": "· el original pesa"
-     },
-     "item_18": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-url-nota",
-      "model": "rotulo",
-      "chave": "url-nota",
-      "texto": "Solo los activos aprobados en Assets se entregan. La URL es el contrato: ancho, calidad, formato y perfil de recorte."
-     }
-    }
-   },
-   "section_5": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "core/franklin/components/section/v1/section",
-    "name": "EDS",
-    "id": "eds",
-    "abertura": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>Edge Delivery Services · lo que usa esta página</p><h2>Cada caja es un recurso real, medido en esta página.</h2>"
-    },
-    "bento": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Bento",
-     "model": "bento",
-     "filter": "bento",
-     "item_0": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_0",
-      "model": "celula",
-      "tipo": "lighthouse",
-      "rotulo": "Lighthouse · móvil",
-      "texto": "<p>Medido en la publicación, en cada cambio, por la compuerta de calidad. Agentic 5/5 con el llms.txt de esta demo.</p>",
-      "dados": "Rendimiento:100|Accesibilidad:100|Prácticas:100|SEO:100",
-      "largura": "3"
-     },
-     "item_1": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_1",
-      "model": "celula",
-      "tipo": "fases",
-      "rotulo": "Fases medidas en esta página",
-      "texto": "<p>Navigation Timing de su navegador, ahora. Primero el LCP, luego los bloques, al final martech y consentimiento.</p>",
-      "dados": "eager|lazy|delayed",
-      "largura": "3"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_2",
-      "model": "celula",
-      "tipo": "indice",
-      "rotulo": "query-index.json",
-      "texto": "<p>Índice publicado automáticamente; alimenta listas, tarjetas y agentes.</p>",
-      "largura": "2"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_3",
-      "model": "celula",
-      "tipo": "cabecalhos",
-      "rotulo": "Cabeceras de seguridad",
-      "texto": "<p>Versionadas en el servicio de configuración, verificadas en cada publicación.</p>",
-      "dados": "content-security-policy=default-src 'self' …|cross-origin-opener-policy=same-origin|x-content-type-options=nosniff|permissions-policy=camera=(), geolocation=()|strict-transport-security=max-age=31557600",
-      "largura": "2"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_4",
-      "model": "celula",
-      "tipo": "edge",
-      "rotulo": "Edge Functions",
-      "texto": "<p>Dato público vía función en el borde de Adobe: la clave de la API nunca llega al navegador. Demostración: cotización del día, caché de 120 s.</p>",
-      "dados": "/api/cotacao|Llamar /api/cotacao|nunca sale de la bóveda",
-      "largura": "2"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_5",
-      "model": "celula",
-      "tipo": "ab",
-      "rotulo": "Experimentación",
-      "texto": "<p>A/B por metadato de página, con variantes como URLs y resultado en la telemetría operacional. Target entra por el mismo Web SDK cuando el cliente lo tiene.</p>",
-      "dados": "Variante A|Variante B|Permitir y ver|Ver el video (12 s)",
-      "largura": "2"
-     },
-     "item_6": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_6",
-      "model": "celula",
-      "tipo": "texto",
-      "rotulo": "Autoría",
-      "texto": "<p>Universal Editor con catálogo de bloques en el idioma del cliente. La variante la elige el autor, nunca una regla de ruta en el código.</p><p><a href=\"#autoria\">Ver el flujo</a></p>",
-      "largura": "2"
-     },
-     "item_7": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_7",
-      "model": "celula",
-      "tipo": "telemetria",
-      "rotulo": "Operational Telemetry",
-      "texto": "<p>Core Web Vitals de usuarios reales, por página y dispositivo, sin scripts de terceros.</p>",
-      "dados": "LCP:0,4 s:22|INP:48 ms:12|CLS:0,00:4",
-      "largura": "2"
-     },
-     "item_8": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_8",
-      "model": "celula",
-      "tipo": "texto",
-      "rotulo": "Accesibilidad por bloque",
-      "texto": "<p>Abra el botón de accesibilidad a la derecha y active el alto contraste: toda la página cambia al instante, incluidos el gate del video, el banner de cookies y estos paneles. El botón solo cambia una clase en la raíz; el tema cambia los tokens y cada bloque trae su propia regla. Ningún bloque necesita saber del botón.</p>",
-      "largura": "6"
-     }
-    }
-   },
-   "section_6": {
+   "section_7": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
     "name": "Agentic",
@@ -2424,7 +2761,7 @@
      }
     }
    },
-   "section_7": {
+   "section_8": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
     "style": "compacta",
@@ -2533,7 +2870,7 @@
     "links": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<ul><li><a href=\"#valor\">Rápido no es fácil</a></li><li><a href=\"#consentimiento\">Consentimiento</a></li><li><a href=\"#fases\">Tres fases</a></li><li><a href=\"#medios\">Assets y Dynamic Media</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#autoria\">Autoría</a></li></ul>"
+     "text": "<ul><li><a href=\"#valor\">Rápido no es fácil</a></li><li><a href=\"#accesibilidad\">Accesibilidad</a></li><li><a href=\"#medios\">Assets y Dynamic Media</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#consentimiento\">Consentimiento</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#autoria\">Autoría</a></li></ul>"
     }
    },
    "section_3": {
@@ -2762,6 +3099,91 @@
       "categoria": "CC_ANALYTICS"
      }
     }
+   },
+   "section_7": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Mapa de CMP",
+    "papel": "cmp",
+    "cmp": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Consent Origens",
+     "model": "consent-origens",
+     "filter": "consent-origens",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_0",
+      "model": "consent-origem",
+      "origem": "C0001",
+      "categoria": "CC_ESSENTIAL"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_1",
+      "model": "consent-origem",
+      "origem": "C0002",
+      "categoria": "CC_ANALYTICS"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_2",
+      "model": "consent-origem",
+      "origem": "C0004",
+      "categoria": "CC_MEDIA"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_3",
+      "model": "consent-origem",
+      "origem": "necessary",
+      "categoria": "CC_ESSENTIAL"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_4",
+      "model": "consent-origem",
+      "origem": "statistics",
+      "categoria": "CC_ANALYTICS"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_5",
+      "model": "consent-origem",
+      "origem": "marketing",
+      "categoria": "CC_MEDIA"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_6",
+      "model": "consent-origem",
+      "origem": "tcf:1",
+      "categoria": "CC_ESSENTIAL"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_7",
+      "model": "consent-origem",
+      "origem": "tcf:8",
+      "categoria": "CC_ANALYTICS"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_8",
+      "model": "consent-origem",
+      "origem": "tcf:4",
+      "categoria": "CC_MEDIA"
+     }
+    }
    }
   }
  },
@@ -2791,7 +3213,7 @@
      "filter": "hero",
      "image": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
      "imageAlt": "Pôster do vídeo: grade escura com brilho quente, EDS Flash Demo",
-     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · native consent</p><h1>The site that <em>asks permission | loads in 0.4 s | crops with AI | talks to agents | ships without IT</em> before loading anything.</h1><p>This page is a live demo: the video below only loads after consent, no third-party script runs before \"Accept\", and every section shows an EDS or Assets capability actually working.</p>",
+     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · native consent</p><h1>The site that <em>loads in 0.4 s | is accessible per block | crops with AI | talks to agents | asks permission | ships without IT</em> in a one-week migration.</h1><p>This page is a live demo, not a slide: every section shows an EDS, Assets or EadTech-method capability actually working. Accessibility that holds for every block, Lighthouse 100, AI agents, native consent. The Adobe video below is the first example: it only loads after your yes.</p>",
      "video": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12",
      "categoria": "CC_MEDIA",
      "item_0": {
@@ -2808,7 +3230,7 @@
       "name": "rotulo-selo-2",
       "model": "rotulo",
       "chave": "selo-2",
-      "texto": "0 third-party scripts before yes"
+      "texto": "accessible per block · 6 tools"
      },
      "item_2": {
       "jcr:primaryType": "nt:unstructured",
@@ -2886,7 +3308,7 @@
     "como": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>How to use it in the presentation</p><p>1. Open the network inspector and show nothing third-party has loaded.</p><p>2. Press play. The video asks for consent. Accept and it loads instantly.</p><p>3. Open \"Cookie settings\", turn off \"Media & video\" and watch the gate come back without a reload.</p>"
+     "text": "<p>How to use it in the presentation</p><p>1. Click the accessibility button on the right and turn on high contrast: the whole page changes, block by block.</p><p>2. Scroll to \"Fast is not easy\" and let the iceberg tell the investment.</p><p>3. Press play on the video: it asks for consent, loads instantly and disappears when revoked, without a reload.</p>"
     }
    },
    "section_1": {
@@ -3157,6 +3579,485 @@
    "section_2": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Acessibilidade",
+    "id": "accessibility",
+    "a11y": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "A11y Painel",
+     "model": "a11y-painel",
+     "filter": "a11y-painel",
+     "texto": "<p>Accessibility per block · WCAG 2.2 AA</p><h2>One button. Every block answers.</h2><p>The accessibility button only sets a class on the page root; the theme swaps the tokens and each block brings its own contrast rule. The table below measures, right now, the text contrast of every block on this page. Switch the mode and watch the numbers change.</p>",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modos-titulo",
+      "model": "rotulo",
+      "chave": "modos-titulo",
+      "texto": "Modes"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modo-normal",
+      "model": "rotulo",
+      "chave": "modo-normal",
+      "texto": "normal"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modos",
+      "model": "rotulo",
+      "chave": "modos",
+      "texto": "Increase font|Decrease font|High contrast|Black and white|Invert colours|Highlight links"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-modos-nota",
+      "model": "rotulo",
+      "chave": "modos-nota",
+      "texto": "The same buttons as the widget on the right: the choice stays in the browser and applies to the whole site, with no third-party script."
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tabela-titulo",
+      "model": "rotulo",
+      "chave": "tabela-titulo",
+      "texto": "Blocks on this page, measured now"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-bloco",
+      "model": "rotulo",
+      "chave": "col-bloco",
+      "texto": "block"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-cores",
+      "model": "rotulo",
+      "chave": "col-cores",
+      "texto": "text / background"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-contraste",
+      "model": "rotulo",
+      "chave": "col-contraste",
+      "texto": "contrast"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-regra",
+      "model": "rotulo",
+      "chave": "col-regra",
+      "texto": "contrast rule"
+     },
+     "item_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-regra-propria",
+      "model": "rotulo",
+      "chave": "regra-propria",
+      "texto": "own + tokens"
+     },
+     "item_10": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-regra-tokens",
+      "model": "rotulo",
+      "chave": "regra-tokens",
+      "texto": "theme tokens"
+     },
+     "item_11": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-aa",
+      "model": "rotulo",
+      "chave": "aa",
+      "texto": "AA"
+     },
+     "item_12": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-em-contraste",
+      "model": "rotulo",
+      "chave": "em-contraste",
+      "texto": "high contrast on"
+     },
+     "item_13": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tabela-nota",
+      "model": "rotulo",
+      "chave": "tabela-nota",
+      "texto": "WCAG AA minimum: 4.5:1 (3:1 for large text). \"Own\" means the block CSS has a rule under html.contrast; \"tokens\" means the block only uses theme colours and already answers."
+     }
+    }
+   },
+   "section_3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Assets e Dynamic Media",
+    "id": "media",
+    "abertura": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/text/v1/text",
+     "text": "<p>AEM Assets · Dynamic Media with OpenAPI</p><h2>One image in the DAM, endless deliveries at the edge.</h2><p>Every media file on this page lives in Assets and is referenced from there. With Dynamic Media, the same photo comes out AI-cropped for each ratio and optimised by URL, with nobody generating files.</p>"
+    },
+    "dm": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "DM Showcase",
+     "model": "dm-showcase",
+     "filter": "dm-showcase",
+     "image": "/content/dam/eds-flash-demo/smart-crop-eds-flash-demo.webp",
+     "imageAlt": "Imagem de demonstração do smart crop",
+     "original": "2400",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-titulo",
+      "model": "rotulo",
+      "chave": "recorte-titulo",
+      "texto": "AI Smart Crop"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-real",
+      "model": "rotulo",
+      "chave": "recorte-real",
+      "texto": "Dynamic Media"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-simulado",
+      "model": "rotulo",
+      "chave": "recorte-simulado",
+      "texto": "simulation · live once DM is enabled on the sandbox"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-hero",
+      "model": "rotulo",
+      "chave": "recorte-hero",
+      "texto": "hero"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-card",
+      "model": "rotulo",
+      "chave": "recorte-card",
+      "texto": "card"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-stories",
+      "model": "rotulo",
+      "chave": "recorte-stories",
+      "texto": "stories"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-sujeito",
+      "model": "rotulo",
+      "chave": "sujeito",
+      "texto": "Point of interest"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar",
+      "model": "rotulo",
+      "chave": "trocar",
+      "texto": "Swap the image in the DAM"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar-nota",
+      "model": "rotulo",
+      "chave": "trocar-nota",
+      "texto": "re-approve in Assets → the page changes without republishing"
+     },
+     "item_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar-feito",
+      "model": "rotulo",
+      "chave": "trocar-feito",
+      "texto": "asset re-approved at"
+     },
+     "item_10": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-trocar-log",
+      "model": "rotulo",
+      "chave": "trocar-log",
+      "texto": "Assets: asset re-approved → delivery updated, 0 republish"
+     },
+     "item_11": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-recorte-nota",
+      "model": "rotulo",
+      "chave": "recorte-nota",
+      "texto": "Drag: the point of interest moves and all three crops follow it. In Dynamic Media this is the smart-crop profile applied on upload."
+     },
+     "item_12": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-url-titulo",
+      "model": "rotulo",
+      "chave": "url-titulo",
+      "texto": "Rendition by URL"
+     },
+     "item_13": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-largura",
+      "model": "rotulo",
+      "chave": "largura",
+      "texto": "Width"
+     },
+     "item_14": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-qualidade",
+      "model": "rotulo",
+      "chave": "qualidade",
+      "texto": "Quality"
+     },
+     "item_15": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-formato",
+      "model": "rotulo",
+      "chave": "formato",
+      "texto": "Format"
+     },
+     "item_16": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-kb",
+      "model": "rotulo",
+      "chave": "kb",
+      "texto": "estimated KB"
+     },
+     "item_17": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-original",
+      "model": "rotulo",
+      "chave": "original",
+      "texto": "· the original is"
+     },
+     "item_18": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-url-nota",
+      "model": "rotulo",
+      "chave": "url-nota",
+      "texto": "Only approved assets are delivered. The URL is the contract: width, quality, format and crop profile."
+     }
+    }
+   },
+   "section_4": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "compacta",
+    "name": "Três fases",
+    "id": "fases",
+    "fases": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Fases",
+     "model": "fases",
+     "filter": "fases",
+     "texto": "<p>Three-phase loading · scroll to see</p><h2>Why it scores 100 on mobile.</h2>",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "fase_0",
+      "model": "fase",
+      "sigla": "E",
+      "titulo": "Eager",
+      "texto": "<p>HTML, CSS and the first image: only what paints the LCP. Nothing third-party.</p>"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "fase_1",
+      "model": "fase",
+      "sigla": "L",
+      "titulo": "Lazy",
+      "texto": "<p>Blocks come in order, each with its own CSS and JS. Fonts and off-screen images wait.</p>"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "fase_2",
+      "model": "fase",
+      "sigla": "D",
+      "titulo": "Delayed",
+      "texto": "<p>Three seconds later: consent, and only then martech. Lighthouse has already finished measuring.</p>"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-url",
+      "model": "rotulo",
+      "chave": "url",
+      "texto": "https://demo.eadtech…/"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-lcp",
+      "model": "rotulo",
+      "chave": "lcp",
+      "texto": "LCP 0.4 s"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cookies",
+      "model": "rotulo",
+      "chave": "cookies",
+      "texto": "cookies · accept / refuse"
+     }
+    }
+   },
+   "section_5": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "EDS",
+    "id": "eds",
+    "abertura": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/text/v1/text",
+     "text": "<p>Edge Delivery Services · what this page uses</p><h2>Every box is a real capability, measured on this page.</h2>"
+    },
+    "bento": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Bento",
+     "model": "bento",
+     "filter": "bento",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_0",
+      "model": "celula",
+      "tipo": "lighthouse",
+      "rotulo": "Lighthouse · mobile",
+      "texto": "<p>Measured on publish, on every change, by the quality gate. Agentic 5/5 with this demo's llms.txt.</p>",
+      "dados": "Performance:100|Accessibility:100|Best practices:100|SEO:100",
+      "largura": "3"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_1",
+      "model": "celula",
+      "tipo": "fases",
+      "rotulo": "Phases measured on this page",
+      "texto": "<p>Your browser's Navigation Timing, right now. LCP first, then blocks, martech and consent last.</p>",
+      "dados": "eager|lazy|delayed",
+      "largura": "3"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_2",
+      "model": "celula",
+      "tipo": "indice",
+      "rotulo": "query-index.json",
+      "texto": "<p>Index published automatically; feeds lists, cards and agents.</p>",
+      "largura": "2"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_3",
+      "model": "celula",
+      "tipo": "cabecalhos",
+      "rotulo": "Security headers",
+      "texto": "<p>Versioned in the config service, checked on every publish.</p>",
+      "dados": "content-security-policy=default-src 'self' …|cross-origin-opener-policy=same-origin|x-content-type-options=nosniff|permissions-policy=camera=(), geolocation=()|strict-transport-security=max-age=31557600",
+      "largura": "2"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_4",
+      "model": "celula",
+      "tipo": "edge",
+      "rotulo": "Edge Functions",
+      "texto": "<p>Public data through a function at Adobe's edge: the API key never reaches the browser. Demo: today's exchange rate, 120 s cache.</p>",
+      "dados": "/api/cotacao|Call /api/cotacao|never leaves the vault",
+      "largura": "2"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_5",
+      "model": "celula",
+      "tipo": "ab",
+      "rotulo": "Experimentation",
+      "texto": "<p>A/B by page metadata, variants as URLs, results in operational telemetry. Target plugs in through the same Web SDK when the client has it.</p>",
+      "dados": "Variant A|Variant B|Allow and watch|Watch the video (12 s)",
+      "largura": "2"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_6",
+      "model": "celula",
+      "tipo": "texto",
+      "rotulo": "Authoring",
+      "texto": "<p>Universal Editor with a block catalogue in the client's language. Variants are the author's choice, never a path rule in code.</p><p><a href=\"#autoria\">See the flow</a></p>",
+      "largura": "2"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_7",
+      "model": "celula",
+      "tipo": "telemetria",
+      "rotulo": "Operational Telemetry",
+      "texto": "<p>Real-user Core Web Vitals, by page and device, with no third-party script.</p>",
+      "dados": "LCP:0.4 s:22|INP:48 ms:12|CLS:0.00:4",
+      "largura": "2"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_8",
+      "model": "celula",
+      "tipo": "texto",
+      "rotulo": "Accessibility per block",
+      "texto": "<p>Open the accessibility button on the right and turn on high contrast: the whole page changes instantly, including the video gate, the cookie banner and these panels. The button only sets a class on the root; the theme swaps the tokens and each block brings its own rule. No block needs to know about the button.</p>",
+      "largura": "6"
+     }
+    }
+   },
+   "section_6": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
     "name": "Consentimento",
     "id": "consent",
     "consent": {
@@ -3165,7 +4066,7 @@
      "name": "Consent Live",
      "model": "consent-live",
      "filter": "consent-live",
-     "texto": "<p>Native consent on EDS · EadTech block</p><h2>Nothing loads before yes. And no takes effect instantly.</h2><p>Banner, categories and copy are content authored in the Universal Editor. Code only does the gate: it swaps the player for a notice until the category is accepted, and brings the notice back when it is revoked, without a reload.</p>",
+     "texto": "<p>Native consent on EDS · EadTech block</p><h2>Native consent, no heavy CMP. And ready for the client's CMP.</h2><p>Banner and categories are authored content; code only does the gate. Every block that needs permission carries its category in the HTML (<code>data-consent-category</code>), and an adapter translates OneTrust, Cookiebot or TCF into the same events. Below, this page's network in real time.</p>",
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -3368,360 +4269,7 @@
      }
     }
    },
-   "section_3": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "core/franklin/components/section/v1/section",
-    "style": "compacta",
-    "name": "Três fases",
-    "id": "fases",
-    "fases": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Fases",
-     "model": "fases",
-     "filter": "fases",
-     "texto": "<p>Three-phase loading · scroll to see</p><h2>Why it scores 100 on mobile.</h2>",
-     "item_0": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "fase_0",
-      "model": "fase",
-      "sigla": "E",
-      "titulo": "Eager",
-      "texto": "<p>HTML, CSS and the first image: only what paints the LCP. Nothing third-party.</p>"
-     },
-     "item_1": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "fase_1",
-      "model": "fase",
-      "sigla": "L",
-      "titulo": "Lazy",
-      "texto": "<p>Blocks come in order, each with its own CSS and JS. Fonts and off-screen images wait.</p>"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "fase_2",
-      "model": "fase",
-      "sigla": "D",
-      "titulo": "Delayed",
-      "texto": "<p>Three seconds later: consent, and only then martech. Lighthouse has already finished measuring.</p>"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-url",
-      "model": "rotulo",
-      "chave": "url",
-      "texto": "https://demo.eadtech…/"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-lcp",
-      "model": "rotulo",
-      "chave": "lcp",
-      "texto": "LCP 0.4 s"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-cookies",
-      "model": "rotulo",
-      "chave": "cookies",
-      "texto": "cookies · accept / refuse"
-     }
-    }
-   },
-   "section_4": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "core/franklin/components/section/v1/section",
-    "name": "Assets e Dynamic Media",
-    "id": "media",
-    "abertura": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>AEM Assets · Dynamic Media with OpenAPI</p><h2>One image in the DAM, endless deliveries at the edge.</h2><p>Every media file on this page lives in Assets and is referenced from there. With Dynamic Media, the same photo comes out AI-cropped for each ratio and optimised by URL, with nobody generating files.</p>"
-    },
-    "dm": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "DM Showcase",
-     "model": "dm-showcase",
-     "filter": "dm-showcase",
-     "image": "/content/dam/eds-flash-demo/smart-crop-eds-flash-demo.webp",
-     "imageAlt": "Imagem de demonstração do smart crop",
-     "original": "2400",
-     "item_0": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-titulo",
-      "model": "rotulo",
-      "chave": "recorte-titulo",
-      "texto": "AI Smart Crop"
-     },
-     "item_1": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-real",
-      "model": "rotulo",
-      "chave": "recorte-real",
-      "texto": "Dynamic Media"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-simulado",
-      "model": "rotulo",
-      "chave": "recorte-simulado",
-      "texto": "simulation · live once DM is enabled on the sandbox"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-hero",
-      "model": "rotulo",
-      "chave": "recorte-hero",
-      "texto": "hero"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-card",
-      "model": "rotulo",
-      "chave": "recorte-card",
-      "texto": "card"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-stories",
-      "model": "rotulo",
-      "chave": "recorte-stories",
-      "texto": "stories"
-     },
-     "item_6": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-sujeito",
-      "model": "rotulo",
-      "chave": "sujeito",
-      "texto": "Point of interest"
-     },
-     "item_7": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar",
-      "model": "rotulo",
-      "chave": "trocar",
-      "texto": "Swap the image in the DAM"
-     },
-     "item_8": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar-nota",
-      "model": "rotulo",
-      "chave": "trocar-nota",
-      "texto": "re-approve in Assets → the page changes without republishing"
-     },
-     "item_9": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar-feito",
-      "model": "rotulo",
-      "chave": "trocar-feito",
-      "texto": "asset re-approved at"
-     },
-     "item_10": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-trocar-log",
-      "model": "rotulo",
-      "chave": "trocar-log",
-      "texto": "Assets: asset re-approved → delivery updated, 0 republish"
-     },
-     "item_11": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-recorte-nota",
-      "model": "rotulo",
-      "chave": "recorte-nota",
-      "texto": "Drag: the point of interest moves and all three crops follow it. In Dynamic Media this is the smart-crop profile applied on upload."
-     },
-     "item_12": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-url-titulo",
-      "model": "rotulo",
-      "chave": "url-titulo",
-      "texto": "Rendition by URL"
-     },
-     "item_13": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-largura",
-      "model": "rotulo",
-      "chave": "largura",
-      "texto": "Width"
-     },
-     "item_14": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-qualidade",
-      "model": "rotulo",
-      "chave": "qualidade",
-      "texto": "Quality"
-     },
-     "item_15": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-formato",
-      "model": "rotulo",
-      "chave": "formato",
-      "texto": "Format"
-     },
-     "item_16": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-kb",
-      "model": "rotulo",
-      "chave": "kb",
-      "texto": "estimated KB"
-     },
-     "item_17": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-original",
-      "model": "rotulo",
-      "chave": "original",
-      "texto": "· the original is"
-     },
-     "item_18": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "rotulo-url-nota",
-      "model": "rotulo",
-      "chave": "url-nota",
-      "texto": "Only approved assets are delivered. The URL is the contract: width, quality, format and crop profile."
-     }
-    }
-   },
-   "section_5": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "core/franklin/components/section/v1/section",
-    "name": "EDS",
-    "id": "eds",
-    "abertura": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>Edge Delivery Services · what this page uses</p><h2>Every box is a real capability, measured on this page.</h2>"
-    },
-    "bento": {
-     "jcr:primaryType": "nt:unstructured",
-     "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Bento",
-     "model": "bento",
-     "filter": "bento",
-     "item_0": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_0",
-      "model": "celula",
-      "tipo": "lighthouse",
-      "rotulo": "Lighthouse · mobile",
-      "texto": "<p>Measured on publish, on every change, by the quality gate. Agentic 5/5 with this demo's llms.txt.</p>",
-      "dados": "Performance:100|Accessibility:100|Best practices:100|SEO:100",
-      "largura": "3"
-     },
-     "item_1": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_1",
-      "model": "celula",
-      "tipo": "fases",
-      "rotulo": "Phases measured on this page",
-      "texto": "<p>Your browser's Navigation Timing, right now. LCP first, then blocks, martech and consent last.</p>",
-      "dados": "eager|lazy|delayed",
-      "largura": "3"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_2",
-      "model": "celula",
-      "tipo": "indice",
-      "rotulo": "query-index.json",
-      "texto": "<p>Index published automatically; feeds lists, cards and agents.</p>",
-      "largura": "2"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_3",
-      "model": "celula",
-      "tipo": "cabecalhos",
-      "rotulo": "Security headers",
-      "texto": "<p>Versioned in the config service, checked on every publish.</p>",
-      "dados": "content-security-policy=default-src 'self' …|cross-origin-opener-policy=same-origin|x-content-type-options=nosniff|permissions-policy=camera=(), geolocation=()|strict-transport-security=max-age=31557600",
-      "largura": "2"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_4",
-      "model": "celula",
-      "tipo": "edge",
-      "rotulo": "Edge Functions",
-      "texto": "<p>Public data through a function at Adobe's edge: the API key never reaches the browser. Demo: today's exchange rate, 120 s cache.</p>",
-      "dados": "/api/cotacao|Call /api/cotacao|never leaves the vault",
-      "largura": "2"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_5",
-      "model": "celula",
-      "tipo": "ab",
-      "rotulo": "Experimentation",
-      "texto": "<p>A/B by page metadata, variants as URLs, results in operational telemetry. Target plugs in through the same Web SDK when the client has it.</p>",
-      "dados": "Variant A|Variant B|Allow and watch|Watch the video (12 s)",
-      "largura": "2"
-     },
-     "item_6": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_6",
-      "model": "celula",
-      "tipo": "texto",
-      "rotulo": "Authoring",
-      "texto": "<p>Universal Editor with a block catalogue in the client's language. Variants are the author's choice, never a path rule in code.</p><p><a href=\"#autoria\">See the flow</a></p>",
-      "largura": "2"
-     },
-     "item_7": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_7",
-      "model": "celula",
-      "tipo": "telemetria",
-      "rotulo": "Operational Telemetry",
-      "texto": "<p>Real-user Core Web Vitals, by page and device, with no third-party script.</p>",
-      "dados": "LCP:0.4 s:22|INP:48 ms:12|CLS:0.00:4",
-      "largura": "2"
-     },
-     "item_8": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "celula_8",
-      "model": "celula",
-      "tipo": "texto",
-      "rotulo": "Accessibility per block",
-      "texto": "<p>Open the accessibility button on the right and turn on high contrast: the whole page changes instantly, including the video gate, the cookie banner and these panels. The button only sets a class on the root; the theme swaps the tokens and each block brings its own rule. No block needs to know about the button.</p>",
-      "largura": "6"
-     }
-    }
-   },
-   "section_6": {
+   "section_7": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
     "name": "Agentic",
@@ -3807,7 +4355,7 @@
      }
     }
    },
-   "section_7": {
+   "section_8": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
     "style": "compacta",
@@ -3916,7 +4464,7 @@
     "links": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<ul><li><a href=\"#valor\">Fast is not easy</a></li><li><a href=\"#consent\">Consent</a></li><li><a href=\"#fases\">Three phases</a></li><li><a href=\"#media\">Assets & Dynamic Media</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#autoria\">Authoring</a></li></ul>"
+     "text": "<ul><li><a href=\"#valor\">Fast is not easy</a></li><li><a href=\"#accessibility\">Accessibility</a></li><li><a href=\"#media\">Assets & Dynamic Media</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#consent\">Consent</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#autoria\">Authoring</a></li></ul>"
     }
    },
    "section_3": {
@@ -4143,6 +4691,91 @@
       "model": "consent-origem",
       "origem": "adobedtm.com",
       "categoria": "CC_ANALYTICS"
+     }
+    }
+   },
+   "section_7": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Mapa de CMP",
+    "papel": "cmp",
+    "cmp": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Consent Origens",
+     "model": "consent-origens",
+     "filter": "consent-origens",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_0",
+      "model": "consent-origem",
+      "origem": "C0001",
+      "categoria": "CC_ESSENTIAL"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_1",
+      "model": "consent-origem",
+      "origem": "C0002",
+      "categoria": "CC_ANALYTICS"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_2",
+      "model": "consent-origem",
+      "origem": "C0004",
+      "categoria": "CC_MEDIA"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_3",
+      "model": "consent-origem",
+      "origem": "necessary",
+      "categoria": "CC_ESSENTIAL"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_4",
+      "model": "consent-origem",
+      "origem": "statistics",
+      "categoria": "CC_ANALYTICS"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_5",
+      "model": "consent-origem",
+      "origem": "marketing",
+      "categoria": "CC_MEDIA"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_6",
+      "model": "consent-origem",
+      "origem": "tcf:1",
+      "categoria": "CC_ESSENTIAL"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_7",
+      "model": "consent-origem",
+      "origem": "tcf:8",
+      "categoria": "CC_ANALYTICS"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "cmp_8",
+      "model": "consent-origem",
+      "origem": "tcf:4",
+      "categoria": "CC_MEDIA"
      }
     }
    }

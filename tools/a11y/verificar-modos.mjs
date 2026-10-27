@@ -162,6 +162,9 @@ async function verificarUrl(browser, url, opts, axeSrc) {
     const page = await ctx.newPage();
     for (const [modo, classes] of Object.entries(MODOS)) {
       await page.goto(url, { waitUntil: 'networkidle', timeout: 90000 }).catch(() => {});
+      // cada modo começa limpo: nada guardado de um modo anterior
+      await page.evaluate(() => { try { localStorage.clear(); } catch (e) { /* sem storage */ } }).catch(() => {});
+      await page.reload({ waitUntil: 'networkidle', timeout: 90000 }).catch(() => {});
       await page.waitForTimeout(3500);
       // fecha o banner de cookies para não mascarar o resto
       await page.evaluate(() => {

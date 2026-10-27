@@ -44,6 +44,30 @@
         "valueType": "string",
         "name": "cookie-consent",
         "label": "Documento de consentimento (ex.: /cookie-consent/padrao)"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "cmp",
+        "label": "CMP de mercado (vazio = banner próprio)",
+        "options": [
+          {
+            "name": "Nenhum (banner próprio)",
+            "value": ""
+          },
+          {
+            "name": "OneTrust",
+            "value": "onetrust"
+          },
+          {
+            "name": "Cookiebot",
+            "value": "cookiebot"
+          },
+          {
+            "name": "TCF v2 (IAB)",
+            "value": "tcf"
+          }
+        ]
       }
     ]
   },
@@ -219,6 +243,17 @@
         "valueType": "string",
         "name": "texto",
         "label": "Texto exibido"
+      }
+    ]
+  },
+  {
+    "id": "a11y-painel",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Abertura (mono, título, parágrafo)",
+        "valueType": "string"
       }
     ]
   },
