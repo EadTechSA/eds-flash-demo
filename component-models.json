@@ -20,6 +20,30 @@
         "name": "keywords",
         "multi": true,
         "label": "Keywords"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "lang",
+        "label": "Idioma (pt-BR, es, en)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "nav",
+        "label": "Fragmento do cabeçalho (ex.: /es/nav)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "footer",
+        "label": "Fragmento do rodapé"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cookie-consent",
+        "label": "Documento de consentimento (ex.: /cookie-consent/padrao)"
       }
     ]
   },
