@@ -223,6 +223,17 @@
     ]
   },
   {
+    "id": "acessibilidade",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Título do painel e lista das seis ferramentas, na ordem: aumentar fonte, diminuir fonte, alto contraste, preto e branco, inverter cores, destacar links",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "agentic",
     "fields": [
       {

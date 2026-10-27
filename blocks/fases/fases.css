@@ -269,3 +269,18 @@
     opacity: 1;
   }
 }
+
+/* alto contraste: navegador simulado em preto e branco */
+html.contrast .fases .fases-hero {
+  background: #000;
+  border-color: #fff;
+}
+
+html.contrast .fases .fases-lcp {
+  background: #ff0;
+  color: #000;
+}
+
+html.contrast .fases .fases-cookies i {
+  background: #ff0;
+}

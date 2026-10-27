@@ -17,6 +17,7 @@
       "consent-live",
       "fases",
       "dm-showcase",
+      "acessibilidade",
       "bento",
       "agentic",
       "passos",
@@ -25,6 +26,12 @@
       "columns",
       "fragment",
       "consent-origens"
+    ]
+  },
+  {
+    "id": "acessibilidade",
+    "components": [
+      "acessibilidade-rotulo"
     ]
   },
   {

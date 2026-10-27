@@ -88,6 +88,11 @@ function aviso(doc, codigo, url) {
  */
 export async function comGate(alvo, url, montar) {
   const codigo = await categoriaDe(url);
+  if (codigo) {
+    alvo.dataset.consentCategory = codigo;
+    const bloco = alvo.closest('.block');
+    if (bloco) bloco.dataset.consentCategory = codigo;
+  }
   const doc = await carregarDocumento();
   if (!codigo || aceita(codigo, doc)) {
     montar();
@@ -116,6 +121,11 @@ export async function comGate(alvo, url, montar) {
  * @param {Function} desmontar remove a mídia real
  */
 export async function comGateCategoria(alvo, codigo, montar, desmontar) {
+  // marca legível por qualquer CMP de mercado (OneTrust, Cookiebot, TCF):
+  // a categoria exigida fica no HTML do bloco e do lugar da mídia
+  alvo.dataset.consentCategory = codigo;
+  const bloco = alvo.closest('.block');
+  if (bloco) bloco.dataset.consentCategory = codigo;
   const doc = await carregarDocumento();
   let el = null;
   let montado = false;

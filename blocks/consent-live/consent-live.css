@@ -176,3 +176,12 @@
     animation: none;
   }
 }
+
+/* alto contraste: barras da cascata em amarelo, bloqueadas em branco tracejado */
+html.contrast .consent-live .consent-live-barra i {
+  background: #ff0;
+}
+
+html.contrast .consent-live .consent-live-linha.preso .consent-live-barra i {
+  background: repeating-linear-gradient(45deg, #fff 0 4px, transparent 4px 8px);
+}

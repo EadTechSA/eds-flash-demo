@@ -269,3 +269,23 @@ main .section:has(> .hero-wrapper) > .default-content-wrapper > p:first-child {
     align-items: start;
   }
 }
+
+/* alto contraste: sem holofote, pôster escurecido, gate sólido */
+html.contrast .hero .hero-brilho,
+html.contrast .hero .hero-palco[data-estado='liberado']::after {
+  display: none;
+}
+
+html.contrast .hero .hero-palco {
+  box-shadow: none;
+  background: #000;
+}
+
+html.contrast .hero .hero-poster img {
+  opacity: 0.4;
+}
+
+html.contrast .hero .hero-gate[data-gate='ativo'] {
+  background: rgb(0 0 0 / 85%);
+  backdrop-filter: none;
+}

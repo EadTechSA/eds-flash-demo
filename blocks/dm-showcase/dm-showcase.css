@@ -143,3 +143,12 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* alto contraste: molduras e trilho em amarelo */
+html.contrast .dm-showcase .dm-moldura {
+  border-color: #ff0;
+}
+
+html.contrast .dm-showcase .dm-trilho i {
+  background: #ff0;
+}

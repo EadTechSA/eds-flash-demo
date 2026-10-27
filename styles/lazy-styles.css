@@ -284,3 +284,17 @@
     animation: none;
   }
 }
+
+/* alto contraste: selos e segmentos */
+html.contrast .selo::before {
+  background: #ff0;
+}
+
+html.contrast .segmentos button.ativo {
+  background: #ff0;
+  color: #000;
+}
+
+html.contrast .pontos a.ativo::after {
+  background: #ff0;
+}

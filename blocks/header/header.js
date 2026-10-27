@@ -22,7 +22,9 @@ export default async function decorate(block) {
   }
   const barra = document.createElement('div');
   barra.className = 'header-barra';
-  const resto = secoes.filter((s) => s !== faixa);
+  // widget de acessibilidade: seção própria do /nav, fica flutuando fora da barra
+  const a11y = secoes.find((s) => s.querySelector('.acessibilidade'));
+  const resto = secoes.filter((s) => s !== faixa && s !== a11y);
   const nomes = ['header-marca', 'header-links', 'header-ferramentas'];
   resto.slice(0, 3).forEach((s, i) => {
     s.className = nomes[i];
@@ -32,6 +34,10 @@ export default async function decorate(block) {
   progresso.className = 'header-progresso';
   barra.append(progresso);
   block.append(barra);
+  if (a11y) {
+    const widget = a11y.querySelector('.acessibilidade');
+    block.append(widget);
+  }
 
   // botão hambúrguer no celular
   const links = barra.querySelector('.header-links');

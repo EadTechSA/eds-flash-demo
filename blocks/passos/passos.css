@@ -130,3 +130,8 @@
 .passos.passos-coluna .passos-linha {
   display: none;
 }
+
+/* alto contraste: linha de progresso em amarelo */
+html.contrast .passos .passos-linha i {
+  background: #ff0;
+}

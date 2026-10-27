@@ -206,6 +206,17 @@
      "item_6": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "camada_6",
+      "model": "valor-item",
+      "tipo": "camada",
+      "titulo": "Acessibilidade por bloco",
+      "texto": "<p>Seis ferramentas (fonte, contraste, preto e branco, inversão, links) que só ligam uma classe na raiz; cada bloco responde pelo próprio CSS. LBI, eMAG 3.1 e WCAG 2.2 AA, sem script de terceiro.</p>",
+      "a": "6",
+      "b": "ferramentas · 0 terceiros"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_0",
       "model": "valor-item",
       "tipo": "comparacao",
@@ -214,7 +225,7 @@
       "a": "26 semanas",
       "b": "1 semana"
      },
-     "item_7": {
+     "item_8": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_1",
@@ -225,7 +236,7 @@
       "a": "55",
       "b": "100"
      },
-     "item_8": {
+     "item_9": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_2",
@@ -236,7 +247,7 @@
       "a": "12",
       "b": "0"
      },
-     "item_9": {
+     "item_10": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_3",
@@ -247,7 +258,7 @@
       "a": "160",
       "b": "8"
      },
-     "item_10": {
+     "item_11": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_4",
@@ -258,7 +269,7 @@
       "a": "14 dias",
       "b": "1 minuto"
      },
-     "item_11": {
+     "item_12": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_5",
@@ -269,7 +280,7 @@
       "a": "2 de 5",
       "b": "5 de 5"
      },
-     "item_12": {
+     "item_13": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_0",
@@ -280,7 +291,7 @@
       "a": "100",
       "b": "× 4"
      },
-     "item_13": {
+     "item_14": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_1",
@@ -291,7 +302,7 @@
       "a": "5",
       "b": "de 5"
      },
-     "item_14": {
+     "item_15": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_2",
@@ -302,7 +313,7 @@
       "a": "0",
       "b": "scripts"
      },
-     "item_15": {
+     "item_16": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_3",
@@ -313,7 +324,7 @@
       "a": "1",
       "b": "clique"
      },
-     "item_16": {
+     "item_17": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_4",
@@ -324,7 +335,7 @@
       "a": "12",
       "b": "meses"
      },
-     "item_17": {
+     "item_18": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_5",
@@ -335,7 +346,7 @@
       "a": "6",
       "b": "cabeçalhos"
      },
-     "item_18": {
+     "item_19": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-ponta-numero",
@@ -343,7 +354,7 @@
       "chave": "ponta-numero",
       "texto": "1"
      },
-     "item_19": {
+     "item_20": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-ponta-texto",
@@ -351,7 +362,7 @@
       "chave": "ponta-texto",
       "texto": "semana no cliente, do kickoff ao site no ar"
      },
-     "item_20": {
+     "item_21": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-iceberg-legenda",
@@ -359,7 +370,7 @@
       "chave": "iceberg-legenda",
       "texto": "embaixo da linha d'água: o investimento feito antes"
      },
-     "item_21": {
+     "item_22": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-caminho-a",
@@ -367,7 +378,7 @@
       "chave": "caminho-a",
       "texto": "Caminho difícil"
      },
-     "item_22": {
+     "item_23": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-caminho-b",
@@ -931,6 +942,16 @@
       "texto": "<p>Core Web Vitals de usuários reais, por página e dispositivo, sem script de terceiro.</p>",
       "dados": "LCP:0,4 s:22|INP:48 ms:12|CLS:0,00:4",
       "largura": "2"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_8",
+      "model": "celula",
+      "tipo": "texto",
+      "rotulo": "Acessibilidade por bloco",
+      "texto": "<p>Abra o botão de acessibilidade à direita e ligue o alto contraste: a página inteira muda na hora, inclusive o gate do vídeo, o banner de cookies e estes painéis. O botão só troca uma classe na raiz; o tema troca os tokens e cada bloco traz a própria regra. Nenhum bloco precisa saber do botão.</p>",
+      "largura": "6"
      }
     }
    },
@@ -1140,6 +1161,59 @@
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
      "text": "<p><a href=\"#definicoes-de-cookies\">Definições de cookies</a></p>"
+    }
+   },
+   "section_4": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Acessibilidade",
+    "acessibilidade": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Acessibilidade",
+     "model": "acessibilidade",
+     "filter": "acessibilidade",
+     "texto": "<h2>Acessibilidade</h2><ul><li>Aumentar fonte</li><li>Diminuir fonte</li><li>Alto contraste</li><li>Preto e branco</li><li>Inverter cores</li><li>Destacar links</li></ul>",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-abrir",
+      "model": "rotulo",
+      "chave": "abrir",
+      "texto": "Ferramentas de acessibilidade"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanho-maximo",
+      "model": "rotulo",
+      "chave": "tamanho-maximo",
+      "texto": "Tamanho máximo da fonte"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanho-minimo",
+      "model": "rotulo",
+      "chave": "tamanho-minimo",
+      "texto": "Tamanho padrão da fonte"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanho",
+      "model": "rotulo",
+      "chave": "tamanho",
+      "texto": "Tamanho da fonte: {n}"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanhos",
+      "model": "rotulo",
+      "chave": "tamanhos",
+      "texto": "normal|grande|maior"
+     }
     }
    }
   }
@@ -1515,6 +1589,17 @@
      "item_6": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "camada_6",
+      "model": "valor-item",
+      "tipo": "camada",
+      "titulo": "Accesibilidad por bloque",
+      "texto": "<p>Seis herramientas (fuente, contraste, blanco y negro, inversión, enlaces) que solo activan una clase en la raíz; cada bloque responde con su propio CSS. WCAG 2.2 AA, sin scripts de terceros.</p>",
+      "a": "6",
+      "b": "herramientas · 0 terceros"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_0",
       "model": "valor-item",
       "tipo": "comparacao",
@@ -1523,7 +1608,7 @@
       "a": "26 semanas",
       "b": "1 semana"
      },
-     "item_7": {
+     "item_8": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_1",
@@ -1534,7 +1619,7 @@
       "a": "55",
       "b": "100"
      },
-     "item_8": {
+     "item_9": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_2",
@@ -1545,7 +1630,7 @@
       "a": "12",
       "b": "0"
      },
-     "item_9": {
+     "item_10": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_3",
@@ -1556,7 +1641,7 @@
       "a": "160",
       "b": "8"
      },
-     "item_10": {
+     "item_11": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_4",
@@ -1567,7 +1652,7 @@
       "a": "14 días",
       "b": "1 minuto"
      },
-     "item_11": {
+     "item_12": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_5",
@@ -1578,7 +1663,7 @@
       "a": "2 de 5",
       "b": "5 de 5"
      },
-     "item_12": {
+     "item_13": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_0",
@@ -1589,7 +1674,7 @@
       "a": "100",
       "b": "× 4"
      },
-     "item_13": {
+     "item_14": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_1",
@@ -1600,7 +1685,7 @@
       "a": "5",
       "b": "de 5"
      },
-     "item_14": {
+     "item_15": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_2",
@@ -1611,7 +1696,7 @@
       "a": "0",
       "b": "scripts"
      },
-     "item_15": {
+     "item_16": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_3",
@@ -1622,7 +1707,7 @@
       "a": "1",
       "b": "clic"
      },
-     "item_16": {
+     "item_17": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_4",
@@ -1633,7 +1718,7 @@
       "a": "12",
       "b": "meses"
      },
-     "item_17": {
+     "item_18": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_5",
@@ -1644,7 +1729,7 @@
       "a": "6",
       "b": "cabeceras"
      },
-     "item_18": {
+     "item_19": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-ponta-numero",
@@ -1652,7 +1737,7 @@
       "chave": "ponta-numero",
       "texto": "1"
      },
-     "item_19": {
+     "item_20": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-ponta-texto",
@@ -1660,7 +1745,7 @@
       "chave": "ponta-texto",
       "texto": "semana en el cliente, del kickoff al sitio en el aire"
      },
-     "item_20": {
+     "item_21": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-iceberg-legenda",
@@ -1668,7 +1753,7 @@
       "chave": "iceberg-legenda",
       "texto": "bajo la línea de flotación: la inversión hecha antes"
      },
-     "item_21": {
+     "item_22": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-caminho-a",
@@ -1676,7 +1761,7 @@
       "chave": "caminho-a",
       "texto": "Camino difícil"
      },
-     "item_22": {
+     "item_23": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-caminho-b",
@@ -2240,6 +2325,16 @@
       "texto": "<p>Core Web Vitals de usuarios reales, por página y dispositivo, sin scripts de terceros.</p>",
       "dados": "LCP:0,4 s:22|INP:48 ms:12|CLS:0,00:4",
       "largura": "2"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_8",
+      "model": "celula",
+      "tipo": "texto",
+      "rotulo": "Accesibilidad por bloque",
+      "texto": "<p>Abra el botón de accesibilidad a la derecha y active el alto contraste: toda la página cambia al instante, incluidos el gate del video, el banner de cookies y estos paneles. El botón solo cambia una clase en la raíz; el tema cambia los tokens y cada bloque trae su propia regla. Ningún bloque necesita saber del botón.</p>",
+      "largura": "6"
      }
     }
    },
@@ -2449,6 +2544,59 @@
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
      "text": "<p><a href=\"#definicoes-de-cookies\">Configuración de cookies</a></p>"
+    }
+   },
+   "section_4": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Acessibilidade",
+    "acessibilidade": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Acessibilidade",
+     "model": "acessibilidade",
+     "filter": "acessibilidade",
+     "texto": "<h2>Accesibilidad</h2><ul><li>Aumentar fuente</li><li>Disminuir fuente</li><li>Alto contraste</li><li>Blanco y negro</li><li>Invertir colores</li><li>Destacar enlaces</li></ul>",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-abrir",
+      "model": "rotulo",
+      "chave": "abrir",
+      "texto": "Herramientas de accesibilidad"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanho-maximo",
+      "model": "rotulo",
+      "chave": "tamanho-maximo",
+      "texto": "Tamaño máximo de la fuente"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanho-minimo",
+      "model": "rotulo",
+      "chave": "tamanho-minimo",
+      "texto": "Tamaño estándar de la fuente"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanho",
+      "model": "rotulo",
+      "chave": "tamanho",
+      "texto": "Tamaño de la fuente: {n}"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanhos",
+      "model": "rotulo",
+      "chave": "tamanhos",
+      "texto": "normal|grande|mayor"
+     }
     }
    }
   }
@@ -2824,6 +2972,17 @@
      "item_6": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "camada_6",
+      "model": "valor-item",
+      "tipo": "camada",
+      "titulo": "Accessibility per block",
+      "texto": "<p>Six tools (font, contrast, black and white, inversion, links) that only set a class on the root; every block answers with its own CSS. WCAG 2.2 AA, no third-party script.</p>",
+      "a": "6",
+      "b": "tools · 0 third parties"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_0",
       "model": "valor-item",
       "tipo": "comparacao",
@@ -2832,7 +2991,7 @@
       "a": "26 weeks",
       "b": "1 week"
      },
-     "item_7": {
+     "item_8": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_1",
@@ -2843,7 +3002,7 @@
       "a": "55",
       "b": "100"
      },
-     "item_8": {
+     "item_9": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_2",
@@ -2854,7 +3013,7 @@
       "a": "12",
       "b": "0"
      },
-     "item_9": {
+     "item_10": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_3",
@@ -2865,7 +3024,7 @@
       "a": "160",
       "b": "8"
      },
-     "item_10": {
+     "item_11": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_4",
@@ -2876,7 +3035,7 @@
       "a": "14 days",
       "b": "1 minute"
      },
-     "item_11": {
+     "item_12": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "comparacao_5",
@@ -2887,7 +3046,7 @@
       "a": "2 of 5",
       "b": "5 of 5"
      },
-     "item_12": {
+     "item_13": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_0",
@@ -2898,7 +3057,7 @@
       "a": "100",
       "b": "× 4"
      },
-     "item_13": {
+     "item_14": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_1",
@@ -2909,7 +3068,7 @@
       "a": "5",
       "b": "of 5"
      },
-     "item_14": {
+     "item_15": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_2",
@@ -2920,7 +3079,7 @@
       "a": "0",
       "b": "scripts"
      },
-     "item_15": {
+     "item_16": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_3",
@@ -2931,7 +3090,7 @@
       "a": "1",
       "b": "click"
      },
-     "item_16": {
+     "item_17": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_4",
@@ -2942,7 +3101,7 @@
       "a": "12",
       "b": "months"
      },
-     "item_17": {
+     "item_18": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "entrega_5",
@@ -2953,7 +3112,7 @@
       "a": "6",
       "b": "headers"
      },
-     "item_18": {
+     "item_19": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-ponta-numero",
@@ -2961,7 +3120,7 @@
       "chave": "ponta-numero",
       "texto": "1"
      },
-     "item_19": {
+     "item_20": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-ponta-texto",
@@ -2969,7 +3128,7 @@
       "chave": "ponta-texto",
       "texto": "week at the client, from kickoff to the site live"
      },
-     "item_20": {
+     "item_21": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-iceberg-legenda",
@@ -2977,7 +3136,7 @@
       "chave": "iceberg-legenda",
       "texto": "below the waterline: the investment made before"
      },
-     "item_21": {
+     "item_22": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-caminho-a",
@@ -2985,7 +3144,7 @@
       "chave": "caminho-a",
       "texto": "The hard way"
      },
-     "item_22": {
+     "item_23": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "rotulo-caminho-b",
@@ -3549,6 +3708,16 @@
       "texto": "<p>Real-user Core Web Vitals, by page and device, with no third-party script.</p>",
       "dados": "LCP:0.4 s:22|INP:48 ms:12|CLS:0.00:4",
       "largura": "2"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "celula_8",
+      "model": "celula",
+      "tipo": "texto",
+      "rotulo": "Accessibility per block",
+      "texto": "<p>Open the accessibility button on the right and turn on high contrast: the whole page changes instantly, including the video gate, the cookie banner and these panels. The button only sets a class on the root; the theme swaps the tokens and each block brings its own rule. No block needs to know about the button.</p>",
+      "largura": "6"
      }
     }
    },
@@ -3758,6 +3927,59 @@
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
      "text": "<p><a href=\"#definicoes-de-cookies\">Cookie settings</a></p>"
+    }
+   },
+   "section_4": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "core/franklin/components/section/v1/section",
+    "name": "Acessibilidade",
+    "acessibilidade": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Acessibilidade",
+     "model": "acessibilidade",
+     "filter": "acessibilidade",
+     "texto": "<h2>Accessibility</h2><ul><li>Increase font</li><li>Decrease font</li><li>High contrast</li><li>Black and white</li><li>Invert colours</li><li>Highlight links</li></ul>",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-abrir",
+      "model": "rotulo",
+      "chave": "abrir",
+      "texto": "Accessibility tools"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanho-maximo",
+      "model": "rotulo",
+      "chave": "tamanho-maximo",
+      "texto": "Maximum font size"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanho-minimo",
+      "model": "rotulo",
+      "chave": "tamanho-minimo",
+      "texto": "Default font size"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanho",
+      "model": "rotulo",
+      "chave": "tamanho",
+      "texto": "Font size: {n}"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-tamanhos",
+      "model": "rotulo",
+      "chave": "tamanhos",
+      "texto": "normal|large|larger"
+     }
     }
    }
   }

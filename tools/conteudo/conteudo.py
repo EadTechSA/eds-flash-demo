@@ -115,6 +115,7 @@ T['pt'] = dict(
         ('Pacote de consentimento', '<p>Banner, preferências e gate de mídia conforme LGPD, com o texto todo autorado e auditoria axe sem violações.</p>', '23', 'verificações'),
         ('Automação do conteúdo', '<p>Migrador, verificador de paridade visual, índice e redirecionamentos. A parte repetitiva deixa de ser manual e de depender de memória.</p>', '3', 'fases de carregamento'),
         ('Conhecimento da suíte', '<p>Assets, Dynamic Media, Target, Analytics, Edge Functions, autenticação de site: o que cada um exige e onde encaixa, sem experimentar no cliente.</p>', '100', 'Lighthouse no celular'),
+        ('Acessibilidade por bloco', '<p>Seis ferramentas (fonte, contraste, preto e branco, inversão, links) que só ligam uma classe na raiz; cada bloco responde pelo próprio CSS. LBI, eMAG 3.1 e WCAG 2.2 AA, sem script de terceiro.</p>', '6', 'ferramentas · 0 terceiros'),
     ],
     comparacoes=[
         ('Prazo até o site no ar', '<p>Projeto tradicional: levantamento, design, componentes, integração, homologação. Express: o método já existe, o conteúdo entra.</p>', '26 semanas', '1 semana'),
@@ -149,6 +150,7 @@ T['pt'] = dict(
         ('ab', 'Experimentação', '<p>A/B por metadado de página, com variantes como URLs e resultado na telemetria operacional. Target entra pelo mesmo Web SDK quando o cliente tem.</p>', 'Variante A|Variante B|Permitir e assistir|Ver o vídeo (12 s)', '2'),
         ('texto', 'Autoria', '<p>Universal Editor com catálogo de blocos em português. Variante é escolha do autor, nunca regra de caminho no código.</p><p><a href="#autoria">Ver o fluxo</a></p>', '', '2'),
         ('telemetria', 'Operational Telemetry', '<p>Core Web Vitals de usuários reais, por página e dispositivo, sem script de terceiro.</p>', 'LCP:0,4 s:22|INP:48 ms:12|CLS:0,00:4', '2'),
+        ('texto', 'Acessibilidade por bloco', '<p>Abra o botão de acessibilidade à direita e ligue o alto contraste: a página inteira muda na hora, inclusive o gate do vídeo, o banner de cookies e estes painéis. O botão só troca uma classe na raiz; o tema troca os tokens e cada bloco traz a própria regra. Nenhum bloco precisa saber do botão.</p>', '', '6'),
     ],
     agentic_abertura='<p>Agentic readiness</p><h2>O que um agente de IA recebe desta página.</h2>',
     verificacoes=[('Conteúdo completo no HTML, sem depender de script', 'ok'), ('Estrutura semântica: main, títulos, listas e tabelas de verdade', 'ok'), ('Metadados e JSON-LD em cada página', 'ok'), ('Índice e sitemap consultáveis por máquina', 'ok'), ('llms.txt com o conteúdo prioritário e as regras de uso', 'ok')],
@@ -156,6 +158,8 @@ T['pt'] = dict(
     passos_abertura='<p>Autoria e governança</p><h2>Quem publica é a área de negócio. TI só entra em bloco novo.</h2>',
     passos=[('✎', 'Universal Editor', '<p>Edição visual na própria página, com Asset Selector do DAM e catálogo de blocos.</p>'), ('⚿', 'Prévia com login', '<p>Autenticação de site na borda: só e-mails da EadTech e da Adobe veem a prévia.</p>'), ('✓', 'Portão de qualidade', '<p>Lint, contrato de blocos, testes e Lighthouse a cada mudança. Nada entra sem passar.</p>'), ('↗', 'Publicar', '<p>Um clique. CDN da Adobe, ou a do cliente na frente. Imagens pelo path mapping, nunca pelo código.</p>'), ('∞', 'Medir e repetir', '<p>Telemetria operacional e experimentos alimentam a próxima rodada. Sem sprint de TI.</p>')],
     passos_rotulos={'dica': 'role para avançar'},
+    a11y_texto='<h2>Acessibilidade</h2><ul><li>Aumentar fonte</li><li>Diminuir fonte</li><li>Alto contraste</li><li>Preto e branco</li><li>Inverter cores</li><li>Destacar links</li></ul>',
+    a11y_rotulos={'abrir': 'Ferramentas de acessibilidade', 'tamanho-maximo': 'Tamanho máximo da fonte', 'tamanho-minimo': 'Tamanho padrão da fonte', 'tamanho': 'Tamanho da fonte: {n}', 'tamanhos': 'normal|grande|maior'},
     cc_banner=('Este site usa cookies e mídia de terceiros', 'Só o necessário carrega agora. Análise e vídeo esperam a sua escolha. Aceitar e recusar têm o mesmo peso.', 'Aceitar', 'Recusar', 'Preferências'),
     cc_prefs=('Definições de cookies', 'Escolha por categoria. A mudança vale na hora, inclusive para revogar.', 'Recusar', 'Salvar', 'Aceitar tudo'),
     cc_cats=[('CC_ESSENTIAL', 'não', 'Necessários', 'Sessão, segurança e a própria escolha de cookies.'), ('CC_ANALYTICS', 'sim', 'Análise', 'Medição de uso. Nesta demo: Web SDK da Adobe, só após o sim.'), ('CC_MEDIA', 'sim', 'Mídia e vídeo', 'Vídeos e embeds. Sem esta categoria, o bloco mostra o aviso no lugar do player.')],
@@ -187,6 +191,7 @@ T['es'] = dict(
         ('Paquete de consentimiento', '<p>Banner, preferencias y gate de medios conforme a la ley, con todo el texto autorado y auditoría axe sin violaciones.</p>', '23', 'verificaciones'),
         ('Automatización del contenido', '<p>Migrador, verificador de paridad visual, índice y redirecciones. La parte repetitiva deja de ser manual y de depender de la memoria.</p>', '3', 'fases de carga'),
         ('Conocimiento de la suite', '<p>Assets, Dynamic Media, Target, Analytics, Edge Functions, autenticación de sitio: qué exige cada uno y dónde encaja, sin experimentar en el cliente.</p>', '100', 'Lighthouse en móvil'),
+        ('Accesibilidad por bloque', '<p>Seis herramientas (fuente, contraste, blanco y negro, inversión, enlaces) que solo activan una clase en la raíz; cada bloque responde con su propio CSS. WCAG 2.2 AA, sin scripts de terceros.</p>', '6', 'herramientas · 0 terceros'),
     ],
     comparacoes=[
         ('Plazo hasta el sitio en el aire', '<p>Proyecto tradicional: relevamiento, diseño, componentes, integración, homologación. Express: el método ya existe, el contenido entra.</p>', '26 semanas', '1 semana'),
@@ -221,6 +226,7 @@ T['es'] = dict(
         ('ab', 'Experimentación', '<p>A/B por metadato de página, con variantes como URLs y resultado en la telemetría operacional. Target entra por el mismo Web SDK cuando el cliente lo tiene.</p>', 'Variante A|Variante B|Permitir y ver|Ver el video (12 s)', '2'),
         ('texto', 'Autoría', '<p>Universal Editor con catálogo de bloques en el idioma del cliente. La variante la elige el autor, nunca una regla de ruta en el código.</p><p><a href="#autoria">Ver el flujo</a></p>', '', '2'),
         ('telemetria', 'Operational Telemetry', '<p>Core Web Vitals de usuarios reales, por página y dispositivo, sin scripts de terceros.</p>', 'LCP:0,4 s:22|INP:48 ms:12|CLS:0,00:4', '2'),
+        ('texto', 'Accesibilidad por bloque', '<p>Abra el botón de accesibilidad a la derecha y active el alto contraste: toda la página cambia al instante, incluidos el gate del video, el banner de cookies y estos paneles. El botón solo cambia una clase en la raíz; el tema cambia los tokens y cada bloque trae su propia regla. Ningún bloque necesita saber del botón.</p>', '', '6'),
     ],
     agentic_abertura='<p>Agentic readiness</p><h2>Lo que un agente de IA recibe de esta página.</h2>',
     verificacoes=[('Contenido completo en el HTML, sin depender de scripts', 'ok'), ('Estructura semántica: main, títulos, listas y tablas de verdad', 'ok'), ('Metadatos y JSON-LD en cada página', 'ok'), ('Índice y sitemap consultables por máquina', 'ok'), ('llms.txt con el contenido prioritario y las reglas de uso', 'ok')],
@@ -228,6 +234,8 @@ T['es'] = dict(
     passos_abertura='<p>Autoría y gobernanza</p><h2>Quien publica es el área de negocio. TI solo entra con un bloque nuevo.</h2>',
     passos=[('✎', 'Universal Editor', '<p>Edición visual en la propia página, con Asset Selector del DAM y catálogo de bloques.</p>'), ('⚿', 'Preview con login', '<p>Autenticación de sitio en el borde: solo correos de EadTech y Adobe ven el preview.</p>'), ('✓', 'Compuerta de calidad', '<p>Lint, contrato de bloques, pruebas y Lighthouse en cada cambio. Nada entra sin pasar.</p>'), ('↗', 'Publicar', '<p>Un clic. CDN de Adobe, o la del cliente adelante. Imágenes por path mapping, nunca por el código.</p>'), ('∞', 'Medir y repetir', '<p>La telemetría operacional y los experimentos alimentan la próxima ronda. Sin sprint de TI.</p>')],
     passos_rotulos={'dica': 'desplace para avanzar'},
+    a11y_texto='<h2>Accesibilidad</h2><ul><li>Aumentar fuente</li><li>Disminuir fuente</li><li>Alto contraste</li><li>Blanco y negro</li><li>Invertir colores</li><li>Destacar enlaces</li></ul>',
+    a11y_rotulos={'abrir': 'Herramientas de accesibilidad', 'tamanho-maximo': 'Tamaño máximo de la fuente', 'tamanho-minimo': 'Tamaño estándar de la fuente', 'tamanho': 'Tamaño de la fuente: {n}', 'tamanhos': 'normal|grande|mayor'},
     cc_banner=('Este sitio usa cookies y medios de terceros', 'Solo lo necesario carga ahora. Análisis y video esperan su elección. Aceptar y rechazar tienen el mismo peso.', 'Aceptar', 'Rechazar', 'Preferencias'),
     cc_prefs=('Configuración de cookies', 'Elija por categoría. El cambio vale al instante, incluso para revocar.', 'Rechazar', 'Guardar', 'Aceptar todo'),
     cc_cats=[('CC_ESSENTIAL', 'não', 'Necesarios', 'Sesión, seguridad y la propia elección de cookies.'), ('CC_ANALYTICS', 'sim', 'Análisis', 'Medición de uso. En esta demo: Web SDK de Adobe, solo después del sí.'), ('CC_MEDIA', 'sim', 'Medios y video', 'Videos y embeds. Sin esta categoría, el bloque muestra el aviso en lugar del player.')],
@@ -259,6 +267,7 @@ T['en'] = dict(
         ('Consent package', '<p>Banner, preferences and media gate under privacy law, with all copy authored and an axe audit with zero violations.</p>', '23', 'checks'),
         ('Content automation', '<p>Migrator, visual parity checker, index and redirects. The repetitive part stops being manual and stops depending on memory.</p>', '3', 'loading phases'),
         ('Suite knowledge', '<p>Assets, Dynamic Media, Target, Analytics, Edge Functions, site authentication: what each requires and where it fits, without experimenting on the client.</p>', '100', 'Lighthouse on mobile'),
+        ('Accessibility per block', '<p>Six tools (font, contrast, black and white, inversion, links) that only set a class on the root; every block answers with its own CSS. WCAG 2.2 AA, no third-party script.</p>', '6', 'tools · 0 third parties'),
     ],
     comparacoes=[
         ('Time to go live', '<p>Traditional project: discovery, design, components, integration, acceptance. Express: the method already exists, the content goes in.</p>', '26 weeks', '1 week'),
@@ -293,6 +302,7 @@ T['en'] = dict(
         ('ab', 'Experimentation', '<p>A/B by page metadata, variants as URLs, results in operational telemetry. Target plugs in through the same Web SDK when the client has it.</p>', 'Variant A|Variant B|Allow and watch|Watch the video (12 s)', '2'),
         ('texto', 'Authoring', '<p>Universal Editor with a block catalogue in the client\'s language. Variants are the author\'s choice, never a path rule in code.</p><p><a href="#autoria">See the flow</a></p>', '', '2'),
         ('telemetria', 'Operational Telemetry', '<p>Real-user Core Web Vitals, by page and device, with no third-party script.</p>', 'LCP:0.4 s:22|INP:48 ms:12|CLS:0.00:4', '2'),
+        ('texto', 'Accessibility per block', '<p>Open the accessibility button on the right and turn on high contrast: the whole page changes instantly, including the video gate, the cookie banner and these panels. The button only sets a class on the root; the theme swaps the tokens and each block brings its own rule. No block needs to know about the button.</p>', '', '6'),
     ],
     agentic_abertura='<p>Agentic readiness</p><h2>What an AI agent gets from this page.</h2>',
     verificacoes=[('Full content in the HTML, no script required', 'ok'), ('Semantic structure: main, headings, real lists and tables', 'ok'), ('Metadata and JSON-LD on every page', 'ok'), ('Machine-readable index and sitemap', 'ok'), ('llms.txt with priority content and usage rules', 'ok')],
@@ -300,6 +310,8 @@ T['en'] = dict(
     passos_abertura='<p>Authoring and governance</p><h2>Business teams publish. IT only steps in for a new block.</h2>',
     passos=[('✎', 'Universal Editor', '<p>Visual editing on the page itself, with the DAM Asset Selector and a block catalogue.</p>'), ('⚿', 'Preview with login', '<p>Site authentication at the edge: only EadTech and Adobe emails see the preview.</p>'), ('✓', 'Quality gate', '<p>Lint, block contract, tests and Lighthouse on every change. Nothing ships without passing.</p>'), ('↗', 'Publish', '<p>One click. Adobe\'s CDN, or the client\'s in front. Images via path mapping, never via code.</p>'), ('∞', 'Measure and repeat', '<p>Operational telemetry and experiments feed the next round. No IT sprint.</p>')],
     passos_rotulos={'dica': 'scroll to advance'},
+    a11y_texto='<h2>Accessibility</h2><ul><li>Increase font</li><li>Decrease font</li><li>High contrast</li><li>Black and white</li><li>Invert colours</li><li>Highlight links</li></ul>',
+    a11y_rotulos={'abrir': 'Accessibility tools', 'tamanho-maximo': 'Maximum font size', 'tamanho-minimo': 'Default font size', 'tamanho': 'Font size: {n}', 'tamanhos': 'normal|large|larger'},
     cc_banner=('This site uses cookies and third-party media', 'Only the essentials load now. Analytics and video wait for your choice. Accept and refuse carry the same weight.', 'Accept', 'Refuse', 'Preferences'),
     cc_prefs=('Cookie settings', 'Choose by category. Changes apply instantly, including revocation.', 'Refuse', 'Save', 'Accept all'),
     cc_cats=[('CC_ESSENTIAL', 'não', 'Necessary', 'Session, security and the cookie choice itself.'), ('CC_ANALYTICS', 'sim', 'Analytics', 'Usage measurement. In this demo: Adobe Web SDK, only after yes.'), ('CC_MEDIA', 'sim', 'Media & video', 'Videos and embeds. Without this category, the block shows a notice instead of the player.')],
@@ -364,6 +376,7 @@ def nav(t):
         section([('marca', text(t['marca']))], nome='Marca'),
         section([('links', text(links))], nome='Links'),
         section([('ferramentas', text(f'<p><a href="#definicoes-de-cookies">{t["cookies"]}</a></p>'))], nome='Ferramentas'),
+        section([('acessibilidade', block('Acessibilidade', 'acessibilidade', {'texto': t['a11y_texto']}, rotulos('rotulo', t['a11y_rotulos']), filt='acessibilidade'))], nome='Acessibilidade'),
     ])
 
 

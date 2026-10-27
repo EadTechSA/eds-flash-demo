@@ -408,3 +408,25 @@
     transform: none;
   }
 }
+
+/* alto contraste: água e barras em amarelo sobre preto, camadas sempre legíveis */
+html.contrast .valor .valor-agua {
+  background: none;
+  border-top-color: #ff0;
+}
+
+html.contrast .valor .valor-camada {
+  background: #000;
+  opacity: 1;
+}
+
+html.contrast .valor .valor-comparacao[data-lado='a'] .valor-b,
+html.contrast .valor .valor-comparacao[data-lado='b'] .valor-a {
+  opacity: 1;
+  color: #fff;
+}
+
+html.contrast .valor .valor-trilho i,
+html.contrast .valor .valor-comparacao[data-lado='b'] .valor-trilho i {
+  background: #ff0;
+}

@@ -145,3 +145,12 @@
   .bento .bento-l4 { grid-column: span 4; }
   .bento .bento-l6 { grid-column: span 6; }
 }
+
+/* alto contraste: sem holofote; medidores em amarelo */
+html.contrast .bento .bento-celula::before {
+  display: none;
+}
+
+html.contrast .bento .bento-medidor .arco {
+  stroke: #ff0;
+}
