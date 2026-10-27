@@ -26,7 +26,7 @@ function cascata(container, r) {
     .filter((e) => !/data:/.test(e.name))
     .slice(0, 28)
     .map((e) => ({
-      nome: e.name.replace(base, '').replace(/\?.*$/, '').slice(-42),
+      nome: e.name.replace(base, '').replace(/\?.*$/, '').replace(/^.*\/(?=[^/]+\/[^/]+$)/, '…/'),
       inicio: e.startTime,
       fim: e.responseEnd || e.startTime,
       bytes: e.transferSize || e.encodedBodySize || 0,

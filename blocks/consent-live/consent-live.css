@@ -8,6 +8,15 @@
   margin: 0;
 }
 
+.consent-live .consent-live-abertura > p:first-child {
+  margin: 0 0 14px;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
 .consent-live .consent-live-abertura p {
   margin: 0;
   color: var(--text-muted);
@@ -52,8 +61,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  direction: rtl;
-  text-align: left;
 }
 
 .consent-live .consent-live-barra {
