@@ -1,0 +1,10 @@
+{
+  "mappings": [
+    "/content/eds-flash-demo/:/",
+    "/content/dam/eds-flash-demo/:/dam/"
+  ],
+  "includes": [
+    "/content/eds-flash-demo/",
+    "/content/dam/eds-flash-demo/"
+  ]
+}
