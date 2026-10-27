@@ -86,14 +86,14 @@
 
 .consent-button.consent-aceitar,
 .consent-button.consent-permitir {
-  background: var(--accent, #fa0f00);
-  border-color: var(--accent, #fa0f00);
+  background: var(--accent, #e30d00);
+  border-color: var(--accent, #e30d00);
   color: #fff;
 }
 
 .consent-button.consent-aceitar:hover,
 .consent-button.consent-permitir:hover {
-  background: var(--accent-hover, #ff2a1c);
+  background: var(--accent-hover, #fa0f00);
 }
 
 /* painel de preferências */

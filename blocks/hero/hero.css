@@ -212,6 +212,22 @@
   }
 }
 
+@media (width < 900px) {
+  .hero .hero-letra {
+    animation-name: hero-entra-leve;
+  }
+
+  .hero .hero-rotativa-palavra.saindo {
+    display: none;
+  }
+}
+
+@keyframes hero-entra-leve {
+  from {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero .hero-letra,
   .hero .hero-rotativa-palavra.saindo .hero-letra,
