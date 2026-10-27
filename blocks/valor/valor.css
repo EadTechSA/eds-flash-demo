@@ -65,6 +65,7 @@
 @media (width < 900px) {
   .valor .valor-camada {
     opacity: 1 !important;
+    visibility: visible !important;
     transform: none !important;
   }
 
@@ -144,15 +145,18 @@
   border: 1px solid var(--line);
   border-radius: 12px;
   background: color-mix(in srgb, var(--surface-1) 85%, transparent);
-  opacity: 0.12;
+  opacity: 0;
+  visibility: hidden;
   transform: translateY(18px) scale(0.985);
-  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease), border-color 0.6s;
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease), border-color 0.6s, visibility 0s 0.6s;
 }
 
 .valor .valor-camada.visivel {
   opacity: 1;
+  visibility: visible;
   transform: none;
   border-color: var(--line-strong);
+  transition-delay: 0s;
 }
 
 .valor .valor-camada-cabeca {
