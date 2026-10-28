@@ -11,6 +11,13 @@ import {
 } from '../../scripts/demo.js';
 import { aoAparecer, contar, revelar } from '../../scripts/motion.js';
 
+// código que rola precisa de foco pelo teclado (axe: scrollable-region-focusable)
+function codigo() {
+  const c = codigo();
+  c.tabIndex = 0;
+  return c;
+}
+
 function dados(s) {
   return s.split('|').map((x) => x.trim()).filter(Boolean);
 }
@@ -73,7 +80,7 @@ const widgets = {
     return b;
   },
   indice() {
-    const c = el('pre', 'codigo');
+    const c = codigo();
     c.innerHTML = '<span class="cursor"></span>';
     aoAparecer(c, async () => {
       try {
@@ -88,7 +95,7 @@ const widgets = {
     return c;
   },
   cabecalhos(d) {
-    const c = el('pre', 'codigo');
+    const c = codigo();
     c.innerHTML = d.map((par) => {
       const [k, ...v] = par.split('=');
       return `<span class="h">${k.trim()}</span>: <span class="g">${v.join('=').trim()}</span>`;
@@ -100,7 +107,7 @@ const widgets = {
     // (valor que começa com URL vira link na entrega e pode se perder)
     const url = d.find((x) => /^https?:\/\//.test(x));
     const botao = d.find((x) => !/^https?:\/\//.test(x));
-    const c = el('pre', 'codigo');
+    const c = codigo();
     const b = el('button', 'button', botao || 'GET');
     b.type = 'button';
     const esc = (x) => String(x).replace(/[&<>]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[ch]));
@@ -135,7 +142,7 @@ const widgets = {
   ab(d) {
     const [rotA, rotB, ctaA, ctaB] = d;
     const seg = el('div', 'segmentos');
-    const c = el('pre', 'codigo');
+    const c = codigo();
     const aplicar = (lado) => {
       seg.querySelectorAll('button').forEach((x, i) => x.classList.toggle('ativo', (i === 0) === (lado === 'a')));
       c.innerHTML = `<span class="h">experiment</span>: hero-cta · <span class="h">variant</span>: <span class="g">${lado === 'a' ? 'control (/)' : 'challenger (/hero-b)'}</span>\n<span class="h">split</span>: 50/50 · <span class="h">audience</span>: all\n<span class="h">cta</span>: "${lado === 'a' ? ctaA : ctaB}"`;

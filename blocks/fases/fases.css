@@ -49,12 +49,28 @@
   display: grid;
   grid-template-columns: 40px 1fr;
   gap: 12px;
-  opacity: 0.25;
-  transition: opacity 0.4s;
+  padding-left: 12px;
+  border-left: 2px solid var(--line);
+  transition: border-color 0.4s;
+}
+
+/* passo fora de foco: texto mais apagado, mas ainda acima de 4,5:1 */
+.fases .fases-passo h3,
+.fases .fases-passo p {
+  color: var(--text-dim);
+  transition: color 0.4s;
 }
 
 .fases .fases-passo.ativo {
-  opacity: 1;
+  border-left-color: var(--warm);
+}
+
+.fases .fases-passo.ativo h3 {
+  color: var(--text-color);
+}
+
+.fases .fases-passo.ativo p {
+  color: var(--text-muted);
 }
 
 .fases .fases-passo b {
@@ -73,7 +89,6 @@
 .fases .fases-passo p {
   margin: 0;
   font-size: var(--body-font-size-s);
-  color: var(--text-muted);
 }
 
 /* navegador simulado */
