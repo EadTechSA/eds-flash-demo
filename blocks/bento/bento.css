@@ -163,3 +163,10 @@ html.contrast .bento .bento-medidor .arco {
 .bento .bento-celula.rybLightContrast::before {
   background-image: none;
 }
+
+.bento .bento-medicao {
+  margin: 10px 0 0;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  color: var(--text-dim);
+}

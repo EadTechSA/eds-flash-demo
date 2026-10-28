@@ -3,3 +3,4 @@ dompurify.min.js
 *.min.js
 tools/a11y/
 tools/seguranca/
+tools/lighthouse/

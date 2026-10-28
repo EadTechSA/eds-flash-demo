@@ -28,9 +28,13 @@ export function revelar(el, atraso = 0) {
   io.observe(el);
 }
 
-/** Quebra o texto do título em palavras animáveis (mantém <em>). */
+/**
+ * Quebra o texto do título em palavras animáveis (mantém <em>), nas seções
+ * em que o autor marcou o estilo "Títulos animados" no Universal Editor.
+ */
 export function palavras(h) {
-  if (reduzido || h.dataset.palavras) return;
+  // só anima onde o autor ligou a opção da seção "Títulos animados"
+  if (reduzido || h.dataset.palavras || !h.closest('.section.titulos-animados')) return;
   h.dataset.palavras = '1';
   let i = 0;
   const envolver = (no) => {

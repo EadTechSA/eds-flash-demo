@@ -21,101 +21,42 @@
      "sling:resourceType": "core/franklin/components/block/v1/block",
      "name": "Hero",
      "model": "hero",
-     "classes": "video",
      "filter": "hero",
-     "image": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
-     "imageAlt": "Pôster do vídeo: grade escura com brilho quente, EDS Flash Demo",
-     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimento nativo</p><h1>O site que <em>carrega em 0,4 s | é acessível por bloco | recorta por IA | fala com agentes | pede permissão | publica sem TI</em> em uma semana de migração.</h1><p>Esta página é uma demonstração ao vivo, não um slide: cada seção mostra um recurso do EDS, do Assets e do método da EadTech funcionando de verdade. Acessibilidade que vale para todo bloco, Lighthouse 100, agentes de IA, consentimento nativo. O vídeo da Adobe abaixo é o primeiro exemplo: só carrega depois do seu sim.</p>",
-     "video": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12",
-     "categoria": "CC_MEDIA",
+     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimento nativo</p><h1>O site que carrega em 0,4 s em uma semana de migração.</h1><p>Esta página é uma demonstração ao vivo, não um slide: cada seção mostra um recurso do EDS, do Assets e do método da EadTech funcionando de verdade. Acessibilidade que vale para todo bloco, Lighthouse medido a cada publicação, agentes de IA, consentimento nativo. O vídeo da Adobe abaixo é o primeiro exemplo: só carrega depois do seu sim.</p>",
+     "girarTrecho": "carrega em 0,4 s",
+     "girarPalavras": [
+      "é acessível por bloco",
+      "recorta por IA",
+      "fala com agentes",
+      "pede permissão",
+      "publica sem TI"
+     ],
+     "girarIntervalo": 2.6,
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-1",
+      "name": "Selo · selo-1",
       "model": "rotulo",
       "chave": "selo-1",
-      "texto": "Lighthouse 100 · 100 · 100 · 100"
+      "texto": "Lighthouse {desempenho} · {acessibilidade} · {praticas} · {seo} · medido {data}"
      },
      "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-2",
+      "name": "Selo · selo-2",
       "model": "rotulo",
       "chave": "selo-2",
       "texto": "acessível por bloco · 6 ferramentas"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-sem-consentimento",
-      "model": "rotulo",
-      "chave": "selo-sem-consentimento",
-      "texto": "sem consentimento"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-com-consentimento",
-      "model": "rotulo",
-      "chave": "selo-com-consentimento",
-      "texto": "mídia e vídeo permitidos"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · hud-bloqueado",
-      "model": "rotulo",
-      "chave": "hud-bloqueado",
-      "texto": "gate ativo"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · hud-liberado",
-      "model": "rotulo",
-      "chave": "hud-liberado",
-      "texto": "vídeo liberado"
-     },
-     "item_6": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · hud-embed",
-      "model": "rotulo",
-      "chave": "hud-embed",
-      "texto": "player da Adobe"
-     },
-     "item_7": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · fonte",
-      "model": "rotulo",
-      "chave": "fonte",
-      "texto": "vídeo: video.tv.adobe.com"
-     },
-     "item_8": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · titulo-video",
-      "model": "rotulo",
-      "chave": "titulo-video",
-      "texto": "Vídeo da Adobe sobre Edge Delivery Services"
-     },
-     "item_9": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · log-liberado",
-      "model": "rotulo",
-      "chave": "log-liberado",
-      "texto": "gate CC_MEDIA: liberado → player inserido"
-     },
-     "item_10": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · log-revogado",
-      "model": "rotulo",
-      "chave": "log-revogado",
-      "texto": "gate CC_MEDIA: revogado → player removido, aviso de volta (sem reload)"
      }
+    },
+    "embed": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Embed",
+     "model": "embed",
+     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
+     "embed_placeholderAlt": "Vídeo da Adobe sobre Edge Delivery Services",
+     "embed_uri": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12"
     },
     "como": {
      "jcr:primaryType": "nt:unstructured",
@@ -126,6 +67,7 @@
    "section_1": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Valor",
     "id": "valor",
     "valor": {
@@ -205,9 +147,9 @@
       "model": "valor-item",
       "tipo": "camada",
       "titulo": "Conhecimento da suíte",
-      "texto": "<p>Assets, Dynamic Media, Target, Analytics, Edge Functions, autenticação de site: o que cada um exige e onde encaixa, sem experimentar no cliente.</p>",
-      "a": "100",
-      "b": "Lighthouse no celular"
+      "texto": "<p>Assets, Dynamic Media, Target, Analytics, App Builder, autenticação de site: o que cada um exige e onde encaixa, sem experimentar no cliente.</p>",
+      "a": "6",
+      "b": "produtos da suíte"
      },
      "item_6": {
       "jcr:primaryType": "nt:unstructured",
@@ -234,13 +176,13 @@
      "item_8": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Lighthouse no celular",
+      "name": "Comparação · Desempenho no Lighthouse (celular)",
       "model": "valor-item",
       "tipo": "comparacao",
-      "titulo": "Lighthouse no celular",
-      "texto": "<p>Sites em frameworks pesados costumam ficar entre 40 e 70. O EDS entrega 100 porque carrega em três fases.</p>",
+      "titulo": "Desempenho no Lighthouse (celular)",
+      "texto": "<p>Sites em frameworks pesados costumam ficar entre 40 e 70. O EDS passa de 90 porque carrega em três fases. A nota medida desta página está na seção EDS, com data.</p>",
       "a": "55",
-      "b": "100"
+      "b": "90+"
      },
      "item_9": {
       "jcr:primaryType": "nt:unstructured",
@@ -289,13 +231,13 @@
      "item_13": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Entrega · Lighthouse em todos os eixos",
+      "name": "Entrega · Lighthouse medido a cada publicação",
       "model": "valor-item",
       "tipo": "entrega",
-      "titulo": "Lighthouse em todos os eixos",
-      "texto": "<p>Desempenho, acessibilidade, boas práticas e SEO, no celular, medidos a cada publicação.</p>",
-      "a": "100",
-      "b": "× 4"
+      "titulo": "Lighthouse medido a cada publicação",
+      "texto": "<p>Desempenho, acessibilidade, boas práticas e SEO, no celular, medidos pelo CI. A nota aparece com data no topo da página e na seção EDS.</p>",
+      "a": "4",
+      "b": "eixos medidos"
      },
      "item_14": {
       "jcr:primaryType": "nt:unstructured",
@@ -397,6 +339,7 @@
    "section_2": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Acessibilidade",
     "id": "acessibilidade",
     "a11y": {
@@ -525,6 +468,7 @@
    "section_3": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Assets e Dynamic Media",
     "id": "midia",
     "abertura": {
@@ -698,7 +642,10 @@
    "section_4": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
-    "style": "compacta",
+    "style": [
+     "compacta",
+     "titulos-animados"
+    ],
     "name": "Três fases",
     "id": "fases",
     "fases": {
@@ -708,7 +655,7 @@
      "model": "fases",
      "filter": "fases",
      "sobretitulo": "Carregamento em três fases · role para ver",
-     "titulo": "Por que dá 100 no celular.",
+     "titulo": "Por que é rápido no celular.",
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -765,6 +712,7 @@
    "section_5": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "EDS",
     "id": "eds",
     "abertura": {
@@ -781,12 +729,12 @@
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Célula · Lighthouse · celular",
+      "name": "Célula · Lighthouse · celular · medido",
       "model": "celula",
       "tipo": "lighthouse",
-      "rotulo": "Lighthouse · celular",
-      "texto": "<p>Medido na publicação, a cada mudança, pelo portão de qualidade. Agentic 5/5 com o llms.txt desta demo.</p>",
-      "dados": "Desempenho:100|Acessibilidade:100|Práticas:100|SEO:100",
+      "rotulo": "Lighthouse · celular · medido",
+      "texto": "<p>Lighthouse de verdade, rodado pelo CI na prévia a cada push e todo dia. O SEO é medido sem a auditoria de indexação, porque o aem.page não é indexado de propósito.</p>",
+      "dados": "Desempenho|Acessibilidade|Boas práticas|SEO",
       "largura": "3"
      },
      "item_1": {
@@ -824,12 +772,12 @@
      "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Célula · Edge Functions",
+      "name": "Célula · Funções serverless · App Builder",
       "model": "celula",
       "tipo": "edge",
-      "rotulo": "Edge Functions",
-      "texto": "<p>Dado público via função na borda da Adobe: a chave da API nunca chega ao navegador. Demonstração: cotação do dia, cache de 120 s.</p>",
-      "dados": "/api/cotacao|Chamar /api/cotacao|nunca sai do cofre",
+      "rotulo": "Funções serverless · App Builder",
+      "texto": "<p>Chamada real, agora: a função roda no Adobe I/O Runtime, busca a PTAX do dólar no Banco Central e guarda 10 minutos. O segredo da função fica no servidor; a resposta só diz o tamanho dele. Numa CDN do cliente, o mesmo papel é de um edge worker.</p>",
+      "dados": "https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/cotacao/usd|Chamar a função",
       "largura": "2"
      },
      "item_5": {
@@ -879,6 +827,7 @@
    "section_6": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Consentimento",
     "id": "consentimento",
     "consent": {
@@ -1538,6 +1487,7 @@
    "section_7": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Agentic",
     "id": "agentic",
     "agentic": {
@@ -1625,6 +1575,7 @@
    "section_8": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Portões de qualidade",
     "id": "portoes",
     "portoes": {
@@ -1713,7 +1664,8 @@
       "model": "portao",
       "nome": "Lighthouse no celular",
       "quando": "entrega",
-      "texto": "<p>PageSpeed Insights na prévia a cada entrega, com meta de 100 em desempenho, acessibilidade e boas práticas. O SEO da prévia cai de propósito: o aem.page não é indexado.</p>"
+      "texto": "<p>O CI roda o Lighthouse na prévia a cada push na main e todo dia, e publica a nota com data. É ela que aparece no selo do topo e na seção EDS, sem número escrito à mão. O SEO é medido sem a auditoria de indexação, porque o aem.page não é indexado de propósito.</p>",
+      "comando": "lighthouse --form-factor=mobile (CI)"
      },
      "item_8": {
       "jcr:primaryType": "nt:unstructured",
@@ -1823,7 +1775,10 @@
    "section_9": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
-    "style": "compacta",
+    "style": [
+     "compacta",
+     "titulos-animados"
+    ],
     "name": "Autoria",
     "id": "autoria",
     "passos": {
@@ -1946,6 +1901,7 @@
    "section_4": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Acessibilidade",
     "acessibilidade": {
      "jcr:primaryType": "nt:unstructured",
@@ -2269,101 +2225,42 @@
      "sling:resourceType": "core/franklin/components/block/v1/block",
      "name": "Hero",
      "model": "hero",
-     "classes": "video",
      "filter": "hero",
-     "image": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
-     "imageAlt": "Pôster do vídeo: grade escura com brilho quente, EDS Flash Demo",
-     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimiento nativo</p><h1>El sitio que <em>carga en 0,4 s | es accesible por bloque | recorta con IA | habla con agentes | pide permiso | publica sin TI</em> en una semana de migración.</h1><p>Esta página es una demostración en vivo, no una diapositiva: cada sección muestra un recurso de EDS, de Assets y del método de EadTech funcionando de verdad. Accesibilidad que vale para todo bloque, Lighthouse 100, agentes de IA, consentimiento nativo. El video de Adobe de abajo es el primer ejemplo: solo carga después de su sí.</p>",
-     "video": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12",
-     "categoria": "CC_MEDIA",
+     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimiento nativo</p><h1>El sitio que carga en 0,4 s en una semana de migración.</h1><p>Esta página es una demostración en vivo, no una diapositiva: cada sección muestra un recurso de EDS, de Assets y del método de EadTech funcionando de verdad. Accesibilidad que vale para todo bloque, Lighthouse medido en cada publicación, agentes de IA, consentimiento nativo. El video de Adobe de abajo es el primer ejemplo: solo carga después de su sí.</p>",
+     "girarTrecho": "carga en 0,4 s",
+     "girarPalavras": [
+      "es accesible por bloque",
+      "recorta con IA",
+      "habla con agentes",
+      "pide permiso",
+      "publica sin TI"
+     ],
+     "girarIntervalo": 2.6,
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-1",
+      "name": "Selo · selo-1",
       "model": "rotulo",
       "chave": "selo-1",
-      "texto": "Lighthouse 100 · 100 · 100 · 100"
+      "texto": "Lighthouse {desempenho} · {acessibilidade} · {praticas} · {seo} · medido {data}"
      },
      "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-2",
+      "name": "Selo · selo-2",
       "model": "rotulo",
       "chave": "selo-2",
       "texto": "accesible por bloque · 6 herramientas"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-sem-consentimento",
-      "model": "rotulo",
-      "chave": "selo-sem-consentimento",
-      "texto": "sin consentimiento"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-com-consentimento",
-      "model": "rotulo",
-      "chave": "selo-com-consentimento",
-      "texto": "medios y video permitidos"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · hud-bloqueado",
-      "model": "rotulo",
-      "chave": "hud-bloqueado",
-      "texto": "gate activo"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · hud-liberado",
-      "model": "rotulo",
-      "chave": "hud-liberado",
-      "texto": "video liberado"
-     },
-     "item_6": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · hud-embed",
-      "model": "rotulo",
-      "chave": "hud-embed",
-      "texto": "player de Adobe"
-     },
-     "item_7": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · fonte",
-      "model": "rotulo",
-      "chave": "fonte",
-      "texto": "video: video.tv.adobe.com"
-     },
-     "item_8": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · titulo-video",
-      "model": "rotulo",
-      "chave": "titulo-video",
-      "texto": "Video de Adobe sobre Edge Delivery Services"
-     },
-     "item_9": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · log-liberado",
-      "model": "rotulo",
-      "chave": "log-liberado",
-      "texto": "gate CC_MEDIA: liberado → player insertado"
-     },
-     "item_10": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · log-revogado",
-      "model": "rotulo",
-      "chave": "log-revogado",
-      "texto": "gate CC_MEDIA: revocado → player retirado, aviso de vuelta (sin reload)"
      }
+    },
+    "embed": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Embed",
+     "model": "embed",
+     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
+     "embed_placeholderAlt": "Video de Adobe sobre Edge Delivery Services",
+     "embed_uri": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12"
     },
     "como": {
      "jcr:primaryType": "nt:unstructured",
@@ -2374,6 +2271,7 @@
    "section_1": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Valor",
     "id": "valor",
     "valor": {
@@ -2453,9 +2351,9 @@
       "model": "valor-item",
       "tipo": "camada",
       "titulo": "Conocimiento de la suite",
-      "texto": "<p>Assets, Dynamic Media, Target, Analytics, Edge Functions, autenticación de sitio: qué exige cada uno y dónde encaja, sin experimentar en el cliente.</p>",
-      "a": "100",
-      "b": "Lighthouse en móvil"
+      "texto": "<p>Assets, Dynamic Media, Target, Analytics, App Builder, autenticación de sitio: qué exige cada uno y dónde encaja, sin experimentar en el cliente.</p>",
+      "a": "6",
+      "b": "productos de la suite"
      },
      "item_6": {
       "jcr:primaryType": "nt:unstructured",
@@ -2482,13 +2380,13 @@
      "item_8": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Lighthouse en móvil",
+      "name": "Comparação · Rendimiento en Lighthouse (móvil)",
       "model": "valor-item",
       "tipo": "comparacao",
-      "titulo": "Lighthouse en móvil",
-      "texto": "<p>Sitios en frameworks pesados suelen quedar entre 40 y 70. EDS entrega 100 porque carga en tres fases.</p>",
+      "titulo": "Rendimiento en Lighthouse (móvil)",
+      "texto": "<p>Sitios en frameworks pesados suelen quedar entre 40 y 70. EDS supera 90 porque carga en tres fases. La nota medida de esta página está en la sección EDS, con fecha.</p>",
       "a": "55",
-      "b": "100"
+      "b": "90+"
      },
      "item_9": {
       "jcr:primaryType": "nt:unstructured",
@@ -2537,13 +2435,13 @@
      "item_13": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Entrega · Lighthouse en todos los ejes",
+      "name": "Entrega · Lighthouse medido en cada publicación",
       "model": "valor-item",
       "tipo": "entrega",
-      "titulo": "Lighthouse en todos los ejes",
-      "texto": "<p>Rendimiento, accesibilidad, buenas prácticas y SEO, en móvil, medidos en cada publicación.</p>",
-      "a": "100",
-      "b": "× 4"
+      "titulo": "Lighthouse medido en cada publicación",
+      "texto": "<p>Rendimiento, accesibilidad, buenas prácticas y SEO, en móvil, medidos por el CI. La nota aparece con fecha arriba de la página y en la sección EDS.</p>",
+      "a": "4",
+      "b": "ejes medidos"
      },
      "item_14": {
       "jcr:primaryType": "nt:unstructured",
@@ -2645,6 +2543,7 @@
    "section_2": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Acessibilidade",
     "id": "accesibilidad",
     "a11y": {
@@ -2773,6 +2672,7 @@
    "section_3": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Assets e Dynamic Media",
     "id": "medios",
     "abertura": {
@@ -2946,7 +2846,10 @@
    "section_4": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
-    "style": "compacta",
+    "style": [
+     "compacta",
+     "titulos-animados"
+    ],
     "name": "Três fases",
     "id": "fases",
     "fases": {
@@ -2956,7 +2859,7 @@
      "model": "fases",
      "filter": "fases",
      "sobretitulo": "Carga en tres fases · desplace para ver",
-     "titulo": "Por qué da 100 en el móvil.",
+     "titulo": "Por qué es rápido en el móvil.",
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -3013,6 +2916,7 @@
    "section_5": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "EDS",
     "id": "eds",
     "abertura": {
@@ -3029,12 +2933,12 @@
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Célula · Lighthouse · móvil",
+      "name": "Célula · Lighthouse · móvil · medido",
       "model": "celula",
       "tipo": "lighthouse",
-      "rotulo": "Lighthouse · móvil",
-      "texto": "<p>Medido en la publicación, en cada cambio, por la compuerta de calidad. Agentic 5/5 con el llms.txt de esta demo.</p>",
-      "dados": "Rendimiento:100|Accesibilidad:100|Prácticas:100|SEO:100",
+      "rotulo": "Lighthouse · móvil · medido",
+      "texto": "<p>Lighthouse de verdad, corrido por el CI en la vista previa en cada push y todos los días. El SEO se mide sin la auditoría de indexación, porque aem.page no se indexa a propósito.</p>",
+      "dados": "Rendimiento|Accesibilidad|Buenas prácticas|SEO",
       "largura": "3"
      },
      "item_1": {
@@ -3072,12 +2976,12 @@
      "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Célula · Edge Functions",
+      "name": "Célula · Funciones serverless · App Builder",
       "model": "celula",
       "tipo": "edge",
-      "rotulo": "Edge Functions",
-      "texto": "<p>Dato público vía función en el borde de Adobe: la clave de la API nunca llega al navegador. Demostración: cotización del día, caché de 120 s.</p>",
-      "dados": "/api/cotacao|Llamar /api/cotacao|nunca sale de la bóveda",
+      "rotulo": "Funciones serverless · App Builder",
+      "texto": "<p>Llamada real, ahora: la función corre en Adobe I/O Runtime, busca la PTAX del dólar en el Banco Central de Brasil y la guarda 10 minutos. El secreto de la función queda en el servidor; la respuesta solo dice su tamaño. En la CDN del cliente, el mismo papel lo cumple un edge worker.</p>",
+      "dados": "https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/cotacao/usd|Llamar a la función",
       "largura": "2"
      },
      "item_5": {
@@ -3127,6 +3031,7 @@
    "section_6": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Consentimento",
     "id": "consentimiento",
     "consent": {
@@ -3786,6 +3691,7 @@
    "section_7": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Agentic",
     "id": "agentic",
     "agentic": {
@@ -3873,6 +3779,7 @@
    "section_8": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Portões de qualidade",
     "id": "controles",
     "portoes": {
@@ -3961,7 +3868,8 @@
       "model": "portao",
       "nome": "Lighthouse en el celular",
       "quando": "entrega",
-      "texto": "<p>PageSpeed Insights en la vista previa en cada entrega, con meta de 100 en rendimiento, accesibilidad y buenas prácticas. El SEO de la vista previa baja a propósito: aem.page no se indexa.</p>"
+      "texto": "<p>El CI corre Lighthouse en la vista previa en cada push a main y todos los días, y publica la nota con fecha. Es la que aparece en el sello de arriba y en la sección EDS, sin número escrito a mano. El SEO se mide sin la auditoría de indexación, porque aem.page no se indexa a propósito.</p>",
+      "comando": "lighthouse --form-factor=mobile (CI)"
      },
      "item_8": {
       "jcr:primaryType": "nt:unstructured",
@@ -4071,7 +3979,10 @@
    "section_9": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
-    "style": "compacta",
+    "style": [
+     "compacta",
+     "titulos-animados"
+    ],
     "name": "Autoria",
     "id": "autoria",
     "passos": {
@@ -4194,6 +4105,7 @@
    "section_4": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Acessibilidade",
     "acessibilidade": {
      "jcr:primaryType": "nt:unstructured",
@@ -4517,101 +4429,42 @@
      "sling:resourceType": "core/franklin/components/block/v1/block",
      "name": "Hero",
      "model": "hero",
-     "classes": "video",
      "filter": "hero",
-     "image": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
-     "imageAlt": "Pôster do vídeo: grade escura com brilho quente, EDS Flash Demo",
-     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · native consent</p><h1>The site that <em>loads in 0.4 s | is accessible per block | crops with AI | talks to agents | asks permission | ships without IT</em> in a one-week migration.</h1><p>This page is a live demo, not a slide: every section shows an EDS, Assets or EadTech-method capability actually working. Accessibility that holds for every block, Lighthouse 100, AI agents, native consent. The Adobe video below is the first example: it only loads after your yes.</p>",
-     "video": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12",
-     "categoria": "CC_MEDIA",
+     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · native consent</p><h1>The site that loads in 0.4 s in a one-week migration.</h1><p>This page is a live demo, not a slide: every section shows an EDS, Assets or EadTech-method capability actually working. Accessibility that holds for every block, Lighthouse measured on every publish, AI agents, native consent. The Adobe video below is the first example: it only loads after your yes.</p>",
+     "girarTrecho": "loads in 0.4 s",
+     "girarPalavras": [
+      "is accessible per block",
+      "crops with AI",
+      "talks to agents",
+      "asks permission",
+      "ships without IT"
+     ],
+     "girarIntervalo": 2.6,
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-1",
+      "name": "Selo · selo-1",
       "model": "rotulo",
       "chave": "selo-1",
-      "texto": "Lighthouse 100 · 100 · 100 · 100"
+      "texto": "Lighthouse {desempenho} · {acessibilidade} · {praticas} · {seo} · measured {data}"
      },
      "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-2",
+      "name": "Selo · selo-2",
       "model": "rotulo",
       "chave": "selo-2",
       "texto": "accessible per block · 6 tools"
-     },
-     "item_2": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-sem-consentimento",
-      "model": "rotulo",
-      "chave": "selo-sem-consentimento",
-      "texto": "no consent yet"
-     },
-     "item_3": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · selo-com-consentimento",
-      "model": "rotulo",
-      "chave": "selo-com-consentimento",
-      "texto": "media & video allowed"
-     },
-     "item_4": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · hud-bloqueado",
-      "model": "rotulo",
-      "chave": "hud-bloqueado",
-      "texto": "gate active"
-     },
-     "item_5": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · hud-liberado",
-      "model": "rotulo",
-      "chave": "hud-liberado",
-      "texto": "video unlocked"
-     },
-     "item_6": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · hud-embed",
-      "model": "rotulo",
-      "chave": "hud-embed",
-      "texto": "Adobe player"
-     },
-     "item_7": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · fonte",
-      "model": "rotulo",
-      "chave": "fonte",
-      "texto": "video: video.tv.adobe.com"
-     },
-     "item_8": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · titulo-video",
-      "model": "rotulo",
-      "chave": "titulo-video",
-      "texto": "Adobe video on Edge Delivery Services"
-     },
-     "item_9": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · log-liberado",
-      "model": "rotulo",
-      "chave": "log-liberado",
-      "texto": "gate CC_MEDIA: allowed → player inserted"
-     },
-     "item_10": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · log-revogado",
-      "model": "rotulo",
-      "chave": "log-revogado",
-      "texto": "gate CC_MEDIA: revoked → player removed, notice back (no reload)"
      }
+    },
+    "embed": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Embed",
+     "model": "embed",
+     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
+     "embed_placeholderAlt": "Adobe video on Edge Delivery Services",
+     "embed_uri": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12"
     },
     "como": {
      "jcr:primaryType": "nt:unstructured",
@@ -4622,6 +4475,7 @@
    "section_1": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Valor",
     "id": "valor",
     "valor": {
@@ -4701,9 +4555,9 @@
       "model": "valor-item",
       "tipo": "camada",
       "titulo": "Suite knowledge",
-      "texto": "<p>Assets, Dynamic Media, Target, Analytics, Edge Functions, site authentication: what each requires and where it fits, without experimenting on the client.</p>",
-      "a": "100",
-      "b": "Lighthouse on mobile"
+      "texto": "<p>Assets, Dynamic Media, Target, Analytics, App Builder, site authentication: what each requires and where it fits, without experimenting on the client.</p>",
+      "a": "6",
+      "b": "suite products"
      },
      "item_6": {
       "jcr:primaryType": "nt:unstructured",
@@ -4730,13 +4584,13 @@
      "item_8": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Lighthouse on mobile",
+      "name": "Comparação · Lighthouse performance (mobile)",
       "model": "valor-item",
       "tipo": "comparacao",
-      "titulo": "Lighthouse on mobile",
-      "texto": "<p>Sites on heavy frameworks usually land between 40 and 70. EDS delivers 100 because it loads in three phases.</p>",
+      "titulo": "Lighthouse performance (mobile)",
+      "texto": "<p>Sites on heavy frameworks usually land between 40 and 70. EDS goes past 90 because it loads in three phases. This page's measured score is in the EDS section, with its date.</p>",
       "a": "55",
-      "b": "100"
+      "b": "90+"
      },
      "item_9": {
       "jcr:primaryType": "nt:unstructured",
@@ -4785,13 +4639,13 @@
      "item_13": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Entrega · Lighthouse on every axis",
+      "name": "Entrega · Lighthouse measured on every publish",
       "model": "valor-item",
       "tipo": "entrega",
-      "titulo": "Lighthouse on every axis",
-      "texto": "<p>Performance, accessibility, best practices and SEO, on mobile, measured on every publish.</p>",
-      "a": "100",
-      "b": "× 4"
+      "titulo": "Lighthouse measured on every publish",
+      "texto": "<p>Performance, accessibility, best practices and SEO, on mobile, measured by CI. The score shows with its date at the top of the page and in the EDS section.</p>",
+      "a": "4",
+      "b": "axes measured"
      },
      "item_14": {
       "jcr:primaryType": "nt:unstructured",
@@ -4893,6 +4747,7 @@
    "section_2": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Acessibilidade",
     "id": "accessibility",
     "a11y": {
@@ -5021,6 +4876,7 @@
    "section_3": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Assets e Dynamic Media",
     "id": "media",
     "abertura": {
@@ -5194,7 +5050,10 @@
    "section_4": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
-    "style": "compacta",
+    "style": [
+     "compacta",
+     "titulos-animados"
+    ],
     "name": "Três fases",
     "id": "fases",
     "fases": {
@@ -5204,7 +5063,7 @@
      "model": "fases",
      "filter": "fases",
      "sobretitulo": "Three-phase loading · scroll to see",
-     "titulo": "Why it scores 100 on mobile.",
+     "titulo": "Why it is fast on mobile.",
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -5261,6 +5120,7 @@
    "section_5": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "EDS",
     "id": "eds",
     "abertura": {
@@ -5277,12 +5137,12 @@
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Célula · Lighthouse · mobile",
+      "name": "Célula · Lighthouse · mobile · measured",
       "model": "celula",
       "tipo": "lighthouse",
-      "rotulo": "Lighthouse · mobile",
-      "texto": "<p>Measured on publish, on every change, by the quality gate. Agentic 5/5 with this demo's llms.txt.</p>",
-      "dados": "Performance:100|Accessibility:100|Best practices:100|SEO:100",
+      "rotulo": "Lighthouse · mobile · measured",
+      "texto": "<p>Real Lighthouse, run by CI on the preview on every push and every day. SEO is measured without the indexing audit, because aem.page is not indexed on purpose.</p>",
+      "dados": "Performance|Accessibility|Best practices|SEO",
       "largura": "3"
      },
      "item_1": {
@@ -5320,12 +5180,12 @@
      "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Célula · Edge Functions",
+      "name": "Célula · Serverless functions · App Builder",
       "model": "celula",
       "tipo": "edge",
-      "rotulo": "Edge Functions",
-      "texto": "<p>Public data through a function at Adobe's edge: the API key never reaches the browser. Demo: today's exchange rate, 120 s cache.</p>",
-      "dados": "/api/cotacao|Call /api/cotacao|never leaves the vault",
+      "rotulo": "Serverless functions · App Builder",
+      "texto": "<p>A real call, right now: the function runs on Adobe I/O Runtime, fetches the USD PTAX rate from Brazil's Central Bank and keeps it for 10 minutes. The function secret stays on the server; the response only states its length. On a client CDN, an edge worker plays the same role.</p>",
+      "dados": "https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/cotacao/usd|Call the function",
       "largura": "2"
      },
      "item_5": {
@@ -5375,6 +5235,7 @@
    "section_6": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Consentimento",
     "id": "consent",
     "consent": {
@@ -6034,6 +5895,7 @@
    "section_7": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Agentic",
     "id": "agentic",
     "agentic": {
@@ -6121,6 +5983,7 @@
    "section_8": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Portões de qualidade",
     "id": "gates",
     "portoes": {
@@ -6209,7 +6072,8 @@
       "model": "portao",
       "nome": "Mobile Lighthouse",
       "quando": "entrega",
-      "texto": "<p>PageSpeed Insights on the preview with every delivery, aiming for 100 in performance, accessibility and best practices. Preview SEO drops on purpose: aem.page is not indexed.</p>"
+      "texto": "<p>CI runs Lighthouse on the preview on every push to main and every day, and publishes the score with its date. That is what shows in the top badge and in the EDS section, with no number typed by hand. SEO is measured without the indexing audit, because aem.page is not indexed on purpose.</p>",
+      "comando": "lighthouse --form-factor=mobile (CI)"
      },
      "item_8": {
       "jcr:primaryType": "nt:unstructured",
@@ -6319,7 +6183,10 @@
    "section_9": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
-    "style": "compacta",
+    "style": [
+     "compacta",
+     "titulos-animados"
+    ],
     "name": "Autoria",
     "id": "autoria",
     "passos": {
@@ -6442,6 +6309,7 @@
    "section_4": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "core/franklin/components/section/v1/section",
+    "style": "titulos-animados",
     "name": "Acessibilidade",
     "acessibilidade": {
      "jcr:primaryType": "nt:unstructured",

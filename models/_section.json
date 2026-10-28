@@ -45,6 +45,10 @@
             {
               "name": "Faixa do aviso",
               "value": "faixa-aviso"
+            },
+            {
+              "name": "Títulos animados (palavra por palavra)",
+              "value": "titulos-animados"
             }
           ]
         },
@@ -91,6 +95,7 @@
         "valor",
         "consent-live",
         "medidor-cookies",
+        "embed",
         "portoes",
         "fases",
         "dm-showcase",

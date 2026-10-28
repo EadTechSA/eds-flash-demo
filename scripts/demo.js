@@ -191,3 +191,26 @@ export function adiar(block, montar) {
   }, { rootMargin: '800px 0px' });
   obs.observe(block);
 }
+
+let lighthouseCache = null;
+/**
+ * A última medição do Lighthouse publicada pelo CI (lighthouse/medicao.json).
+ * Devolve null quando não há medição: quem usa esconde o número, não inventa.
+ */
+export function lighthouse() {
+  if (!lighthouseCache) {
+    lighthouseCache = fetch(`${window.hlx?.codeBasePath || ''}/lighthouse/medicao.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null);
+  }
+  return lighthouseCache;
+}
+
+/** Data curta no idioma da página (ex.: 27/10/2026). */
+export function dataCurta(iso) {
+  try {
+    return new Date(iso).toLocaleDateString(document.documentElement.lang || 'pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  } catch (e) {
+    return '';
+  }
+}

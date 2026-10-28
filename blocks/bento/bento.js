@@ -2,12 +2,12 @@
  * Bento dos recursos do EDS. Cada célula é autorada com um tipo, e o tipo
  * decide o widget: medidores do Lighthouse, fases medidas nesta página
  * (Navigation Timing), query-index.json lido ao vivo, cabeçalhos de
- * segurança (lidos da própria resposta quando o navegador expõe), Edge
- * Function (chamada real quando há URL, simulada quando não), A/B,
+ * segurança (lidos da própria resposta quando o navegador expõe), função
+ * serverless (chamada real ao endereço autorado, sem simulação), A/B,
  * telemetria. Linhas: tipo | rótulo | texto | dados | largura.
  */
 import {
-  el, texto, adiar, campo, conteudo, marcar,
+  el, texto, adiar, campo, conteudo, marcar, lighthouse, dataCurta,
 } from '../../scripts/demo.js';
 import { aoAparecer, contar, revelar } from '../../scripts/motion.js';
 
@@ -17,22 +17,35 @@ function dados(s) {
 
 const widgets = {
   lighthouse(d) {
+    // os rótulos dos eixos vêm do conteúdo; as notas vêm da medição do CI
+    const eixos = [['desempenho', d[0]], ['acessibilidade', d[1]], ['praticas', d[2]], ['seo', d[3]]];
     const g = el('div', 'bento-medidores');
-    d.forEach((par, i) => {
-      const [nome, valor] = par.split(':').map((x) => x.trim());
-      const m = el('div', 'bento-medidor');
-      m.innerHTML = `<div class="bento-medidor-c"><svg viewBox="0 0 84 84" aria-hidden="true"><circle class="fundo" cx="42" cy="42" r="36"/><circle class="arco" cx="42" cy="42" r="36"/></svg><b>0</b></div><span>${nome}</span>`;
-      g.append(m);
-      const b = m.querySelector('b');
-      const arco = m.querySelector('.arco');
-      aoAparecer(m, () => {
-        setTimeout(() => {
-          contar(b, +valor || 100, { duracao: 1400 });
-          arco.style.strokeDashoffset = 226 - (226 * (+valor || 100)) / 100;
-        }, i * 150);
+    const quando = el('p', 'bento-medicao');
+    const wrap = el('div', 'bento-lighthouse');
+    wrap.append(g, quando);
+    lighthouse().then((m) => {
+      if (!m) {
+        quando.textContent = '—';
+        return;
+      }
+      quando.innerHTML = `<time datetime="${m.medidoEm}">${dataCurta(m.medidoEm)}</time> · ${m.ferramenta} · LCP ${(m.metricas.lcpMs / 1000).toFixed(1)} s · CLS ${m.metricas.cls}`;
+      eixos.forEach(([chave, nome], i) => {
+        const valor = m.notas[chave];
+        if (valor === null || valor === undefined) return;
+        const md = el('div', 'bento-medidor');
+        md.innerHTML = `<div class="bento-medidor-c"><svg viewBox="0 0 84 84" aria-hidden="true"><circle class="fundo" cx="42" cy="42" r="36"/><circle class="arco" cx="42" cy="42" r="36"/></svg><b>0</b></div><span>${nome || chave}</span>`;
+        g.append(md);
+        const b = md.querySelector('b');
+        const arco = md.querySelector('.arco');
+        aoAparecer(md, () => {
+          setTimeout(() => {
+            contar(b, valor, { duracao: 1400 });
+            arco.style.strokeDashoffset = 226 - (226 * valor) / 100;
+          }, i * 150);
+        });
       });
     });
-    return g;
+    return wrap;
   },
   fases(d) {
     const nomes = d.length >= 3 ? d : ['eager', 'lazy', 'delayed'];
@@ -87,17 +100,27 @@ const widgets = {
     const c = el('pre', 'codigo');
     const b = el('button', 'button', botao || 'GET');
     b.type = 'button';
+    const esc = (x) => String(x).replace(/[&<>]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[ch]));
+    // chamada real ao endereço autorado; erro aparece como erro, nada é inventado
     const chamar = async () => {
+      if (!url) {
+        c.textContent = '—';
+        return;
+      }
       c.innerHTML = '<span class="cursor dim"></span>';
+      const t0 = performance.now();
       try {
-        if (!url || !url.startsWith('/')) throw new Error('sem url');
-        const t0 = performance.now();
         const resp = await fetch(url, { cache: 'no-store' });
-        const corpo = await resp.text();
         const ms = Math.round(performance.now() - t0);
-        c.innerHTML = `<span class="b">GET</span> ${url} · <span class="g">${resp.status}</span> · ${ms} ms\n<span class="h">cache-control</span>: ${resp.headers.get('cache-control') || '—'}\n\n${corpo.slice(0, 400)}`;
+        const corpo = await resp.text();
+        let mostrar = corpo.slice(0, 420);
+        try {
+          mostrar = JSON.stringify(JSON.parse(corpo), null, 2).slice(0, 420);
+        } catch (e) { /* texto */ }
+        const { host } = new URL(url, window.location.href);
+        c.innerHTML = `<span class="b">GET</span> ${esc(host)} · <span class="g">${resp.status}</span> · ${ms} ms\n<span class="h">cache-control</span>: ${esc(resp.headers.get('cache-control') || '—')}\n\n${esc(mostrar)}`;
       } catch (e) {
-        c.innerHTML = `<span class="b">GET</span> ${url || '/api/…'}\n<span class="h">x-edge-function</span>: demo@v1\n<span class="h">cache-control</span>: max-age=120\n<span class="h">age</span>: ${Math.floor(Math.random() * 119)}\n\n{ "USD": <span class="g">5,${30 + Math.floor(Math.random() * 40)}</span>, "chave": "<span class="g">${d[2] || '***'}</span>" }`;
+        c.innerHTML = `<span class="b">GET</span> ${esc(url)}\n<span class="h">erro</span>: ${esc(e.message || e)}`;
       }
     };
     b.addEventListener('click', chamar);

@@ -196,6 +196,10 @@
           {
             "name": "Faixa do aviso",
             "value": "faixa-aviso"
+          },
+          {
+            "name": "Títulos animados (palavra por palavra)",
+            "value": "titulos-animados"
           }
         ]
       },
@@ -531,6 +535,32 @@
     ]
   },
   {
+    "id": "embed",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "embed_placeholder",
+        "label": "Imagem de capa (do Assets)",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "embed_placeholderAlt",
+        "value": "",
+        "label": "Texto alternativo da capa (vira o título do player)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "embed_uri",
+        "label": "Endereço do vídeo ou post (YouTube, Vimeo, Adobe Video…)",
+        "description": "A categoria de consentimento vem da origem deste endereço, pela tabela de origens do documento de consentimento."
+      }
+    ]
+  },
+  {
     "id": "fases",
     "fields": [
       {
@@ -590,56 +620,46 @@
     "id": "hero",
     "fields": [
       {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "Variante",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Padrão (imagem)",
-            "value": ""
-          },
-          {
-            "name": "Vídeo com consentimento",
-            "value": "video"
-          }
-        ]
-      },
-      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Imagem (pôster, do Assets)",
+        "label": "Imagem (opcional, do Assets)",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Texto alternativo",
+        "label": "Texto alternativo da imagem",
         "value": ""
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Texto (abertura em mono, título com <em> para a palavra rotativa, lead)",
+        "label": "Texto (sobretítulo, título H1 completo e parágrafo)",
         "valueType": "string"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "video",
-        "label": "Vídeo (URL do mp4 no Assets/Dynamic Media ou embed da Adobe)",
-        "value": ""
+        "name": "girarTrecho",
+        "label": "Trecho do título que gira",
+        "description": "Copie exatamente um pedaço do título. Ele é trocado pelas palavras abaixo. Vazio: o título não gira."
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "categoria",
-        "label": "Categoria de consentimento exigida pelo vídeo",
-        "value": "CC_MEDIA"
+        "name": "girarPalavras",
+        "label": "Outras palavras que entram no lugar",
+        "multi": true
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "girarIntervalo",
+        "label": "Intervalo da troca (segundos)",
+        "value": 2.6
       }
     ]
   },

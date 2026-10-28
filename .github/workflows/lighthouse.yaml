@@ -1,0 +1,43 @@
+name: Lighthouse medido
+# Roda o Lighthouse (celular) na prévia e publica a nota em lighthouse/medicao.json,
+# que a página lê para mostrar o número medido, com data. Sem nota escrita à mão.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore: ['lighthouse/**']
+  schedule:
+    - cron: '41 10 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lighthouse
+  cancel-in-progress: true
+
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
+      with:
+        node-version: 24
+    - name: Esperar o Code Sync
+      run: sleep 90
+    - name: Lighthouse no celular
+      run: |
+        npx -y lighthouse@12.6.1 https://main--eds-flash-demo--eadtechsa.aem.page/ \
+          --quiet --chrome-flags="--headless=new --no-sandbox" \
+          --only-categories=performance,accessibility,best-practices,seo \
+          --skip-audits=is-crawlable --output=json --output-path=lh.json
+        node tools/lighthouse/resumir.mjs lh.json
+    - name: Publicar a medição
+      run: |
+        git config user.name "lighthouse-ci"
+        git config user.email "lighthouse-ci@users.noreply.github.com"
+        git add lighthouse/medicao.json
+        git diff --cached --quiet && exit 0
+        git commit -m "Lighthouse medido no celular"
+        git push
