@@ -94,8 +94,8 @@ export function decorateButtons(main) {
     const em = a.closest('em');
     if (!strong && !em) return;
 
-    p.className = 'button-wrapper';
-    a.className = 'button';
+    p.classList.add('button-wrapper');
+    a.classList.add('button');
     if (strong && em) { // high-impact call-to-action
       a.classList.add('accent');
       const outer = strong.contains(em) ? strong : em;

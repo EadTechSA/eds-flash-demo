@@ -15,7 +15,7 @@ export default function decorate(block) {
   nav.setAttribute('aria-label', 'Idiomas');
   if (idiomasCel) {
     idiomasCel.querySelectorAll('a').forEach((a) => {
-      a.className = '';
+      a.classList.remove(...a.classList);
       const atual = new URL(a.href, window.location.href).pathname.replace(/\/$/, '') === window.location.pathname.replace(/\/(index)?$/, '');
       if (atual) a.setAttribute('aria-current', 'page');
       a.setAttribute('hreflang', (a.textContent.trim().toLowerCase() === 'pt') ? 'pt-BR' : a.textContent.trim().toLowerCase());

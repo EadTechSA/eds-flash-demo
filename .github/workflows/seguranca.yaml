@@ -1,0 +1,29 @@
+name: Cabeçalhos na entrega
+# Lê os cabeçalhos que aem.page (e aem.live, com token) devolvem e cobra A+ sem
+# avisos (critério securityheaders.com) e igualdade com seguranca/cabecalhos.json.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '23 9 * * 1'
+
+jobs:
+  cabecalhos:
+    runs-on: ubuntu-latest
+    env:
+      AEM_SITE_TOKEN: ${{ secrets.AEM_SITE_TOKEN }}
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
+      with:
+        node-version: 24
+    - name: Prévia (aberta)
+      run: |
+        sleep 60
+        node tools/seguranca/verificar-cabecalhos.mjs \
+          https://main--eds-flash-demo--eadtechsa.aem.page/ \
+          https://main--eds-flash-demo--eadtechsa.aem.page/en
+    - name: Versão com login
+      if: env.AEM_SITE_TOKEN != ''
+      run: node tools/seguranca/verificar-cabecalhos.mjs https://main--eds-flash-demo--eadtechsa.aem.live/

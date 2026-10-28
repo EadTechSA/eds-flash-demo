@@ -505,3 +505,12 @@ html.contrast .medidor-cookies .medidor-progresso i {
 .medidor-cookies .medidor-hosts li[hidden] {
   display: none;
 }
+
+/* Rybená (contraste escuro e claro): ele troca a cor de fundo elemento a elemento;
+   imagem e gradiente ficariam por cima, então saem */
+.medidor-cookies .medidor-progresso i.rybDarkContrast,
+.medidor-cookies .medidor-progresso i.rybLightContrast,
+.medidor-cookies .medidor-veredito.alerta.rybDarkContrast,
+.medidor-cookies .medidor-veredito.alerta.rybLightContrast {
+  background-image: none;
+}

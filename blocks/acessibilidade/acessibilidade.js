@@ -90,6 +90,8 @@ export default function decorate(block) {
   const titulo = textoCel && textoCel.querySelector('h1, h2, h3, h4, p');
   const itens = textoCel ? [...textoCel.querySelectorAll('li')].map((li) => li.textContent.trim()) : [];
   block.textContent = '';
+  // nome comum do widget nas três gerações (o verificador por modo o procura assim)
+  block.classList.add('a11y-widget');
   const html = document.documentElement;
 
   const alternar = el('button', 'a11y-widget-alternar');

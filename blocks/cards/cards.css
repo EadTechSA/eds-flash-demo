@@ -25,3 +25,8 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+/* alto contraste: borda branca */
+html.contrast .cards > ul > li {
+  border-color: #fff;
+}

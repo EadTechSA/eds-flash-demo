@@ -1,0 +1,43 @@
+name: Acessibilidade no navegador
+# Liga cada modo do widget (axe, WCAG 2.2 AA, desktop e celular) e cada modo do
+# Rybená pela API oficial, e mede bloco a bloco na prévia publicada.
+on:
+  workflow_dispatch:
+    inputs:
+      paginas:
+        description: Caminhos separados por espaço
+        default: / /es /en
+  push:
+    branches: [main]
+
+jobs:
+  modos:
+    runs-on: ubuntu-latest
+    env:
+      BASE: https://main--eds-flash-demo--eadtechsa.aem.page
+      RYBENA_TOKEN: ${{ secrets.RYBENA_TOKEN }}
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
+      with:
+        node-version: 24
+    - name: Playwright e axe
+      run: npm i --no-save playwright@1.48.2 axe-core@4.10.2 && npx playwright install --with-deps chromium
+    - name: Widget por modo e por bloco (axe)
+      run: |
+        sleep 60
+        URLS=""
+        for p in ${{ github.event.inputs.paginas || '/ /es /en' }}; do URLS="$URLS $BASE$p"; done
+        node tools/a11y/verificar-modos.mjs $URLS --widget --saida a11y
+    - name: Rybená por modo e por bloco
+      run: |
+        URLS=""
+        for p in ${{ github.event.inputs.paginas || '/ /es /en' }}; do URLS="$URLS $BASE$p"; done
+        node tools/a11y/verificar-rybena.mjs $URLS --saida rybena || echo "::warning::Rybená não autenticou o domínio de prévia; cadastre RYBENA_TOKEN"
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: a11y-relatorios
+        path: |
+          a11y
+          rybena

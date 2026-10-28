@@ -7,3 +7,5 @@ package-lock.json
 test/*
 _*
 tools/conteudo/
+seguranca/
+tools/

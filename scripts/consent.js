@@ -155,7 +155,7 @@ function botoes(container, acoes) {
     if (!acoes[acao]) return;
     const b = document.createElement('button');
     b.type = 'button';
-    b.className = `consent-button consent-${acao}`;
+    b.classList.add('consent-button', `consent-${acao}`);
     b.textContent = a.textContent;
     b.addEventListener('click', acoes[acao]);
     alvoDoLink(a).replaceWith(b);
@@ -163,7 +163,7 @@ function botoes(container, acoes) {
   const lista = [...container.querySelectorAll('.consent-button')];
   if (lista.length) {
     const barra = document.createElement('div');
-    barra.className = 'consent-acoes';
+    barra.classList.add('consent-acoes');
     barra.append(...lista);
     container.append(barra);
   }
@@ -174,7 +174,7 @@ function abrirPainel(doc, versao, aoFechar) {
   const atuais = (window.consent && window.consent.categories) || [];
   const [intro] = secoes(doc, 'preferencias');
   const dialog = document.createElement('dialog');
-  dialog.className = 'consent consent-painel';
+  dialog.classList.add('consent', 'consent-painel');
   const corpo = intro ? conteudo(intro) : document.createElement('div');
   const titulo = corpo.querySelector('h1, h2, h3');
   if (titulo) {
@@ -183,7 +183,7 @@ function abrirPainel(doc, versao, aoFechar) {
   }
 
   const lista = document.createElement('ul');
-  lista.className = 'consent-categorias';
+  lista.classList.add('consent-categorias');
   cats.forEach((c) => {
     const item = document.createElement('li');
     const bloco = conteudo(c.secao);
@@ -200,9 +200,9 @@ function abrirPainel(doc, versao, aoFechar) {
     rotulo.textContent = nome ? nome.textContent : c.codigo;
     if (nome) nome.remove();
     const cabeca = document.createElement('div');
-    cabeca.className = 'consent-categoria-cabeca';
+    cabeca.classList.add('consent-categoria-cabeca');
     cabeca.append(caixa, rotulo);
-    bloco.className = 'consent-categoria-texto';
+    bloco.classList.add('consent-categoria-texto');
     item.append(cabeca, bloco);
     lista.append(item);
   });
@@ -236,7 +236,7 @@ function mostrarBanner(doc, versao) {
   const [secao] = secoes(doc, 'banner');
   if (!secao) return;
   const banner = document.createElement('section');
-  banner.className = 'consent consent-banner';
+  banner.classList.add('consent', 'consent-banner');
   banner.setAttribute('role', 'region');
   const corpo = conteudo(secao);
   const titulo = corpo.querySelector('h1, h2, h3');

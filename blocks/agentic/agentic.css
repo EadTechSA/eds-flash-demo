@@ -90,3 +90,11 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* alto contraste: marcas sem fundo translúcido */
+html.contrast .agentic .agentic-marca,
+html.contrast .agentic li.pendente .agentic-marca {
+  background: #000;
+  border-color: #ff0;
+  color: #ff0;
+}

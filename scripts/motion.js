@@ -41,7 +41,7 @@ export function palavras(h) {
           return;
         }
         const p = document.createElement('span');
-        p.className = 'palavra';
+        p.classList.add('palavra');
         const s = document.createElement('span');
         s.style.setProperty('--i', i);
         i += 1;
@@ -130,7 +130,7 @@ function pontos(main) {
   const secoes = [...main.querySelectorAll('.section[id]')];
   if (secoes.length < 3 || !io) return;
   const ul = document.createElement('ul');
-  ul.className = 'pontos';
+  ul.classList.add('pontos');
   secoes.forEach((s) => {
     const li = document.createElement('li');
     const a = document.createElement('a');

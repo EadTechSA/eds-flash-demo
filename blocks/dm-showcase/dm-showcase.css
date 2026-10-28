@@ -152,3 +152,10 @@ html.contrast .dm-showcase .dm-moldura {
 html.contrast .dm-showcase .dm-trilho i {
   background: #ff0;
 }
+
+/* Rybená (contraste escuro e claro): ele troca a cor de fundo elemento a elemento;
+   imagem e gradiente ficariam por cima, então saem */
+.dm-showcase .dm-trilho i.rybDarkContrast,
+.dm-showcase .dm-trilho i.rybLightContrast {
+  background-image: none;
+}

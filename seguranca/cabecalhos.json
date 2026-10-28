@@ -1,0 +1,17 @@
+{
+  "_leia": "Fonte única dos cabeçalhos de segurança da entrega (aem.page e aem.live) da EDS Flash Demo. Aplicados no config service (POST admin.hlx.page/config/eadtechsa/sites/eds-flash-demo/headers.json) por tools/seguranca/aplicar-cabecalhos.js. Base: CSP recomendada pela Adobe (aem.live/docs/csp), mais o que a demo usa de fora (player de vídeo da Adobe, ação do medidor no App Builder, entrega do Dynamic Media) e o que a página de CSP do Rybená exige; nível A+ do securityheaders.com sem avisos, com COOP, COEP e CORP. Conferida por tools/seguranca/contrato-cabecalhos.mjs e tools/a11y/contrato-rybena.mjs (R6 a R8).",
+  "/**": [
+    {
+      "key": "content-security-policy",
+      "value": "default-src 'self'; script-src 'nonce-aem' 'strict-dynamic'; base-uri 'self'; object-src 'none'; connect-src 'self' https://ot.aem.live https://3763698-creciuploadsdemo-stage.adobeioruntime.net libras.rybena.com.br tts.rybena.com.br dicio.rybena.com.br repository.rybena.com.br cm.rybena.com.br; frame-src https://video.tv.adobe.com repository.rybena.com.br; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://delivery-p172553-e1847554.adobeaemcloud.com cdn.rybena.com.br libras.rybena.com.br repository.rybena.com.br; font-src 'self' cdn.rybena.com.br repository.rybena.com.br; media-src 'self' https://delivery-p172553-e1847554.adobeaemcloud.com repository.rybena.com.br; worker-src 'self' blob:; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests"
+    },
+    { "key": "strict-transport-security", "value": "max-age=63072000; includeSubDomains" },
+    { "key": "x-frame-options", "value": "DENY" },
+    { "key": "x-content-type-options", "value": "nosniff" },
+    { "key": "referrer-policy", "value": "strict-origin-when-cross-origin" },
+    { "key": "permissions-policy", "value": "accelerometer=(), autoplay=(self \"https://video.tv.adobe.com\"), camera=(self), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(self), payment=(), usb=()" },
+    { "key": "cross-origin-opener-policy", "value": "same-origin" },
+    { "key": "cross-origin-resource-policy", "value": "same-origin" },
+    { "key": "cross-origin-embedder-policy-report-only", "value": "require-corp" }
+  ]
+}

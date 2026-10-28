@@ -284,3 +284,10 @@ html.contrast .fases .fases-lcp {
 html.contrast .fases .fases-cookies i {
   background: #ff0;
 }
+
+/* Rybená (contraste escuro e claro): ele troca a cor de fundo elemento a elemento;
+   imagem e gradiente ficariam por cima, então saem */
+.fases .fases-hero.rybDarkContrast,
+.fases .fases-hero.rybLightContrast {
+  background-image: none;
+}

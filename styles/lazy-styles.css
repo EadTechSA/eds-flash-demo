@@ -182,9 +182,12 @@
 .codigo .g { color: var(--ok); }
 .codigo .b { color: var(--info); }
 
+.codigo .cursor {
+  color: var(--warm);
+}
+
 .codigo .cursor::after {
   content: '▍';
-  color: var(--warm);
   animation: piscar 1s steps(2) infinite;
 }
 

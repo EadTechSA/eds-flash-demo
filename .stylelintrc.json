@@ -3,6 +3,12 @@
     "stylelint-config-standard"
   ],
   "rules": {
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "selector-class-pattern": [
+      "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$|^ryb[A-Za-z0-9-]+$",
+      {
+        "message": "Classes em kebab-case (as do Rybená, ryb*, são a exceção)"
+      }
+    ]
   }
 }

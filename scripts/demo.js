@@ -60,7 +60,7 @@ export function agora() {
 /** Cria elemento com classe e html. */
 export function el(tag, classe, html) {
   const e = document.createElement(tag);
-  if (classe) e.className = classe;
+  if (classe) e.classList.add(...String(classe).split(/\s+/).filter(Boolean));
   if (html !== undefined) e.innerHTML = html;
   return e;
 }

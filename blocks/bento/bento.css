@@ -101,11 +101,13 @@
 }
 
 .bento .bento-medidor .fundo {
-  stroke: var(--surface-3);
+  color: var(--surface-3);
+  stroke: currentcolor;
 }
 
 .bento .bento-medidor .arco {
-  stroke: var(--ok);
+  color: var(--ok);
+  stroke: currentcolor;
   stroke-linecap: round;
   stroke-dasharray: 226;
   stroke-dashoffset: 226;
@@ -152,5 +154,12 @@ html.contrast .bento .bento-celula::before {
 }
 
 html.contrast .bento .bento-medidor .arco {
-  stroke: #ff0;
+  color: #ff0;
+}
+
+/* Rybená (contraste escuro e claro): ele troca a cor de fundo elemento a elemento;
+   imagem e gradiente ficariam por cima, então saem */
+.bento .bento-celula.rybDarkContrast::before,
+.bento .bento-celula.rybLightContrast::before {
+  background-image: none;
 }

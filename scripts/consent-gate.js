@@ -54,7 +54,7 @@ function aviso(doc, codigo, url) {
   const [secao] = secoes(doc, 'gate');
   loadCSS(`${window.hlx.codeBasePath}/styles/consent.css`);
   const el = document.createElement('div');
-  el.className = 'consent consent-gate';
+  el.classList.add('consent', 'consent-gate');
   if (secao) el.append(...conteudo(secao).childNodes);
   el.querySelectorAll('a[href="#abrir"]').forEach((a) => {
     if (url) {
@@ -68,7 +68,7 @@ function aviso(doc, codigo, url) {
   el.querySelectorAll('a[href="#permitir"]').forEach((a) => {
     const b = document.createElement('button');
     b.type = 'button';
-    b.className = 'consent-button consent-permitir';
+    b.classList.add('consent-button', 'consent-permitir');
     b.textContent = a.textContent;
     b.addEventListener('click', () => {
       const salvo = escolhaGuardada(versaoPolitica(doc));

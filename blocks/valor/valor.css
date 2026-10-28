@@ -62,18 +62,6 @@
   }
 }
 
-@media (width < 900px) {
-  .valor .valor-camada {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-  }
-
-  .valor .valor-camadas {
-    transform: none !important;
-  }
-}
-
 /* a água desce conforme a rolagem revela o que está submerso */
 .valor .valor-agua {
   position: absolute;
@@ -262,7 +250,6 @@
 .valor .valor-comparacao[data-lado='a'] .valor-b,
 .valor .valor-comparacao[data-lado='b'] .valor-a {
   color: var(--text-dim);
-  opacity: 0.6;
 }
 
 .valor .valor-comparacao[data-lado='a'] .valor-a {
@@ -433,4 +420,28 @@ html.contrast .valor .valor-comparacao[data-lado='b'] .valor-a {
 html.contrast .valor .valor-trilho i,
 html.contrast .valor .valor-comparacao[data-lado='b'] .valor-trilho i {
   background: #ff0;
+}
+
+/* celular: camadas estáticas e visíveis (vence as regras de rolagem acima sem !important) */
+@media (width < 900px) {
+  .valor.valor .valor-camada {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .valor.valor .valor-camadas {
+    transform: none;
+  }
+}
+
+/* Rybená (contraste escuro e claro): ele troca a cor de fundo elemento a elemento;
+   imagem e gradiente ficariam por cima, então saem */
+.valor .valor-agua.rybDarkContrast,
+.valor .valor-agua.rybLightContrast,
+.valor .valor-agua.rybDarkContrast::before,
+.valor .valor-agua.rybLightContrast::before,
+.valor .valor-comparacao[data-lado='b'] .valor-trilho i.rybDarkContrast,
+.valor .valor-comparacao[data-lado='b'] .valor-trilho i.rybLightContrast {
+  background-image: none;
 }

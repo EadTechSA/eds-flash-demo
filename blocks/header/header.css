@@ -183,3 +183,20 @@ header .header-barra.aberta .header-links ul {
     display: block;
   }
 }
+
+/* alto contraste: barra sólida, progresso amarelo */
+html.contrast header .header-barra {
+  background: #000;
+  backdrop-filter: none;
+}
+
+html.contrast header .header-progresso {
+  background: #ff0;
+}
+
+/* Rybená (contraste escuro e claro): ele troca a cor de fundo elemento a elemento;
+   imagem e gradiente ficariam por cima, então saem */
+header .header-progresso.rybDarkContrast,
+header .header-progresso.rybLightContrast {
+  background-image: none;
+}

@@ -151,7 +151,7 @@ function montar(block) {
     const html = document.documentElement;
     const modos = ['contrast', 'a11y-grayscale', 'a11y-invert', 'a11y-links', 'font-size-1', 'font-size-2'].filter((c) => html.classList.contains(c));
     seloModo.textContent = modos.length ? modos.join(' + ') : r('modo-normal', 'normal');
-    seloModo.className = `selo ${modos.length ? '' : 'inativo'}`;
+    seloModo.classList.toggle('inativo', !modos.length);
     lista.querySelectorAll('button').forEach((b) => {
       const w = document.querySelector(`.acessibilidade .${b.dataset.classe}`);
       b.classList.toggle('primary', !!(w && w.getAttribute('aria-pressed') === 'true'));
@@ -178,7 +178,7 @@ function montar(block) {
       corpo.append(tr);
     });
     resumo.textContent = `${ok}/${blocos.length} ${r('aa', 'AA')}${emContraste ? ` · ${r('em-contraste', 'contraste')}` : ''}`;
-    resumo.className = `selo ${ok === blocos.length ? '' : 'alerta'}`;
+    resumo.classList.toggle('alerta', ok !== blocos.length);
   };
   new MutationObserver(() => window.setTimeout(medir, 350)).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
   window.addEventListener('load', () => window.setTimeout(medir, 1200));

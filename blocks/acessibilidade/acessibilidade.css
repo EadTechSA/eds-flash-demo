@@ -106,3 +106,9 @@
     bottom: max(88px, env(safe-area-inset-bottom, 0));
   }
 }
+
+/* alto contraste: painel sem sombra, borda branca */
+html.contrast .acessibilidade .a11y-widget-painel {
+  box-shadow: none;
+  border-color: #fff;
+}

@@ -17,21 +17,22 @@ export default async function decorate(block) {
   const secoes = [...fragment.children];
   const faixa = secoes.find((s) => s.querySelector('.aviso'));
   if (faixa) {
-    faixa.className = 'header-faixa';
+    faixa.classList.add('header-faixa');
     block.append(faixa);
   }
   const barra = document.createElement('div');
-  barra.className = 'header-barra';
+  barra.classList.add('header-barra');
   // widget de acessibilidade: seção própria do /nav, fica flutuando fora da barra
   const a11y = secoes.find((s) => s.querySelector('.acessibilidade'));
   const resto = secoes.filter((s) => s !== faixa && s !== a11y);
   const nomes = ['header-marca', 'header-links', 'header-ferramentas'];
   resto.slice(0, 3).forEach((s, i) => {
-    s.className = nomes[i];
+    s.classList.remove(...s.classList);
+    s.classList.add(nomes[i]);
     barra.append(s);
   });
   const progresso = document.createElement('i');
-  progresso.className = 'header-progresso';
+  progresso.classList.add('header-progresso');
   barra.append(progresso);
   block.append(barra);
   if (a11y) {
@@ -44,7 +45,7 @@ export default async function decorate(block) {
   if (links) {
     const b = document.createElement('button');
     b.type = 'button';
-    b.className = 'header-menu';
+    b.classList.add('header-menu');
     b.setAttribute('aria-expanded', 'false');
     b.setAttribute('aria-controls', 'header-links');
     b.setAttribute('aria-label', links.dataset.menu || 'Menu');

@@ -147,7 +147,7 @@ function montar(block) {
       + `<dt>localStorage</dt><dd>${salvo ? new Date(salvo.data).toLocaleString() : '—'}</dd>`;
     const presos = cascata(lista, r);
     seloCascata.textContent = presos ? `${presos} ${r('bloqueados', '')}` : r('tudo-liberado', 'ok');
-    seloCascata.className = `selo ${presos ? 'alerta' : ''}`;
+    seloCascata.classList.toggle('alerta', !!presos);
   };
 
   window.addEventListener('consent', (e) => {

@@ -185,3 +185,10 @@ html.contrast .consent-live .consent-live-barra i {
 html.contrast .consent-live .consent-live-linha.preso .consent-live-barra i {
   background: repeating-linear-gradient(45deg, #fff 0 4px, transparent 4px 8px);
 }
+
+/* Rybená (contraste escuro e claro): ele troca a cor de fundo elemento a elemento;
+   imagem e gradiente ficariam por cima, então saem */
+.consent-live .consent-live-linha.preso .consent-live-barra i.rybDarkContrast,
+.consent-live .consent-live-linha.preso .consent-live-barra i.rybLightContrast {
+  background-image: none;
+}

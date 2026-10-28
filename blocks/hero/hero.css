@@ -289,3 +289,16 @@ html.contrast .hero .hero-gate[data-gate='ativo'] {
   background: rgb(0 0 0 / 85%);
   backdrop-filter: none;
 }
+
+/* Rybená (contraste escuro e claro): ele troca a cor de fundo elemento a elemento;
+   imagem e gradiente ficariam por cima, então saem */
+.hero .hero-palco.rybDarkContrast,
+.hero .hero-palco.rybLightContrast,
+.hero .hero-brilho.rybDarkContrast,
+.hero .hero-brilho.rybLightContrast,
+.hero .hero-brilho.rybDarkContrast::after,
+.hero .hero-brilho.rybLightContrast::after,
+.hero .hero-palco[data-estado='liberado'].rybDarkContrast::after,
+.hero .hero-palco[data-estado='liberado'].rybLightContrast::after {
+  background-image: none;
+}

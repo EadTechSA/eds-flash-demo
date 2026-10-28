@@ -6,9 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
-    - name: Use Node.js 20
+    - name: Use Node.js 24
       uses: actions/setup-node@v6
       with:
         node-version: 24
     - run: npm ci
-    - run: npm run lint
+    - name: Lint (ESLint airbnb + regras xwalk do Universal Editor, Stylelint)
+      run: npm run lint
+    - name: Contrato de contraste por bloco
+      run: node tools/a11y/contrato-contraste.mjs
+    - name: Contrato Rybená por bloco (R1 a R8)
+      run: node tools/a11y/contrato-rybena.mjs
+    - name: Cabeçalhos de segurança (A+ securityheaders, sem avisos)
+      run: node tools/seguranca/contrato-cabecalhos.mjs

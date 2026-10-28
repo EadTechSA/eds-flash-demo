@@ -12,7 +12,14 @@
     "build:json:models": "merge-json-cli -i \"models/_component-models.json\" -o \"component-models.json\"",
     "build:json:definitions": "merge-json-cli -i \"models/_component-definition.json\" -o \"component-definition.json\"",
     "build:json:filters": "merge-json-cli -i \"models/_component-filters.json\" -o \"component-filters.json\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "a11y:contrato": "node tools/a11y/contrato-contraste.mjs",
+    "a11y:modos": "node tools/a11y/verificar-modos.mjs",
+    "a11y:rybena": "node tools/a11y/contrato-rybena.mjs",
+    "a11y:rybena-navegador": "node tools/a11y/verificar-rybena.mjs",
+    "seguranca:contrato": "node tools/seguranca/contrato-cabecalhos.mjs",
+    "seguranca:entrega": "node tools/seguranca/verificar-cabecalhos.mjs",
+    "portoes": "npm run lint && npm run a11y:contrato && npm run a11y:rybena && npm run seguranca:contrato"
   },
   "repository": {
     "type": "git",
