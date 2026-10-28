@@ -1,0 +1,507 @@
+.medidor-cookies {
+  --cat-publicidade: var(--accent);
+  --cat-medicao: var(--warm);
+  --cat-personalizacao: #c79bff;
+  --cat-neutra: var(--text-dim);
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.medidor-cookies .medidor-abertura > p:first-child {
+  margin: 0 0 14px;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.medidor-cookies .medidor-abertura h2 {
+  margin: 0;
+}
+
+.medidor-cookies .medidor-abertura h2 + p {
+  margin: 12px 0 0;
+  font-size: clamp(17px, 1.6vw, 20px);
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+/* formulário */
+.medidor-cookies .medidor-form {
+  display: grid;
+  gap: 12px;
+}
+
+.medidor-cookies .medidor-form label {
+  font-family: var(--mono-font-family);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.medidor-cookies .medidor-campo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.medidor-cookies .medidor-campo input {
+  flex: 1 1 260px;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg, #0b0c0f);
+  color: var(--text-color);
+  font: inherit;
+  font-family: var(--mono-font-family);
+  font-size: 16px;
+}
+
+.medidor-cookies .medidor-campo input:focus-visible {
+  outline: 2px solid var(--warm);
+  outline-offset: 2px;
+}
+
+.medidor-cookies .medidor-campo input:disabled {
+  opacity: 0.55;
+}
+
+.medidor-cookies .medidor-campo .button {
+  margin: 0;
+  min-height: 52px;
+}
+
+.medidor-cookies .medidor-exemplos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.medidor-cookies .medidor-exemplos:empty {
+  display: none;
+}
+
+.medidor-cookies .medidor-exemplo {
+  border: 1px dashed var(--line-strong);
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.medidor-cookies .medidor-exemplo:hover:not(:disabled) {
+  color: var(--text-color);
+  border-color: var(--warm);
+}
+
+.medidor-cookies .medidor-status:empty {
+  display: none;
+}
+
+.medidor-cookies .medidor-status p {
+  margin: 8px 0 0;
+  font-size: var(--body-font-size-s);
+  color: var(--text-muted);
+}
+
+.medidor-cookies .medidor-segundos {
+  font-family: var(--mono-font-family);
+  color: var(--text-dim);
+}
+
+.medidor-cookies .medidor-progresso {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+
+.medidor-cookies .medidor-progresso i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--warm));
+  transition: width 0.5s linear;
+}
+
+.medidor-cookies .medidor-aviso {
+  border-left: 3px solid var(--warm);
+  padding-left: 12px;
+}
+
+/* resultado */
+.medidor-cookies .medidor-saida {
+  display: grid;
+  gap: 20px;
+}
+
+.medidor-cookies .medidor-saida:empty {
+  display: none;
+}
+
+.medidor-cookies .medidor-veredito {
+  padding: 22px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line-strong);
+  background: var(--surface-1);
+  animation: medidor-entra 0.5s var(--ease, ease) both;
+}
+
+.medidor-cookies .medidor-veredito.alerta {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgb(227 13 0 / 14%), var(--surface-1) 60%);
+}
+
+.medidor-cookies .medidor-veredito.ok {
+  border-color: var(--ok);
+}
+
+.medidor-cookies .medidor-veredito h3 {
+  margin: 4px 0 8px;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.15;
+}
+
+.medidor-cookies .medidor-veredito h3:focus {
+  outline: none;
+}
+
+.medidor-cookies .medidor-alvo {
+  margin: 0;
+  font-family: var(--mono-font-family);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.medidor-cookies .medidor-origem {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.medidor-cookies .medidor-refazer {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--text-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.medidor-cookies .medidor-kpis {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.medidor-cookies .medidor-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface-1);
+  animation: medidor-entra 0.5s var(--ease, ease) both;
+}
+
+.medidor-cookies .medidor-kpi:nth-child(2) { animation-delay: 60ms; }
+.medidor-cookies .medidor-kpi:nth-child(3) { animation-delay: 120ms; }
+.medidor-cookies .medidor-kpi:nth-child(4) { animation-delay: 180ms; }
+.medidor-cookies .medidor-kpi:nth-child(5) { animation-delay: 240ms; }
+
+.medidor-cookies .medidor-kpi strong {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.medidor-cookies .medidor-kpi span {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.medidor-cookies .medidor-kpi.alerta strong {
+  color: var(--warm);
+}
+
+.medidor-cookies .medidor-kpi.ok strong {
+  color: var(--ok);
+}
+
+.medidor-cookies .medidor-grade {
+  display: grid;
+  gap: 20px;
+}
+
+.medidor-cookies .medidor-lado {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+  min-width: 0;
+}
+
+.medidor-cookies .painel h3 {
+  margin: 0 0 14px;
+  font-size: 16px;
+}
+
+/* linha do tempo */
+.medidor-cookies .medidor-eixo {
+  position: relative;
+  height: 46px;
+  margin: 8px 0 18px;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.medidor-cookies .medidor-eixo i {
+  position: absolute;
+  left: var(--x);
+  bottom: 6px;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: var(--cat-neutra);
+  opacity: 0.85;
+  animation: medidor-ponto 0.6s var(--ease, ease) both;
+}
+
+.medidor-cookies .medidor-eixo i:nth-of-type(3n) { bottom: 20px; }
+.medidor-cookies .medidor-eixo i:nth-of-type(3n + 1) { bottom: 32px; }
+
+.medidor-cookies .medidor-eixo-ini,
+.medidor-cookies .medidor-eixo-fim {
+  position: absolute;
+  bottom: -18px;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.medidor-cookies .medidor-eixo-fim {
+  right: 0;
+}
+
+.medidor-cookies .medidor-hosts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.medidor-cookies .medidor-hosts li {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 7px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.medidor-cookies .medidor-ms {
+  font-family: var(--mono-font-family);
+  font-size: 12px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.medidor-cookies .medidor-host {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--mono-font-family);
+  font-size: 12px;
+}
+
+.medidor-cookies .medidor-host small {
+  display: block;
+  font-family: var(--body-font-family);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.medidor-cookies .medidor-cat {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  font-size: 11px;
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+.medidor-cookies .medidor-cat.cat-publicidade {
+  border-color: var(--cat-publicidade);
+  color: var(--text-color);
+  background: rgb(227 13 0 / 22%);
+}
+
+.medidor-cookies .medidor-cat.cat-medicao {
+  border-color: var(--cat-medicao);
+  color: var(--text-color);
+}
+
+.medidor-cookies .medidor-cat.cat-personalizacao {
+  border-color: var(--cat-personalizacao);
+  color: var(--text-color);
+}
+
+.medidor-cookies .medidor-eixo i.cat-publicidade { background: var(--cat-publicidade); }
+.medidor-cookies .medidor-eixo i.cat-medicao { background: var(--cat-medicao); }
+.medidor-cookies .medidor-eixo i.cat-personalizacao { background: var(--cat-personalizacao); }
+
+.medidor-cookies .medidor-mais {
+  margin: 12px 0 0;
+}
+
+/* captura e cookies */
+.medidor-cookies .medidor-captura {
+  margin: 0;
+}
+
+.medidor-cookies .medidor-captura img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+.medidor-cookies .medidor-captura figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.medidor-cookies .medidor-rolagem {
+  max-height: 360px;
+  overflow: auto;
+}
+
+.medidor-cookies .medidor-rolagem:focus-visible {
+  outline: 2px solid var(--warm);
+}
+
+.medidor-cookies table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.medidor-cookies th,
+.medidor-cookies td {
+  text-align: left;
+  padding: 7px 6px;
+  border-top: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.medidor-cookies thead th {
+  position: sticky;
+  top: 0;
+  border-top: 0;
+  background: var(--surface-1);
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.medidor-cookies tbody th {
+  font-family: var(--mono-font-family);
+  font-weight: 400;
+  word-break: break-all;
+}
+
+.medidor-cookies td small {
+  color: var(--text-dim);
+}
+
+.medidor-cookies .medidor-nota {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  max-width: 80ch;
+}
+
+@keyframes medidor-entra {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes medidor-ponto {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@media (width >= 600px) {
+  .medidor-cookies .medidor-kpis {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .medidor-cookies .medidor-kpis {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .medidor-cookies .medidor-grade {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medidor-cookies .medidor-veredito,
+  .medidor-cookies .medidor-kpi,
+  .medidor-cookies .medidor-eixo i {
+    animation: none;
+  }
+
+  .medidor-cookies .medidor-progresso i {
+    transition: none;
+  }
+}
+
+/* alto contraste: categorias por borda e texto, sem fundo colorido */
+html.contrast .medidor-cookies {
+  --cat-publicidade: #ff0;
+  --cat-medicao: #fff;
+  --cat-personalizacao: #fff;
+  --cat-neutra: #fff;
+}
+
+html.contrast .medidor-cookies .medidor-veredito.alerta,
+html.contrast .medidor-cookies .medidor-cat.cat-publicidade {
+  background: #000;
+}
+
+html.contrast .medidor-cookies .medidor-cat.cat-medicao {
+  border-style: dashed;
+}
+
+html.contrast .medidor-cookies .medidor-progresso i {
+  background: #ff0;
+}
+
+.medidor-cookies .medidor-hosts li[hidden] {
+  display: none;
+}

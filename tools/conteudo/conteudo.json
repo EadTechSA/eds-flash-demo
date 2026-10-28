@@ -1079,6 +1079,447 @@
       "chave": "log-consented",
       "texto": "consented.js: CC_ANALYTICS → aqui entraria o Web SDK (alloy), na fase delayed"
      }
+    },
+    "medidor": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Medidor de cookies",
+     "model": "medidor-cookies",
+     "filter": "medidor-cookies",
+     "texto": "<p>Medidor de cookies · leitura real</p><h2>Digite um site. Veja o que ele grava antes do seu sim.</h2><p>Um navegador limpo, saindo de uma conexão no Brasil, abre o endereço e não clica em nada. Em uns 40 segundos aparece aqui quem foi chamado, quais cookies ficaram gravados e se havia banner na tela. Compare com esta demo: zero.</p>",
+     "endpoint": "https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/medir",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-campo-rotulo",
+      "model": "rotulo",
+      "chave": "campo-rotulo",
+      "texto": "Endereço do site"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-campo-exemplo",
+      "model": "rotulo",
+      "chave": "campo-exemplo",
+      "texto": "www.seusite.com.br"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-botao",
+      "model": "rotulo",
+      "chave": "botao",
+      "texto": "Medir agora"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-exemplos",
+      "model": "rotulo",
+      "chave": "exemplos",
+      "texto": "Esta demo (prévia)=https://main--eds-flash-demo--eadtechsa.aem.page/"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-etapas",
+      "model": "rotulo",
+      "chave": "etapas",
+      "texto": "conectando a um navegador no Brasil…|abrindo o site sem clicar em nada…|parado, como quem ainda não escolheu…|lendo cookies e terceiros…"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-segundos",
+      "model": "rotulo",
+      "chave": "segundos",
+      "texto": "{n} s"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-veredito-alerta",
+      "model": "rotulo",
+      "chave": "veredito-alerta",
+      "texto": "{n} serviços de publicidade, medição ou personalização rodaram antes de qualquer escolha"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-veredito-ok",
+      "model": "rotulo",
+      "chave": "veredito-ok",
+      "texto": "Nenhum serviço de publicidade, medição ou personalização antes da escolha"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-origem",
+      "model": "rotulo",
+      "chave": "origem",
+      "texto": "Medido de {local} · {rede} · {quando}"
+     },
+     "item_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cache",
+      "model": "rotulo",
+      "chave": "cache",
+      "texto": "leitura feita há pouco, guardada por 30 min."
+     },
+     "item_10": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-refazer",
+      "model": "rotulo",
+      "chave": "refazer",
+      "texto": "Medir de novo"
+     },
+     "item_11": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-terceiros",
+      "model": "rotulo",
+      "chave": "k-terceiros",
+      "texto": "serviços de terceiros chamados"
+     },
+     "item_12": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-cookies",
+      "model": "rotulo",
+      "chave": "k-cookies",
+      "texto": "cookies gravados"
+     },
+     "item_13": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-esperariam",
+      "model": "rotulo",
+      "chave": "k-esperariam",
+      "texto": "cookies que deveriam esperar o sim"
+     },
+     "item_14": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-primeiro",
+      "model": "rotulo",
+      "chave": "k-primeiro",
+      "texto": "primeiro rastreador"
+     },
+     "item_15": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-banner",
+      "model": "rotulo",
+      "chave": "k-banner",
+      "texto": "banner de cookies"
+     },
+     "item_16": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-banner-sim",
+      "model": "rotulo",
+      "chave": "banner-sim",
+      "texto": "na tela"
+     },
+     "item_17": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-banner-nao",
+      "model": "rotulo",
+      "chave": "banner-nao",
+      "texto": "não apareceu"
+     },
+     "item_18": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cmp-proprio",
+      "model": "rotulo",
+      "chave": "cmp-proprio",
+      "texto": "banner próprio"
+     },
+     "item_19": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-linha-titulo",
+      "model": "rotulo",
+      "chave": "linha-titulo",
+      "texto": "Quando cada terceiro foi chamado"
+     },
+     "item_20": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-linha-nota",
+      "model": "rotulo",
+      "chave": "linha-nota",
+      "texto": "Tempo contado do início da navegação, já com a demora do proxy no Brasil (um visitante comum vê tudo isso mais cedo). Ninguém clicou em nada."
+     },
+     "item_21": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-mostrar-mais",
+      "model": "rotulo",
+      "chave": "mostrar-mais",
+      "texto": "Ver os {n}"
+     },
+     "item_22": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cookies-titulo",
+      "model": "rotulo",
+      "chave": "cookies-titulo",
+      "texto": "Cookies gravados antes da escolha"
+     },
+     "item_23": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-nome",
+      "model": "rotulo",
+      "chave": "col-nome",
+      "texto": "nome"
+     },
+     "item_24": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-dominio",
+      "model": "rotulo",
+      "chave": "col-dominio",
+      "texto": "domínio"
+     },
+     "item_25": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-categoria",
+      "model": "rotulo",
+      "chave": "col-categoria",
+      "texto": "categoria"
+     },
+     "item_26": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-validade",
+      "model": "rotulo",
+      "chave": "col-validade",
+      "texto": "validade"
+     },
+     "item_27": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-parte-1",
+      "model": "rotulo",
+      "chave": "parte-1",
+      "texto": "1ª parte"
+     },
+     "item_28": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-parte-3",
+      "model": "rotulo",
+      "chave": "parte-3",
+      "texto": "3ª parte"
+     },
+     "item_29": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-sessao",
+      "model": "rotulo",
+      "chave": "sessao",
+      "texto": "sessão"
+     },
+     "item_30": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-dias",
+      "model": "rotulo",
+      "chave": "dias",
+      "texto": "{n} dias"
+     },
+     "item_31": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-captura-titulo",
+      "model": "rotulo",
+      "chave": "captura-titulo",
+      "texto": "O que o visitante vê nesse momento"
+     },
+     "item_32": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-captura-alt",
+      "model": "rotulo",
+      "chave": "captura-alt",
+      "texto": "Captura da página medida antes de qualquer escolha do visitante"
+     },
+     "item_33": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-publicidade",
+      "model": "rotulo",
+      "chave": "cat-publicidade",
+      "texto": "publicidade"
+     },
+     "item_34": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-medicao",
+      "model": "rotulo",
+      "chave": "cat-medicao",
+      "texto": "medição"
+     },
+     "item_35": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-personalizacao",
+      "model": "rotulo",
+      "chave": "cat-personalizacao",
+      "texto": "personalização"
+     },
+     "item_36": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-gerenciador",
+      "model": "rotulo",
+      "chave": "cat-gerenciador",
+      "texto": "gerenciador de tags"
+     },
+     "item_37": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-cmp",
+      "model": "rotulo",
+      "chave": "cat-cmp",
+      "texto": "gestão de consentimento"
+     },
+     "item_38": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-desempenho",
+      "model": "rotulo",
+      "chave": "cat-desempenho",
+      "texto": "desempenho"
+     },
+     "item_39": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-seguranca",
+      "model": "rotulo",
+      "chave": "cat-seguranca",
+      "texto": "segurança"
+     },
+     "item_40": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-necessario",
+      "model": "rotulo",
+      "chave": "cat-necessario",
+      "texto": "necessário"
+     },
+     "item_41": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-infraestrutura",
+      "model": "rotulo",
+      "chave": "cat-infraestrutura",
+      "texto": "infraestrutura"
+     },
+     "item_42": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-atendimento",
+      "model": "rotulo",
+      "chave": "cat-atendimento",
+      "texto": "atendimento"
+     },
+     "item_43": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-midia",
+      "model": "rotulo",
+      "chave": "cat-midia",
+      "texto": "vídeo"
+     },
+     "item_44": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-outros",
+      "model": "rotulo",
+      "chave": "cat-outros",
+      "texto": "outros"
+     },
+     "item_45": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-primeira-parte",
+      "model": "rotulo",
+      "chave": "cat-primeira-parte",
+      "texto": "1ª parte"
+     },
+     "item_46": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-nota",
+      "model": "rotulo",
+      "chave": "nota",
+      "texto": "Leitura técnica do que o navegador registrou, não parecer jurídico. Publicidade, medição e personalização são as categorias que, pelo Guia de Cookies da ANPD, deveriam esperar o consentimento. Cookies necessários e de segurança não entram na conta. Os valores dos cookies não são lidos."
+     },
+     "item_47": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-so-login",
+      "model": "rotulo",
+      "chave": "so-login",
+      "texto": "Na prévia pública o campo fica desligado. A medição roda só na versão com login, para ninguém usar a demo para varrer sites de terceiros."
+     },
+     "item_48": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-origem",
+      "model": "rotulo",
+      "chave": "erro-origem",
+      "texto": "O medidor só responde à versão com login desta demo."
+     },
+     "item_49": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-limite",
+      "model": "rotulo",
+      "chave": "erro-limite",
+      "texto": "Chegamos ao limite de medições por agora. Tente de novo mais tarde."
+     },
+     "item_50": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-url",
+      "model": "rotulo",
+      "chave": "erro-url",
+      "texto": "Esse endereço não foi aceito: {m}."
+     },
+     "item_51": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-navegador",
+      "model": "rotulo",
+      "chave": "erro-navegador",
+      "texto": "O site não abriu no navegador de medição: {m}."
+     },
+     "item_52": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-rede",
+      "model": "rotulo",
+      "chave": "erro-rede",
+      "texto": "Não deu para falar com o medidor. Confira a conexão e tente de novo."
+     },
+     "item_53": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-sem-chave",
+      "model": "rotulo",
+      "chave": "erro-sem-chave",
+      "texto": "O medidor ainda não foi configurado."
+     }
     }
    },
    "section_7": {
@@ -2673,6 +3114,447 @@
       "chave": "log-consented",
       "texto": "consented.js: CC_ANALYTICS → aquí entraría el Web SDK (alloy), en la fase delayed"
      }
+    },
+    "medidor": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Medidor de cookies",
+     "model": "medidor-cookies",
+     "filter": "medidor-cookies",
+     "texto": "<p>Medidor de cookies · lectura real</p><h2>Escribe un sitio. Mira lo que graba antes de tu sí.</h2><p>Un navegador limpio, saliendo de una conexión en Brasil, abre la dirección y no hace clic en nada. En unos 40 segundos aparece aquí a quién llamó, qué cookies quedaron grabadas y si había banner en pantalla. Compara con esta demo: cero.</p>",
+     "endpoint": "https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/medir",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-campo-rotulo",
+      "model": "rotulo",
+      "chave": "campo-rotulo",
+      "texto": "Dirección del sitio"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-campo-exemplo",
+      "model": "rotulo",
+      "chave": "campo-exemplo",
+      "texto": "www.tusitio.com"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-botao",
+      "model": "rotulo",
+      "chave": "botao",
+      "texto": "Medir ahora"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-exemplos",
+      "model": "rotulo",
+      "chave": "exemplos",
+      "texto": "Esta demo (vista previa)=https://main--eds-flash-demo--eadtechsa.aem.page/"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-etapas",
+      "model": "rotulo",
+      "chave": "etapas",
+      "texto": "conectando a un navegador en Brasil…|abriendo el sitio sin hacer clic…|quieto, como quien todavía no eligió…|leyendo cookies y terceros…"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-segundos",
+      "model": "rotulo",
+      "chave": "segundos",
+      "texto": "{n} s"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-veredito-alerta",
+      "model": "rotulo",
+      "chave": "veredito-alerta",
+      "texto": "{n} servicios de publicidad, medición o personalización corrieron antes de cualquier elección"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-veredito-ok",
+      "model": "rotulo",
+      "chave": "veredito-ok",
+      "texto": "Ningún servicio de publicidad, medición o personalización antes de la elección"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-origem",
+      "model": "rotulo",
+      "chave": "origem",
+      "texto": "Medido desde {local} · {rede} · {quando}"
+     },
+     "item_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cache",
+      "model": "rotulo",
+      "chave": "cache",
+      "texto": "lectura reciente, guardada por 30 min."
+     },
+     "item_10": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-refazer",
+      "model": "rotulo",
+      "chave": "refazer",
+      "texto": "Medir de nuevo"
+     },
+     "item_11": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-terceiros",
+      "model": "rotulo",
+      "chave": "k-terceiros",
+      "texto": "servicios de terceros llamados"
+     },
+     "item_12": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-cookies",
+      "model": "rotulo",
+      "chave": "k-cookies",
+      "texto": "cookies grabadas"
+     },
+     "item_13": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-esperariam",
+      "model": "rotulo",
+      "chave": "k-esperariam",
+      "texto": "cookies que deberían esperar el sí"
+     },
+     "item_14": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-primeiro",
+      "model": "rotulo",
+      "chave": "k-primeiro",
+      "texto": "primer rastreador"
+     },
+     "item_15": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-banner",
+      "model": "rotulo",
+      "chave": "k-banner",
+      "texto": "banner de cookies"
+     },
+     "item_16": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-banner-sim",
+      "model": "rotulo",
+      "chave": "banner-sim",
+      "texto": "en pantalla"
+     },
+     "item_17": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-banner-nao",
+      "model": "rotulo",
+      "chave": "banner-nao",
+      "texto": "no apareció"
+     },
+     "item_18": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cmp-proprio",
+      "model": "rotulo",
+      "chave": "cmp-proprio",
+      "texto": "banner propio"
+     },
+     "item_19": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-linha-titulo",
+      "model": "rotulo",
+      "chave": "linha-titulo",
+      "texto": "Cuándo se llamó a cada tercero"
+     },
+     "item_20": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-linha-nota",
+      "model": "rotulo",
+      "chave": "linha-nota",
+      "texto": "Tiempo desde el inicio de la navegación, ya con la demora del proxy en Brasil (un visitante común lo ve antes). Nadie hizo clic."
+     },
+     "item_21": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-mostrar-mais",
+      "model": "rotulo",
+      "chave": "mostrar-mais",
+      "texto": "Ver los {n}"
+     },
+     "item_22": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cookies-titulo",
+      "model": "rotulo",
+      "chave": "cookies-titulo",
+      "texto": "Cookies grabadas antes de la elección"
+     },
+     "item_23": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-nome",
+      "model": "rotulo",
+      "chave": "col-nome",
+      "texto": "nombre"
+     },
+     "item_24": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-dominio",
+      "model": "rotulo",
+      "chave": "col-dominio",
+      "texto": "dominio"
+     },
+     "item_25": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-categoria",
+      "model": "rotulo",
+      "chave": "col-categoria",
+      "texto": "categoría"
+     },
+     "item_26": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-validade",
+      "model": "rotulo",
+      "chave": "col-validade",
+      "texto": "validez"
+     },
+     "item_27": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-parte-1",
+      "model": "rotulo",
+      "chave": "parte-1",
+      "texto": "1ª parte"
+     },
+     "item_28": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-parte-3",
+      "model": "rotulo",
+      "chave": "parte-3",
+      "texto": "3ª parte"
+     },
+     "item_29": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-sessao",
+      "model": "rotulo",
+      "chave": "sessao",
+      "texto": "sesión"
+     },
+     "item_30": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-dias",
+      "model": "rotulo",
+      "chave": "dias",
+      "texto": "{n} días"
+     },
+     "item_31": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-captura-titulo",
+      "model": "rotulo",
+      "chave": "captura-titulo",
+      "texto": "Lo que ve el visitante en ese momento"
+     },
+     "item_32": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-captura-alt",
+      "model": "rotulo",
+      "chave": "captura-alt",
+      "texto": "Captura de la página medida antes de cualquier elección del visitante"
+     },
+     "item_33": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-publicidade",
+      "model": "rotulo",
+      "chave": "cat-publicidade",
+      "texto": "publicidad"
+     },
+     "item_34": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-medicao",
+      "model": "rotulo",
+      "chave": "cat-medicao",
+      "texto": "medición"
+     },
+     "item_35": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-personalizacao",
+      "model": "rotulo",
+      "chave": "cat-personalizacao",
+      "texto": "personalización"
+     },
+     "item_36": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-gerenciador",
+      "model": "rotulo",
+      "chave": "cat-gerenciador",
+      "texto": "gestor de etiquetas"
+     },
+     "item_37": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-cmp",
+      "model": "rotulo",
+      "chave": "cat-cmp",
+      "texto": "gestión de consentimiento"
+     },
+     "item_38": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-desempenho",
+      "model": "rotulo",
+      "chave": "cat-desempenho",
+      "texto": "rendimiento"
+     },
+     "item_39": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-seguranca",
+      "model": "rotulo",
+      "chave": "cat-seguranca",
+      "texto": "seguridad"
+     },
+     "item_40": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-necessario",
+      "model": "rotulo",
+      "chave": "cat-necessario",
+      "texto": "necesaria"
+     },
+     "item_41": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-infraestrutura",
+      "model": "rotulo",
+      "chave": "cat-infraestrutura",
+      "texto": "infraestructura"
+     },
+     "item_42": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-atendimento",
+      "model": "rotulo",
+      "chave": "cat-atendimento",
+      "texto": "atención"
+     },
+     "item_43": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-midia",
+      "model": "rotulo",
+      "chave": "cat-midia",
+      "texto": "video"
+     },
+     "item_44": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-outros",
+      "model": "rotulo",
+      "chave": "cat-outros",
+      "texto": "otros"
+     },
+     "item_45": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-primeira-parte",
+      "model": "rotulo",
+      "chave": "cat-primeira-parte",
+      "texto": "1ª parte"
+     },
+     "item_46": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-nota",
+      "model": "rotulo",
+      "chave": "nota",
+      "texto": "Lectura técnica de lo que registró el navegador, no un dictamen jurídico. Publicidad, medición y personalización son las categorías que, según la guía de cookies de la ANPD (Brasil), deberían esperar el consentimiento. Las cookies necesarias y de seguridad no cuentan. Los valores de las cookies no se leen."
+     },
+     "item_47": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-so-login",
+      "model": "rotulo",
+      "chave": "so-login",
+      "texto": "En la vista previa pública el campo está apagado. La medición corre solo en la versión con login, para que nadie use la demo para escanear sitios ajenos."
+     },
+     "item_48": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-origem",
+      "model": "rotulo",
+      "chave": "erro-origem",
+      "texto": "El medidor solo responde a la versión con login de esta demo."
+     },
+     "item_49": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-limite",
+      "model": "rotulo",
+      "chave": "erro-limite",
+      "texto": "Llegamos al límite de mediciones por ahora. Inténtalo más tarde."
+     },
+     "item_50": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-url",
+      "model": "rotulo",
+      "chave": "erro-url",
+      "texto": "Esa dirección no fue aceptada: {m}."
+     },
+     "item_51": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-navegador",
+      "model": "rotulo",
+      "chave": "erro-navegador",
+      "texto": "El sitio no abrió en el navegador de medición: {m}."
+     },
+     "item_52": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-rede",
+      "model": "rotulo",
+      "chave": "erro-rede",
+      "texto": "No se pudo hablar con el medidor. Revisa la conexión e inténtalo de nuevo."
+     },
+     "item_53": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-sem-chave",
+      "model": "rotulo",
+      "chave": "erro-sem-chave",
+      "texto": "El medidor todavía no está configurado."
+     }
     }
    },
    "section_7": {
@@ -4266,6 +5148,447 @@
       "model": "rotulo",
       "chave": "log-consented",
       "texto": "consented.js: CC_ANALYTICS → the Web SDK (alloy) would load here, in the delayed phase"
+     }
+    },
+    "medidor": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Medidor de cookies",
+     "model": "medidor-cookies",
+     "filter": "medidor-cookies",
+     "texto": "<p>Cookie meter · live reading</p><h2>Type a site. See what it stores before your yes.</h2><p>A clean browser on a Brazilian connection opens the address and clicks nothing. In about 40 seconds you see who was called, which cookies were stored and whether a banner was on screen. Compare with this demo: zero.</p>",
+     "endpoint": "https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/medir",
+     "item_0": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-campo-rotulo",
+      "model": "rotulo",
+      "chave": "campo-rotulo",
+      "texto": "Site address"
+     },
+     "item_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-campo-exemplo",
+      "model": "rotulo",
+      "chave": "campo-exemplo",
+      "texto": "www.yoursite.com"
+     },
+     "item_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-botao",
+      "model": "rotulo",
+      "chave": "botao",
+      "texto": "Measure now"
+     },
+     "item_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-exemplos",
+      "model": "rotulo",
+      "chave": "exemplos",
+      "texto": "This demo (preview)=https://main--eds-flash-demo--eadtechsa.aem.page/"
+     },
+     "item_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-etapas",
+      "model": "rotulo",
+      "chave": "etapas",
+      "texto": "connecting to a browser in Brazil…|opening the site without clicking anything…|waiting, like someone who has not chosen yet…|reading cookies and third parties…"
+     },
+     "item_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-segundos",
+      "model": "rotulo",
+      "chave": "segundos",
+      "texto": "{n} s"
+     },
+     "item_6": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-veredito-alerta",
+      "model": "rotulo",
+      "chave": "veredito-alerta",
+      "texto": "{n} advertising, measurement or personalization services ran before any choice"
+     },
+     "item_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-veredito-ok",
+      "model": "rotulo",
+      "chave": "veredito-ok",
+      "texto": "No advertising, measurement or personalization before the choice"
+     },
+     "item_8": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-origem",
+      "model": "rotulo",
+      "chave": "origem",
+      "texto": "Measured from {local} · {rede} · {quando}"
+     },
+     "item_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cache",
+      "model": "rotulo",
+      "chave": "cache",
+      "texto": "recent reading, kept for 30 min."
+     },
+     "item_10": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-refazer",
+      "model": "rotulo",
+      "chave": "refazer",
+      "texto": "Measure again"
+     },
+     "item_11": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-terceiros",
+      "model": "rotulo",
+      "chave": "k-terceiros",
+      "texto": "third-party services called"
+     },
+     "item_12": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-cookies",
+      "model": "rotulo",
+      "chave": "k-cookies",
+      "texto": "cookies stored"
+     },
+     "item_13": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-esperariam",
+      "model": "rotulo",
+      "chave": "k-esperariam",
+      "texto": "cookies that should wait for yes"
+     },
+     "item_14": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-primeiro",
+      "model": "rotulo",
+      "chave": "k-primeiro",
+      "texto": "first tracker"
+     },
+     "item_15": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-k-banner",
+      "model": "rotulo",
+      "chave": "k-banner",
+      "texto": "cookie banner"
+     },
+     "item_16": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-banner-sim",
+      "model": "rotulo",
+      "chave": "banner-sim",
+      "texto": "on screen"
+     },
+     "item_17": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-banner-nao",
+      "model": "rotulo",
+      "chave": "banner-nao",
+      "texto": "did not show"
+     },
+     "item_18": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cmp-proprio",
+      "model": "rotulo",
+      "chave": "cmp-proprio",
+      "texto": "in-house banner"
+     },
+     "item_19": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-linha-titulo",
+      "model": "rotulo",
+      "chave": "linha-titulo",
+      "texto": "When each third party was called"
+     },
+     "item_20": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-linha-nota",
+      "model": "rotulo",
+      "chave": "linha-nota",
+      "texto": "Time from the start of navigation, including the Brazilian proxy delay (a regular visitor gets all this sooner). Nobody clicked anything."
+     },
+     "item_21": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-mostrar-mais",
+      "model": "rotulo",
+      "chave": "mostrar-mais",
+      "texto": "Show all {n}"
+     },
+     "item_22": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cookies-titulo",
+      "model": "rotulo",
+      "chave": "cookies-titulo",
+      "texto": "Cookies stored before the choice"
+     },
+     "item_23": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-nome",
+      "model": "rotulo",
+      "chave": "col-nome",
+      "texto": "name"
+     },
+     "item_24": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-dominio",
+      "model": "rotulo",
+      "chave": "col-dominio",
+      "texto": "domain"
+     },
+     "item_25": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-categoria",
+      "model": "rotulo",
+      "chave": "col-categoria",
+      "texto": "category"
+     },
+     "item_26": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-col-validade",
+      "model": "rotulo",
+      "chave": "col-validade",
+      "texto": "lifetime"
+     },
+     "item_27": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-parte-1",
+      "model": "rotulo",
+      "chave": "parte-1",
+      "texto": "1st party"
+     },
+     "item_28": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-parte-3",
+      "model": "rotulo",
+      "chave": "parte-3",
+      "texto": "3rd party"
+     },
+     "item_29": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-sessao",
+      "model": "rotulo",
+      "chave": "sessao",
+      "texto": "session"
+     },
+     "item_30": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-dias",
+      "model": "rotulo",
+      "chave": "dias",
+      "texto": "{n} days"
+     },
+     "item_31": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-captura-titulo",
+      "model": "rotulo",
+      "chave": "captura-titulo",
+      "texto": "What the visitor sees at that moment"
+     },
+     "item_32": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-captura-alt",
+      "model": "rotulo",
+      "chave": "captura-alt",
+      "texto": "Screenshot of the measured page before any visitor choice"
+     },
+     "item_33": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-publicidade",
+      "model": "rotulo",
+      "chave": "cat-publicidade",
+      "texto": "advertising"
+     },
+     "item_34": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-medicao",
+      "model": "rotulo",
+      "chave": "cat-medicao",
+      "texto": "measurement"
+     },
+     "item_35": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-personalizacao",
+      "model": "rotulo",
+      "chave": "cat-personalizacao",
+      "texto": "personalization"
+     },
+     "item_36": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-gerenciador",
+      "model": "rotulo",
+      "chave": "cat-gerenciador",
+      "texto": "tag manager"
+     },
+     "item_37": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-cmp",
+      "model": "rotulo",
+      "chave": "cat-cmp",
+      "texto": "consent management"
+     },
+     "item_38": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-desempenho",
+      "model": "rotulo",
+      "chave": "cat-desempenho",
+      "texto": "performance"
+     },
+     "item_39": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-seguranca",
+      "model": "rotulo",
+      "chave": "cat-seguranca",
+      "texto": "security"
+     },
+     "item_40": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-necessario",
+      "model": "rotulo",
+      "chave": "cat-necessario",
+      "texto": "necessary"
+     },
+     "item_41": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-infraestrutura",
+      "model": "rotulo",
+      "chave": "cat-infraestrutura",
+      "texto": "infrastructure"
+     },
+     "item_42": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-atendimento",
+      "model": "rotulo",
+      "chave": "cat-atendimento",
+      "texto": "support"
+     },
+     "item_43": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-midia",
+      "model": "rotulo",
+      "chave": "cat-midia",
+      "texto": "video"
+     },
+     "item_44": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-outros",
+      "model": "rotulo",
+      "chave": "cat-outros",
+      "texto": "other"
+     },
+     "item_45": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-cat-primeira-parte",
+      "model": "rotulo",
+      "chave": "cat-primeira-parte",
+      "texto": "1st party"
+     },
+     "item_46": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-nota",
+      "model": "rotulo",
+      "chave": "nota",
+      "texto": "A technical reading of what the browser recorded, not legal advice. Advertising, measurement and personalization are the categories that, under the Brazilian ANPD cookie guide, should wait for consent. Necessary and security cookies are not counted. Cookie values are never read."
+     },
+     "item_47": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-so-login",
+      "model": "rotulo",
+      "chave": "so-login",
+      "texto": "On the public preview the field is off. Measuring only runs on the signed-in version, so nobody can use the demo to scan other sites."
+     },
+     "item_48": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-origem",
+      "model": "rotulo",
+      "chave": "erro-origem",
+      "texto": "The meter only answers the signed-in version of this demo."
+     },
+     "item_49": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-limite",
+      "model": "rotulo",
+      "chave": "erro-limite",
+      "texto": "We hit the measuring limit for now. Try again later."
+     },
+     "item_50": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-url",
+      "model": "rotulo",
+      "chave": "erro-url",
+      "texto": "That address was not accepted: {m}."
+     },
+     "item_51": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-navegador",
+      "model": "rotulo",
+      "chave": "erro-navegador",
+      "texto": "The site did not open in the measuring browser: {m}."
+     },
+     "item_52": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-rede",
+      "model": "rotulo",
+      "chave": "erro-rede",
+      "texto": "Could not reach the meter. Check the connection and try again."
+     },
+     "item_53": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "core/franklin/components/block/v1/block/item",
+      "name": "rotulo-erro-sem-chave",
+      "model": "rotulo",
+      "chave": "erro-sem-chave",
+      "texto": "The meter is not configured yet."
      }
     }
    },

@@ -324,6 +324,94 @@ T['en'] = dict(
     cc_gate=('Adobe video: needs "Media & video"', 'The video block does not load a single byte before you allow this category. The choice stays in your browser for 12 months, or until the policy changes.', 'Allow and watch', 'Open in a new tab'),
 )
 
+# --------------------------------------------------------------------------
+# medidor de cookies (leitura real de outro site, pela ação do App Builder)
+# --------------------------------------------------------------------------
+MEDIDOR = 'https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/medir'
+PREVIA = 'https://main--eds-flash-demo--eadtechsa.aem.page/'
+
+T['pt']['medidor_abertura'] = ('<p>Medidor de cookies · leitura real</p>'
+    '<h2>Digite um site. Veja o que ele grava antes do seu sim.</h2>'
+    '<p>Um navegador limpo, saindo de uma conexão no Brasil, abre o endereço e não clica em nada. Em uns 40 segundos aparece aqui quem foi chamado, quais cookies ficaram gravados e se havia banner na tela. Compare com esta demo: zero.</p>')
+T['pt']['medidor_rotulos'] = {
+    'campo-rotulo': 'Endereço do site', 'campo-exemplo': 'www.seusite.com.br', 'botao': 'Medir agora',
+    'exemplos': f'Esta demo (prévia)={PREVIA}',
+    'etapas': 'conectando a um navegador no Brasil…|abrindo o site sem clicar em nada…|parado, como quem ainda não escolheu…|lendo cookies e terceiros…',
+    'segundos': '{n} s',
+    'veredito-alerta': '{n} serviços de publicidade, medição ou personalização rodaram antes de qualquer escolha',
+    'veredito-ok': 'Nenhum serviço de publicidade, medição ou personalização antes da escolha',
+    'origem': 'Medido de {local} · {rede} · {quando}', 'cache': 'leitura feita há pouco, guardada por 30 min.', 'refazer': 'Medir de novo',
+    'k-terceiros': 'serviços de terceiros chamados', 'k-cookies': 'cookies gravados', 'k-esperariam': 'cookies que deveriam esperar o sim',
+    'k-primeiro': 'primeiro rastreador', 'k-banner': 'banner de cookies', 'banner-sim': 'na tela', 'banner-nao': 'não apareceu', 'cmp-proprio': 'banner próprio',
+    'linha-titulo': 'Quando cada terceiro foi chamado', 'linha-nota': 'Tempo contado do início da navegação, já com a demora do proxy no Brasil (um visitante comum vê tudo isso mais cedo). Ninguém clicou em nada.', 'mostrar-mais': 'Ver os {n}',
+    'cookies-titulo': 'Cookies gravados antes da escolha', 'col-nome': 'nome', 'col-dominio': 'domínio', 'col-categoria': 'categoria', 'col-validade': 'validade',
+    'parte-1': '1ª parte', 'parte-3': '3ª parte', 'sessao': 'sessão', 'dias': '{n} dias',
+    'captura-titulo': 'O que o visitante vê nesse momento', 'captura-alt': 'Captura da página medida antes de qualquer escolha do visitante',
+    'cat-publicidade': 'publicidade', 'cat-medicao': 'medição', 'cat-personalizacao': 'personalização', 'cat-gerenciador': 'gerenciador de tags',
+    'cat-cmp': 'gestão de consentimento', 'cat-desempenho': 'desempenho', 'cat-seguranca': 'segurança', 'cat-necessario': 'necessário',
+    'cat-infraestrutura': 'infraestrutura', 'cat-atendimento': 'atendimento', 'cat-midia': 'vídeo', 'cat-outros': 'outros', 'cat-primeira-parte': '1ª parte',
+    'nota': 'Leitura técnica do que o navegador registrou, não parecer jurídico. Publicidade, medição e personalização são as categorias que, pelo Guia de Cookies da ANPD, deveriam esperar o consentimento. Cookies necessários e de segurança não entram na conta. Os valores dos cookies não são lidos.',
+    'so-login': 'Na prévia pública o campo fica desligado. A medição roda só na versão com login, para ninguém usar a demo para varrer sites de terceiros.',
+    'erro-origem': 'O medidor só responde à versão com login desta demo.', 'erro-limite': 'Chegamos ao limite de medições por agora. Tente de novo mais tarde.',
+    'erro-url': 'Esse endereço não foi aceito: {m}.', 'erro-navegador': 'O site não abriu no navegador de medição: {m}.',
+    'erro-rede': 'Não deu para falar com o medidor. Confira a conexão e tente de novo.', 'erro-sem-chave': 'O medidor ainda não foi configurado.',
+}
+
+T['es']['medidor_abertura'] = ('<p>Medidor de cookies · lectura real</p>'
+    '<h2>Escribe un sitio. Mira lo que graba antes de tu sí.</h2>'
+    '<p>Un navegador limpio, saliendo de una conexión en Brasil, abre la dirección y no hace clic en nada. En unos 40 segundos aparece aquí a quién llamó, qué cookies quedaron grabadas y si había banner en pantalla. Compara con esta demo: cero.</p>')
+T['es']['medidor_rotulos'] = {
+    'campo-rotulo': 'Dirección del sitio', 'campo-exemplo': 'www.tusitio.com', 'botao': 'Medir ahora',
+    'exemplos': f'Esta demo (vista previa)={PREVIA}',
+    'etapas': 'conectando a un navegador en Brasil…|abriendo el sitio sin hacer clic…|quieto, como quien todavía no eligió…|leyendo cookies y terceros…',
+    'segundos': '{n} s',
+    'veredito-alerta': '{n} servicios de publicidad, medición o personalización corrieron antes de cualquier elección',
+    'veredito-ok': 'Ningún servicio de publicidad, medición o personalización antes de la elección',
+    'origem': 'Medido desde {local} · {rede} · {quando}', 'cache': 'lectura reciente, guardada por 30 min.', 'refazer': 'Medir de nuevo',
+    'k-terceiros': 'servicios de terceros llamados', 'k-cookies': 'cookies grabadas', 'k-esperariam': 'cookies que deberían esperar el sí',
+    'k-primeiro': 'primer rastreador', 'k-banner': 'banner de cookies', 'banner-sim': 'en pantalla', 'banner-nao': 'no apareció', 'cmp-proprio': 'banner propio',
+    'linha-titulo': 'Cuándo se llamó a cada tercero', 'linha-nota': 'Tiempo desde el inicio de la navegación, ya con la demora del proxy en Brasil (un visitante común lo ve antes). Nadie hizo clic.', 'mostrar-mais': 'Ver los {n}',
+    'cookies-titulo': 'Cookies grabadas antes de la elección', 'col-nome': 'nombre', 'col-dominio': 'dominio', 'col-categoria': 'categoría', 'col-validade': 'validez',
+    'parte-1': '1ª parte', 'parte-3': '3ª parte', 'sessao': 'sesión', 'dias': '{n} días',
+    'captura-titulo': 'Lo que ve el visitante en ese momento', 'captura-alt': 'Captura de la página medida antes de cualquier elección del visitante',
+    'cat-publicidade': 'publicidad', 'cat-medicao': 'medición', 'cat-personalizacao': 'personalización', 'cat-gerenciador': 'gestor de etiquetas',
+    'cat-cmp': 'gestión de consentimiento', 'cat-desempenho': 'rendimiento', 'cat-seguranca': 'seguridad', 'cat-necessario': 'necesaria',
+    'cat-infraestrutura': 'infraestructura', 'cat-atendimento': 'atención', 'cat-midia': 'video', 'cat-outros': 'otros', 'cat-primeira-parte': '1ª parte',
+    'nota': 'Lectura técnica de lo que registró el navegador, no un dictamen jurídico. Publicidad, medición y personalización son las categorías que, según la guía de cookies de la ANPD (Brasil), deberían esperar el consentimiento. Las cookies necesarias y de seguridad no cuentan. Los valores de las cookies no se leen.',
+    'so-login': 'En la vista previa pública el campo está apagado. La medición corre solo en la versión con login, para que nadie use la demo para escanear sitios ajenos.',
+    'erro-origem': 'El medidor solo responde a la versión con login de esta demo.', 'erro-limite': 'Llegamos al límite de mediciones por ahora. Inténtalo más tarde.',
+    'erro-url': 'Esa dirección no fue aceptada: {m}.', 'erro-navegador': 'El sitio no abrió en el navegador de medición: {m}.',
+    'erro-rede': 'No se pudo hablar con el medidor. Revisa la conexión e inténtalo de nuevo.', 'erro-sem-chave': 'El medidor todavía no está configurado.',
+}
+
+T['en']['medidor_abertura'] = ('<p>Cookie meter · live reading</p>'
+    '<h2>Type a site. See what it stores before your yes.</h2>'
+    '<p>A clean browser on a Brazilian connection opens the address and clicks nothing. In about 40 seconds you see who was called, which cookies were stored and whether a banner was on screen. Compare with this demo: zero.</p>')
+T['en']['medidor_rotulos'] = {
+    'campo-rotulo': 'Site address', 'campo-exemplo': 'www.yoursite.com', 'botao': 'Measure now',
+    'exemplos': f'This demo (preview)={PREVIA}',
+    'etapas': 'connecting to a browser in Brazil…|opening the site without clicking anything…|waiting, like someone who has not chosen yet…|reading cookies and third parties…',
+    'segundos': '{n} s',
+    'veredito-alerta': '{n} advertising, measurement or personalization services ran before any choice',
+    'veredito-ok': 'No advertising, measurement or personalization before the choice',
+    'origem': 'Measured from {local} · {rede} · {quando}', 'cache': 'recent reading, kept for 30 min.', 'refazer': 'Measure again',
+    'k-terceiros': 'third-party services called', 'k-cookies': 'cookies stored', 'k-esperariam': 'cookies that should wait for yes',
+    'k-primeiro': 'first tracker', 'k-banner': 'cookie banner', 'banner-sim': 'on screen', 'banner-nao': 'did not show', 'cmp-proprio': 'in-house banner',
+    'linha-titulo': 'When each third party was called', 'linha-nota': 'Time from the start of navigation, including the Brazilian proxy delay (a regular visitor gets all this sooner). Nobody clicked anything.', 'mostrar-mais': 'Show all {n}',
+    'cookies-titulo': 'Cookies stored before the choice', 'col-nome': 'name', 'col-dominio': 'domain', 'col-categoria': 'category', 'col-validade': 'lifetime',
+    'parte-1': '1st party', 'parte-3': '3rd party', 'sessao': 'session', 'dias': '{n} days',
+    'captura-titulo': 'What the visitor sees at that moment', 'captura-alt': 'Screenshot of the measured page before any visitor choice',
+    'cat-publicidade': 'advertising', 'cat-medicao': 'measurement', 'cat-personalizacao': 'personalization', 'cat-gerenciador': 'tag manager',
+    'cat-cmp': 'consent management', 'cat-desempenho': 'performance', 'cat-seguranca': 'security', 'cat-necessario': 'necessary',
+    'cat-infraestrutura': 'infrastructure', 'cat-atendimento': 'support', 'cat-midia': 'video', 'cat-outros': 'other', 'cat-primeira-parte': '1st party',
+    'nota': 'A technical reading of what the browser recorded, not legal advice. Advertising, measurement and personalization are the categories that, under the Brazilian ANPD cookie guide, should wait for consent. Necessary and security cookies are not counted. Cookie values are never read.',
+    'so-login': 'On the public preview the field is off. Measuring only runs on the signed-in version, so nobody can use the demo to scan other sites.',
+    'erro-origem': 'The meter only answers the signed-in version of this demo.', 'erro-limite': 'We hit the measuring limit for now. Try again later.',
+    'erro-url': 'That address was not accepted: {m}.', 'erro-navegador': 'The site did not open in the measuring browser: {m}.',
+    'erro-rede': 'Could not reach the meter. Check the connection and try again.', 'erro-sem-chave': 'The meter is not configured yet.',
+}
+
+
 IDS = {'pt': ['valor', 'consentimento', 'fases', 'midia', 'eds', 'agentic', 'autoria', 'acessibilidade'],
        'es': ['valor', 'consentimiento', 'fases', 'medios', 'eds', 'agentic', 'autoria', 'accesibilidad'],
        'en': ['valor', 'consent', 'fases', 'media', 'eds', 'agentic', 'autoria', 'accessibility']}
@@ -354,6 +442,7 @@ def home(t, ids):
                     [(f'verificacao_{i}', 'verificacao', {'texto': a, 'estado': b}) for i, (a, b) in enumerate(t['verificacoes'])] + rotulos('rotulo', t['agentic_rotulos']), filt='agentic')
     passos = block('Passos', 'passos', {'texto': t['passos_abertura']},
                    [(f'passo_{i}', 'passo', {'icone': a, 'titulo': b, 'texto': c}) for i, (a, b, c) in enumerate(t['passos'])] + rotulos('rotulo', t['passos_rotulos']), filt='passos')
+    medidor = block('Medidor de cookies', 'medidor-cookies', {'texto': t['medidor_abertura'], 'endpoint': MEDIDOR}, rotulos('rotulo', t['medidor_rotulos']), filt='medidor-cookies')
     a11y = block('A11y Painel', 'a11y-painel', {'texto': t['a11y_abertura']}, rotulos('rotulo', t['a11y_painel_rotulos']), filt='a11y-painel')
     sections = [
         section([('hero', hero), ('como', text(t['como']))], nome='Capa'),
@@ -362,7 +451,7 @@ def home(t, ids):
         section([('abertura', text(t['midia_abertura'])), ('dm', dm)], id=ids[3], nome='Assets e Dynamic Media'),
         section([('fases', fases)], id=ids[2], nome='Três fases', style='compacta'),
         section([('abertura', text(t['eds_abertura'])), ('bento', bento)], id=ids[4], nome='EDS'),
-        section([('consent', consent)], id=ids[1], nome='Consentimento'),
+        section([('consent', consent), ('medidor', medidor)], id=ids[1], nome='Consentimento'),
         section([('agentic', agentic)], id=ids[5], nome='Agentic'),
         section([('passos', passos)], id=ids[6], nome='Autoria', style='compacta'),
     ]

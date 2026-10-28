@@ -15,6 +15,7 @@
       "hero",
       "valor",
       "consent-live",
+      "medidor-cookies",
       "fases",
       "dm-showcase",
       "acessibilidade",
@@ -104,6 +105,12 @@
     "id": "hero",
     "components": [
       "hero-rotulo"
+    ]
+  },
+  {
+    "id": "medidor-cookies",
+    "components": [
+      "medidor-cookies-rotulo"
     ]
   },
   {

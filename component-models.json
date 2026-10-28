@@ -596,6 +596,24 @@
     ]
   },
   {
+    "id": "medidor-cookies",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Texto de abertura",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "endpoint",
+        "label": "Endereço da ação de medição (App Builder)",
+        "valueType": "string",
+        "description": "https://<namespace>.adobeioruntime.net/api/v1/web/demo-ps/medir"
+      }
+    ]
+  },
+  {
     "id": "passos",
     "fields": [
       {
