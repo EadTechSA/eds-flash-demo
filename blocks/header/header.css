@@ -2,6 +2,7 @@ header .header {
   position: sticky;
   top: 0;
   z-index: 40;
+  overflow-x: clip;
 }
 
 header .header-faixa {
@@ -24,13 +25,21 @@ header .header-barra {
   max-width: var(--max-width);
   margin: auto;
   padding: 12px var(--gutter);
+}
+
+/* fundo da barra de ponta a ponta, atrás do conteúdo centralizado */
+header .header-barra::before {
+  content: '';
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
   background: rgb(247 246 242 / 94%);
 }
 
 @media (width >= 900px) {
-  header .header-barra {
-    background: rgb(247 246 242 / 80%);
-    backdrop-filter: blur(10px);
+  header .header-barra::before {
+    background: rgb(247 246 242 / 82%);
+    backdrop-filter: saturate(160%) blur(14px);
   }
 }
 
@@ -281,7 +290,7 @@ header .header-barra.aberta .header-links {
 }
 
 /* alto contraste: barra sólida, progresso amarelo */
-html.contrast header .header-barra {
+html.contrast header .header-barra::before {
   background: #000;
   backdrop-filter: none;
 }
