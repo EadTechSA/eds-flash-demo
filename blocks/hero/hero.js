@@ -38,9 +38,14 @@ function girar(alvo, palavras, intervalo) {
   const mostrar = (p, anima) => {
     const velho = alvo.firstElementChild;
     const novo = el('span', 'hero-rotativa-palavra');
+    // espaço fica como texto: é onde a linha pode quebrar no celular
     [...p].forEach((ch, k) => {
-      const l = el('span', 'hero-letra', ch === ' ' ? '&nbsp;' : '');
-      if (ch !== ' ') l.textContent = ch;
+      if (ch === ' ') {
+        novo.append(' ');
+        return;
+      }
+      const l = el('span', 'hero-letra');
+      l.textContent = ch;
       l.style.setProperty('--i', k);
       novo.append(l);
     });

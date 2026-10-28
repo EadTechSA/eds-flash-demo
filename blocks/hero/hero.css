@@ -50,11 +50,17 @@
   color: var(--warm);
   font-style: normal;
   vertical-align: top;
+  max-width: 100%;
 }
 
 .hero .hero-rotativa-palavra {
   grid-area: 1 / 1;
-  white-space: nowrap;
+}
+
+@media (width >= 600px) {
+  .hero .hero-rotativa-palavra {
+    white-space: nowrap;
+  }
 }
 
 .hero .hero-letra {

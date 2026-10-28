@@ -302,3 +302,15 @@ header .header-progresso.rybDarkContrast,
 header .header-progresso.rybLightContrast {
   background-image: none;
 }
+
+/* celular: marca sem subtítulo e botão de cookies menor, para caber na barra */
+@media (width < 900px) {
+  header .header-marca em {
+    display: none;
+  }
+
+  header .header-ferramentas a {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
