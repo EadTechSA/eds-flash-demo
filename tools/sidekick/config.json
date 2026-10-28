@@ -6,15 +6,19 @@
     {
       "id": "editar-no-aem",
       "title": "Editar no Universal Editor",
-      "titleI18n": {
-        "pt_BR": "Editar no Universal Editor",
-        "en": "Edit in Universal Editor"
-      },
-      "environments": ["preview", "live"],
+      "environments": [
+        "preview",
+        "live"
+      ],
       "url": "/editar-no-aem.html",
       "passReferrer": true,
-      "excludePaths": ["/nav", "/footer", "/404", "/cookie-consent/**"]
+      "excludePaths": [
+        "/nav",
+        "/footer",
+        "/404",
+        "/cookie-consent/**"
+      ]
     }
   ],
-  "_nota": "Registro versionado do que está no serviço de configuração (POST admin.hlx.page/config/eadtechsa/sites/eds-flash-demo/sidekick.json). A entrega não serve /tools/**. editUrlPattern é o padrão do aem-boilerplate-xwalk: o botão Editar nativo abre {{contentSourceUrl}}{{pathname}}?cmd=open no author, que redireciona ao Universal Editor. O plugin é a alternativa que não depende do author resolver o caminho: a ponte /editar-no-aem.html monta o endereço do editor."
+  "_nota": "Registro versionado do que está no serviço de configuração (POST admin.hlx.page/config/eadtechsa/sites/eds-flash-demo/sidekick.json). A entrega não serve /tools/**. editUrlPattern é o padrão do aem-boilerplate-xwalk: o botão Editar nativo abre {{contentSourceUrl}}{{pathname}}?cmd=open no author, que redireciona ao Universal Editor. O plugin é a alternativa que não depende do author resolver o caminho: a ponte /editar-no-aem.html monta o endereço do editor. O serviço recusa titleI18n com pt_BR (schema), por isso só title. Conferido em 27/10: /?cmd=open e /en?cmd=open abrem o Universal Editor de index e en."
 }
