@@ -640,7 +640,7 @@ def home(t, ids):
         section([('hero', hero), ('embed', embed), ('como', text(t['como']))], nome='Capa'),
         section([('abertura', text(f'<p>{st["paginas-eyebrow"]}</p><h2>{st["paginas-titulo"]}</h2><p>{st["paginas-texto"]}</p>')), ('paginas', cartoes)],
                 id='paginas', nome='Páginas', style='titulos-animados'),
-        section([('cta', text(f'<p>{st["cta-eyebrow"]}</p><h2>{st["cta-titulo"]}</h2><p><a href="{href(t, primeira[0])}">{st["cta-botao"]}</a></p>'))],
+        section([('cta', text(f'<p>{st["cta-eyebrow"]}</p><h2>{st["cta-titulo"]}</h2><p><strong><a href="{href(t, primeira[0])}">{st["cta-botao"]}</a></strong></p>'))],
                 nome='Faixa final', style='faixa-final'),
     ]
     return page(t['titulo'], sections, **props(t, t['titulo'], t['descricao']))

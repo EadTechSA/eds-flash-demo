@@ -154,7 +154,7 @@
     "cta": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>Comece por aqui</p><h2>Uma semana no cliente. Veja o que vem antes dela.</h2><p><a href=\"/metodo\">Ver o método</a></p>"
+     "text": "<p>Comece por aqui</p><h2>Uma semana no cliente. Veja o que vem antes dela.</h2><p><strong><a href=\"/metodo\">Ver o método</a></strong></p>"
     }
    }
   }
@@ -2869,7 +2869,7 @@
     "cta": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>Empiece por aquí</p><h2>Una semana en el cliente. Vea lo que viene antes.</h2><p><a href=\"/es/metodo\">Ver el método</a></p>"
+     "text": "<p>Empiece por aquí</p><h2>Una semana en el cliente. Vea lo que viene antes.</h2><p><strong><a href=\"/es/metodo\">Ver el método</a></strong></p>"
     }
    }
   }
@@ -5584,7 +5584,7 @@
     "cta": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<p>Start here</p><h2>One week at the client. See what comes before it.</h2><p><a href=\"/en/method\">See the method</a></p>"
+     "text": "<p>Start here</p><h2>One week at the client. See what comes before it.</h2><p><strong><a href=\"/en/method\">See the method</a></strong></p>"
     }
    }
   }

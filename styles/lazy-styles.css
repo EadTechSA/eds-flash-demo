@@ -430,6 +430,28 @@ main > .section.faixa-final h2 {
   max-width: 22ch;
 }
 
+/* link em negrito na faixa: chamada principal, em botão */
+main > .section.faixa-final strong > a:any-link {
+  display: inline-flex;
+  margin-top: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+main > .section.faixa-final strong > a:hover {
+  background: var(--accent-hover);
+}
+
+html.contrast main > .section.faixa-final strong > a:any-link {
+  background: #ff0;
+  color: #000;
+}
+
 /* o link da página seguinte em destaque; o "voltar" fica discreto */
 main > .section.faixa-final .default-content-wrapper > p:nth-child(2) a {
   font-size: var(--heading-font-size-l);
@@ -447,7 +469,7 @@ main > .section.faixa-final .default-content-wrapper > p:nth-child(3) {
   max-width: 60ch;
 }
 
-main > .section.faixa-final .default-content-wrapper > p:last-child:not(:nth-child(2)) a {
+main > .section.faixa-final .default-content-wrapper > p:last-child:not(:nth-child(2)) a:not(strong > a) {
   font-size: 14px;
   color: var(--text-muted);
 }
