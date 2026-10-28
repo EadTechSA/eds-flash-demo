@@ -107,12 +107,20 @@ function medir({ classe, contraste, filtro, transbordo, alvo }) {
 
 async function verificar(browser, url, viewport) {
   const headers = process.env.AEM_SITE_TOKEN ? { authorization: `token ${process.env.AEM_SITE_TOKEN}` } : {};
-  const ctx = await browser.newContext({ viewport, extraHTTPHeaders: headers });
+  // a CSP estrita do site barraria o script injetado pelo teste (na página real o
+  // Rybená entra pelo delayed.js, que é confiável); a compatibilidade da CSP com
+  // o Rybená é conferida à parte pelo contrato estático (R6)
+  const ctx = await browser.newContext({ viewport, extraHTTPHeaders: headers, bypassCSP: true });
   const page = await ctx.newPage();
   await page.goto(url, { waitUntil: 'networkidle', timeout: 90000 }).catch(() => {});
   await page.waitForTimeout(3000);
   await page.addScriptTag({ url: SCRIPT_RYBENA });
-  await page.waitForFunction(() => window.RybenaApi?.getInstance, null, { timeout: 60000 });
+  const carregou = await page.waitForFunction(() => window.RybenaApi?.getInstance, null, { timeout: 60000 })
+    .then(() => true).catch(() => false);
+  if (!carregou) {
+    await ctx.close();
+    throw new Error(`Rybená não carregou em ${url}: o domínio não está autorizado (a autenticação é pelo Referer). Defina RYBENA_TOKEN com o token de domínio.`);
+  }
   await page.evaluate(() => new Promise((ok) => { window.RybenaApi.getInstance().handleLoaded(ok); }));
   await page.waitForTimeout(1000);
   const res = {};
