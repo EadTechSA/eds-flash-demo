@@ -182,9 +182,9 @@ async function verificarUrl(browser, url, opts, axeSrc) {
       await page.evaluate(() => {
         document.querySelectorAll('.consent-banner').forEach((b) => { b.style.display = 'none'; });
       }).catch(() => {});
+      const fonteNormal = await page.evaluate(() => parseFloat(getComputedStyle(document.body).fontSize));
       let widget = null;
       if (opts.widget && vp.nome === 'desktop' && classes.length) widget = await provarWidget(page, modo, classes);
-      const fonteNormal = await page.evaluate(() => parseFloat(getComputedStyle(document.body).fontSize));
       await page.evaluate(([cls, todas, sin]) => {
         todas.forEach((c) => document.documentElement.classList.remove(c));
         document.documentElement.removeAttribute('data-font-size');
