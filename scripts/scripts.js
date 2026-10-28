@@ -182,7 +182,10 @@ function loadDelayed() {
   window.setTimeout(() => import('./delayed.js'), 3000);
   // consentimento: banner, painel e gates (pacote EadTech), só depois do LCP
   // eslint-disable-next-line import/no-cycle
-  window.setTimeout(() => import('./consent-check.js'), 3000);
+  // no editor o banner cobriria o canvas; o consentimento se edita no documento dele
+  if (!document.documentElement.classList.contains('editor')) {
+    window.setTimeout(() => import('./consent-check.js'), 3000);
+  }
 }
 
 async function loadPage() {

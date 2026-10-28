@@ -123,7 +123,8 @@ export function rotulos(block) {
   });
   const r = (chave, padrao = '') => (mapa[chave] !== undefined ? mapa[chave] : padrao);
   r.mapa = mapa;
-  if (emEditor && guardadas.length) {
+  // cabeçalho e rodapé vêm de outros documentos (nav, footer): lá a caixa aparece
+  if (emEditor && guardadas.length && !block.closest('header, footer')) {
     // depois que o bloco terminar de se desenhar
     const anexar = () => {
       if (block.querySelector(':scope > .textos-interface')) return;

@@ -1930,7 +1930,7 @@
     "links": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<ul><li><a href=\"#valor\">Rápido não é fácil</a></li><li><a href=\"#acessibilidade\">Acessibilidade</a></li><li><a href=\"#midia\">Assets e Dynamic Media</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#consentimento\">Consentimento</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#portoes\">Portões</a></li><li><a href=\"#autoria\">Autoria</a></li></ul>"
+     "text": "<ul><li><a href=\"#valor\">Rápido não é fácil</a></li><li><a href=\"#acessibilidade\">Acessibilidade</a></li><li><a href=\"#midia\">Assets</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#consentimento\">Consentimento</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#portoes\">Portões</a></li><li><a href=\"#autoria\">Autoria</a></li></ul>"
     }
    },
    "section_3": {
@@ -4178,7 +4178,7 @@
     "links": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<ul><li><a href=\"#valor\">Rápido no es fácil</a></li><li><a href=\"#accesibilidad\">Accesibilidad</a></li><li><a href=\"#medios\">Assets y Dynamic Media</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#consentimiento\">Consentimiento</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#controles\">Controles</a></li><li><a href=\"#autoria\">Autoría</a></li></ul>"
+     "text": "<ul><li><a href=\"#valor\">Rápido no es fácil</a></li><li><a href=\"#accesibilidad\">Accesibilidad</a></li><li><a href=\"#medios\">Assets</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#consentimiento\">Consentimiento</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#controles\">Controles</a></li><li><a href=\"#autoria\">Autoría</a></li></ul>"
     }
    },
    "section_3": {
@@ -6426,7 +6426,7 @@
     "links": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/text/v1/text",
-     "text": "<ul><li><a href=\"#valor\">Fast is not easy</a></li><li><a href=\"#accessibility\">Accessibility</a></li><li><a href=\"#media\">Assets & Dynamic Media</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#consent\">Consent</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#gates\">Gates</a></li><li><a href=\"#autoria\">Authoring</a></li></ul>"
+     "text": "<ul><li><a href=\"#valor\">Fast is not easy</a></li><li><a href=\"#accessibility\">Accessibility</a></li><li><a href=\"#media\">Assets</a></li><li><a href=\"#eds\">EDS</a></li><li><a href=\"#consent\">Consent</a></li><li><a href=\"#agentic\">Agentic</a></li><li><a href=\"#gates\">Gates</a></li><li><a href=\"#autoria\">Authoring</a></li></ul>"
     }
    },
    "section_3": {
