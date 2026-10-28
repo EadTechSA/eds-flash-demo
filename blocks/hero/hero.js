@@ -54,7 +54,7 @@ function girar(alvo, palavras, intervalo) {
   };
   // leitor de tela ouve a frase como está no HTML, sem a troca
   const leitor = el('span', 'hero-rotativa-leitor');
-  leitor.textContent = palavras[0];
+  [leitor.textContent] = palavras;
   alvo.before(leitor);
   alvo.setAttribute('aria-hidden', 'true');
   mostrar(palavras[0], false);
