@@ -65,8 +65,8 @@
 .iceberg .iceberg-agua {
   position: absolute;
   inset: calc(22% + var(--p) * 70%) -10% -10%;
-  background: linear-gradient(180deg, rgb(86 194 255 / 18%), rgb(11 12 15 / 0%) 70%);
-  border-top: 1px solid rgb(86 194 255 / 45%);
+  background: linear-gradient(180deg, rgb(10 98 181 / 10%), transparent 70%);
+  border-top: 1px solid rgb(10 98 181 / 40%);
   pointer-events: none;
   transition: top 0.2s linear;
 }
@@ -78,7 +78,7 @@
   right: 0;
   top: -1px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgb(86 194 255 / 90%), transparent);
+  background: linear-gradient(90deg, transparent, rgb(10 98 181 / 80%), transparent);
   animation: iceberg-onda 3s ease-in-out infinite alternate;
 }
 

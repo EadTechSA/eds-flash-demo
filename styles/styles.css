@@ -1,30 +1,30 @@
 /*
- * EDS Flash Demo — tema "Dark Studio".
+ * EDS Flash Demo — tema claro "Paper Studio".
  * Só o necessário para o LCP: tokens, tipografia, seções e botões.
  * O resto (revelações, utilitários de demo) vive em lazy-styles.css.
  */
 
 :root {
   /* superfícies por luminância, nunca por sombra */
-  --background-color: #0b0c0f;
-  --surface-1: #141519;
-  --surface-2: #1c1e24;
-  --surface-3: #25282f;
-  --line: rgb(255 255 255 / 8%);
-  --line-strong: rgb(255 255 255 / 14%);
+  --background-color: #f7f6f2;
+  --surface-1: #fff;
+  --surface-2: #efede7;
+  --surface-3: #e2dfd7;
+  --line: rgb(17 18 22 / 9%);
+  --line-strong: rgb(17 18 22 / 18%);
 
   /* texto */
-  --text-color: #f2f3f5;
-  --text-muted: #9aa0a8;
-  --text-dim: #858b94;
+  --text-color: #111216;
+  --text-muted: #474b53;
+  --text-dim: #5e626a;
 
   /* um acento só, e as cores de estado */
   --accent: #e30d00;
   --accent-hover: #fa0f00;
-  --warm: #ff6a3d;
-  --ok: #3ddc97;
-  --warn: #ffc857;
-  --info: #56c2ff;
+  --warm: #c2360b;
+  --ok: #0b7a4f;
+  --warn: #8a5a00;
+  --info: #0a62b5;
   --link-color: var(--text-color);
   --link-hover-color: var(--warm);
 
@@ -70,7 +70,7 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -284,7 +284,7 @@ main > .section.pagina-topo {
   position: relative;
   padding-block: clamp(56px, 8vw, 112px) clamp(32px, 5vw, 64px);
   border-bottom: 1px solid var(--line);
-  background: radial-gradient(60% 120% at 15% 0%, rgb(255 106 61 / 12%), transparent 60%);
+  background: radial-gradient(60% 120% at 15% 0%, rgb(194 54 11 / 9%), transparent 60%);
 }
 
 main > .section.pagina-topo h1 {

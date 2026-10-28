@@ -21,7 +21,7 @@
   padding: 18px 20px;
   border: 1px solid var(--line-strong, rgb(255 255 255 / 14%));
   border-radius: var(--radius, 16px);
-  box-shadow: 0 30px 80px -30px rgb(0 0 0 / 80%);
+  box-shadow: 0 30px 80px -30px rgb(17 18 22 / 25%);
   animation: consent-subir 0.5s var(--ease, ease-out);
 }
 
@@ -118,7 +118,7 @@ dialog.consent-painel[open] {
 }
 
 dialog.consent-painel::backdrop {
-  background: rgb(0 0 0 / 60%);
+  background: rgb(17 18 22 / 45%);
   backdrop-filter: blur(4px);
 }
 

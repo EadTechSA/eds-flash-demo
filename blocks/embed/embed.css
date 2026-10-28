@@ -52,8 +52,10 @@
   border: 2px solid;
   border-radius: 20px;
   padding: 0;
-  color: var(--text-color);
-  background: rgb(11 12 15 / 55%);
+
+  /* sobre a capa (imagem), o botão fica claro em fundo escuro em qualquer tema */
+  color: #fff;
+  background: rgb(17 18 22 / 60%);
   cursor: pointer;
 }
 

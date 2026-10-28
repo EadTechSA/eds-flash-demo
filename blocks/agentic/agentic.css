@@ -69,15 +69,15 @@
   font-size: 11px;
   flex: none;
   margin-top: 2px;
-  background: rgb(61 220 151 / 18%);
+  background: rgb(11 122 79 / 10%);
   color: var(--ok);
-  border: 1px solid rgb(61 220 151 / 50%);
+  border: 1px solid rgb(11 122 79 / 40%);
 }
 
 .agentic li.pendente .agentic-marca {
-  background: rgb(255 200 87 / 15%);
+  background: rgb(138 90 0 / 10%);
   color: var(--warn);
-  border-color: rgb(255 200 87 / 50%);
+  border-color: rgb(138 90 0 / 40%);
   border-style: dashed;
 }
 

@@ -24,12 +24,12 @@ header .header-barra {
   max-width: var(--max-width);
   margin: auto;
   padding: 12px var(--gutter);
-  background: rgb(11 12 15 / 92%);
+  background: rgb(247 246 242 / 94%);
 }
 
 @media (width >= 900px) {
   header .header-barra {
-    background: rgb(11 12 15 / 72%);
+    background: rgb(247 246 242 / 80%);
     backdrop-filter: blur(10px);
   }
 }
@@ -201,7 +201,7 @@ header .header-links a[aria-current='page'] {
     border: 1px solid var(--line-strong);
     border-radius: 14px;
     background: var(--surface-1);
-    box-shadow: 0 24px 48px rgb(0 0 0 / 45%);
+    box-shadow: 0 24px 48px rgb(17 18 22 / 12%);
   }
 
   /* ponte invisível para o ponteiro passar do botão ao painel sem fechar */

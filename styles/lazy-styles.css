@@ -402,7 +402,7 @@ main > .section.faixa-final > div {
   border: 1px solid var(--line-strong);
   border-radius: calc(var(--radius) * 1.5);
   background:
-    radial-gradient(80% 140% at 100% 0%, rgb(255 106 61 / 14%), transparent 60%),
+    radial-gradient(80% 140% at 100% 0%, rgb(194 54 11 / 8%), transparent 60%),
     var(--surface-1);
   max-width: calc(var(--max-width) - 2 * var(--gutter));
 }

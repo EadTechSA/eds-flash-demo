@@ -85,7 +85,7 @@
   aspect-ratio: 16 / 10;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 40px 120px -50px rgb(0 0 0 / 90%);
+  box-shadow: 0 40px 120px -50px rgb(17 18 22 / 35%);
 }
 
 .fases .fases-barra {
@@ -146,7 +146,7 @@
 .fases .fases-hero {
   position: relative;
   border-radius: 12px;
-  background: radial-gradient(120% 90% at 20% 10%, #2a1410 0%, #141519 45%, #0b0c0f 100%);
+  background: radial-gradient(120% 90% at 20% 10%, rgb(194 54 11 / 14%) 0%, var(--surface-2) 55%, var(--surface-3) 100%);
   border: 1px solid var(--line);
   display: grid;
   align-content: end;
@@ -179,7 +179,7 @@
   padding: 3px 7px;
   border-radius: 5px;
   background: var(--ok);
-  color: #06251a;
+  color: #fff;
   font: 500 10px var(--mono-font-family);
   opacity: 0;
   transform: scale(0.6);

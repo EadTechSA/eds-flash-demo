@@ -39,7 +39,7 @@
 .dm-showcase .dm-moldura {
   position: absolute;
   inset: 6px;
-  border: 1px dashed rgb(255 255 255 / 35%);
+  border: 1px dashed var(--line-strong);
   border-radius: 8px;
   pointer-events: none;
 }
