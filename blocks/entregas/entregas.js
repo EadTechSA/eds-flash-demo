@@ -6,9 +6,22 @@
  * Depois, uma linha por entrega: título | texto | número | unidade.
  */
 import {
-  el, adiar, abertura as montarAbertura, campos, campo, conteudo, marcar, numeroDe, casasDe, texto,
+  el, adiar, abertura as montarAbertura, campos, campo, conteudo, marcar, texto,
 } from '../../scripts/demo.js';
 import { contar, palavras, revelar } from '../../scripts/motion.js';
+
+/* local de propósito: um demo.js antigo no cache do navegador não derruba o bloco */
+function numeroDe(s) {
+  const m = String(s || '').match(/-?[\d.]*\d(?:,\d+)?/);
+  if (!m) return 0;
+  const n = parseFloat(m[0].replace(/\./g, '').replace(',', '.'));
+  return Number.isFinite(n) ? n : 0;
+}
+
+function casasDe(s) {
+  const m = String(s || '').match(/\d[,.](\d+)/);
+  return m ? m[1].length : 0;
+}
 
 function abertura(cels) {
   const d = montarAbertura(cels, 'entregas-abertura');

@@ -8,9 +8,17 @@
  * Depois, uma linha por critério: título | texto | valor A | valor B.
  */
 import {
-  el, adiar, abertura as montarAbertura, campos, campo, conteudo, marcar, numeroDe, texto,
+  el, adiar, abertura as montarAbertura, campos, campo, conteudo, marcar, texto,
 } from '../../scripts/demo.js';
 import { palavras, reduzido, revelar } from '../../scripts/motion.js';
+
+/* local de propósito: um demo.js antigo no cache do navegador não derruba o bloco */
+function numeroDe(s) {
+  const m = String(s || '').match(/-?[\d.]*\d(?:,\d+)?/);
+  if (!m) return 0;
+  const n = parseFloat(m[0].replace(/\./g, '').replace(',', '.'));
+  return Number.isFinite(n) ? n : 0;
+}
 
 function abertura(cels) {
   const d = montarAbertura(cels, 'comparacao-abertura');
