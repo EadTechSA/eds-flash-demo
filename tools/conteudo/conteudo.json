@@ -1083,7 +1083,7 @@
     "medidor": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Medidor de cookies",
+     "name": "Medidor Cookies",
      "model": "medidor-cookies",
      "filter": "medidor-cookies",
      "texto": "<p>Medidor de cookies · leitura real</p><h2>Digite um site. Veja o que ele grava antes do seu sim.</h2><p>Um navegador limpo, saindo de uma conexão no Brasil, abre o endereço e não clica em nada. Em uns 40 segundos aparece aqui quem foi chamado, quais cookies ficaram gravados e se havia banner na tela. Compare com esta demo: zero.</p>",
@@ -3118,7 +3118,7 @@
     "medidor": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Medidor de cookies",
+     "name": "Medidor Cookies",
      "model": "medidor-cookies",
      "filter": "medidor-cookies",
      "texto": "<p>Medidor de cookies · lectura real</p><h2>Escribe un sitio. Mira lo que graba antes de tu sí.</h2><p>Un navegador limpio, saliendo de una conexión en Brasil, abre la dirección y no hace clic en nada. En unos 40 segundos aparece aquí a quién llamó, qué cookies quedaron grabadas y si había banner en pantalla. Compara con esta demo: cero.</p>",
@@ -5153,7 +5153,7 @@
     "medidor": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Medidor de cookies",
+     "name": "Medidor Cookies",
      "model": "medidor-cookies",
      "filter": "medidor-cookies",
      "texto": "<p>Cookie meter · live reading</p><h2>Type a site. See what it stores before your yes.</h2><p>A clean browser on a Brazilian connection opens the address and clicks nothing. In about 40 seconds you see who was called, which cookies were stored and whether a banner was on screen. Compare with this demo: zero.</p>",

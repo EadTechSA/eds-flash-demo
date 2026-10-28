@@ -442,7 +442,7 @@ def home(t, ids):
                     [(f'verificacao_{i}', 'verificacao', {'texto': a, 'estado': b}) for i, (a, b) in enumerate(t['verificacoes'])] + rotulos('rotulo', t['agentic_rotulos']), filt='agentic')
     passos = block('Passos', 'passos', {'texto': t['passos_abertura']},
                    [(f'passo_{i}', 'passo', {'icone': a, 'titulo': b, 'texto': c}) for i, (a, b, c) in enumerate(t['passos'])] + rotulos('rotulo', t['passos_rotulos']), filt='passos')
-    medidor = block('Medidor de cookies', 'medidor-cookies', {'texto': t['medidor_abertura'], 'endpoint': MEDIDOR}, rotulos('rotulo', t['medidor_rotulos']), filt='medidor-cookies')
+    medidor = block('Medidor Cookies', 'medidor-cookies', {'texto': t['medidor_abertura'], 'endpoint': MEDIDOR}, rotulos('rotulo', t['medidor_rotulos']), filt='medidor-cookies')
     a11y = block('A11y Painel', 'a11y-painel', {'texto': t['a11y_abertura']}, rotulos('rotulo', t['a11y_painel_rotulos']), filt='a11y-painel')
     sections = [
         section([('hero', hero), ('como', text(t['como']))], nome='Capa'),
