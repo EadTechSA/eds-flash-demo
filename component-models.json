@@ -200,6 +200,14 @@
           {
             "name": "Títulos animados (palavra por palavra)",
             "value": "titulos-animados"
+          },
+          {
+            "name": "Topo da página (grupo, h1 e abertura)",
+            "value": "pagina-topo"
+          },
+          {
+            "name": "Faixa final (próximo passo)",
+            "value": "faixa-final"
           }
         ]
       },

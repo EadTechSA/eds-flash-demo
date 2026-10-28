@@ -394,3 +394,70 @@ html.editor .iceberg .iceberg-camadas {
 .textos-interface .textos-interface-linha p {
   margin: 0;
 }
+
+/* faixa final: próximo passo (página seguinte ou chamada do início) */
+main > .section.faixa-final > div {
+  position: relative;
+  padding: clamp(32px, 5vw, 56px);
+  border: 1px solid var(--line-strong);
+  border-radius: calc(var(--radius) * 1.5);
+  background:
+    radial-gradient(80% 140% at 100% 0%, rgb(255 106 61 / 14%), transparent 60%),
+    var(--surface-1);
+  max-width: calc(var(--max-width) - 2 * var(--gutter));
+}
+
+main > .section.faixa-final .default-content-wrapper {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+
+main > .section.faixa-final .default-content-wrapper > p {
+  margin: 0;
+}
+
+main > .section.faixa-final .default-content-wrapper > p:first-child {
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+main > .section.faixa-final h2 {
+  margin: 0;
+  max-width: 22ch;
+}
+
+/* o link da página seguinte em destaque; o "voltar" fica discreto */
+main > .section.faixa-final .default-content-wrapper > p:nth-child(2) a {
+  font-size: var(--heading-font-size-l);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+main > .section.faixa-final .default-content-wrapper > p:nth-child(2) a::after {
+  content: ' →';
+}
+
+main > .section.faixa-final .default-content-wrapper > p:nth-child(3) {
+  color: var(--text-muted);
+  max-width: 60ch;
+}
+
+main > .section.faixa-final .default-content-wrapper > p:last-child:not(:nth-child(2)) a {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+html.contrast main > .section.faixa-final > div {
+  background: #000;
+}
+
+/* Rybená: ele troca a cor de fundo elemento a elemento; o gradiente ficaria por cima */
+main > .section.faixa-final > div.rybDarkContrast,
+main > .section.faixa-final > div.rybLightContrast {
+  background-image: none;
+}

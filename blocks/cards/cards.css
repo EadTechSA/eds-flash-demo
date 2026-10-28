@@ -4,16 +4,72 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  gap: 16px;
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-1);
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s var(--ease);
+}
+
+.cards > ul > li:hover,
+.cards > ul > li:focus-within {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
 }
 
 .cards .cards-card-body {
-  margin: 16px;
+  margin: 22px;
+}
+
+.cards .cards-card-body:empty {
+  display: none;
+}
+
+.cards .cards-card-body > p:first-child {
+  margin: 0 0 10px;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.cards .cards-card-body h3 {
+  margin: 0 0 8px;
+  font-size: var(--heading-font-size-s);
+}
+
+.cards .cards-card-body h3 a {
+  text-decoration: none;
+}
+
+/* o cartão inteiro leva à página, pelo próprio link do título */
+.cards .cards-card-body h3 a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.cards .cards-card-body h3 a:focus-visible {
+  outline: none;
+}
+
+.cards > ul > li:has(h3 a:focus-visible) {
+  outline: 2px solid var(--warm);
+  outline-offset: 2px;
+}
+
+.cards .cards-card-body p {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  color: var(--text-muted);
 }
 
 .cards .cards-card-image {
@@ -26,7 +82,14 @@
   object-fit: cover;
 }
 
+@media (width >= 900px) {
+  .cards > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* alto contraste: borda branca */
 html.contrast .cards > ul > li {
   border-color: #fff;
+  background: #000;
 }

@@ -1,17 +1,16 @@
 footer {
   border-top: 1px solid var(--line);
-  padding: 36px var(--gutter);
-  font-size: 13px;
+  padding: 56px var(--gutter) 32px;
+  font-size: 14px;
   color: var(--text-dim);
+  background: var(--surface-1);
 }
 
 footer .footer > div {
   max-width: var(--max-width);
   margin: auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 40px;
 }
 
 footer .footer p {
@@ -20,4 +19,85 @@ footer .footer p {
 
 footer .footer a {
   color: var(--text-muted);
+  text-decoration: none;
+}
+
+footer .footer a:hover {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+footer .footer-marca p + p {
+  margin-top: 12px;
+  max-width: 36ch;
+  line-height: 1.6;
+}
+
+footer .footer-marca strong {
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+footer .footer-marca em {
+  font-style: normal;
+  margin-left: 8px;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+footer .footer-mapa ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer-mapa nav > div > ul,
+footer .footer-mapa nav > ul {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+footer .footer-mapa li > p {
+  margin-bottom: 12px;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+footer .footer-mapa li li + li {
+  margin-top: 8px;
+}
+
+footer .footer-base {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+
+footer .footer-base .default-content-wrapper {
+  display: contents;
+}
+
+footer .footer-base p:first-child {
+  margin-right: auto;
+}
+
+@media (width >= 900px) {
+  footer .footer > div {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+html.contrast footer {
+  background: #000;
 }

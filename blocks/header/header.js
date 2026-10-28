@@ -2,12 +2,78 @@
  * Cabeçalho da demo, carregado do fragmento /nav. Seções do fragmento:
  *  1. faixa de aviso (bloco `aviso`: uso exclusivo + idiomas),
  *  2. marca (imagem ou texto + subtítulo),
- *  3. links das seções da página,
+ *  3. menu: lista de grupos (rótulo + lista de páginas), cada grupo vira
+ *     um botão que abre o painel com as páginas dele,
  *  4. ferramentas (link #definicoes-de-cookies).
- * A barra fica fixa, com a seção visível marcada e a linha de progresso.
+ * A barra fica fixa, com a página atual marcada e a linha de progresso.
  */
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
+
+const caminho = (u) => new URL(u, window.location.href).pathname.replace(/\/(index)?$/, '') || '/';
+
+/**
+ * Cada item do menu com sublista vira um grupo: o rótulo vira botão
+ * (aria-expanded) e a sublista, o painel. A página atual ganha
+ * aria-current e marca o grupo dela.
+ */
+function grupos(links) {
+  const aqui = caminho(window.location.href);
+  const botoes = [];
+  const fechar = (exceto) => botoes.forEach((b) => {
+    if (b !== exceto) b.setAttribute('aria-expanded', 'false');
+  });
+  links.querySelectorAll('a[href]').forEach((a) => {
+    if (caminho(a.href) === aqui) a.setAttribute('aria-current', 'page');
+  });
+  [...links.querySelectorAll(':scope ul')].filter((ul) => !ul.parentElement.closest('ul'))
+    .forEach((topo) => [...topo.children].forEach((li, i) => {
+      const sub = li.querySelector(':scope > ul');
+      if (!sub) return;
+      const rotulo = li.querySelector(':scope > p') || li.firstChild;
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.classList.add('header-grupo');
+      b.textContent = (rotulo?.textContent || '').trim();
+      b.setAttribute('aria-expanded', 'false');
+      sub.id = sub.id || `header-painel-${i}`;
+      sub.classList.add('header-painel');
+      b.setAttribute('aria-controls', sub.id);
+      if (rotulo) rotulo.replaceWith(b); else li.prepend(b);
+      li.classList.add('header-item-grupo');
+      if (sub.querySelector('[aria-current]')) b.classList.add('ativo');
+      b.addEventListener('click', () => {
+        const abrir = b.getAttribute('aria-expanded') !== 'true';
+        fechar(b);
+        b.setAttribute('aria-expanded', String(abrir));
+      });
+      // no desktop, o painel também abre ao passar o ponteiro
+      li.addEventListener('pointerenter', (e) => {
+        if (e.pointerType === 'mouse' && window.matchMedia('(width >= 900px)').matches) {
+          fechar(b);
+          b.setAttribute('aria-expanded', 'true');
+        }
+      });
+      li.addEventListener('pointerleave', (e) => {
+        if (e.pointerType === 'mouse' && window.matchMedia('(width >= 900px)').matches) b.setAttribute('aria-expanded', 'false');
+      });
+      botoes.push(b);
+    }));
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    const aberto = botoes.find((b) => b.getAttribute('aria-expanded') === 'true');
+    if (aberto) {
+      fechar();
+      aberto.focus();
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (!links.contains(e.target)) fechar();
+  });
+  links.addEventListener('focusout', (e) => {
+    if (e.relatedTarget && !links.contains(e.relatedTarget)) fechar();
+  });
+}
 
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');
@@ -40,8 +106,10 @@ export default async function decorate(block) {
     block.append(widget);
   }
 
-  // botão hambúrguer no celular
   const links = barra.querySelector('.header-links');
+  if (links) grupos(links);
+
+  // botão hambúrguer no celular
   if (links) {
     const b = document.createElement('button');
     b.type = 'button';
@@ -57,15 +125,9 @@ export default async function decorate(block) {
       barra.classList.toggle('aberta', !aberto);
     });
     links.before(b);
-    links.addEventListener('click', (e) => {
-      if (e.target.closest('a')) {
-        b.setAttribute('aria-expanded', 'false');
-        barra.classList.remove('aberta');
-      }
-    });
   }
 
-  // seção ativa e progresso de leitura
+  // progresso de leitura
   let agendado = false;
   const medir = () => {
     agendado = false;
@@ -80,15 +142,4 @@ export default async function decorate(block) {
     }
   }, { passive: true });
   medir();
-  if ('IntersectionObserver' in window && links) {
-    const obs = new IntersectionObserver((es) => {
-      es.forEach((e) => {
-        if (!e.isIntersecting) return;
-        links.querySelectorAll('a').forEach((a) => a.classList.toggle('ativo', a.getAttribute('href') === `#${e.target.id}`));
-      });
-    }, { rootMargin: '-35% 0px -55% 0px' });
-    const ligar = () => document.querySelectorAll('main .section[id]').forEach((s) => obs.observe(s));
-    // as seções ganham id no motion.js; liga quando a página terminar de carregar
-    if (document.readyState === 'complete') ligar(); else window.addEventListener('load', ligar);
-  }
 }

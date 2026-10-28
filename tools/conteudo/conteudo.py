@@ -105,15 +105,14 @@ T['pt'] = dict(
     descricao='Demonstração ao vivo de AEM Edge Delivery Services, Assets e Dynamic Media com consentimento nativo, feita pela EadTech para o Adobe Professional Services.',
     aviso='<p><strong>Uso exclusivo para apresentação ao Adobe Professional Services</strong> · ambiente de demonstração EadTech</p>',
     marca='<p><strong>EadTech</strong> <em>EDS Flash Demo</em></p>',
-    menu=[('#valor', 'Rápido não é fácil'), ('#acessibilidade', 'Acessibilidade'), ('#midia', 'Assets'), ('#eds', 'EDS'), ('#consentimento', 'Consentimento'), ('#agentic', 'Agentic'), ('#autoria', 'Autoria')],
     cookies='Definições de cookies',
     rodape='<p>EadTech · parceira estratégica Adobe · demonstração interna, não é site de cliente</p>',
     rodape_link='<p><a href="#definicoes-de-cookies">Definições de cookies</a></p>',
     hero_texto='<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimento nativo</p>'
                '<h1>O site que <em>carrega rápido no celular | é acessível por bloco | recorta por IA | fala com agentes | pede permissão | publica sem TI</em> em uma semana de migração.</h1>'
-               '<p>Esta página é uma demonstração ao vivo, não um slide: cada seção mostra um recurso do EDS, do Assets e do método da EadTech funcionando de verdade. Acessibilidade que vale para todo bloco, Lighthouse medido a cada publicação, agentes de IA, consentimento nativo. O vídeo da Adobe abaixo é o primeiro exemplo: só carrega depois do seu sim.</p>',
+               '<p>Este site é uma demonstração ao vivo, não um slide: cada página mostra um recurso do EDS, do Assets e do método da EadTech funcionando de verdade. Acessibilidade que vale para todo bloco, Lighthouse medido a cada publicação, agentes de IA, consentimento nativo. O vídeo da Adobe abaixo é o primeiro exemplo: só carrega depois do seu sim.</p>',
     hero_rotulos={'selo-1': 'Lighthouse {desempenho} · {acessibilidade} · {praticas} · {seo} · medido {data}', 'selo-2': 'acessível por bloco · 6 ferramentas', 'selo-sem-consentimento': 'sem consentimento', 'selo-com-consentimento': 'mídia e vídeo permitidos', 'hud-bloqueado': 'gate ativo', 'hud-liberado': 'vídeo liberado', 'hud-embed': 'player da Adobe', 'fonte': 'vídeo: video.tv.adobe.com', 'titulo-video': 'Vídeo da Adobe sobre Edge Delivery Services', 'log-liberado': 'gate CC_MEDIA: liberado → player inserido', 'log-revogado': 'gate CC_MEDIA: revogado → player removido, aviso de volta (sem reload)'},
-    como='<p>Como usar na apresentação</p><p>1. Clique no botão de acessibilidade à direita e ligue o alto contraste: a página inteira muda, bloco a bloco.</p><p>2. Role até "Rápido não é fácil" e deixe o iceberg contar o investimento.</p><p>3. Dê play no vídeo: ele pede consentimento, carrega na hora e some ao revogar, sem recarregar.</p>',
+    como='<p>Como usar na apresentação</p><p>1. Clique no botão de acessibilidade à direita e ligue o alto contraste: a página inteira muda, bloco a bloco.</p><p>2. Abra Método no menu e deixe o iceberg contar o investimento.</p><p>3. Dê play no vídeo: ele pede consentimento, carrega na hora e some ao revogar, sem recarregar.</p>',
     valor_iceberg='<p>Rápido não quer dizer fácil</p><h2>Uma semana no cliente. Anos antes dela.</h2><p>O que você vê é a ponta: a migração entregue em uma semana. O que torna isso possível está embaixo da linha d\'água, e foi investido antes de qualquer cliente aparecer. Role para ver.</p>',
     valor_comparacao='<p>O caminho difícil × a Migração Express</p><h2>Difícil não entrega mais. Entrega menos, mais tarde.</h2><p>Os mesmos critérios, nos dois caminhos. Alterne e veja para onde vai cada número.</p>',
     valor_entregas='<p>O que a semana entrega</p><h2>Rápido é o que sobra quando o método está pronto.</h2><p>Cada número abaixo é medido, não prometido.</p>',
@@ -129,14 +128,14 @@ T['pt'] = dict(
     ],
     comparacoes=[
         ('Prazo até o site no ar', '<p>Projeto tradicional: levantamento, design, componentes, integração, homologação. Express: o método já existe, o conteúdo entra.</p>', '26 semanas', '1 semana'),
-        ('Desempenho no Lighthouse (celular)', '<p>Sites em frameworks pesados costumam ficar entre 40 e 70. O EDS fica entre 85 e 100 nas medições desta página, porque carrega em três fases; a nota oscila um pouco a cada medição. A última, com data, está na seção EDS.</p>', '55', '85 a 100'),
+        ('Desempenho no Lighthouse (celular)', '<p>Sites em frameworks pesados costumam ficar entre 40 e 70. O EDS fica entre 85 e 100 nas medições desta página, porque carrega em três fases; a nota oscila um pouco a cada medição. A última, com data, está na página EDS por dentro.</p>', '55', '85 a 100'),
         ('Scripts de terceiros antes do sim', '<p>Tag managers, pixels e vídeos costumam entrar antes de qualquer escolha. Aqui, zero.</p>', '12', '0'),
         ('Horas de TI do cliente por mês', '<p>Sem bloco novo, não há sprint: quem publica é a área de negócio, no Universal Editor.</p>', '160', '8'),
         ('Tempo para publicar um ajuste', '<p>Da fila de TI para um clique de quem escreve.</p>', '14 dias', '1 minuto'),
         ('Agentic readiness', '<p>Conteúdo no HTML, estrutura semântica, metadados, índice e llms.txt.</p>', '2 de 5', '5 de 5'),
     ],
     entregas=[
-        ('Lighthouse medido a cada publicação', '<p>Desempenho, acessibilidade, boas práticas e SEO, no celular, medidos pelo CI. A nota aparece com data no topo da página e na seção EDS.</p>', '4', 'eixos medidos'),
+        ('Lighthouse medido a cada publicação', '<p>Desempenho, acessibilidade, boas práticas e SEO, no celular, medidos pelo CI. A nota aparece com data no início e na página EDS por dentro.</p>', '4', 'eixos medidos'),
         ('Agentic readiness', '<p>As cinco verificações, com llms.txt publicado.</p>', '5', 'de 5'),
         ('Scripts antes do consentimento', '<p>Nenhum pixel, tag manager ou vídeo entra antes do sim.</p>', '0', 'scripts'),
         ('Clique para publicar', '<p>Autor aprova, publica. CDN da Adobe ou a do cliente na frente.</p>', '1', 'clique'),
@@ -183,15 +182,14 @@ T['es'] = dict(
     descricao='Demostración en vivo de AEM Edge Delivery Services, Assets y Dynamic Media con consentimiento nativo, hecha por EadTech para Adobe Professional Services.',
     aviso='<p><strong>Uso exclusivo para presentación a Adobe Professional Services</strong> · ambiente de demostración EadTech</p>',
     marca='<p><strong>EadTech</strong> <em>EDS Flash Demo</em></p>',
-    menu=[('#valor', 'Rápido no es fácil'), ('#accesibilidad', 'Accesibilidad'), ('#medios', 'Assets'), ('#eds', 'EDS'), ('#consentimiento', 'Consentimiento'), ('#agentic', 'Agentic'), ('#autoria', 'Autoría')],
     cookies='Configuración de cookies',
     rodape='<p>EadTech · partner estratégico de Adobe · demostración interna, no es sitio de cliente</p>',
     rodape_link='<p><a href="#definicoes-de-cookies">Configuración de cookies</a></p>',
     hero_texto='<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimiento nativo</p>'
                '<h1>El sitio que <em>carga rápido en el móvil | es accesible por bloque | recorta con IA | habla con agentes | pide permiso | publica sin TI</em> en una semana de migración.</h1>'
-               '<p>Esta página es una demostración en vivo, no una diapositiva: cada sección muestra un recurso de EDS, de Assets y del método de EadTech funcionando de verdad. Accesibilidad que vale para todo bloque, Lighthouse medido en cada publicación, agentes de IA, consentimiento nativo. El video de Adobe de abajo es el primer ejemplo: solo carga después de su sí.</p>',
+               '<p>Este sitio es una demostración en vivo, no una diapositiva: cada página muestra un recurso de EDS, de Assets y del método de EadTech funcionando de verdad. Accesibilidad que vale para todo bloque, Lighthouse medido en cada publicación, agentes de IA, consentimiento nativo. El video de Adobe de abajo es el primer ejemplo: solo carga después de su sí.</p>',
     hero_rotulos={'selo-1': 'Lighthouse {desempenho} · {acessibilidade} · {praticas} · {seo} · medido {data}', 'selo-2': 'accesible por bloque · 6 herramientas', 'selo-sem-consentimento': 'sin consentimiento', 'selo-com-consentimento': 'medios y video permitidos', 'hud-bloqueado': 'gate activo', 'hud-liberado': 'video liberado', 'hud-embed': 'player de Adobe', 'fonte': 'video: video.tv.adobe.com', 'titulo-video': 'Video de Adobe sobre Edge Delivery Services', 'log-liberado': 'gate CC_MEDIA: liberado → player insertado', 'log-revogado': 'gate CC_MEDIA: revocado → player retirado, aviso de vuelta (sin reload)'},
-    como='<p>Cómo usar en la presentación</p><p>1. Pulse el botón de accesibilidad a la derecha y active el alto contraste: toda la página cambia, bloque a bloque.</p><p>2. Desplace hasta "Rápido no es fácil" y deje que el iceberg cuente la inversión.</p><p>3. Dé play al video: pide consentimiento, carga al instante y desaparece al revocar, sin recargar.</p>',
+    como='<p>Cómo usar en la presentación</p><p>1. Pulse el botón de accesibilidad a la derecha y active el alto contraste: toda la página cambia, bloque a bloque.</p><p>2. Abra Método en el menú y deje que el iceberg cuente la inversión.</p><p>3. Dé play al video: pide consentimiento, carga al instante y desaparece al revocar, sin recargar.</p>',
     valor_iceberg='<p>Rápido no quiere decir fácil</p><h2>Una semana en el cliente. Años antes de ella.</h2><p>Lo que ve es la punta: la migración entregada en una semana. Lo que la hace posible está bajo la línea de flotación, y fue invertido antes de que apareciera cualquier cliente. Desplace para ver.</p>',
     valor_comparacao='<p>El camino difícil × la Migración Express</p><h2>Difícil no entrega más. Entrega menos, más tarde.</h2><p>Los mismos criterios, en los dos caminos. Alterne y vea adónde va cada número.</p>',
     valor_entregas='<p>Lo que entrega la semana</p><h2>Rápido es lo que queda cuando el método está listo.</h2><p>Cada número de abajo se mide, no se promete.</p>',
@@ -207,14 +205,14 @@ T['es'] = dict(
     ],
     comparacoes=[
         ('Plazo hasta el sitio en el aire', '<p>Proyecto tradicional: relevamiento, diseño, componentes, integración, homologación. Express: el método ya existe, el contenido entra.</p>', '26 semanas', '1 semana'),
-        ('Rendimiento en Lighthouse (móvil)', '<p>Sitios en frameworks pesados suelen quedar entre 40 y 70. EDS queda entre 85 y 100 en las mediciones de esta página, porque carga en tres fases; la nota varía un poco en cada medición. La última, con fecha, está en la sección EDS.</p>', '55', '85 a 100'),
+        ('Rendimiento en Lighthouse (móvil)', '<p>Sitios en frameworks pesados suelen quedar entre 40 y 70. EDS queda entre 85 y 100 en las mediciones de esta página, porque carga en tres fases; la nota varía un poco en cada medición. La última, con fecha, está en la página EDS por dentro.</p>', '55', '85 a 100'),
         ('Scripts de terceros antes del sí', '<p>Tag managers, píxeles y videos suelen entrar antes de cualquier elección. Aquí, cero.</p>', '12', '0'),
         ('Horas de TI del cliente por mes', '<p>Sin bloque nuevo no hay sprint: quien publica es el área de negocio, en el Universal Editor.</p>', '160', '8'),
         ('Tiempo para publicar un ajuste', '<p>De la cola de TI a un clic de quien escribe.</p>', '14 días', '1 minuto'),
         ('Agentic readiness', '<p>Contenido en el HTML, estructura semántica, metadatos, índice y llms.txt.</p>', '2 de 5', '5 de 5'),
     ],
     entregas=[
-        ('Lighthouse medido en cada publicación', '<p>Rendimiento, accesibilidad, buenas prácticas y SEO, en móvil, medidos por el CI. La nota aparece con fecha arriba de la página y en la sección EDS.</p>', '4', 'ejes medidos'),
+        ('Lighthouse medido en cada publicación', '<p>Rendimiento, accesibilidad, buenas prácticas y SEO, en móvil, medidos por el CI. La nota aparece con fecha en el inicio y en la página EDS por dentro.</p>', '4', 'ejes medidos'),
         ('Agentic readiness', '<p>Las cinco verificaciones, con llms.txt publicado.</p>', '5', 'de 5'),
         ('Scripts antes del consentimiento', '<p>Ningún píxel, tag manager o video entra antes del sí.</p>', '0', 'scripts'),
         ('Clic para publicar', '<p>El autor aprueba, publica. CDN de Adobe o la del cliente adelante.</p>', '1', 'clic'),
@@ -261,15 +259,14 @@ T['en'] = dict(
     descricao='Live demo of AEM Edge Delivery Services, Assets and Dynamic Media with native consent, built by EadTech for Adobe Professional Services.',
     aviso='<p><strong>For presentation to Adobe Professional Services only</strong> · EadTech demo environment</p>',
     marca='<p><strong>EadTech</strong> <em>EDS Flash Demo</em></p>',
-    menu=[('#valor', 'Fast is not easy'), ('#accessibility', 'Accessibility'), ('#media', 'Assets'), ('#eds', 'EDS'), ('#consent', 'Consent'), ('#agentic', 'Agentic'), ('#autoria', 'Authoring')],
     cookies='Cookie settings',
     rodape='<p>EadTech · Adobe strategic partner · internal demo, not a client site</p>',
     rodape_link='<p><a href="#definicoes-de-cookies">Cookie settings</a></p>',
     hero_texto='<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · native consent</p>'
                '<h1>The site that <em>loads fast on mobile | is accessible per block | crops with AI | talks to agents | asks permission | ships without IT</em> in a one-week migration.</h1>'
-               '<p>This page is a live demo, not a slide: every section shows an EDS, Assets or EadTech-method capability actually working. Accessibility that holds for every block, Lighthouse measured on every publish, AI agents, native consent. The Adobe video below is the first example: it only loads after your yes.</p>',
+               '<p>This site is a live demo, not a slide: every page shows an EDS, Assets or EadTech-method capability actually working. Accessibility that holds for every block, Lighthouse measured on every publish, AI agents, native consent. The Adobe video below is the first example: it only loads after your yes.</p>',
     hero_rotulos={'selo-1': 'Lighthouse {desempenho} · {acessibilidade} · {praticas} · {seo} · measured {data}', 'selo-2': 'accessible per block · 6 tools', 'selo-sem-consentimento': 'no consent yet', 'selo-com-consentimento': 'media & video allowed', 'hud-bloqueado': 'gate active', 'hud-liberado': 'video unlocked', 'hud-embed': 'Adobe player', 'fonte': 'video: video.tv.adobe.com', 'titulo-video': 'Adobe video on Edge Delivery Services', 'log-liberado': 'gate CC_MEDIA: allowed → player inserted', 'log-revogado': 'gate CC_MEDIA: revoked → player removed, notice back (no reload)'},
-    como='<p>How to use it in the presentation</p><p>1. Click the accessibility button on the right and turn on high contrast: the whole page changes, block by block.</p><p>2. Scroll to "Fast is not easy" and let the iceberg tell the investment.</p><p>3. Press play on the video: it asks for consent, loads instantly and disappears when revoked, without a reload.</p>',
+    como='<p>How to use it in the presentation</p><p>1. Click the accessibility button on the right and turn on high contrast: the whole page changes, block by block.</p><p>2. Open Method in the menu and let the iceberg tell the investment.</p><p>3. Press play on the video: it asks for consent, loads instantly and disappears when revoked, without a reload.</p>',
     valor_iceberg='<p>Fast does not mean easy</p><h2>One week at the client. Years before it.</h2><p>What you see is the tip: the migration delivered in a week. What makes it possible sits below the waterline, invested before any client showed up. Scroll to see.</p>',
     valor_comparacao='<p>The hard way × Express Migration</p><h2>Hard does not deliver more. It delivers less, later.</h2><p>Same criteria, both paths. Toggle and watch where each number goes.</p>',
     valor_entregas='<p>What the week delivers</p><h2>Fast is what is left when the method is ready.</h2><p>Every number below is measured, not promised.</p>',
@@ -285,14 +282,14 @@ T['en'] = dict(
     ],
     comparacoes=[
         ('Time to go live', '<p>Traditional project: discovery, design, components, integration, acceptance. Express: the method already exists, the content goes in.</p>', '26 weeks', '1 week'),
-        ('Lighthouse performance (mobile)', '<p>Sites on heavy frameworks usually land between 40 and 70. EDS lands between 85 and 100 in this page\'s measurements, because it loads in three phases; the score moves a little on every run. The latest, with its date, is in the EDS section.</p>', '55', '85 to 100'),
+        ('Lighthouse performance (mobile)', '<p>Sites on heavy frameworks usually land between 40 and 70. EDS lands between 85 and 100 in this page\'s measurements, because it loads in three phases; the score moves a little on every run. The latest, with its date, is on the EDS inside page.</p>', '55', '85 to 100'),
         ('Third-party scripts before yes', '<p>Tag managers, pixels and videos usually run before any choice. Here, zero.</p>', '12', '0'),
         ('Client IT hours per month', '<p>No new block, no sprint: business teams publish in the Universal Editor.</p>', '160', '8'),
         ('Time to publish a change', '<p>From the IT queue to one click by the person who writes.</p>', '14 days', '1 minute'),
         ('Agentic readiness', '<p>Content in the HTML, semantic structure, metadata, index and llms.txt.</p>', '2 of 5', '5 of 5'),
     ],
     entregas=[
-        ('Lighthouse measured on every publish', '<p>Performance, accessibility, best practices and SEO, on mobile, measured by CI. The score shows with its date at the top of the page and in the EDS section.</p>', '4', 'axes measured'),
+        ('Lighthouse measured on every publish', '<p>Performance, accessibility, best practices and SEO, on mobile, measured by CI. The score shows with its date on the home page and on the EDS inside page.</p>', '4', 'axes measured'),
         ('Agentic readiness', '<p>All five checks, with llms.txt published.</p>', '5', 'of 5'),
         ('Scripts before consent', '<p>No pixel, tag manager or video runs before yes.</p>', '0', 'scripts'),
         ('Click to publish', '<p>The author approves, publishes. Adobe\'s CDN or the client\'s in front.</p>', '1', 'click'),
@@ -438,7 +435,7 @@ PORTOES = {
         ('Lighthouse no celular', 'entrega', '<p>O CI roda o Lighthouse na prévia a cada push na main e todo dia, e publica a nota com data. É ela que aparece no selo do topo e na seção EDS, sem número escrito à mão. O SEO é medido sem a auditoria de indexação, porque o aem.page não é indexado de propósito.</p>', 'lighthouse --form-factor=mobile (CI)'),
         ('Acessibilidade por modo e por bloco (axe)', 'navegador', '<p>Liga cada modo do widget (normal, alto contraste, tons de cinza, inversão, links, fonte maior e a combinação) no computador e no celular, roda o axe com WCAG 2.2 AA e separa o que achar por bloco. Também clica nos botões do widget para provar que funcionam.</p>', 'npm run a11y:modos'),
         ('Rybená no navegador', 'navegador', '<p>Carrega o script oficial do Rybená, liga onze modos pela API documentada e mede bloco a bloco: se cada texto recebeu a classe, se o contraste segura, se o filtro vale e se nada transborda.</p>', 'npm run a11y:rybena-navegador'),
-        ('Painel de acessibilidade ao vivo', 'pagina', '<p>A seção de acessibilidade desta página mede agora, no seu navegador, o contraste do texto de cada bloco e se ele tem regra própria. Trocou o modo, a tabela mede de novo.</p>', ''),
+        ('Painel de acessibilidade ao vivo', 'pagina', '<p>A página de acessibilidade mede agora, no seu navegador, o contraste do texto de cada bloco e se ele tem regra própria. Trocou o modo, a tabela mede de novo.</p>', ''),
         ('Zero terceiros antes do sim', 'pagina', '<p>O medidor de cookies mede esta demo com o mesmo navegador remoto que mede os outros sites: nenhum terceiro e nenhum cookie antes da escolha. A cascata de rede da seção de consentimento mostra o mesmo, ao vivo.</p>', ''),
         ('Leitura por agentes de IA', 'pagina', '<p>O bloco agentic busca o .plain.html desta página, que é o que um agente recebe, e confere conteúdo inteiro no HTML, títulos em ordem e metadados.</p>', ''),
     ],
@@ -457,7 +454,7 @@ PORTOES = {
         ('Lighthouse en el celular', 'entrega', '<p>El CI corre Lighthouse en la vista previa en cada push a main y todos los días, y publica la nota con fecha. Es la que aparece en el sello de arriba y en la sección EDS, sin número escrito a mano. El SEO se mide sin la auditoría de indexación, porque aem.page no se indexa a propósito.</p>', 'lighthouse --form-factor=mobile (CI)'),
         ('Accesibilidad por modo y por bloque (axe)', 'navegador', '<p>Activa cada modo del widget (normal, alto contraste, escala de grises, inversión, enlaces, letra más grande y la combinación) en computadora y celular, corre axe con WCAG 2.2 AA y separa lo que encuentra por bloque. También pulsa los botones del widget para probar que funcionan.</p>', 'npm run a11y:modos'),
         ('Rybená en el navegador', 'navegador', '<p>Carga el script oficial de Rybená, activa once modos por la API documentada y mide bloque a bloque: si cada texto recibió la clase, si el contraste se sostiene, si el filtro vale y si nada se desborda.</p>', 'npm run a11y:rybena-navegador'),
-        ('Panel de accesibilidad en vivo', 'pagina', '<p>La sección de accesibilidad de esta página mide ahora, en su navegador, el contraste del texto de cada bloque y si tiene regla propia. Cambió el modo, la tabla vuelve a medir.</p>', ''),
+        ('Panel de accesibilidad en vivo', 'pagina', '<p>La página de accesibilidad mide ahora, en su navegador, el contraste del texto de cada bloque y si tiene regla propia. Cambió el modo, la tabla vuelve a medir.</p>', ''),
         ('Cero terceros antes del sí', 'pagina', '<p>El medidor de cookies mide esta demo con el mismo navegador remoto que mide los otros sitios: ningún tercero y ninguna cookie antes de la elección. La cascada de red de la sección de consentimiento muestra lo mismo, en vivo.</p>', ''),
         ('Lectura por agentes de IA', 'pagina', '<p>El bloque agentic busca el .plain.html de esta página, que es lo que recibe un agente, y revisa contenido completo en el HTML, títulos en orden y metadatos.</p>', ''),
     ],
@@ -476,7 +473,7 @@ PORTOES = {
         ('Mobile Lighthouse', 'entrega', '<p>CI runs Lighthouse on the preview on every push to main and every day, and publishes the score with its date. That is what shows in the top badge and in the EDS section, with no number typed by hand. SEO is measured without the indexing audit, because aem.page is not indexed on purpose.</p>', 'lighthouse --form-factor=mobile (CI)'),
         ('Accessibility per mode and per block (axe)', 'navegador', '<p>Turns on every widget mode (normal, high contrast, grayscale, invert, links, larger text and the combination) on desktop and mobile, runs axe with WCAG 2.2 AA and groups findings by block. It also clicks the widget buttons to prove they work.</p>', 'npm run a11y:modos'),
         ('Rybená in the browser', 'navegador', '<p>Loads the official Rybená script, turns on eleven modes through the documented API and measures block by block: whether every text got the class, whether contrast holds, whether the filter applies and whether anything overflows.</p>', 'npm run a11y:rybena-navegador'),
-        ('Live accessibility panel', 'pagina', '<p>The accessibility section of this page measures, right now in your browser, the text contrast of every block and whether it has its own rule. Switch the mode and the table measures again.</p>', ''),
+        ('Live accessibility panel', 'pagina', '<p>The accessibility page measures, right now in your browser, the text contrast of every block and whether it has its own rule. Switch the mode and the table measures again.</p>', ''),
         ('Zero third parties before yes', 'pagina', '<p>The cookie meter measures this demo with the same remote browser it uses for other sites: no third parties and no cookies before the choice. The network waterfall in the consent section shows the same thing, live.</p>', ''),
         ('Read by AI agents', 'pagina', '<p>The agentic block fetches this page\'s .plain.html, which is what an agent receives, and checks full content in the HTML, ordered headings and metadata.</p>', ''),
     ],
@@ -485,21 +482,86 @@ PORTOES = {
 }
 for _lg in ('pt', 'es', 'en'):
     T[_lg]['portoes'] = PORTOES[_lg]
-T['pt']['menu'].insert(-1, ('#portoes', 'Portões'))
-T['es']['menu'].insert(-1, ('#controles', 'Controles'))
-T['en']['menu'].insert(-1, ('#gates', 'Gates'))
 
 
-IDS = {'pt': ['valor', 'consentimento', 'fases', 'midia', 'eds', 'agentic', 'autoria', 'acessibilidade', 'portoes'],
-       'es': ['valor', 'consentimiento', 'fases', 'medios', 'eds', 'agentic', 'autoria', 'accesibilidad', 'controles'],
-       'en': ['valor', 'consent', 'fases', 'media', 'eds', 'agentic', 'autoria', 'accessibility', 'gates']}
+# --------------------------------------------------------------------------
+# mini site: uma página por assunto, agrupadas no menu
+# (slug do IDS, grupo, nome no menu, h1, linha de abertura)
+# --------------------------------------------------------------------------
+GRUPOS = {
+    'pt': {'rapido': 'Por que é rápido', 'confianca': 'Confiança', 'conteudo': 'Conteúdo e IA'},
+    'es': {'rapido': 'Por qué es rápido', 'confianca': 'Confianza', 'conteudo': 'Contenido e IA'},
+    'en': {'rapido': 'Why it is fast', 'confianca': 'Trust', 'conteudo': 'Content and AI'},
+}
+PAGINAS = {
+    'pt': [
+        ('metodo', 'rapido', 'Método', 'Método Migração Express', 'Uma semana no cliente, do kickoff ao site no ar. O que foi feito antes dela, a comparação com o caminho tradicional e o que a semana entrega.'),
+        ('fases', 'rapido', 'Três fases', 'Carregamento em três fases', 'O que entra primeiro, o que espera e o que só carrega depois do consentimento. É por isso que o EDS é rápido no celular.'),
+        ('eds', 'rapido', 'EDS por dentro', 'Edge Delivery Services por dentro', 'Recursos da plataforma rodando aqui: a nota do Lighthouse medida pelo CI, o índice de páginas, os cabeçalhos de segurança e uma função serverless chamada de verdade.'),
+        ('acessibilidade', 'confianca', 'Acessibilidade', 'Acessibilidade por bloco', 'Cada bloco responde pelo próprio contraste, foco e leitura. O painel mede o site no seu navegador, agora.'),
+        ('consentimento', 'confianca', 'Consentimento', 'Consentimento nativo', 'Nada de terceiro entra antes do sim. Veja a rede em tempo real e meça qualquer outro site com o medidor de cookies.'),
+        ('portoes', 'confianca', 'Portões de qualidade', 'Portões de qualidade', 'O que roda a cada push, na entrega e no navegador antes de qualquer mudança chegar ao ar, e por que cada verificação existe.'),
+        ('midia', 'conteudo', 'Assets e Dynamic Media', 'Assets e Dynamic Media', 'Uma imagem no DAM, vários recortes por IA e a entrega no tamanho certo para cada tela.'),
+        ('agentic', 'conteudo', 'Agentes de IA', 'Pronto para agentes de IA', 'O que um agente recebe ao ler o site e as verificações que dizem se ele entende o conteúdo.'),
+        ('autoria', 'conteudo', 'Autoria', 'Autoria no Universal Editor', 'Quem escreve publica: clica no texto, troca e publica. TI só entra quando precisa de bloco novo.'),
+    ],
+    'es': [
+        ('metodo', 'rapido', 'Método', 'Método Migración Express', 'Una semana en el cliente, del kickoff al sitio en el aire. Lo que se hizo antes, la comparación con el camino tradicional y lo que entrega la semana.'),
+        ('fases', 'rapido', 'Tres fases', 'Carga en tres fases', 'Lo que entra primero, lo que espera y lo que solo carga después del consentimiento. Por eso EDS es rápido en el móvil.'),
+        ('eds', 'rapido', 'EDS por dentro', 'Edge Delivery Services por dentro', 'Recursos de la plataforma funcionando aquí: la nota de Lighthouse medida por el CI, el índice de páginas, las cabeceras de seguridad y una función serverless llamada de verdad.'),
+        ('accesibilidad', 'confianca', 'Accesibilidad', 'Accesibilidad por bloque', 'Cada bloque responde por su propio contraste, foco y lectura. El panel mide el sitio en su navegador, ahora.'),
+        ('consentimiento', 'confianca', 'Consentimiento', 'Consentimiento nativo', 'Nada de terceros entra antes del sí. Vea la red en tiempo real y mida cualquier otro sitio con el medidor de cookies.'),
+        ('controles', 'confianca', 'Controles de calidad', 'Controles de calidad', 'Lo que corre en cada push, en la entrega y en el navegador antes de que un cambio llegue al aire, y por qué existe cada verificación.'),
+        ('medios', 'conteudo', 'Assets y Dynamic Media', 'Assets y Dynamic Media', 'Una imagen en el DAM, varios recortes con IA y la entrega en el tamaño justo para cada pantalla.'),
+        ('agentic', 'conteudo', 'Agentes de IA', 'Listo para agentes de IA', 'Lo que recibe un agente al leer el sitio y las verificaciones que dicen si entiende el contenido.'),
+        ('autoria', 'conteudo', 'Autoría', 'Autoría en Universal Editor', 'Quien escribe publica: hace clic en el texto, cambia y publica. TI solo entra cuando hace falta un bloque nuevo.'),
+    ],
+    'en': [
+        ('method', 'rapido', 'Method', 'The Express Migration method', 'One week at the client, from kickoff to the site live. What was done before it, how it compares with the traditional path and what the week delivers.'),
+        ('fases', 'rapido', 'Three phases', 'Loading in three phases', 'What comes in first, what waits and what only loads after consent. That is why EDS is fast on mobile.'),
+        ('eds', 'rapido', 'EDS inside', 'Edge Delivery Services, inside', 'Platform features running here: the Lighthouse score measured by CI, the page index, the security headers and a serverless function called for real.'),
+        ('accessibility', 'confianca', 'Accessibility', 'Accessibility per block', 'Every block answers for its own contrast, focus and reading. The panel measures the site in your browser, right now.'),
+        ('consent', 'confianca', 'Consent', 'Native consent', 'Nothing third-party loads before yes. Watch the network live and measure any other site with the cookie meter.'),
+        ('gates', 'confianca', 'Quality gates', 'Quality gates', 'What runs on every push, on delivery and in the browser before any change goes live, and why each check exists.'),
+        ('media', 'conteudo', 'Assets and Dynamic Media', 'Assets and Dynamic Media', 'One image in the DAM, several AI crops and delivery at the right size for every screen.'),
+        ('agentic', 'conteudo', 'AI agents', 'Ready for AI agents', 'What an agent gets when it reads the site, and the checks that tell whether it understands the content.'),
+        ('authoring', 'conteudo', 'Authoring', 'Authoring in Universal Editor', 'Whoever writes, publishes: click the text, change it, publish. IT only steps in when a new block is needed.'),
+    ],
+}
+SITE = {
+    'pt': {'paginas-eyebrow': 'O que tem em cada página', 'paginas-titulo': 'Nove páginas, cada uma com um recurso funcionando de verdade.',
+           'paginas-texto': 'Comece pelo método ou vá direto ao que interessa. Todas as páginas usam o mesmo cabeçalho, o mesmo consentimento e o mesmo botão de acessibilidade.',
+           'cta-eyebrow': 'Comece por aqui', 'cta-titulo': 'Uma semana no cliente. Veja o que vem antes dela.', 'cta-botao': 'Ver o método',
+           'proximo': 'Próxima página', 'inicio': 'Voltar ao início', 'menu': 'Menu', 'mapa': 'Mapa do site', 'idiomas': 'Idiomas',
+           'marca-texto': 'Demonstração de AEM Edge Delivery Services, Assets e Dynamic Media com consentimento nativo, acessibilidade por bloco e portões de qualidade.'},
+    'es': {'paginas-eyebrow': 'Qué hay en cada página', 'paginas-titulo': 'Nueve páginas, cada una con un recurso funcionando de verdad.',
+           'paginas-texto': 'Empiece por el método o vaya directo a lo que le interesa. Todas las páginas usan la misma cabecera, el mismo consentimiento y el mismo botón de accesibilidad.',
+           'cta-eyebrow': 'Empiece por aquí', 'cta-titulo': 'Una semana en el cliente. Vea lo que viene antes.', 'cta-botao': 'Ver el método',
+           'proximo': 'Página siguiente', 'inicio': 'Volver al inicio', 'menu': 'Menú', 'mapa': 'Mapa del sitio', 'idiomas': 'Idiomas',
+           'marca-texto': 'Demostración de AEM Edge Delivery Services, Assets y Dynamic Media con consentimiento nativo, accesibilidad por bloque y controles de calidad.'},
+    'en': {'paginas-eyebrow': 'What each page shows', 'paginas-titulo': 'Nine pages, each with one capability actually working.',
+           'paginas-texto': 'Start with the method or go straight to what you need. Every page shares the same header, the same consent and the same accessibility button.',
+           'cta-eyebrow': 'Start here', 'cta-titulo': 'One week at the client. See what comes before it.', 'cta-botao': 'See the method',
+           'proximo': 'Next page', 'inicio': 'Back to home', 'menu': 'Menu', 'mapa': 'Site map', 'idiomas': 'Languages',
+           'marca-texto': 'A demo of AEM Edge Delivery Services, Assets and Dynamic Media with native consent, accessibility per block and quality gates.'},
+}
+
+
+def href(t, slug=''):
+    base = t['raiz'] or ''
+    return f'{base}/{slug}' if slug else (base or '/')
+
+
+IDS = {'pt': ['metodo', 'consentimento', 'fases', 'midia', 'eds', 'agentic', 'autoria', 'acessibilidade', 'portoes'],
+       'es': ['metodo', 'consentimiento', 'fases', 'medios', 'eds', 'agentic', 'autoria', 'accesibilidad', 'controles'],
+       'en': ['method', 'consent', 'fases', 'media', 'eds', 'agentic', 'authoring', 'accessibility', 'gates']}
 
 
 def idiomas_html():
     return '<p><a href="/">PT</a></p><p><a href="/es">ES</a></p><p><a href="/en">EN</a></p>'
 
 
-def home(t, ids):
+def blocos(t, ids):
     # título inteiro no texto; o trecho que gira e as outras palavras em campos próprios
     import re as _re
     _m = _re.search(r'<em>(.*?)</em>', t['hero_texto'])
@@ -539,42 +601,95 @@ def home(t, ids):
     portoes = block('Portoes', 'portoes', ab3(pt['abertura']),
                     [(f'Portão · {n}', 'portao', {'nome': n, 'quando': q, 'texto': tx, 'comando': c}) for n, q, tx, c in pt['itens']] + rotulos('rotulo', pt['rotulos']), filt='portoes')
     a11y = block('A11y Painel', 'a11y-painel', ab3(t['a11y_abertura']), rotulos('rotulo', t['a11y_painel_rotulos']), filt='a11y-painel')
-    sections = [
-        section([('hero', hero), ('embed', embed), ('como', text(t['como']))], nome='Capa'),
-        section([('iceberg', iceberg), ('comparacao', comparacao), ('entregas', entregas)], id=ids[0], nome='Valor', style='titulos-animados'),
-        section([('a11y', a11y)], id=ids[7], nome='Acessibilidade', style='titulos-animados'),
-        section([('abertura', text(t['midia_abertura'])), ('dm', dm)], id=ids[3], nome='Assets e Dynamic Media', style='titulos-animados'),
-        section([('fases', fases)], id=ids[2], nome='Três fases', style=['compacta', 'titulos-animados']),
-        section([('abertura', text(t['eds_abertura'])), ('bento', bento)], id=ids[4], nome='EDS', style='titulos-animados'),
-        section([('consent', consent), ('medidor', medidor)], id=ids[1], nome='Consentimento', style='titulos-animados'),
-        section([('agentic', agentic)], id=ids[5], nome='Agentic', style='titulos-animados'),
-        section([('portoes', portoes)], id=ids[8], nome='Portões de qualidade', style='titulos-animados'),
-        section([('passos', passos)], id=ids[6], nome='Autoria', style=['compacta', 'titulos-animados']),
-    ]
+    por_slug = {
+        ids[0]: [section([('iceberg', iceberg), ('comparacao', comparacao), ('entregas', entregas)], id=ids[0], nome='Método', style='titulos-animados')],
+        ids[7]: [section([('a11y', a11y)], id=ids[7], nome='Acessibilidade', style='titulos-animados')],
+        ids[3]: [section([('abertura', text(t['midia_abertura'])), ('dm', dm)], id=ids[3], nome='Assets e Dynamic Media', style='titulos-animados')],
+        ids[2]: [section([('fases', fases)], id=ids[2], nome='Três fases', style=['compacta', 'titulos-animados'])],
+        ids[4]: [section([('abertura', text(t['eds_abertura'])), ('bento', bento)], id=ids[4], nome='EDS', style='titulos-animados')],
+        ids[1]: [section([('consent', consent), ('medidor', medidor)], id=ids[1], nome='Consentimento', style='titulos-animados')],
+        ids[5]: [section([('agentic', agentic)], id=ids[5], nome='Agentic', style='titulos-animados')],
+        ids[8]: [section([('portoes', portoes)], id=ids[8], nome='Portões de qualidade', style='titulos-animados')],
+        ids[6]: [section([('passos', passos)], id=ids[6], nome='Autoria', style=['compacta', 'titulos-animados'])],
+    }
+    return hero, embed, por_slug
+
+
+def props(t, titulo, descricao):
     raiz = t['raiz']
-    return page(t['titulo'], sections, **{
-        'jcr:description': t['descricao'],
+    return {
+        'jcr:description': descricao,
         'lang': t['lang'],
         'nav': f'{raiz}/nav',
         'footer': f'{raiz}/footer',
         'cookie-consent': f'{raiz}/cookie-consent/padrao',
-    })
+    }
+
+
+def home(t, ids):
+    hero, embed, _ = blocos(t, ids)
+    lg = t['lang'][:2]
+    st = SITE[lg]
+    grupos = GRUPOS[lg]
+    cartoes = block('Cards', 'cards', {}, [
+        (f'Página · {nome}', 'card', {'text': f'<p>{grupos[g]}</p><h3><a href="{href(t, slug)}">{nome}</a></h3><p>{lead}</p>'})
+        for slug, g, nome, h1, lead in PAGINAS[lg]
+    ], filt='cards')
+    primeira = PAGINAS[lg][0]
+    sections = [
+        section([('hero', hero), ('embed', embed), ('como', text(t['como']))], nome='Capa'),
+        section([('abertura', text(f'<p>{st["paginas-eyebrow"]}</p><h2>{st["paginas-titulo"]}</h2><p>{st["paginas-texto"]}</p>')), ('paginas', cartoes)],
+                id='paginas', nome='Páginas', style='titulos-animados'),
+        section([('cta', text(f'<p>{st["cta-eyebrow"]}</p><h2>{st["cta-titulo"]}</h2><p><a href="{href(t, primeira[0])}">{st["cta-botao"]}</a></p>'))],
+                nome='Faixa final', style='faixa-final'),
+    ]
+    return page(t['titulo'], sections, **props(t, t['titulo'], t['descricao']))
+
+
+def subpagina(t, ids, i):
+    lg = t['lang'][:2]
+    st = SITE[lg]
+    slug, g, nome, h1, lead = PAGINAS[lg][i]
+    _, _, por_slug = blocos(t, ids)
+    prox = PAGINAS[lg][(i + 1) % len(PAGINAS[lg])]
+    topo = section([('grupo', text(f'<p>{GRUPOS[lg][g]}</p>')), ('titulo', node(TITLE_RT, title=h1, titleType='h1')), ('abertura', text(f'<p>{lead}</p>'))],
+                   nome='Topo da página', style='pagina-topo')
+    fim = section([('proximo', text(f'<p>{st["proximo"]}</p><p><a href="{href(t, prox[0])}">{prox[2]}</a></p><p>{prox[4]}</p><p><a href="{href(t)}">{st["inicio"]}</a></p>'))],
+                  nome='Próxima página', style='faixa-final')
+    return page(f'{nome} · {t["titulo"]}', [topo] + por_slug[slug] + [fim], **props(t, nome, lead))
+
+
+def mapa_html(t, com_inicio=False):
+    """Lista de grupos com as páginas de cada um (menu e rodapé)."""
+    lg = t['lang'][:2]
+    grupos = GRUPOS[lg]
+    html = '<ul>'
+    for g, rotulo in grupos.items():
+        itens = ''.join(f'<li><a href="{href(t, slug)}">{nome}</a></li>' for slug, gg, nome, _, _ in PAGINAS[lg] if gg == g)
+        html += f'<li><p>{rotulo}</p><ul>{itens}</ul></li>'
+    return html + '</ul>'
 
 
 def nav(t):
     aviso = block('Aviso', 'aviso', {'texto': t['aviso'], 'idiomas': idiomas_html()})
-    links = '<ul>' + ''.join(f'<li><a href="{h}">{n}</a></li>' for h, n in t['menu']) + '</ul>'
+    marca = t['marca'].replace('<p><strong>', f'<p><a href="{href(t)}"><strong>', 1).replace('</em></p>', '</em></a></p>', 1)
     return page('nav', [
         section([('aviso', aviso)], nome='Aviso', style='faixa-aviso'),
-        section([('marca', text(t['marca']))], nome='Marca'),
-        section([('links', text(links))], nome='Links'),
+        section([('marca', text(marca))], nome='Marca'),
+        section([('links', text(mapa_html(t)))], nome='Menu'),
         section([('ferramentas', text(f'<p><a href="#definicoes-de-cookies">{t["cookies"]}</a></p>'))], nome='Ferramentas'),
         section([('acessibilidade', block('Acessibilidade', 'acessibilidade', {'texto': t['a11y_texto']}, rotulos('rotulo', t['a11y_rotulos']), filt='acessibilidade'))], nome='Acessibilidade', style='titulos-animados'),
     ])
 
 
 def footer(t):
-    return page('footer', [section([('texto', text(t['rodape'])), ('link', text(t['rodape_link']))], nome='Rodapé')])
+    lg = t['lang'][:2]
+    st = SITE[lg]
+    return page('footer', [
+        section([('marca', text(t['marca'] + f'<p>{st["marca-texto"]}</p>'))], nome='Marca'),
+        section([('mapa', text(f'<p>{st["mapa"]}</p>' + mapa_html(t)))], nome='Mapa do site'),
+        section([('texto', text(t['rodape'])), ('link', text(t['rodape_link'])), ('idiomas', text(idiomas_html()))], nome='Base'),
+    ])
 
 
 def consent_doc(t):
@@ -619,6 +734,9 @@ def gerar():
         raiz = f'/content/eds-flash-demo{t["raiz"]}'
         ids = IDS[lg]
         out[f'{raiz}/index' if lg == 'pt' else raiz] = home(t, ids)
+        # filhas depois da mãe: o import com :replace apaga o que estiver embaixo
+        for i, (slug, *_) in enumerate(PAGINAS[lg]):
+            out[f'{raiz}/{slug}'] = subpagina(t, ids, i)
         out[f'{raiz}/nav'] = nav(t)
         out[f'{raiz}/footer'] = footer(t)
         if lg != 'pt':

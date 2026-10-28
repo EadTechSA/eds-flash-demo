@@ -164,7 +164,8 @@ export function iniciar(main) {
     // id da seção vem do metadado `id` autorado (data-id) ou do primeiro título
     if (!s.id && s.dataset.id) s.id = s.dataset.id;
     s.querySelectorAll('.default-content-wrapper > h2').forEach((h) => palavras(h));
-    s.querySelectorAll('.default-content-wrapper > p').forEach((p, i) => revelar(p, i * 80));
+    // o topo das páginas internas é o LCP: entra sem animação
+    if (!s.classList.contains('pagina-topo')) s.querySelectorAll('.default-content-wrapper > p').forEach((p, i) => revelar(p, i * 80));
   });
   pontos(main);
 }

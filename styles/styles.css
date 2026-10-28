@@ -279,6 +279,32 @@ main > .section.compacta {
   padding-block: 0;
 }
 
+/* topo de cada página interna: grupo, h1 e uma linha de abertura */
+main > .section.pagina-topo {
+  position: relative;
+  padding-block: clamp(56px, 8vw, 112px) clamp(32px, 5vw, 64px);
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(60% 120% at 15% 0%, rgb(255 106 61 / 12%), transparent 60%);
+}
+
+main > .section.pagina-topo h1 {
+  max-width: 18ch;
+  font-size: var(--heading-font-size-xl);
+}
+
+main > .section.pagina-topo + .section {
+  padding-top: clamp(48px, 6vw, 88px);
+}
+
+html.contrast main > .section.pagina-topo {
+  background: none;
+}
+
+main > .section.pagina-topo.rybDarkContrast,
+main > .section.pagina-topo.rybLightContrast {
+  background-image: none;
+}
+
 /* conteúdo padrão: o parágrafo de abertura em mono, o lead maior */
 main .section .default-content-wrapper > p:first-child:has(+ h1),
 main .section .default-content-wrapper > p:first-child:has(+ h2),
