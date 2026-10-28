@@ -54,7 +54,7 @@
      "sling:resourceType": "core/franklin/components/block/v1/block",
      "name": "Embed",
      "model": "embed",
-     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
+     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo-capa.webp",
      "embed_placeholderAlt": "Vídeo da Adobe sobre Edge Delivery Services",
      "embed_uri": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12"
     },
@@ -2258,7 +2258,7 @@
      "sling:resourceType": "core/franklin/components/block/v1/block",
      "name": "Embed",
      "model": "embed",
-     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
+     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo-capa.webp",
      "embed_placeholderAlt": "Video de Adobe sobre Edge Delivery Services",
      "embed_uri": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12"
     },
@@ -4462,7 +4462,7 @@
      "sling:resourceType": "core/franklin/components/block/v1/block",
      "name": "Embed",
      "model": "embed",
-     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo.webp",
+     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo-capa.webp",
      "embed_placeholderAlt": "Adobe video on Edge Delivery Services",
      "embed_uri": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12"
     },

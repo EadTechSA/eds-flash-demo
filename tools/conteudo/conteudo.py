@@ -513,7 +513,7 @@ def home(t, ids):
         'girarIntervalo': 2.6,
     }, [(f'Selo · {k}', 'rotulo', {'chave': k, 'texto': v}) for k, v in _selos.items()], filt='hero')
     embed = block('Embed', 'embed', {
-        'embed_placeholder': f'{AUTHOR_DAM}/poster-eds-flash-demo.webp',
+        'embed_placeholder': f'{AUTHOR_DAM}/poster-eds-flash-demo-capa.webp',
         'embed_placeholderAlt': t['hero_rotulos']['titulo-video'],
         'embed_uri': VIDEO,
     })
