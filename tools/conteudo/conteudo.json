@@ -1149,6 +1149,20 @@
       "texto": "consented.js: CC_ANALYTICS → aqui entraria o Web SDK (alloy), na fase delayed"
      }
     },
+    "video_texto": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/text/v1/text",
+     "text": "<p>Teste aqui</p><h2>O vídeo da capa, atrás do mesmo gate.</h2><p>Mude a escolha em Definições de cookies. Sem Mídia e vídeo, o player sai e a capa volta, sem recarregar a página. Com o sim, ele carrega na hora.</p>"
+    },
+    "embed": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Embed",
+     "model": "embed",
+     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo-capa.webp",
+     "embed_placeholderAlt": "Vídeo da Adobe sobre Edge Delivery Services",
+     "embed_uri": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12"
+    },
     "medidor": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/block/v1/block",
@@ -3864,6 +3878,20 @@
       "texto": "consented.js: CC_ANALYTICS → aquí entraría el Web SDK (alloy), en la fase delayed"
      }
     },
+    "video_texto": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/text/v1/text",
+     "text": "<p>Pruebe aquí</p><h2>El video de la portada, detrás del mismo gate.</h2><p>Cambie la elección en Configuración de cookies. Sin Medios y video, el player sale y vuelve la portada, sin recargar la página. Con el sí, carga al instante.</p>"
+    },
+    "embed": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Embed",
+     "model": "embed",
+     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo-capa.webp",
+     "embed_placeholderAlt": "Video de Adobe sobre Edge Delivery Services",
+     "embed_uri": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12"
+    },
     "medidor": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/block/v1/block",
@@ -6578,6 +6606,20 @@
       "chave": "log-consented",
       "texto": "consented.js: CC_ANALYTICS → the Web SDK (alloy) would load here, in the delayed phase"
      }
+    },
+    "video_texto": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/text/v1/text",
+     "text": "<p>Try it here</p><h2>The cover video, behind the same gate.</h2><p>Change your choice in Cookie settings. Without Media and video, the player leaves and the cover comes back, with no page reload. With a yes, it loads right away.</p>"
+    },
+    "embed": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Embed",
+     "model": "embed",
+     "embed_placeholder": "/content/dam/eds-flash-demo/poster-eds-flash-demo-capa.webp",
+     "embed_placeholderAlt": "Adobe video on Edge Delivery Services",
+     "embed_uri": "https://video.tv.adobe.com/v/3427989/?learn=on&quality=12"
     },
     "medidor": {
      "jcr:primaryType": "nt:unstructured",
