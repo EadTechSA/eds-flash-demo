@@ -4,7 +4,7 @@
 
   /* EadTech: largura da seção, moldura no tema da demo */
   max-width: none;
-  margin: 32px 0 0;
+  margin: 32px 0 clamp(48px, 6vw, 88px);
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--line-strong);
