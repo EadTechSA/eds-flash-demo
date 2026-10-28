@@ -29,6 +29,10 @@ jobs:
         URLS=""
         for p in ${{ github.event.inputs.paginas || '/ /es /en' }}; do URLS="$URLS $BASE$p"; done
         node tools/a11y/verificar-modos.mjs $URLS --widget --saida a11y
+        # reprova se qualquer modo, em qualquer página, tiver violação
+        if grep -hE '^\| \*\*total\*\*' a11y/*-relatorio.md | grep -Eq '\| [1-9][0-9]* '; then
+          echo "::error::há violações de acessibilidade; veja os relatórios"; exit 1
+        fi
     - name: Rybená por modo e por bloco
       run: |
         URLS=""

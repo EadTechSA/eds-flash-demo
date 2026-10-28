@@ -50,12 +50,12 @@ const VIEWPORTS = [
 // botão do widget que liga cada modo: 1ª geração (utility-*) e painel novo
 // (a11y-acao[data-chave], Portal de Normas / Prodesp desde 21/10/2026)
 const BOTOES = {
-  contrast: '.utility-contrast, .a11y-acao[data-chave="contraste"], .a11y-painel input[name="contraste"]',
-  'a11y-grayscale': '.utility-grayscale, .a11y-acao[data-chave="pb"], .a11y-painel input[name="pb"]',
-  'a11y-invert': '.utility-invert, .a11y-acao[data-chave="inverter"], .a11y-painel input[name="inverter"]',
-  'a11y-links': '.utility-links, .a11y-acao[data-chave="links"], .a11y-painel input[name="links"]',
+  contrast: '.a11y-widget button.a11y-contrast, .utility-contrast, .a11y-acao[data-chave="contraste"], .a11y-painel input[name="contraste"]',
+  'a11y-grayscale': '.a11y-widget button.a11y-grayscale, .utility-grayscale, .a11y-acao[data-chave="pb"], .a11y-painel input[name="pb"]',
+  'a11y-invert': '.a11y-widget button.a11y-invert, .utility-invert, .a11y-acao[data-chave="inverter"], .a11y-painel input[name="inverter"]',
+  'a11y-links': '.a11y-widget button.a11y-links, .utility-links, .a11y-acao[data-chave="links"], .a11y-painel input[name="links"]',
 };
-const BOTAO_MAIS = '.utility-font-increase, .a11y-tamanho-botao:last-of-type, .a11y-painel input[name="a11y-fonte"][value="2"]';
+const BOTAO_MAIS = '.a11y-widget button.a11y-font-increase, .utility-font-increase, .a11y-tamanho-botao:last-of-type, .a11y-painel input[name="a11y-fonte"][value="2"]';
 const ABRIR_WIDGET = '.a11y-widget-alternar, .a11y-widget > button, .a11y-botao';
 const CHAVES_STORAGE = ['aem-a11y', 'prodesp:acessibilidade', 'creci-acessibilidade', 'a11y-contrast', 'a11y-grayscale', 'a11y-invert', 'a11y-links', 'a11y-font-level'];
 
@@ -200,6 +200,10 @@ async function verificarUrl(browser, url, opts, axeSrc) {
         window.scrollTo(0, 0);
       });
       await page.waitForTimeout(600);
+      // mede o estado parado: termina transições e animações em curso (uma camada
+      // no meio do fade sairia como texto sem contraste, o que o visitante não lê)
+      await page.evaluate(() => { document.getAnimations().forEach((a) => { try { a.finish(); } catch (e) { /* infinita */ } }); });
+      await page.waitForTimeout(150);
       await page.addScriptTag({ content: axeSrc });
       const dados = await page.evaluate(`(${SCRIPT_PAGINA})(${JSON.stringify(modo)})`);
       const fonteModo = await page.evaluate(() => parseFloat(getComputedStyle(document.body).fontSize));
