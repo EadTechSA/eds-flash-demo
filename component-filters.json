@@ -13,7 +13,9 @@
       "button",
       "title",
       "hero",
-      "valor",
+      "iceberg",
+      "comparacao",
+      "entregas",
       "consent-live",
       "medidor-cookies",
       "embed",
@@ -79,6 +81,12 @@
     ]
   },
   {
+    "id": "comparacao",
+    "components": [
+      "comparacao-criterio"
+    ]
+  },
+  {
     "id": "consent-live",
     "components": [
       "consent-live-rotulo"
@@ -97,6 +105,12 @@
     ]
   },
   {
+    "id": "entregas",
+    "components": [
+      "entregas-item"
+    ]
+  },
+  {
     "id": "fases",
     "components": [
       "fases-fase",
@@ -107,6 +121,12 @@
     "id": "hero",
     "components": [
       "hero-rotulo"
+    ]
+  },
+  {
+    "id": "iceberg",
+    "components": [
+      "iceberg-camada"
     ]
   },
   {
@@ -127,13 +147,6 @@
     "components": [
       "portao",
       "portoes-rotulo"
-    ]
-  },
-  {
-    "id": "valor",
-    "components": [
-      "valor-item",
-      "valor-rotulo"
     ]
   }
 ]

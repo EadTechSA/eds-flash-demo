@@ -463,6 +463,77 @@
     ]
   },
   {
+    "id": "comparacao",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "sobretitulo",
+        "label": "Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título (h2)"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "texto",
+        "label": "Texto de abertura"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "caminhoA",
+        "label": "Nome do caminho A (botão da esquerda)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "caminhoB",
+        "label": "Nome do caminho B (botão da direita)"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "trocarSozinho",
+        "label": "Trocar sozinho para o caminho B quando o bloco aparecer",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "comparacao-criterio",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Critério (h3)"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "texto",
+        "label": "Texto"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "a",
+        "label": "Valor no caminho A (ex.: 26 semanas; a barra usa o primeiro número)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "b",
+        "label": "Valor no caminho B (ex.: 1 semana)"
+      }
+    ]
+  },
+  {
     "id": "consent-live",
     "fields": [
       {
@@ -557,6 +628,58 @@
         "name": "embed_uri",
         "label": "Endereço do vídeo ou post (YouTube, Vimeo, Adobe Video…)",
         "description": "A categoria de consentimento vem da origem deste endereço, pela tabela de origens do documento de consentimento."
+      }
+    ]
+  },
+  {
+    "id": "entregas",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "sobretitulo",
+        "label": "Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título (h2)"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "texto",
+        "label": "Texto de abertura"
+      }
+    ]
+  },
+  {
+    "id": "entregas-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título da entrega (h3)"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "texto",
+        "label": "Texto"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "numero",
+        "label": "Número (aceita prefixo e sufixo, ex.: +40 ou 99%)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "unidade",
+        "label": "Unidade (ex.: cabeçalhos)"
       }
     ]
   },
@@ -660,6 +783,76 @@
         "name": "girarIntervalo",
         "label": "Intervalo da troca (segundos)",
         "value": 2.6
+      }
+    ]
+  },
+  {
+    "id": "iceberg",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "sobretitulo",
+        "label": "Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título (h2)"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "texto",
+        "label": "Texto de abertura"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pontaNumero",
+        "label": "Ponta · número (o que o cliente vê, ex.: 1)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pontaTexto",
+        "label": "Ponta · texto ao lado do número"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "legenda",
+        "label": "Legenda embaixo das camadas"
+      }
+    ]
+  },
+  {
+    "id": "iceberg-camada",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título da camada (h3)"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "texto",
+        "label": "Texto"
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "numero",
+        "label": "Número (conta de 0 até ele ao aparecer)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "unidade",
+        "label": "Unidade (ex.: blocos prontos)"
       }
     ]
   },
@@ -806,114 +999,6 @@
         "valueType": "string",
         "name": "comando",
         "label": "Comando (opcional)"
-      }
-    ]
-  },
-  {
-    "id": "valor",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "camadasSobretitulo",
-        "label": "Iceberg · Sobretítulo (linha pequena acima do título)"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "camadasTitulo",
-        "label": "Iceberg · Título"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "camadasTexto",
-        "label": "Iceberg · Texto"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "comparacaoSobretitulo",
-        "label": "Comparação · Sobretítulo (linha pequena acima do título)"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "comparacaoTitulo",
-        "label": "Comparação · Título"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "comparacaoTexto",
-        "label": "Comparação · Texto"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "entregasSobretitulo",
-        "label": "Entregas · Sobretítulo (linha pequena acima do título)"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "entregasTitulo",
-        "label": "Entregas · Título"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "entregasTexto",
-        "label": "Entregas · Texto"
-      }
-    ]
-  },
-  {
-    "id": "valor-item",
-    "fields": [
-      {
-        "component": "select",
-        "name": "tipo",
-        "label": "Tipo",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Camada do iceberg (investimento antes)",
-            "value": "camada"
-          },
-          {
-            "name": "Comparação difícil × rápido",
-            "value": "comparacao"
-          },
-          {
-            "name": "Entrega da semana",
-            "value": "entrega"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "titulo",
-        "label": "Título"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "texto",
-        "label": "Texto"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "a",
-        "label": "Valor A (camada: número investido; comparação: caminho difícil; entrega: número)"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "b",
-        "label": "Valor B (camada: unidade; comparação: Migração Express; entrega: unidade)"
       }
     ]
   }

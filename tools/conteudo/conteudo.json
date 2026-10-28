@@ -22,8 +22,8 @@
      "name": "Hero",
      "model": "hero",
      "filter": "hero",
-     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimento nativo</p><h1>O site que carrega em 0,4 s em uma semana de migração.</h1><p>Esta página é uma demonstração ao vivo, não um slide: cada seção mostra um recurso do EDS, do Assets e do método da EadTech funcionando de verdade. Acessibilidade que vale para todo bloco, Lighthouse medido a cada publicação, agentes de IA, consentimento nativo. O vídeo da Adobe abaixo é o primeiro exemplo: só carrega depois do seu sim.</p>",
-     "girarTrecho": "carrega em 0,4 s",
+     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimento nativo</p><h1>O site que carrega rápido no celular em uma semana de migração.</h1><p>Esta página é uma demonstração ao vivo, não um slide: cada seção mostra um recurso do EDS, do Assets e do método da EadTech funcionando de verdade. Acessibilidade que vale para todo bloco, Lighthouse medido a cada publicação, agentes de IA, consentimento nativo. O vídeo da Adobe abaixo é o primeiro exemplo: só carrega depois do seu sim.</p>",
+     "girarTrecho": "carrega rápido no celular",
      "girarPalavras": [
       "é acessível por bloco",
       "recorta por IA",
@@ -70,269 +70,230 @@
     "style": "titulos-animados",
     "name": "Valor",
     "id": "valor",
-    "valor": {
+    "iceberg": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Valor",
-     "model": "valor",
-     "filter": "valor",
-     "camadasSobretitulo": "Rápido não quer dizer fácil",
-     "camadasTitulo": "Uma semana no cliente. Anos antes dela.",
-     "camadasTexto": "<p>O que você vê é a ponta: a migração entregue em uma semana. O que torna isso possível está embaixo da linha d'água, e foi investido antes de qualquer cliente aparecer. Role para ver.</p>",
-     "comparacaoSobretitulo": "O caminho difícil × a Migração Express",
-     "comparacaoTitulo": "Difícil não entrega mais. Entrega menos, mais tarde.",
-     "comparacaoTexto": "<p>Os mesmos critérios, nos dois caminhos. Alterne e veja para onde vai cada número.</p>",
-     "entregasSobretitulo": "O que a semana entrega",
-     "entregasTitulo": "Rápido é o que sobra quando o método está pronto.",
-     "entregasTexto": "<p>Cada número abaixo é medido, não prometido.</p>",
+     "name": "Iceberg",
+     "model": "iceberg",
+     "filter": "iceberg",
+     "sobretitulo": "Rápido não quer dizer fácil",
+     "titulo": "Uma semana no cliente. Anos antes dela.",
+     "texto": "<p>O que você vê é a ponta: a migração entregue em uma semana. O que torna isso possível está embaixo da linha d'água, e foi investido antes de qualquer cliente aparecer. Role para ver.</p>",
+     "pontaNumero": "1",
+     "pontaTexto": "semana no cliente, do kickoff ao site no ar",
+     "legenda": "embaixo da linha d'água: o investimento feito antes",
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Método em roteiro",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Método em roteiro",
       "texto": "<p>Cada migração vira roteiro: o que se faz, em que ordem, o que se confere. A próxima começa do passo 1 já escrito, e o cliente só valida.</p>",
-      "a": "511",
-      "b": "páginas no último portal"
+      "numero": 511,
+      "unidade": "páginas no último portal"
      },
      "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Biblioteca de blocos",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Biblioteca de blocos",
       "texto": "<p>Blocos já modelados para o Universal Editor, com a variante decidida pelo autor e nunca por regra de código. Dicionário com captura real de cada um.</p>",
-      "a": "43",
-      "b": "blocos prontos"
+      "numero": 43,
+      "unidade": "blocos prontos"
      },
      "item_2": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Portão de qualidade",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Portão de qualidade",
       "texto": "<p>Lint, contrato de blocos, testes automatizados e Lighthouse a cada mudança. Nada entra na main sem passar.</p>",
-      "a": "308",
-      "b": "testes"
+      "numero": 308,
+      "unidade": "testes"
      },
      "item_3": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Pacote de consentimento",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Pacote de consentimento",
       "texto": "<p>Banner, preferências e gate de mídia conforme LGPD, com o texto todo autorado e auditoria axe sem violações.</p>",
-      "a": "23",
-      "b": "verificações"
+      "numero": 23,
+      "unidade": "verificações"
      },
      "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Automação do conteúdo",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Automação do conteúdo",
       "texto": "<p>Migrador, verificador de paridade visual, índice e redirecionamentos. A parte repetitiva deixa de ser manual e de depender de memória.</p>",
-      "a": "3",
-      "b": "fases de carregamento"
+      "numero": 3,
+      "unidade": "fases de carregamento"
      },
      "item_5": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Conhecimento da suíte",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Conhecimento da suíte",
       "texto": "<p>Assets, Dynamic Media, Target, Analytics, App Builder, autenticação de site: o que cada um exige e onde encaixa, sem experimentar no cliente.</p>",
-      "a": "6",
-      "b": "produtos da suíte"
+      "numero": 6,
+      "unidade": "produtos da suíte"
      },
      "item_6": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Acessibilidade por bloco",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Acessibilidade por bloco",
       "texto": "<p>Seis ferramentas (fonte, contraste, preto e branco, inversão, links) que só ligam uma classe na raiz; cada bloco responde pelo próprio CSS. LBI, eMAG 3.1 e WCAG 2.2 AA, sem script de terceiro.</p>",
-      "a": "6",
-      "b": "ferramentas · 0 terceiros"
-     },
-     "item_7": {
+      "numero": 6,
+      "unidade": "ferramentas · 0 terceiros"
+     }
+    },
+    "comparacao": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Comparacao",
+     "model": "comparacao",
+     "filter": "comparacao",
+     "sobretitulo": "O caminho difícil × a Migração Express",
+     "titulo": "Difícil não entrega mais. Entrega menos, mais tarde.",
+     "texto": "<p>Os mesmos critérios, nos dois caminhos. Alterne e veja para onde vai cada número.</p>",
+     "caminhoA": "Caminho difícil",
+     "caminhoB": "Migração Express",
+     "trocarSozinho": true,
+     "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Prazo até o site no ar",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Prazo até o site no ar",
+      "model": "comparacao-criterio",
       "titulo": "Prazo até o site no ar",
       "texto": "<p>Projeto tradicional: levantamento, design, componentes, integração, homologação. Express: o método já existe, o conteúdo entra.</p>",
       "a": "26 semanas",
       "b": "1 semana"
      },
-     "item_8": {
+     "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Desempenho no Lighthouse (celular)",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Desempenho no Lighthouse (celular)",
+      "model": "comparacao-criterio",
       "titulo": "Desempenho no Lighthouse (celular)",
-      "texto": "<p>Sites em frameworks pesados costumam ficar entre 40 e 70. O EDS passa de 90 porque carrega em três fases. A nota medida desta página está na seção EDS, com data.</p>",
+      "texto": "<p>Sites em frameworks pesados costumam ficar entre 40 e 70. O EDS fica entre 85 e 100 nas medições desta página, porque carrega em três fases; a nota oscila um pouco a cada medição. A última, com data, está na seção EDS.</p>",
       "a": "55",
-      "b": "90+"
+      "b": "85 a 100"
      },
-     "item_9": {
+     "item_2": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Scripts de terceiros antes do sim",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Scripts de terceiros antes do sim",
+      "model": "comparacao-criterio",
       "titulo": "Scripts de terceiros antes do sim",
       "texto": "<p>Tag managers, pixels e vídeos costumam entrar antes de qualquer escolha. Aqui, zero.</p>",
       "a": "12",
       "b": "0"
      },
-     "item_10": {
+     "item_3": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Horas de TI do cliente por mês",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Horas de TI do cliente por mês",
+      "model": "comparacao-criterio",
       "titulo": "Horas de TI do cliente por mês",
       "texto": "<p>Sem bloco novo, não há sprint: quem publica é a área de negócio, no Universal Editor.</p>",
       "a": "160",
       "b": "8"
      },
-     "item_11": {
+     "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Tempo para publicar um ajuste",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Tempo para publicar um ajuste",
+      "model": "comparacao-criterio",
       "titulo": "Tempo para publicar um ajuste",
       "texto": "<p>Da fila de TI para um clique de quem escreve.</p>",
       "a": "14 dias",
       "b": "1 minuto"
      },
-     "item_12": {
+     "item_5": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Agentic readiness",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Agentic readiness",
+      "model": "comparacao-criterio",
       "titulo": "Agentic readiness",
       "texto": "<p>Conteúdo no HTML, estrutura semântica, metadados, índice e llms.txt.</p>",
       "a": "2 de 5",
       "b": "5 de 5"
-     },
-     "item_13": {
+     }
+    },
+    "entregas": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Entregas",
+     "model": "entregas",
+     "filter": "entregas",
+     "sobretitulo": "O que a semana entrega",
+     "titulo": "Rápido é o que sobra quando o método está pronto.",
+     "texto": "<p>Cada número abaixo é medido, não prometido.</p>",
+     "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Lighthouse medido a cada publicação",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Lighthouse medido a cada publicação",
       "texto": "<p>Desempenho, acessibilidade, boas práticas e SEO, no celular, medidos pelo CI. A nota aparece com data no topo da página e na seção EDS.</p>",
-      "a": "4",
-      "b": "eixos medidos"
+      "numero": "4",
+      "unidade": "eixos medidos"
      },
-     "item_14": {
+     "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Agentic readiness",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Agentic readiness",
       "texto": "<p>As cinco verificações, com llms.txt publicado.</p>",
-      "a": "5",
-      "b": "de 5"
+      "numero": "5",
+      "unidade": "de 5"
      },
-     "item_15": {
+     "item_2": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Scripts antes do consentimento",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Scripts antes do consentimento",
       "texto": "<p>Nenhum pixel, tag manager ou vídeo entra antes do sim.</p>",
-      "a": "0",
-      "b": "scripts"
+      "numero": "0",
+      "unidade": "scripts"
      },
-     "item_16": {
+     "item_3": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Clique para publicar",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Clique para publicar",
       "texto": "<p>Autor aprova, publica. CDN da Adobe ou a do cliente na frente.</p>",
-      "a": "1",
-      "b": "clique"
+      "numero": "1",
+      "unidade": "clique"
      },
-     "item_17": {
+     "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Validade do consentimento",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Validade do consentimento",
       "texto": "<p>Escolha guardada por origem, com versão da política. Muda a política, o banner volta.</p>",
-      "a": "12",
-      "b": "meses"
+      "numero": "12",
+      "unidade": "meses"
      },
-     "item_18": {
+     "item_5": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Cabeçalhos de segurança",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Cabeçalhos de segurança",
       "texto": "<p>CSP, COOP, HSTS, nosniff e permissions-policy versionados no serviço de configuração.</p>",
-      "a": "6",
-      "b": "cabeçalhos"
-     },
-     "item_19": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · ponta-numero",
-      "model": "rotulo",
-      "chave": "ponta-numero",
-      "texto": "1"
-     },
-     "item_20": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · ponta-texto",
-      "model": "rotulo",
-      "chave": "ponta-texto",
-      "texto": "semana no cliente, do kickoff ao site no ar"
-     },
-     "item_21": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · iceberg-legenda",
-      "model": "rotulo",
-      "chave": "iceberg-legenda",
-      "texto": "embaixo da linha d'água: o investimento feito antes"
-     },
-     "item_22": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · caminho-a",
-      "model": "rotulo",
-      "chave": "caminho-a",
-      "texto": "Caminho difícil"
-     },
-     "item_23": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · caminho-b",
-      "model": "rotulo",
-      "chave": "caminho-b",
-      "texto": "Migração Express"
+      "numero": "6",
+      "unidade": "cabeçalhos"
      }
     }
    },
@@ -697,7 +658,7 @@
       "name": "Texto da interface · lcp",
       "model": "rotulo",
       "chave": "lcp",
-      "texto": "LCP 0,4 s"
+      "texto": "LCP {lcp}"
      },
      "item_5": {
       "jcr:primaryType": "nt:unstructured",
@@ -808,7 +769,7 @@
       "model": "celula",
       "tipo": "telemetria",
       "rotulo": "Operational Telemetry",
-      "texto": "<p>Core Web Vitals de usuários reais, por página e dispositivo, sem script de terceiro.</p>",
+      "texto": "<p>Core Web Vitals de usuários reais, por página e dispositivo, sem script de terceiro. Os números abaixo são um exemplo do painel: esta demo não tem tráfego real que sustente uma medição.</p>",
       "dados": "LCP:0,4 s:22|INP:48 ms:12|CLS:0,00:4",
       "largura": "2"
      },
@@ -2226,8 +2187,8 @@
      "name": "Hero",
      "model": "hero",
      "filter": "hero",
-     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimiento nativo</p><h1>El sitio que carga en 0,4 s en una semana de migración.</h1><p>Esta página es una demostración en vivo, no una diapositiva: cada sección muestra un recurso de EDS, de Assets y del método de EadTech funcionando de verdad. Accesibilidad que vale para todo bloque, Lighthouse medido en cada publicación, agentes de IA, consentimiento nativo. El video de Adobe de abajo es el primer ejemplo: solo carga después de su sí.</p>",
-     "girarTrecho": "carga en 0,4 s",
+     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · consentimiento nativo</p><h1>El sitio que carga rápido en el móvil en una semana de migración.</h1><p>Esta página es una demostración en vivo, no una diapositiva: cada sección muestra un recurso de EDS, de Assets y del método de EadTech funcionando de verdad. Accesibilidad que vale para todo bloque, Lighthouse medido en cada publicación, agentes de IA, consentimiento nativo. El video de Adobe de abajo es el primer ejemplo: solo carga después de su sí.</p>",
+     "girarTrecho": "carga rápido en el móvil",
      "girarPalavras": [
       "es accesible por bloque",
       "recorta con IA",
@@ -2274,269 +2235,230 @@
     "style": "titulos-animados",
     "name": "Valor",
     "id": "valor",
-    "valor": {
+    "iceberg": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Valor",
-     "model": "valor",
-     "filter": "valor",
-     "camadasSobretitulo": "Rápido no quiere decir fácil",
-     "camadasTitulo": "Una semana en el cliente. Años antes de ella.",
-     "camadasTexto": "<p>Lo que ve es la punta: la migración entregada en una semana. Lo que la hace posible está bajo la línea de flotación, y fue invertido antes de que apareciera cualquier cliente. Desplace para ver.</p>",
-     "comparacaoSobretitulo": "El camino difícil × la Migración Express",
-     "comparacaoTitulo": "Difícil no entrega más. Entrega menos, más tarde.",
-     "comparacaoTexto": "<p>Los mismos criterios, en los dos caminos. Alterne y vea adónde va cada número.</p>",
-     "entregasSobretitulo": "Lo que entrega la semana",
-     "entregasTitulo": "Rápido es lo que queda cuando el método está listo.",
-     "entregasTexto": "<p>Cada número de abajo se mide, no se promete.</p>",
+     "name": "Iceberg",
+     "model": "iceberg",
+     "filter": "iceberg",
+     "sobretitulo": "Rápido no quiere decir fácil",
+     "titulo": "Una semana en el cliente. Años antes de ella.",
+     "texto": "<p>Lo que ve es la punta: la migración entregada en una semana. Lo que la hace posible está bajo la línea de flotación, y fue invertido antes de que apareciera cualquier cliente. Desplace para ver.</p>",
+     "pontaNumero": "1",
+     "pontaTexto": "semana en el cliente, del kickoff al sitio en el aire",
+     "legenda": "bajo la línea de flotación: la inversión hecha antes",
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Método en guion",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Método en guion",
       "texto": "<p>Cada migración se vuelve guion: qué se hace, en qué orden, qué se verifica. La siguiente empieza del paso 1 ya escrito, y el cliente solo valida.</p>",
-      "a": "511",
-      "b": "páginas en el último portal"
+      "numero": 511,
+      "unidade": "páginas en el último portal"
      },
      "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Biblioteca de bloques",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Biblioteca de bloques",
       "texto": "<p>Bloques ya modelados para el Universal Editor, con la variante decidida por el autor y nunca por una regla en el código. Diccionario con captura real de cada uno.</p>",
-      "a": "43",
-      "b": "bloques listos"
+      "numero": 43,
+      "unidade": "bloques listos"
      },
      "item_2": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Compuerta de calidad",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Compuerta de calidad",
       "texto": "<p>Lint, contrato de bloques, pruebas automatizadas y Lighthouse en cada cambio. Nada entra en main sin pasar.</p>",
-      "a": "308",
-      "b": "pruebas"
+      "numero": 308,
+      "unidade": "pruebas"
      },
      "item_3": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Paquete de consentimiento",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Paquete de consentimiento",
       "texto": "<p>Banner, preferencias y gate de medios conforme a la ley, con todo el texto autorado y auditoría axe sin violaciones.</p>",
-      "a": "23",
-      "b": "verificaciones"
+      "numero": 23,
+      "unidade": "verificaciones"
      },
      "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Automatización del contenido",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Automatización del contenido",
       "texto": "<p>Migrador, verificador de paridad visual, índice y redirecciones. La parte repetitiva deja de ser manual y de depender de la memoria.</p>",
-      "a": "3",
-      "b": "fases de carga"
+      "numero": 3,
+      "unidade": "fases de carga"
      },
      "item_5": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Conocimiento de la suite",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Conocimiento de la suite",
       "texto": "<p>Assets, Dynamic Media, Target, Analytics, App Builder, autenticación de sitio: qué exige cada uno y dónde encaja, sin experimentar en el cliente.</p>",
-      "a": "6",
-      "b": "productos de la suite"
+      "numero": 6,
+      "unidade": "productos de la suite"
      },
      "item_6": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Accesibilidad por bloque",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Accesibilidad por bloque",
       "texto": "<p>Seis herramientas (fuente, contraste, blanco y negro, inversión, enlaces) que solo activan una clase en la raíz; cada bloque responde con su propio CSS. WCAG 2.2 AA, sin scripts de terceros.</p>",
-      "a": "6",
-      "b": "herramientas · 0 terceros"
-     },
-     "item_7": {
+      "numero": 6,
+      "unidade": "herramientas · 0 terceros"
+     }
+    },
+    "comparacao": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Comparacao",
+     "model": "comparacao",
+     "filter": "comparacao",
+     "sobretitulo": "El camino difícil × la Migración Express",
+     "titulo": "Difícil no entrega más. Entrega menos, más tarde.",
+     "texto": "<p>Los mismos criterios, en los dos caminos. Alterne y vea adónde va cada número.</p>",
+     "caminhoA": "Camino difícil",
+     "caminhoB": "Migración Express",
+     "trocarSozinho": true,
+     "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Plazo hasta el sitio en el aire",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Plazo hasta el sitio en el aire",
+      "model": "comparacao-criterio",
       "titulo": "Plazo hasta el sitio en el aire",
       "texto": "<p>Proyecto tradicional: relevamiento, diseño, componentes, integración, homologación. Express: el método ya existe, el contenido entra.</p>",
       "a": "26 semanas",
       "b": "1 semana"
      },
-     "item_8": {
+     "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Rendimiento en Lighthouse (móvil)",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Rendimiento en Lighthouse (móvil)",
+      "model": "comparacao-criterio",
       "titulo": "Rendimiento en Lighthouse (móvil)",
-      "texto": "<p>Sitios en frameworks pesados suelen quedar entre 40 y 70. EDS supera 90 porque carga en tres fases. La nota medida de esta página está en la sección EDS, con fecha.</p>",
+      "texto": "<p>Sitios en frameworks pesados suelen quedar entre 40 y 70. EDS queda entre 85 y 100 en las mediciones de esta página, porque carga en tres fases; la nota varía un poco en cada medición. La última, con fecha, está en la sección EDS.</p>",
       "a": "55",
-      "b": "90+"
+      "b": "85 a 100"
      },
-     "item_9": {
+     "item_2": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Scripts de terceros antes del sí",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Scripts de terceros antes del sí",
+      "model": "comparacao-criterio",
       "titulo": "Scripts de terceros antes del sí",
       "texto": "<p>Tag managers, píxeles y videos suelen entrar antes de cualquier elección. Aquí, cero.</p>",
       "a": "12",
       "b": "0"
      },
-     "item_10": {
+     "item_3": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Horas de TI del cliente por mes",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Horas de TI del cliente por mes",
+      "model": "comparacao-criterio",
       "titulo": "Horas de TI del cliente por mes",
       "texto": "<p>Sin bloque nuevo no hay sprint: quien publica es el área de negocio, en el Universal Editor.</p>",
       "a": "160",
       "b": "8"
      },
-     "item_11": {
+     "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Tiempo para publicar un ajuste",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Tiempo para publicar un ajuste",
+      "model": "comparacao-criterio",
       "titulo": "Tiempo para publicar un ajuste",
       "texto": "<p>De la cola de TI a un clic de quien escribe.</p>",
       "a": "14 días",
       "b": "1 minuto"
      },
-     "item_12": {
+     "item_5": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Agentic readiness",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Agentic readiness",
+      "model": "comparacao-criterio",
       "titulo": "Agentic readiness",
       "texto": "<p>Contenido en el HTML, estructura semántica, metadatos, índice y llms.txt.</p>",
       "a": "2 de 5",
       "b": "5 de 5"
-     },
-     "item_13": {
+     }
+    },
+    "entregas": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Entregas",
+     "model": "entregas",
+     "filter": "entregas",
+     "sobretitulo": "Lo que entrega la semana",
+     "titulo": "Rápido es lo que queda cuando el método está listo.",
+     "texto": "<p>Cada número de abajo se mide, no se promete.</p>",
+     "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Lighthouse medido en cada publicación",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Lighthouse medido en cada publicación",
       "texto": "<p>Rendimiento, accesibilidad, buenas prácticas y SEO, en móvil, medidos por el CI. La nota aparece con fecha arriba de la página y en la sección EDS.</p>",
-      "a": "4",
-      "b": "ejes medidos"
+      "numero": "4",
+      "unidade": "ejes medidos"
      },
-     "item_14": {
+     "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Agentic readiness",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Agentic readiness",
       "texto": "<p>Las cinco verificaciones, con llms.txt publicado.</p>",
-      "a": "5",
-      "b": "de 5"
+      "numero": "5",
+      "unidade": "de 5"
      },
-     "item_15": {
+     "item_2": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Scripts antes del consentimiento",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Scripts antes del consentimiento",
       "texto": "<p>Ningún píxel, tag manager o video entra antes del sí.</p>",
-      "a": "0",
-      "b": "scripts"
+      "numero": "0",
+      "unidade": "scripts"
      },
-     "item_16": {
+     "item_3": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Clic para publicar",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Clic para publicar",
       "texto": "<p>El autor aprueba, publica. CDN de Adobe o la del cliente adelante.</p>",
-      "a": "1",
-      "b": "clic"
+      "numero": "1",
+      "unidade": "clic"
      },
-     "item_17": {
+     "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Validez del consentimiento",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Validez del consentimiento",
       "texto": "<p>Elección guardada por origen, con versión de la política. Cambia la política, vuelve el banner.</p>",
-      "a": "12",
-      "b": "meses"
+      "numero": "12",
+      "unidade": "meses"
      },
-     "item_18": {
+     "item_5": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Cabeceras de seguridad",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Cabeceras de seguridad",
       "texto": "<p>CSP, COOP, HSTS, nosniff y permissions-policy versionadas en el servicio de configuración.</p>",
-      "a": "6",
-      "b": "cabeceras"
-     },
-     "item_19": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · ponta-numero",
-      "model": "rotulo",
-      "chave": "ponta-numero",
-      "texto": "1"
-     },
-     "item_20": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · ponta-texto",
-      "model": "rotulo",
-      "chave": "ponta-texto",
-      "texto": "semana en el cliente, del kickoff al sitio en el aire"
-     },
-     "item_21": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · iceberg-legenda",
-      "model": "rotulo",
-      "chave": "iceberg-legenda",
-      "texto": "bajo la línea de flotación: la inversión hecha antes"
-     },
-     "item_22": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · caminho-a",
-      "model": "rotulo",
-      "chave": "caminho-a",
-      "texto": "Camino difícil"
-     },
-     "item_23": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · caminho-b",
-      "model": "rotulo",
-      "chave": "caminho-b",
-      "texto": "Migración Express"
+      "numero": "6",
+      "unidade": "cabeceras"
      }
     }
    },
@@ -2901,7 +2823,7 @@
       "name": "Texto da interface · lcp",
       "model": "rotulo",
       "chave": "lcp",
-      "texto": "LCP 0,4 s"
+      "texto": "LCP {lcp}"
      },
      "item_5": {
       "jcr:primaryType": "nt:unstructured",
@@ -3012,7 +2934,7 @@
       "model": "celula",
       "tipo": "telemetria",
       "rotulo": "Operational Telemetry",
-      "texto": "<p>Core Web Vitals de usuarios reales, por página y dispositivo, sin scripts de terceros.</p>",
+      "texto": "<p>Core Web Vitals de usuarios reales, por página y dispositivo, sin scripts de terceros. Los números de abajo son un ejemplo del panel: esta demo no tiene tráfico real que sostenga una medición.</p>",
       "dados": "LCP:0,4 s:22|INP:48 ms:12|CLS:0,00:4",
       "largura": "2"
      },
@@ -4430,8 +4352,8 @@
      "name": "Hero",
      "model": "hero",
      "filter": "hero",
-     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · native consent</p><h1>The site that loads in 0.4 s in a one-week migration.</h1><p>This page is a live demo, not a slide: every section shows an EDS, Assets or EadTech-method capability actually working. Accessibility that holds for every block, Lighthouse measured on every publish, AI agents, native consent. The Adobe video below is the first example: it only loads after your yes.</p>",
-     "girarTrecho": "loads in 0.4 s",
+     "text": "<p>AEM Edge Delivery Services · AEM Assets · Dynamic Media · native consent</p><h1>The site that loads fast on mobile in a one-week migration.</h1><p>This page is a live demo, not a slide: every section shows an EDS, Assets or EadTech-method capability actually working. Accessibility that holds for every block, Lighthouse measured on every publish, AI agents, native consent. The Adobe video below is the first example: it only loads after your yes.</p>",
+     "girarTrecho": "loads fast on mobile",
      "girarPalavras": [
       "is accessible per block",
       "crops with AI",
@@ -4478,269 +4400,230 @@
     "style": "titulos-animados",
     "name": "Valor",
     "id": "valor",
-    "valor": {
+    "iceberg": {
      "jcr:primaryType": "nt:unstructured",
      "sling:resourceType": "core/franklin/components/block/v1/block",
-     "name": "Valor",
-     "model": "valor",
-     "filter": "valor",
-     "camadasSobretitulo": "Fast does not mean easy",
-     "camadasTitulo": "One week at the client. Years before it.",
-     "camadasTexto": "<p>What you see is the tip: the migration delivered in a week. What makes it possible sits below the waterline, invested before any client showed up. Scroll to see.</p>",
-     "comparacaoSobretitulo": "The hard way × Express Migration",
-     "comparacaoTitulo": "Hard does not deliver more. It delivers less, later.",
-     "comparacaoTexto": "<p>Same criteria, both paths. Toggle and watch where each number goes.</p>",
-     "entregasSobretitulo": "What the week delivers",
-     "entregasTitulo": "Fast is what is left when the method is ready.",
-     "entregasTexto": "<p>Every number below is measured, not promised.</p>",
+     "name": "Iceberg",
+     "model": "iceberg",
+     "filter": "iceberg",
+     "sobretitulo": "Fast does not mean easy",
+     "titulo": "One week at the client. Years before it.",
+     "texto": "<p>What you see is the tip: the migration delivered in a week. What makes it possible sits below the waterline, invested before any client showed up. Scroll to see.</p>",
+     "pontaNumero": "1",
+     "pontaTexto": "week at the client, from kickoff to the site live",
+     "legenda": "below the waterline: the investment made before",
      "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Method as a script",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Method as a script",
       "texto": "<p>Every migration becomes a script: what is done, in what order, what is checked. The next one starts from step 1 already written, and the client only validates.</p>",
-      "a": "511",
-      "b": "pages on the last portal"
+      "numero": 511,
+      "unidade": "pages on the last portal"
      },
      "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Block library",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Block library",
       "texto": "<p>Blocks already modelled for the Universal Editor, with the variant chosen by the author and never by a rule in code. A dictionary with a real capture of each one.</p>",
-      "a": "43",
-      "b": "ready blocks"
+      "numero": 43,
+      "unidade": "ready blocks"
      },
      "item_2": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Quality gate",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Quality gate",
       "texto": "<p>Lint, block contract, automated tests and Lighthouse on every change. Nothing reaches main without passing.</p>",
-      "a": "308",
-      "b": "tests"
+      "numero": 308,
+      "unidade": "tests"
      },
      "item_3": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Consent package",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Consent package",
       "texto": "<p>Banner, preferences and media gate under privacy law, with all copy authored and an axe audit with zero violations.</p>",
-      "a": "23",
-      "b": "checks"
+      "numero": 23,
+      "unidade": "checks"
      },
      "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Content automation",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Content automation",
       "texto": "<p>Migrator, visual parity checker, index and redirects. The repetitive part stops being manual and stops depending on memory.</p>",
-      "a": "3",
-      "b": "loading phases"
+      "numero": 3,
+      "unidade": "loading phases"
      },
      "item_5": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Suite knowledge",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Suite knowledge",
       "texto": "<p>Assets, Dynamic Media, Target, Analytics, App Builder, site authentication: what each requires and where it fits, without experimenting on the client.</p>",
-      "a": "6",
-      "b": "suite products"
+      "numero": 6,
+      "unidade": "suite products"
      },
      "item_6": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Camada · Accessibility per block",
-      "model": "valor-item",
-      "tipo": "camada",
+      "model": "iceberg-camada",
       "titulo": "Accessibility per block",
       "texto": "<p>Six tools (font, contrast, black and white, inversion, links) that only set a class on the root; every block answers with its own CSS. WCAG 2.2 AA, no third-party script.</p>",
-      "a": "6",
-      "b": "tools · 0 third parties"
-     },
-     "item_7": {
+      "numero": 6,
+      "unidade": "tools · 0 third parties"
+     }
+    },
+    "comparacao": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Comparacao",
+     "model": "comparacao",
+     "filter": "comparacao",
+     "sobretitulo": "The hard way × Express Migration",
+     "titulo": "Hard does not deliver more. It delivers less, later.",
+     "texto": "<p>Same criteria, both paths. Toggle and watch where each number goes.</p>",
+     "caminhoA": "The hard way",
+     "caminhoB": "Express Migration",
+     "trocarSozinho": true,
+     "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Time to go live",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Time to go live",
+      "model": "comparacao-criterio",
       "titulo": "Time to go live",
       "texto": "<p>Traditional project: discovery, design, components, integration, acceptance. Express: the method already exists, the content goes in.</p>",
       "a": "26 weeks",
       "b": "1 week"
      },
-     "item_8": {
+     "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Lighthouse performance (mobile)",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Lighthouse performance (mobile)",
+      "model": "comparacao-criterio",
       "titulo": "Lighthouse performance (mobile)",
-      "texto": "<p>Sites on heavy frameworks usually land between 40 and 70. EDS goes past 90 because it loads in three phases. This page's measured score is in the EDS section, with its date.</p>",
+      "texto": "<p>Sites on heavy frameworks usually land between 40 and 70. EDS lands between 85 and 100 in this page's measurements, because it loads in three phases; the score moves a little on every run. The latest, with its date, is in the EDS section.</p>",
       "a": "55",
-      "b": "90+"
+      "b": "85 to 100"
      },
-     "item_9": {
+     "item_2": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Third-party scripts before yes",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Third-party scripts before yes",
+      "model": "comparacao-criterio",
       "titulo": "Third-party scripts before yes",
       "texto": "<p>Tag managers, pixels and videos usually run before any choice. Here, zero.</p>",
       "a": "12",
       "b": "0"
      },
-     "item_10": {
+     "item_3": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Client IT hours per month",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Client IT hours per month",
+      "model": "comparacao-criterio",
       "titulo": "Client IT hours per month",
       "texto": "<p>No new block, no sprint: business teams publish in the Universal Editor.</p>",
       "a": "160",
       "b": "8"
      },
-     "item_11": {
+     "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Time to publish a change",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Time to publish a change",
+      "model": "comparacao-criterio",
       "titulo": "Time to publish a change",
       "texto": "<p>From the IT queue to one click by the person who writes.</p>",
       "a": "14 days",
       "b": "1 minute"
      },
-     "item_12": {
+     "item_5": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Comparação · Agentic readiness",
-      "model": "valor-item",
-      "tipo": "comparacao",
+      "name": "Critério · Agentic readiness",
+      "model": "comparacao-criterio",
       "titulo": "Agentic readiness",
       "texto": "<p>Content in the HTML, semantic structure, metadata, index and llms.txt.</p>",
       "a": "2 of 5",
       "b": "5 of 5"
-     },
-     "item_13": {
+     }
+    },
+    "entregas": {
+     "jcr:primaryType": "nt:unstructured",
+     "sling:resourceType": "core/franklin/components/block/v1/block",
+     "name": "Entregas",
+     "model": "entregas",
+     "filter": "entregas",
+     "sobretitulo": "What the week delivers",
+     "titulo": "Fast is what is left when the method is ready.",
+     "texto": "<p>Every number below is measured, not promised.</p>",
+     "item_0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Lighthouse measured on every publish",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Lighthouse measured on every publish",
       "texto": "<p>Performance, accessibility, best practices and SEO, on mobile, measured by CI. The score shows with its date at the top of the page and in the EDS section.</p>",
-      "a": "4",
-      "b": "axes measured"
+      "numero": "4",
+      "unidade": "axes measured"
      },
-     "item_14": {
+     "item_1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Agentic readiness",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Agentic readiness",
       "texto": "<p>All five checks, with llms.txt published.</p>",
-      "a": "5",
-      "b": "of 5"
+      "numero": "5",
+      "unidade": "of 5"
      },
-     "item_15": {
+     "item_2": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Scripts before consent",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Scripts before consent",
       "texto": "<p>No pixel, tag manager or video runs before yes.</p>",
-      "a": "0",
-      "b": "scripts"
+      "numero": "0",
+      "unidade": "scripts"
      },
-     "item_16": {
+     "item_3": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Click to publish",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Click to publish",
       "texto": "<p>The author approves, publishes. Adobe's CDN or the client's in front.</p>",
-      "a": "1",
-      "b": "click"
+      "numero": "1",
+      "unidade": "click"
      },
-     "item_17": {
+     "item_4": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Consent validity",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Consent validity",
       "texto": "<p>Choice stored per origin, with policy version. Change the policy and the banner is back.</p>",
-      "a": "12",
-      "b": "months"
+      "numero": "12",
+      "unidade": "months"
      },
-     "item_18": {
+     "item_5": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "core/franklin/components/block/v1/block/item",
       "name": "Entrega · Security headers",
-      "model": "valor-item",
-      "tipo": "entrega",
+      "model": "entregas-item",
       "titulo": "Security headers",
       "texto": "<p>CSP, COOP, HSTS, nosniff and permissions-policy versioned in the config service.</p>",
-      "a": "6",
-      "b": "headers"
-     },
-     "item_19": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · ponta-numero",
-      "model": "rotulo",
-      "chave": "ponta-numero",
-      "texto": "1"
-     },
-     "item_20": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · ponta-texto",
-      "model": "rotulo",
-      "chave": "ponta-texto",
-      "texto": "week at the client, from kickoff to the site live"
-     },
-     "item_21": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · iceberg-legenda",
-      "model": "rotulo",
-      "chave": "iceberg-legenda",
-      "texto": "below the waterline: the investment made before"
-     },
-     "item_22": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · caminho-a",
-      "model": "rotulo",
-      "chave": "caminho-a",
-      "texto": "The hard way"
-     },
-     "item_23": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "core/franklin/components/block/v1/block/item",
-      "name": "Texto da interface · caminho-b",
-      "model": "rotulo",
-      "chave": "caminho-b",
-      "texto": "Express Migration"
+      "numero": "6",
+      "unidade": "headers"
      }
     }
    },
@@ -5105,7 +4988,7 @@
       "name": "Texto da interface · lcp",
       "model": "rotulo",
       "chave": "lcp",
-      "texto": "LCP 0.4 s"
+      "texto": "LCP {lcp}"
      },
      "item_5": {
       "jcr:primaryType": "nt:unstructured",
@@ -5216,7 +5099,7 @@
       "model": "celula",
       "tipo": "telemetria",
       "rotulo": "Operational Telemetry",
-      "texto": "<p>Real-user Core Web Vitals, by page and device, with no third-party script.</p>",
+      "texto": "<p>Real-user Core Web Vitals, by page and device, with no third-party script. The numbers below are a sample of the dashboard: this demo has no real traffic to back a measurement.</p>",
       "dados": "LCP:0.4 s:22|INP:48 ms:12|CLS:0.00:4",
       "largura": "2"
      },

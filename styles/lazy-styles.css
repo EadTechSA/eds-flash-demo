@@ -328,26 +328,26 @@ html.editor .fases {
 }
 
 html.editor .fases .fases-fixo,
-html.editor .valor .valor-iceberg-fixo {
+html.editor .iceberg .iceberg-fixo {
   position: relative;
   top: auto;
   height: auto;
 }
 
 html.editor .fases .fases-passo,
-html.editor .valor .valor-camada {
+html.editor .iceberg .iceberg-camada {
   opacity: 1;
   visibility: visible;
   transform: none;
 }
 
-html.editor .valor .valor-iceberg {
+html.editor .iceberg .iceberg-palco {
   --p: 1;
 
   height: auto;
 }
 
-html.editor .valor .valor-camadas {
+html.editor .iceberg .iceberg-camadas {
   transform: none;
 }
 

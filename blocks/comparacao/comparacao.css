@@ -1,0 +1,165 @@
+/* comparacao: abertura (sobretítulo, título, texto) */
+.section > div + div > .comparacao {
+  margin-top: clamp(72px, 9vw, 128px);
+}
+
+.comparacao .comparacao-abertura {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 760px;
+}
+
+.comparacao .comparacao-abertura > p:first-child {
+  margin: 0;
+  font-family: var(--mono-font-family);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.comparacao .comparacao-abertura h2 {
+  margin: 0;
+}
+
+.comparacao .comparacao-abertura h2 + p {
+  margin: 0;
+  font-size: clamp(17px, 1.6vw, 20px);
+  color: var(--text-muted);
+}
+
+/* 2. comparação */
+.comparacao .comparacao-painel {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.comparacao .comparacao-linhas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.comparacao .comparacao-linha {
+  display: grid;
+  gap: 8px 20px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-1);
+}
+
+.comparacao .comparacao-linha h3 {
+  margin: 0;
+  font-size: var(--heading-font-size-xs);
+}
+
+.comparacao .comparacao-linha-valores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.comparacao .comparacao-a,
+.comparacao .comparacao-b {
+  transition: color 0.4s, opacity 0.4s;
+}
+
+.comparacao .comparacao-painel[data-lado='a'] .comparacao-b,
+.comparacao .comparacao-painel[data-lado='b'] .comparacao-a {
+  color: var(--text-dim);
+}
+
+.comparacao .comparacao-painel[data-lado='a'] .comparacao-a {
+  color: var(--text-muted);
+}
+
+.comparacao .comparacao-painel[data-lado='b'] .comparacao-b {
+  color: var(--warm);
+}
+
+.comparacao .comparacao-trilho {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--surface-3);
+  overflow: hidden;
+  position: relative;
+}
+
+.comparacao .comparacao-trilho i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-radius: 4px;
+  background: var(--text-dim);
+  transition: width 0.9s var(--ease), background 0.4s;
+}
+
+.comparacao .comparacao-painel[data-lado='b'] .comparacao-trilho i {
+  background: linear-gradient(90deg, var(--warm), var(--ok));
+}
+
+.comparacao .comparacao-linha-texto {
+  font-size: var(--body-font-size-s);
+  color: var(--text-muted);
+}
+
+.comparacao .comparacao-linha-texto p {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .comparacao .comparacao-linha {
+    grid-template-columns: 1.1fr 220px 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+  }
+
+  .comparacao .comparacao-linha-cabeca {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+  .comparacao .comparacao-linha-valores {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+  .comparacao .comparacao-trilho {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+  .comparacao .comparacao-linha-texto {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+}
+
+html.contrast .comparacao .comparacao-painel[data-lado='a'] .comparacao-b,
+html.contrast .comparacao .comparacao-painel[data-lado='b'] .comparacao-a {
+  opacity: 1;
+  color: #fff;
+}
+
+html.contrast .comparacao .comparacao-trilho i,
+html.contrast .comparacao .comparacao-painel[data-lado='b'] .comparacao-trilho i {
+  background: #ff0;
+}
+
+/* Rybená: o gradiente da barra sairia por cima da cor trocada */
+.comparacao .comparacao-painel[data-lado='b'] .comparacao-trilho i.rybDarkContrast,
+.comparacao .comparacao-painel[data-lado='b'] .comparacao-trilho i.rybLightContrast {
+  background-image: none;
+}

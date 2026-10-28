@@ -6,7 +6,7 @@
  * texto), rótulos. Itens e campos ficam editáveis no lugar.
  */
 import {
-  el, rotulos, adiar, abertura, campos, campo, conteudo, marcar,
+  el, rotulos, adiar, abertura, campos, campo, conteudo, marcar, lighthouse,
 } from '../../scripts/demo.js';
 import { aoRolar } from '../../scripts/motion.js';
 
@@ -37,7 +37,15 @@ function montar(block) {
   const vp = el('div', 'fases-viewport');
   const menu = el('div', 'fases-menu', '<span style="width:80px"></span><span></span><span></span><span></span>');
   const hero = el('div', 'fases-hero');
-  const lcp = el('span', 'fases-lcp', r('lcp', 'LCP'));
+  // {lcp} no rótulo vira o LCP medido pelo CI (Lighthouse, celular); sem medição, some
+  const modelo = r('lcp', 'LCP');
+  const lcp = el('span', 'fases-lcp', modelo.replace('{lcp}', '').trim());
+  if (modelo.includes('{lcp}')) {
+    lighthouse().then((m) => {
+      const v = m?.metricas?.lcpMs;
+      if (v) lcp.textContent = modelo.replace('{lcp}', `${(v / 1000).toFixed(1).replace('.', document.documentElement.lang.startsWith('en') ? '.' : ',')} s`);
+    });
+  }
   hero.append(lcp, el('div', 'fases-t'), el('div', 'fases-t2'));
   const blocos = el('div', 'fases-blocos', '<span></span><span></span><span></span>');
   const cookies = el('div', 'fases-cookies', `<span>${r('cookies', 'cookies')}</span><i></i>`);

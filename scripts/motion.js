@@ -65,8 +65,10 @@ export function palavras(h) {
 }
 
 /** Conta de 0 até o valor quando o elemento aparece. */
-export function contar(el, ate, { duracao = 1400, casas = 0, sufixo = '' } = {}) {
-  const fim = () => { el.textContent = `${ate.toFixed(casas)}${sufixo}`; };
+export function contar(el, ate, {
+  duracao = 1400, casas = 0, sufixo = '', prefixo = '',
+} = {}) {
+  const fim = () => { el.textContent = `${prefixo}${ate.toFixed(casas)}${sufixo}`; };
   if (reduzido || !io) {
     fim();
     return;
@@ -78,7 +80,7 @@ export function contar(el, ate, { duracao = 1400, casas = 0, sufixo = '' } = {})
     const passo = (t) => {
       const p = Math.min(1, (t - t0) / duracao);
       const e = 1 - (1 - p) ** 3;
-      el.textContent = `${(ate * e).toFixed(casas)}${sufixo}`;
+      el.textContent = `${prefixo}${(ate * e).toFixed(casas)}${sufixo}`;
       if (p < 1) requestAnimationFrame(passo); else fim();
     };
     requestAnimationFrame(passo);

@@ -214,3 +214,17 @@ export function dataCurta(iso) {
     return '';
   }
 }
+
+/** Primeiro número de um texto autorado ("26 semanas" → 26, "1.234,5" → 1234.5). */
+export function numeroDe(s) {
+  const m = String(s || '').match(/-?[\d.]*\d(?:,\d+)?/);
+  if (!m) return 0;
+  const n = parseFloat(m[0].replace(/\./g, '').replace(',', '.'));
+  return Number.isFinite(n) ? n : 0;
+}
+
+/** Casas decimais do primeiro número do texto ("0,00" → 2). */
+export function casasDe(s) {
+  const m = String(s || '').match(/\d[,.](\d+)/);
+  return m ? m[1].length : 0;
+}
