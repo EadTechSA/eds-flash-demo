@@ -38,6 +38,14 @@ for (const url of urls) {
     const real = k === 'content-security-policy' ? csp.split(/,(?=\s*[a-z-]+-src|\s*base-uri|\s*default-src)/)[0] : cab[k];
     if (semNonce(real) !== semNonce(v)) problemas.push(`${k} diferente do repositório${real ? '' : ' (ausente)'}`);
   });
+  // aem.page e aem.live: o HSTS é escrito pela própria plataforma (max-age de
+  // um ano, sem includeSubDomains) e não aceita o do config. No domínio do
+  // cliente, a CDN dele entrega o valor do repositório; aqui vira só aviso.
+  const plataforma = /\.aem\.(page|live)$/.test(new URL(url).hostname);
+  const daPlataforma = (x) => plataforma && /HSTS|strict-transport-security/i.test(x);
+  const avisosPlataforma = problemas.filter((x) => daPlataforma(x) || (plataforma && x === 'nota A' && problemas.filter((y) => !daPlataforma(y) && y !== 'nota A').length === 0));
+  avisosPlataforma.forEach((x) => problemas.splice(problemas.indexOf(x), 1));
+  if (avisosPlataforma.length) console.log(`${url}: aviso da plataforma (HSTS do aem.page/aem.live): ${avisosPlataforma.join('; ')}`);
   falhas += problemas.length;
   console.log(`${url}: nota ${r.nota}${problemas.length ? `\n- ${problemas.join('\n- ')}` : ' · igual ao repositório'}`);
 }
