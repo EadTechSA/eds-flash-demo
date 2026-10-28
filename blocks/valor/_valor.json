@@ -52,22 +52,58 @@
       "id": "valor",
       "fields": [
         {
-          "component": "richtext",
-          "name": "camadas",
-          "label": "Abertura do iceberg (abertura em mono, título, parágrafo)",
-          "valueType": "string"
+          "component": "text",
+          "valueType": "string",
+          "name": "camadasSobretitulo",
+          "label": "Iceberg · Sobretítulo (linha pequena acima do título)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "camadasTitulo",
+          "label": "Iceberg · Título"
         },
         {
           "component": "richtext",
-          "name": "comparacao",
-          "label": "Abertura da comparação difícil × rápido",
-          "valueType": "string"
+          "valueType": "string",
+          "name": "camadasTexto",
+          "label": "Iceberg · Texto"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "comparacaoSobretitulo",
+          "label": "Comparação · Sobretítulo (linha pequena acima do título)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "comparacaoTitulo",
+          "label": "Comparação · Título"
         },
         {
           "component": "richtext",
-          "name": "entregas",
-          "label": "Abertura do que a semana entrega",
-          "valueType": "string"
+          "valueType": "string",
+          "name": "comparacaoTexto",
+          "label": "Comparação · Texto"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "entregasSobretitulo",
+          "label": "Entregas · Sobretítulo (linha pequena acima do título)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "entregasTitulo",
+          "label": "Entregas · Título"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "entregasTexto",
+          "label": "Entregas · Texto"
         }
       ]
     },
@@ -80,9 +116,18 @@
           "label": "Tipo",
           "valueType": "string",
           "options": [
-            { "name": "Camada do iceberg (investimento antes)", "value": "camada" },
-            { "name": "Comparação difícil × rápido", "value": "comparacao" },
-            { "name": "Entrega da semana", "value": "entrega" }
+            {
+              "name": "Camada do iceberg (investimento antes)",
+              "value": "camada"
+            },
+            {
+              "name": "Comparação difícil × rápido",
+              "value": "comparacao"
+            },
+            {
+              "name": "Entrega da semana",
+              "value": "entrega"
+            }
           ]
         },
         {
@@ -115,7 +160,10 @@
   "filters": [
     {
       "id": "valor",
-      "components": ["valor-item", "valor-rotulo"]
+      "components": [
+        "valor-item",
+        "valor-rotulo"
+      ]
     }
   ]
 }

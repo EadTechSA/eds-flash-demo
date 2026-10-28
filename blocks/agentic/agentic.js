@@ -2,10 +2,11 @@
  * Agentic readiness: as verificações autoradas com placar que conta, e a
  * visão "curl" da própria página (busca o .plain.html real e mostra o
  * início do HTML), com alternância para o texto renderizado.
- * Linhas: abertura (1 célula), verificações (texto | estado), rótulos.
+ * Linhas: abertura (sobretítulo, título, texto), verificações
+ * (texto | estado), rótulos.
  */
 import {
-  el, linhas, rotulos, texto, adiar,
+  el, rotulos, texto, adiar, abertura, campos, campo, marcar,
 } from '../../scripts/demo.js';
 import { aoAparecer, contar, revelar } from '../../scripts/motion.js';
 
@@ -14,16 +15,14 @@ function escapar(s) {
 }
 
 function montar(block) {
+  const ab = campos(block, 3);
+  // verificações antes dos rótulos: também têm duas células
+  const checks = [...block.children].filter((l) => l.children.length === 2 && /^(ok|pendente)$/i.test(texto(l.children[1])))
+    .map((l) => ({ linha: l, cel: l.children[0], ok: /^ok$/i.test(texto(l.children[1])) }));
+  checks.forEach((c) => c.linha.remove());
   const r = rotulos(block);
-  const todas = linhas(block);
-  const abertura = todas.find((c) => c.length === 1);
-  const checks = todas.filter((c) => c.length === 2 && /^(ok|pendente)$/i.test(texto(c[1]))).map((c) => ({ texto: texto(c[0]), ok: /^ok$/i.test(texto(c[1])) }));
   block.textContent = '';
-  if (abertura) {
-    const ab = el('div', 'agentic-abertura');
-    ab.append(...abertura[0].childNodes);
-    block.append(ab);
-  }
+  block.append(abertura(ab, 'agentic-abertura'));
   const grade = el('div', 'agentic-grade');
 
   const p1 = el('div', 'painel');
@@ -34,8 +33,8 @@ function montar(block) {
   h1.append(el('span', '', r('verificacoes', 'checks')), placar);
   const ul = el('ul', 'agentic-lista');
   checks.forEach((c) => {
-    const li = el('li', c.ok ? '' : 'pendente');
-    li.append(el('span', 'agentic-marca', c.ok ? '✓' : '·'), el('span', '', c.texto));
+    const li = marcar(c.linha, el('li', c.ok ? '' : 'pendente'));
+    li.append(el('span', 'agentic-marca', c.ok ? '✓' : '·'), campo(c.cel, 'span'));
     ul.append(li);
   });
   p1.append(h1, ul);

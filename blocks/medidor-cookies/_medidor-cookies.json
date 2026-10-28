@@ -37,10 +37,22 @@
       "id": "medidor-cookies",
       "fields": [
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "sobretitulo",
+          "label": "Sobretítulo (linha pequena acima do título)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "titulo",
+          "label": "Título"
+        },
+        {
           "component": "richtext",
+          "valueType": "string",
           "name": "texto",
-          "label": "Texto de abertura",
-          "valueType": "string"
+          "label": "Texto"
         },
         {
           "component": "text",

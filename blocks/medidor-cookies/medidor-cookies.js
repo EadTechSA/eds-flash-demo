@@ -3,11 +3,11 @@
  * leitura real do que aquele site gravou e chamou ANTES de qualquer escolha
  * de consentimento. Quem mede é uma ação do App Builder com um navegador
  * remoto saindo do Brasil; aqui só desenhamos o resultado.
- * Linhas: abertura (1 célula), endereço da ação (1 célula, https://…) e
+ * Linhas: abertura (sobretítulo, título, texto), endereço da ação e
  * rótulos `chave | texto`. Nenhum texto visível nasce do código.
  */
 import {
-  el, linhas, rotulos, texto,
+  el, rotulos, texto, abertura, campos,
 } from '../../scripts/demo.js';
 
 const CATS_CONSENTIMENTO = ['publicidade', 'medicao', 'personalizacao'];
@@ -158,17 +158,11 @@ function desenhar(r, dados, saida, refazer) {
 }
 
 function montar(block) {
+  const [sobre, titulo, txt, endpointCel] = campos(block, 4);
   const r = rotulos(block);
-  const unicas = linhas(block).filter((c) => c.length === 1).map((c) => c[0]);
-  const endpointCel = unicas.find((c) => /^https:\/\/\S+$/.test(texto(c)));
-  const endpoint = endpointCel ? texto(endpointCel).replace(/\/+$/, '') : '';
-  const abertura = unicas.find((c) => c !== endpointCel);
+  const endpoint = /^https:\/\/\S+$/.test(texto(endpointCel)) ? texto(endpointCel).replace(/\/+$/, '') : '';
   block.textContent = '';
-  if (abertura) {
-    const ab = el('div', 'medidor-abertura');
-    ab.append(...abertura.childNodes);
-    block.append(ab);
-  }
+  block.append(abertura([sobre, titulo, txt], 'medidor-abertura'));
 
   const form = el('form', 'painel medidor-form');
   form.noValidate = true;

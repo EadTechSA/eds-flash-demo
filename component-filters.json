@@ -16,6 +16,7 @@
       "valor",
       "consent-live",
       "medidor-cookies",
+      "portoes",
       "fases",
       "dm-showcase",
       "acessibilidade",
@@ -118,6 +119,13 @@
     "components": [
       "passos-passo",
       "passos-rotulo"
+    ]
+  },
+  {
+    "id": "portoes",
+    "components": [
+      "portao",
+      "portoes-rotulo"
     ]
   },
   {

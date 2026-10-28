@@ -52,10 +52,22 @@
       "id": "passos",
       "fields": [
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "sobretitulo",
+          "label": "Sobretítulo (linha pequena acima do título)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "titulo",
+          "label": "Título"
+        },
+        {
           "component": "richtext",
+          "valueType": "string",
           "name": "texto",
-          "label": "Abertura",
-          "valueType": "string"
+          "label": "Texto"
         }
       ]
     },

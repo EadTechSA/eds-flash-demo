@@ -7,7 +7,7 @@
  * telemetria. Linhas: tipo | rótulo | texto | dados | largura.
  */
 import {
-  el, linhas, texto, adiar,
+  el, texto, adiar, campo, conteudo, marcar,
 } from '../../scripts/demo.js';
 import { aoAparecer, contar, revelar } from '../../scripts/motion.js';
 
@@ -145,21 +145,24 @@ const widgets = {
 };
 
 function montar(block) {
-  const itens = linhas(block).filter((c) => c.length >= 3).map((c) => ({
-    tipo: texto(c[0]).toLowerCase(),
-    rotulo: texto(c[1]),
-    texto: c[2],
-    dados: dados(texto(c[3] || null)),
-    largura: texto(c[4] || null) || '2',
-  }));
+  const itens = [...block.children].filter((l) => l.children.length >= 3).map((l) => {
+    const c = [...l.children];
+    return {
+      linha: l,
+      tipo: texto(c[0]).toLowerCase(),
+      rotulo: c[1],
+      texto: c[2],
+      dados: dados(texto(c[3] || null)),
+      largura: texto(c[4] || null) || '2',
+    };
+  });
   block.textContent = '';
   const grade = el('div', 'bento-grade');
   itens.forEach((it, i) => {
-    const cel = el('div', `bento-celula bento-l${it.largura} bento-${it.tipo}`);
-    if (it.rotulo) cel.append(el('span', 'bento-rotulo', it.rotulo));
+    const cel = marcar(it.linha, el('div', `bento-celula bento-l${it.largura} bento-${it.tipo}`));
+    if (texto(it.rotulo)) cel.append(campo(it.rotulo, 'span', 'bento-rotulo'));
     const w = (widgets[it.tipo] || widgets.texto)(it.dados);
-    const tx = el('div', 'bento-texto');
-    tx.append(...it.texto.childNodes);
+    const tx = conteudo(it.texto, el('div', 'bento-texto'));
     if (it.tipo === 'lighthouse' || it.tipo === 'fases') {
       cel.append(w, tx);
     } else {

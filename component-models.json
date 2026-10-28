@@ -250,10 +250,22 @@
     "id": "a11y-painel",
     "fields": [
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "sobretitulo",
+        "label": "Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título"
+      },
+      {
         "component": "richtext",
+        "valueType": "string",
         "name": "texto",
-        "label": "Abertura (mono, título, parágrafo)",
-        "valueType": "string"
+        "label": "Texto"
       }
     ]
   },
@@ -272,10 +284,22 @@
     "id": "agentic",
     "fields": [
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "sobretitulo",
+        "label": "Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título"
+      },
+      {
         "component": "richtext",
+        "valueType": "string",
         "name": "texto",
-        "label": "Abertura",
-        "valueType": "string"
+        "label": "Texto"
       }
     ]
   },
@@ -438,10 +462,22 @@
     "id": "consent-live",
     "fields": [
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "sobretitulo",
+        "label": "Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título"
+      },
+      {
         "component": "richtext",
+        "valueType": "string",
         "name": "texto",
-        "label": "Texto de abertura (opcional)",
-        "valueType": "string"
+        "label": "Texto"
       }
     ]
   },
@@ -498,10 +534,22 @@
     "id": "fases",
     "fields": [
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "sobretitulo",
+        "label": "Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título"
+      },
+      {
         "component": "richtext",
+        "valueType": "string",
         "name": "texto",
-        "label": "Abertura (mono, título)",
-        "valueType": "string"
+        "label": "Texto"
       }
     ]
   },
@@ -599,10 +647,22 @@
     "id": "medidor-cookies",
     "fields": [
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "sobretitulo",
+        "label": "Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título"
+      },
+      {
         "component": "richtext",
+        "valueType": "string",
         "name": "texto",
-        "label": "Texto de abertura",
-        "valueType": "string"
+        "label": "Texto"
       },
       {
         "component": "text",
@@ -617,10 +677,22 @@
     "id": "passos",
     "fields": [
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "sobretitulo",
+        "label": "Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título"
+      },
+      {
         "component": "richtext",
+        "valueType": "string",
         "name": "texto",
-        "label": "Abertura",
-        "valueType": "string"
+        "label": "Texto"
       }
     ]
   },
@@ -648,25 +720,131 @@
     ]
   },
   {
+    "id": "portoes",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "sobretitulo",
+        "label": "Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titulo",
+        "label": "Título"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "texto",
+        "label": "Texto"
+      }
+    ]
+  },
+  {
+    "id": "portao",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "nome",
+        "label": "Nome do portão"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "quando",
+        "label": "Quando roda",
+        "options": [
+          {
+            "name": "A cada push (CI)",
+            "value": "push"
+          },
+          {
+            "name": "Na entrega publicada",
+            "value": "entrega"
+          },
+          {
+            "name": "No navegador",
+            "value": "navegador"
+          },
+          {
+            "name": "Na própria página, ao vivo",
+            "value": "pagina"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "texto",
+        "label": "O que confere e o que reprova"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "comando",
+        "label": "Comando (opcional)"
+      }
+    ]
+  },
+  {
     "id": "valor",
     "fields": [
       {
-        "component": "richtext",
-        "name": "camadas",
-        "label": "Abertura do iceberg (abertura em mono, título, parágrafo)",
-        "valueType": "string"
+        "component": "text",
+        "valueType": "string",
+        "name": "camadasSobretitulo",
+        "label": "Iceberg · Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "camadasTitulo",
+        "label": "Iceberg · Título"
       },
       {
         "component": "richtext",
-        "name": "comparacao",
-        "label": "Abertura da comparação difícil × rápido",
-        "valueType": "string"
+        "valueType": "string",
+        "name": "camadasTexto",
+        "label": "Iceberg · Texto"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "comparacaoSobretitulo",
+        "label": "Comparação · Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "comparacaoTitulo",
+        "label": "Comparação · Título"
       },
       {
         "component": "richtext",
-        "name": "entregas",
-        "label": "Abertura do que a semana entrega",
-        "valueType": "string"
+        "valueType": "string",
+        "name": "comparacaoTexto",
+        "label": "Comparação · Texto"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "entregasSobretitulo",
+        "label": "Entregas · Sobretítulo (linha pequena acima do título)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "entregasTitulo",
+        "label": "Entregas · Título"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "entregasTexto",
+        "label": "Entregas · Texto"
       }
     ]
   },

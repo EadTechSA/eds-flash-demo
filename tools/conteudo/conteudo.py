@@ -50,9 +50,19 @@ def block(name, model, fields=None, items=None, classes=None, filt=None):
     return b
 
 
+def ab3(html, prefixo=''):
+    """Abertura '<p>sobre</p><h2>título</h2><p>…</p>' em três campos do modelo."""
+    import re
+    m = re.match(r'\s*(?:<p>(.*?)</p>)?\s*(?:<h2>(.*?)</h2>)?(.*)$', html or '', re.S)
+    sobre, titulo, resto = (m.group(1) or ''), (m.group(2) or ''), (m.group(3) or '').strip()
+    n = (lambda x: prefixo + x[0].upper() + x[1:]) if prefixo else (lambda x: x)
+    return {n('sobretitulo'): sobre, n('titulo'): titulo, n('texto'): resto}
+
+
 def rotulos(prefixo, mapa):
     """Itens `rotulo` (chave | texto) para um bloco."""
-    return [(f'{prefixo}-{k}', 'rotulo', {'chave': k, 'texto': v}) for k, v in mapa.items()]
+    # o nome aparece no painel e na árvore do Universal Editor
+    return [(f'Texto da interface · {k}', 'rotulo', {'chave': k, 'texto': v}) for k, v in mapa.items()]
 
 
 def section(children, id=None, style=None, nome=None, **meta):
@@ -411,10 +421,78 @@ T['en']['medidor_rotulos'] = {
     'erro-rede': 'Could not reach the meter. Check the connection and try again.', 'erro-sem-chave': 'The meter is not configured yet.',
 }
 
+# --------------------------------------------------------------------------
+# portões de qualidade (o que cada mudança atravessa antes do site)
+# --------------------------------------------------------------------------
+PORTOES = {
+'pt': dict(
+    abertura='<p>Portões de qualidade</p><h2>Nada chega ao site sem passar por aqui.</h2><p>Os mesmos portões que a EadTech roda em todo projeto EDS. Os seis primeiros rodam a cada push e reprovam o build na hora. Os outros conferem o site publicado e a própria página que você está vendo. Filtre pelo momento em que cada um entra.</p>',
+    itens=[
+        ('ESLint no padrão Airbnb', 'push', '<p>Todo JavaScript segue o guia da Airbnb, o mesmo do boilerplate da Adobe. Variável esquecida, import sem extensão ou estilo fora do padrão param o build ali mesmo.</p>', 'npm run lint:js'),
+        ('Modelos do Universal Editor (regras xwalk)', 'push', '<p>O plugin da Adobe confere definições, modelos e filtros de cada bloco: campo sem nome, filtro que aponta para componente inexistente, bloco com colunas demais para o autor. O que aparece no painel do editor nasce daqui.</p>', 'npm run lint:js'),
+        ('Stylelint', 'push', '<p>CSS no padrão, classes em kebab-case e seletor sempre preso ao bloco, para um bloco nunca vazar no outro. A única exceção são as classes do Rybená.</p>', 'npm run lint:css'),
+        ('Contrato de contraste por bloco', 'push', '<p>Bloco com cor própria precisa dizer como fica no alto contraste, com regra <code>html.contrast</code> dele mesmo, e sem <code>!important</code>. Bloco novo sem essa regra não entra. É o que faz o botão de acessibilidade valer para o site inteiro.</p>', 'npm run a11y:contrato'),
+        ('Contrato Rybená (R1 a R8)', 'push', '<p>O Rybená, widget de Libras e voz usado por bancos e órgãos públicos, marca cada elemento com uma classe. O contrato barra o que corta essa ligação: <code>!important</code> (R1), trocar a lista de classes inteira (R2), gradiente que não sai nos modos de contraste (R3), texto em pseudo-elemento com cor fixa (R4), SVG com cor fixa (R5), CSP que bloqueie o Rybená (R6), política de referrer que esconda o domínio (R7) e câmera ou microfone negados (R8).</p>', 'npm run a11y:rybena'),
+        ('Cabeçalhos de segurança A+', 'push', '<p>O arquivo de cabeçalhos precisa tirar A+ no critério do securityheaders.com, sem nenhum aviso, e já trazer COOP, COEP e CORP. A CSP parte da recomendada pela Adobe e libera só o que esta página usa: o player da Adobe, o medidor de cookies e o Rybená.</p>', 'npm run seguranca:contrato'),
+        ('Cabeçalhos na entrega', 'entrega', '<p>Depois de publicado, lê o que o aem.page e o aem.live devolvem de verdade e compara com o repositório. Roda a cada push na main e toda segunda-feira. No aem.page o HSTS vem da própria plataforma; no domínio do cliente, a CDN entrega o valor do repositório.</p>', 'npm run seguranca:entrega'),
+        ('Lighthouse no celular', 'entrega', '<p>PageSpeed Insights na prévia a cada entrega, com meta de 100 em desempenho, acessibilidade e boas práticas. O SEO da prévia cai de propósito: o aem.page não é indexado.</p>', ''),
+        ('Acessibilidade por modo e por bloco (axe)', 'navegador', '<p>Liga cada modo do widget (normal, alto contraste, tons de cinza, inversão, links, fonte maior e a combinação) no computador e no celular, roda o axe com WCAG 2.2 AA e separa o que achar por bloco. Também clica nos botões do widget para provar que funcionam.</p>', 'npm run a11y:modos'),
+        ('Rybená no navegador', 'navegador', '<p>Carrega o script oficial do Rybená, liga onze modos pela API documentada e mede bloco a bloco: se cada texto recebeu a classe, se o contraste segura, se o filtro vale e se nada transborda.</p>', 'npm run a11y:rybena-navegador'),
+        ('Painel de acessibilidade ao vivo', 'pagina', '<p>A seção de acessibilidade desta página mede agora, no seu navegador, o contraste do texto de cada bloco e se ele tem regra própria. Trocou o modo, a tabela mede de novo.</p>', ''),
+        ('Zero terceiros antes do sim', 'pagina', '<p>O medidor de cookies mede esta demo com o mesmo navegador remoto que mede os outros sites: nenhum terceiro e nenhum cookie antes da escolha. A cascata de rede da seção de consentimento mostra o mesmo, ao vivo.</p>', ''),
+        ('Leitura por agentes de IA', 'pagina', '<p>O bloco agentic busca o .plain.html desta página, que é o que um agente recebe, e confere conteúdo inteiro no HTML, títulos em ordem e metadados.</p>', ''),
+    ],
+    rotulos={'momentos': 'push=A cada push|entrega=Na entrega publicada|navegador=No navegador|pagina=Nesta página, ao vivo', 'todos': 'Todos', 'filtros-rotulo': 'Filtrar portões por momento', 'contador': '{n} portões', 'ok': '✓', 'nota': 'Os portões de push rodam no GitHub Actions a cada commit e barram o merge. Os de navegador rodam na main e sob demanda, com relatório por bloco guardado em cada execução.', 'editor-titulo': 'Textos da interface'},
+),
+'es': dict(
+    abertura='<p>Controles de calidad</p><h2>Nada llega al sitio sin pasar por aquí.</h2><p>Los mismos controles que EadTech corre en todo proyecto EDS. Los seis primeros corren en cada push y reprueban el build en el acto. Los demás revisan el sitio publicado y la propia página que está viendo. Filtre por el momento en que entra cada uno.</p>',
+    itens=[
+        ('ESLint con la guía Airbnb', 'push', '<p>Todo el JavaScript sigue la guía de Airbnb, la misma del boilerplate de Adobe. Una variable olvidada, un import sin extensión o un estilo fuera de la norma detienen el build ahí mismo.</p>', 'npm run lint:js'),
+        ('Modelos del Universal Editor (reglas xwalk)', 'push', '<p>El plugin de Adobe revisa definiciones, modelos y filtros de cada bloque: campo sin nombre, filtro que apunta a un componente que no existe, bloque con demasiadas columnas para el autor. Lo que aparece en el panel del editor nace aquí.</p>', 'npm run lint:js'),
+        ('Stylelint', 'push', '<p>CSS según la norma, clases en kebab-case y selectores siempre dentro del bloque, para que un bloque nunca afecte a otro. La única excepción son las clases de Rybená.</p>', 'npm run lint:css'),
+        ('Contrato de contraste por bloque', 'push', '<p>Un bloque con color propio debe decir cómo queda en alto contraste, con su propia regla <code>html.contrast</code> y sin <code>!important</code>. Un bloque nuevo sin esa regla no entra. Es lo que hace que el botón de accesibilidad valga para todo el sitio.</p>', 'npm run a11y:contrato'),
+        ('Contrato Rybená (R1 a R8)', 'push', '<p>Rybená, widget de lengua de señas y voz usado por bancos y organismos públicos de Brasil, marca cada elemento con una clase. El contrato bloquea lo que corta ese vínculo: <code>!important</code> (R1), reemplazar toda la lista de clases (R2), degradado que no se apaga en los modos de contraste (R3), texto en pseudoelemento con color fijo (R4), SVG con color fijo (R5), CSP que bloquee Rybená (R6), política de referrer que oculte el dominio (R7) y cámara o micrófono denegados (R8).</p>', 'npm run a11y:rybena'),
+        ('Cabeceras de seguridad A+', 'push', '<p>El archivo de cabeceras debe sacar A+ con el criterio de securityheaders.com, sin ningún aviso, y traer COOP, COEP y CORP. La CSP parte de la recomendada por Adobe y libera solo lo que esta página usa: el reproductor de Adobe, el medidor de cookies y Rybená.</p>', 'npm run seguranca:contrato'),
+        ('Cabeceras en la entrega', 'entrega', '<p>Después de publicar, lee lo que aem.page y aem.live devuelven de verdad y lo compara con el repositorio. Corre en cada push a main y todos los lunes. En aem.page el HSTS lo pone la plataforma; en el dominio del cliente, la CDN entrega el valor del repositorio.</p>', 'npm run seguranca:entrega'),
+        ('Lighthouse en el celular', 'entrega', '<p>PageSpeed Insights en la vista previa en cada entrega, con meta de 100 en rendimiento, accesibilidad y buenas prácticas. El SEO de la vista previa baja a propósito: aem.page no se indexa.</p>', ''),
+        ('Accesibilidad por modo y por bloque (axe)', 'navegador', '<p>Activa cada modo del widget (normal, alto contraste, escala de grises, inversión, enlaces, letra más grande y la combinación) en computadora y celular, corre axe con WCAG 2.2 AA y separa lo que encuentra por bloque. También pulsa los botones del widget para probar que funcionan.</p>', 'npm run a11y:modos'),
+        ('Rybená en el navegador', 'navegador', '<p>Carga el script oficial de Rybená, activa once modos por la API documentada y mide bloque a bloque: si cada texto recibió la clase, si el contraste se sostiene, si el filtro vale y si nada se desborda.</p>', 'npm run a11y:rybena-navegador'),
+        ('Panel de accesibilidad en vivo', 'pagina', '<p>La sección de accesibilidad de esta página mide ahora, en su navegador, el contraste del texto de cada bloque y si tiene regla propia. Cambió el modo, la tabla vuelve a medir.</p>', ''),
+        ('Cero terceros antes del sí', 'pagina', '<p>El medidor de cookies mide esta demo con el mismo navegador remoto que mide los otros sitios: ningún tercero y ninguna cookie antes de la elección. La cascada de red de la sección de consentimiento muestra lo mismo, en vivo.</p>', ''),
+        ('Lectura por agentes de IA', 'pagina', '<p>El bloque agentic busca el .plain.html de esta página, que es lo que recibe un agente, y revisa contenido completo en el HTML, títulos en orden y metadatos.</p>', ''),
+    ],
+    rotulos={'momentos': 'push=En cada push|entrega=En la entrega publicada|navegador=En el navegador|pagina=En esta página, en vivo', 'todos': 'Todos', 'filtros-rotulo': 'Filtrar controles por momento', 'contador': '{n} controles', 'ok': '✓', 'nota': 'Los controles de push corren en GitHub Actions en cada commit y bloquean el merge. Los de navegador corren en main y bajo demanda, con un informe por bloque guardado en cada ejecución.', 'editor-titulo': 'Textos de la interfaz'},
+),
+'en': dict(
+    abertura='<p>Quality gates</p><h2>Nothing reaches the site without passing through here.</h2><p>The same gates EadTech runs on every EDS project. The first six run on every push and fail the build on the spot. The rest check the published site and the very page you are looking at. Filter by when each one runs.</p>',
+    itens=[
+        ('ESLint with the Airbnb guide', 'push', '<p>All JavaScript follows the Airbnb guide, the same one in the Adobe boilerplate. A forgotten variable, an import without an extension or off-standard style stops the build right there.</p>', 'npm run lint:js'),
+        ('Universal Editor models (xwalk rules)', 'push', '<p>The Adobe plugin checks every block\'s definitions, models and filters: unnamed fields, filters pointing to components that do not exist, blocks with too many columns for an author. What shows up in the editor panel starts here.</p>', 'npm run lint:js'),
+        ('Stylelint', 'push', '<p>Standard CSS, kebab-case classes and selectors always scoped to their block, so one block never leaks into another. Rybená classes are the only exception.</p>', 'npm run lint:css'),
+        ('Per-block contrast contract', 'push', '<p>A block with its own colors must say how it looks in high contrast, with its own <code>html.contrast</code> rule and no <code>!important</code>. A new block without that rule does not get in. This is what makes the accessibility button work across the whole site.</p>', 'npm run a11y:contrato'),
+        ('Rybená contract (R1 to R8)', 'push', '<p>Rybená, a sign language and voice widget used by Brazilian banks and public bodies, tags every element with a class. The contract blocks anything that breaks that link: <code>!important</code> (R1), replacing the whole class list (R2), gradients that stay on in contrast modes (R3), pseudo-element text with a fixed color (R4), SVG with a fixed color (R5), a CSP that blocks Rybená (R6), a referrer policy that hides the domain (R7) and denied camera or microphone (R8).</p>', 'npm run a11y:rybena'),
+        ('A+ security headers', 'push', '<p>The headers file must score A+ by securityheaders.com criteria with no warnings at all, and already ship COOP, COEP and CORP. The CSP starts from the one Adobe recommends and allows only what this page uses: the Adobe player, the cookie meter and Rybená.</p>', 'npm run seguranca:contrato'),
+        ('Headers on delivery', 'entrega', '<p>After publishing, reads what aem.page and aem.live actually return and compares it with the repository. Runs on every push to main and every Monday. On aem.page the platform sets HSTS itself; on the client domain the CDN serves the repository value.</p>', 'npm run seguranca:entrega'),
+        ('Mobile Lighthouse', 'entrega', '<p>PageSpeed Insights on the preview with every delivery, aiming for 100 in performance, accessibility and best practices. Preview SEO drops on purpose: aem.page is not indexed.</p>', ''),
+        ('Accessibility per mode and per block (axe)', 'navegador', '<p>Turns on every widget mode (normal, high contrast, grayscale, invert, links, larger text and the combination) on desktop and mobile, runs axe with WCAG 2.2 AA and groups findings by block. It also clicks the widget buttons to prove they work.</p>', 'npm run a11y:modos'),
+        ('Rybená in the browser', 'navegador', '<p>Loads the official Rybená script, turns on eleven modes through the documented API and measures block by block: whether every text got the class, whether contrast holds, whether the filter applies and whether anything overflows.</p>', 'npm run a11y:rybena-navegador'),
+        ('Live accessibility panel', 'pagina', '<p>The accessibility section of this page measures, right now in your browser, the text contrast of every block and whether it has its own rule. Switch the mode and the table measures again.</p>', ''),
+        ('Zero third parties before yes', 'pagina', '<p>The cookie meter measures this demo with the same remote browser it uses for other sites: no third parties and no cookies before the choice. The network waterfall in the consent section shows the same thing, live.</p>', ''),
+        ('Read by AI agents', 'pagina', '<p>The agentic block fetches this page\'s .plain.html, which is what an agent receives, and checks full content in the HTML, ordered headings and metadata.</p>', ''),
+    ],
+    rotulos={'momentos': 'push=On every push|entrega=On delivery|navegador=In the browser|pagina=On this page, live', 'todos': 'All', 'filtros-rotulo': 'Filter gates by when they run', 'contador': '{n} gates', 'ok': '✓', 'nota': 'Push gates run in GitHub Actions on every commit and block the merge. Browser gates run on main and on demand, with a per-block report saved on every run.', 'editor-titulo': 'Interface texts'},
+),
+}
+for _lg in ('pt', 'es', 'en'):
+    T[_lg]['portoes'] = PORTOES[_lg]
+T['pt']['menu'].insert(-1, ('#portoes', 'Portões'))
+T['es']['menu'].insert(-1, ('#controles', 'Controles'))
+T['en']['menu'].insert(-1, ('#gates', 'Gates'))
 
-IDS = {'pt': ['valor', 'consentimento', 'fases', 'midia', 'eds', 'agentic', 'autoria', 'acessibilidade'],
-       'es': ['valor', 'consentimiento', 'fases', 'medios', 'eds', 'agentic', 'autoria', 'accesibilidad'],
-       'en': ['valor', 'consent', 'fases', 'media', 'eds', 'agentic', 'autoria', 'accessibility']}
+
+IDS = {'pt': ['valor', 'consentimento', 'fases', 'midia', 'eds', 'agentic', 'autoria', 'acessibilidade', 'portoes'],
+       'es': ['valor', 'consentimiento', 'fases', 'medios', 'eds', 'agentic', 'autoria', 'accesibilidad', 'controles'],
+       'en': ['valor', 'consent', 'fases', 'media', 'eds', 'agentic', 'autoria', 'accessibility', 'gates']}
 
 
 def idiomas_html():
@@ -427,23 +505,26 @@ def home(t, ids):
         'imageAlt': 'Pôster do vídeo: grade escura com brilho quente, EDS Flash Demo',
         'text': t['hero_texto'], 'video': VIDEO, 'categoria': 'CC_MEDIA',
     }, rotulos('rotulo', t['hero_rotulos']), classes='video', filt='hero')
-    valor = block('Valor', 'valor', {'camadas': t['valor_iceberg'], 'comparacao': t['valor_comparacao'], 'entregas': t['valor_entregas']},
-                  [(f'camada_{i}', 'valor-item', {'tipo': 'camada', 'titulo': a, 'texto': b, 'a': c, 'b': d}) for i, (a, b, c, d) in enumerate(t['camadas'])]
-                  + [(f'comparacao_{i}', 'valor-item', {'tipo': 'comparacao', 'titulo': a, 'texto': b, 'a': c, 'b': d}) for i, (a, b, c, d) in enumerate(t['comparacoes'])]
-                  + [(f'entrega_{i}', 'valor-item', {'tipo': 'entrega', 'titulo': a, 'texto': b, 'a': c, 'b': d}) for i, (a, b, c, d) in enumerate(t['entregas'])]
+    valor = block('Valor', 'valor', {**ab3(t['valor_iceberg'], 'camadas'), **ab3(t['valor_comparacao'], 'comparacao'), **ab3(t['valor_entregas'], 'entregas')},
+                  [(f'Camada · {a}', 'valor-item', {'tipo': 'camada', 'titulo': a, 'texto': b, 'a': c, 'b': d}) for i, (a, b, c, d) in enumerate(t['camadas'])]
+                  + [(f'Comparação · {a}', 'valor-item', {'tipo': 'comparacao', 'titulo': a, 'texto': b, 'a': c, 'b': d}) for i, (a, b, c, d) in enumerate(t['comparacoes'])]
+                  + [(f'Entrega · {a}', 'valor-item', {'tipo': 'entrega', 'titulo': a, 'texto': b, 'a': c, 'b': d}) for i, (a, b, c, d) in enumerate(t['entregas'])]
                   + rotulos('rotulo', t['valor_rotulos']), filt='valor')
-    consent = block('Consent Live', 'consent-live', {'texto': t['consent_abertura']}, rotulos('rotulo', t['consent_rotulos']), filt='consent-live')
-    fases = block('Fases', 'fases', {'texto': t['fases_abertura']},
-                  [(f'fase_{i}', 'fase', {'sigla': s, 'titulo': ti, 'texto': tx}) for i, (s, ti, tx) in enumerate(t['fases'])] + rotulos('rotulo', t['fases_rotulos']), filt='fases')
+    consent = block('Consent Live', 'consent-live', ab3(t['consent_abertura']), rotulos('rotulo', t['consent_rotulos']), filt='consent-live')
+    fases = block('Fases', 'fases', ab3(t['fases_abertura']),
+                  [(f'Fase · {ti}', 'fase', {'sigla': s, 'titulo': ti, 'texto': tx}) for i, (s, ti, tx) in enumerate(t['fases'])] + rotulos('rotulo', t['fases_rotulos']), filt='fases')
     dm = block('DM Showcase', 'dm-showcase', {'image': f'{AUTHOR_DAM}/smart-crop-eds-flash-demo.webp', 'imageAlt': 'Imagem de demonstração do smart crop', 'urlBase': '', 'original': '2400'},
                rotulos('rotulo', t['midia_rotulos']), filt='dm-showcase')
-    bento = block('Bento', 'bento', {}, [(f'celula_{i}', 'celula', {'tipo': tp, 'rotulo': ro, 'texto': tx, 'dados': da, 'largura': la}) for i, (tp, ro, tx, da, la) in enumerate(t['bento'])], filt='bento')
-    agentic = block('Agentic', 'agentic', {'texto': t['agentic_abertura']},
-                    [(f'verificacao_{i}', 'verificacao', {'texto': a, 'estado': b}) for i, (a, b) in enumerate(t['verificacoes'])] + rotulos('rotulo', t['agentic_rotulos']), filt='agentic')
-    passos = block('Passos', 'passos', {'texto': t['passos_abertura']},
-                   [(f'passo_{i}', 'passo', {'icone': a, 'titulo': b, 'texto': c}) for i, (a, b, c) in enumerate(t['passos'])] + rotulos('rotulo', t['passos_rotulos']), filt='passos')
-    medidor = block('Medidor Cookies', 'medidor-cookies', {'texto': t['medidor_abertura'], 'endpoint': MEDIDOR}, rotulos('rotulo', t['medidor_rotulos']), filt='medidor-cookies')
-    a11y = block('A11y Painel', 'a11y-painel', {'texto': t['a11y_abertura']}, rotulos('rotulo', t['a11y_painel_rotulos']), filt='a11y-painel')
+    bento = block('Bento', 'bento', {}, [(f'Célula · {ro or tp}', 'celula', {'tipo': tp, 'rotulo': ro, 'texto': tx, 'dados': da, 'largura': la}) for i, (tp, ro, tx, da, la) in enumerate(t['bento'])], filt='bento')
+    agentic = block('Agentic', 'agentic', ab3(t['agentic_abertura']),
+                    [(f'Verificação · {a[:48]}', 'verificacao', {'texto': a, 'estado': b}) for i, (a, b) in enumerate(t['verificacoes'])] + rotulos('rotulo', t['agentic_rotulos']), filt='agentic')
+    passos = block('Passos', 'passos', ab3(t['passos_abertura']),
+                   [(f'Passo · {b}', 'passo', {'icone': a, 'titulo': b, 'texto': c}) for i, (a, b, c) in enumerate(t['passos'])] + rotulos('rotulo', t['passos_rotulos']), filt='passos')
+    medidor = block('Medidor Cookies', 'medidor-cookies', {**ab3(t['medidor_abertura']), 'endpoint': MEDIDOR}, rotulos('rotulo', t['medidor_rotulos']), filt='medidor-cookies')
+    pt = t['portoes']
+    portoes = block('Portoes', 'portoes', ab3(pt['abertura']),
+                    [(f'Portão · {n}', 'portao', {'nome': n, 'quando': q, 'texto': tx, 'comando': c}) for n, q, tx, c in pt['itens']] + rotulos('rotulo', pt['rotulos']), filt='portoes')
+    a11y = block('A11y Painel', 'a11y-painel', ab3(t['a11y_abertura']), rotulos('rotulo', t['a11y_painel_rotulos']), filt='a11y-painel')
     sections = [
         section([('hero', hero), ('como', text(t['como']))], nome='Capa'),
         section([('valor', valor)], id=ids[0], nome='Valor'),
@@ -453,6 +534,7 @@ def home(t, ids):
         section([('abertura', text(t['eds_abertura'])), ('bento', bento)], id=ids[4], nome='EDS'),
         section([('consent', consent), ('medidor', medidor)], id=ids[1], nome='Consentimento'),
         section([('agentic', agentic)], id=ids[5], nome='Agentic'),
+        section([('portoes', portoes)], id=ids[8], nome='Portões de qualidade'),
         section([('passos', passos)], id=ids[6], nome='Autoria', style='compacta'),
     ]
     raiz = t['raiz']

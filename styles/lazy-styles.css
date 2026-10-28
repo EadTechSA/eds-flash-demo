@@ -301,3 +301,96 @@ html.contrast .segmentos button.ativo {
 html.contrast .pontos a.ativo::after {
   background: #ff0;
 }
+
+/* ------------------------------------------------------------------
+   Modo editor (author / Universal Editor): tudo parado, visível e na
+   altura natural, para o autor ver e clicar em cada item.
+   ------------------------------------------------------------------ */
+html.editor main .section {
+  content-visibility: visible;
+}
+
+html.editor [data-revelar],
+html.editor .palavra > span {
+  opacity: 1;
+  transform: none;
+}
+
+html.editor .block[data-adiado] {
+  visibility: visible;
+  min-height: 0;
+}
+
+html.editor .fases {
+  --p: 1;
+
+  height: auto;
+}
+
+html.editor .fases .fases-fixo,
+html.editor .valor .valor-iceberg-fixo {
+  position: relative;
+  top: auto;
+  height: auto;
+}
+
+html.editor .fases .fases-passo,
+html.editor .valor .valor-camada {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+html.editor .valor .valor-iceberg {
+  --p: 1;
+
+  height: auto;
+}
+
+html.editor .valor .valor-camadas {
+  transform: none;
+}
+
+/* textos de botões, legendas e mensagens de cada bloco: só no editor */
+.textos-interface {
+  margin-top: 24px;
+  border: 1px dashed var(--warm);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  background: var(--surface-1);
+}
+
+.textos-interface summary {
+  cursor: pointer;
+  font-family: var(--mono-font-family);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--warm);
+}
+
+.textos-interface-lista {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.textos-interface .textos-interface-linha {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.35fr) 1fr;
+  gap: 12px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.textos-interface .textos-interface-linha > div:first-child {
+  font-family: var(--mono-font-family);
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.textos-interface .textos-interface-linha p {
+  margin: 0;
+}

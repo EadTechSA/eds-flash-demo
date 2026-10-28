@@ -130,6 +130,8 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   // o idioma é metadado da página (pt-BR na raiz, es e en nas cópias)
   document.documentElement.lang = getMetadata('lang') || 'pt-BR';
+  // no author (Universal Editor) a página fica estática para editar
+  if (/\.adobeaemcloud\.com$/.test(window.location.hostname)) document.documentElement.classList.add('editor');
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {

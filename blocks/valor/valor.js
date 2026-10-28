@@ -7,11 +7,13 @@
  *     os números de cada linha animando de um para o outro.
  *  3. Entregas da semana: contadores.
  *
- * Linhas: 3 richtexts (aberturas), itens de 5 células
- * (tipo | título | texto | a | b) e rótulos `chave | texto`.
+ * Linhas: 9 campos (sobretítulo, título e texto de cada parte), itens de
+ * 5 células (tipo | título | texto | a | b) e rótulos `chave | texto`.
+ * Cada item e cada campo levam a marcação do Universal Editor para o
+ * elemento desenhado, então tudo se edita clicando na própria página.
  */
 import {
-  el, linhas, rotulos, texto, adiar,
+  el, rotulos, texto, adiar, abertura as montarAbertura, campos, campo, conteudo, marcar,
 } from '../../scripts/demo.js';
 import {
   aoRolar, contar, palavras, reduzido, revelar,
@@ -27,9 +29,8 @@ function casas(s) {
   return m ? m[1].length : 0;
 }
 
-function abertura(celula, classe) {
-  const d = el('div', `valor-abertura ${classe}`);
-  if (celula) d.append(...celula.childNodes);
+function abertura(cels, classe) {
+  const d = montarAbertura(cels, `valor-abertura ${classe}`);
   const h = d.querySelector('h2, h3');
   if (h) palavras(h);
   d.querySelectorAll('p').forEach((p, i) => revelar(p, i * 80));
@@ -45,15 +46,14 @@ function iceberg(itens, r) {
   ponta.append(el('span', 'valor-ponta-numero', r('ponta-numero', '1')), el('span', 'valor-ponta-texto', r('ponta-texto', '')));
   const pilha = el('ol', 'valor-camadas');
   itens.forEach((it, i) => {
-    const li = el('li', 'valor-camada');
+    const li = marcar(it.linha, el('li', 'valor-camada'));
     li.style.setProperty('--i', i);
-    const n = el('span', 'valor-camada-numero', '0');
-    n.dataset.ate = numero(it.a);
-    n.dataset.casas = casas(it.a);
+    const n = marcar(it.a, el('span', 'valor-camada-numero', '0'));
+    n.dataset.ate = numero(it.aTxt);
+    n.dataset.casas = casas(it.aTxt);
     const cab = el('div', 'valor-camada-cabeca');
-    cab.append(n, el('span', 'valor-camada-unidade', it.b), el('h3', '', it.titulo));
-    const tx = el('div', 'valor-camada-texto');
-    tx.append(...it.texto.childNodes);
+    cab.append(n, campo(it.b, 'span', 'valor-camada-unidade'), campo(it.titulo, 'h3'));
+    const tx = conteudo(it.texto, el('div', 'valor-camada-texto'));
     li.append(cab, tx);
     pilha.append(li);
   });
@@ -92,23 +92,22 @@ function comparacao(itens, r) {
   seg.append(bA, bB);
   const lista = el('ul', 'valor-linhas');
   itens.forEach((it) => {
-    const li = el('li', 'valor-linha');
+    const li = marcar(it.linha, el('li', 'valor-linha'));
     const cab = el('div', 'valor-linha-cabeca');
-    cab.append(el('h3', '', it.titulo));
+    cab.append(campo(it.titulo, 'h3'));
     const vals = el('div', 'valor-linha-valores');
-    const va = el('span', 'valor-a', it.a);
-    const vb = el('span', 'valor-b', it.b);
+    const va = campo(it.a, 'span', 'valor-a');
+    const vb = campo(it.b, 'span', 'valor-b');
     vals.append(va, vb);
     const tr = el('div', 'valor-trilho');
     const barra = el('i');
     tr.append(barra);
-    const nA = numero(it.a);
-    const nB = numero(it.b);
+    const nA = numero(it.aTxt);
+    const nB = numero(it.bTxt);
     const max = Math.max(nA, nB, 1);
     li.dataset.a = (nA / max) * 100;
     li.dataset.b = (nB / max) * 100;
-    const tx = el('div', 'valor-linha-texto');
-    tx.append(...it.texto.childNodes);
+    const tx = conteudo(it.texto, el('div', 'valor-linha-texto'));
     li.append(cab, vals, tr, tx);
     lista.append(li);
     revelar(li);
@@ -141,18 +140,19 @@ function comparacao(itens, r) {
 function entregas(itens) {
   const grade = el('ul', 'valor-entregas');
   itens.forEach((it, i) => {
-    const li = el('li', 'valor-entrega');
-    const n = el('span', 'valor-entrega-numero', '0');
-    const prefixo = String(it.a).match(/^[^\d]*/)[0];
-    const ate = numero(it.a);
-    const sufixo = String(it.a).replace(/^[^\d]*[\d.,]+/, '');
-    contar(n, ate, { casas: casas(it.a), sufixo });
+    const li = marcar(it.linha, el('li', 'valor-entrega'));
+    const n = marcar(it.a, el('span', 'valor-entrega-numero', '0'));
+    const prefixo = String(it.aTxt).match(/^[^\d]*/)[0];
+    const ate = numero(it.aTxt);
+    const sufixo = String(it.aTxt).replace(/^[^\d]*[\d.,]+/, '');
+    contar(n, ate, { casas: casas(it.aTxt), sufixo });
     if (prefixo) n.prepend(prefixo);
-    const un = el('span', 'valor-entrega-unidade', it.b);
+    const un = campo(it.b, 'span', 'valor-entrega-unidade');
     const cab = el('div', 'valor-entrega-cabeca');
     cab.append(n, un);
     const tx = el('div', 'valor-entrega-texto');
-    tx.append(el('h3', '', it.titulo), ...it.texto.childNodes);
+    tx.append(campo(it.titulo, 'h3'));
+    conteudo(it.texto, tx);
     li.append(cab, tx);
     revelar(li, i * 80);
     grade.append(li);
@@ -161,25 +161,30 @@ function entregas(itens) {
 }
 
 function montar(block) {
+  const ab = campos(block, 9);
   const r = rotulos(block);
-  const todas = linhas(block);
-  const aberturas = todas.filter((c) => c.length === 1).map((c) => c[0]);
-  const itens = todas.filter((c) => c.length === 5).map((c) => ({
-    tipo: texto(c[0]).toLowerCase(),
-    titulo: texto(c[1]),
-    texto: c[2],
-    a: texto(c[3]),
-    b: texto(c[4]),
-  }));
+  const itens = [...block.children].filter((l) => l.children.length === 5).map((l) => {
+    const c = [...l.children];
+    return {
+      linha: l,
+      tipo: texto(c[0]).toLowerCase(),
+      titulo: c[1],
+      texto: c[2],
+      a: c[3],
+      b: c[4],
+      aTxt: texto(c[3]),
+      bTxt: texto(c[4]),
+    };
+  });
   block.textContent = '';
   const por = (t) => itens.filter((i) => i.tipo === t);
 
   const p1 = el('section', 'valor-parte valor-parte-iceberg');
-  p1.append(abertura(aberturas[0], 'valor-abertura-iceberg'), iceberg(por('camada'), r));
+  p1.append(abertura(ab.slice(0, 3), 'valor-abertura-iceberg'), iceberg(por('camada'), r));
   const p2 = el('section', 'valor-parte valor-parte-comparacao');
-  p2.append(abertura(aberturas[1], 'valor-abertura-comparacao'), comparacao(por('comparacao'), r));
+  p2.append(abertura(ab.slice(3, 6), 'valor-abertura-comparacao'), comparacao(por('comparacao'), r));
   const p3 = el('section', 'valor-parte valor-parte-entregas');
-  p3.append(abertura(aberturas[2], 'valor-abertura-entregas'), entregas(por('entrega')));
+  p3.append(abertura(ab.slice(6, 9), 'valor-abertura-entregas'), entregas(por('entrega')));
   block.append(p1, p2, p3);
 }
 

@@ -37,10 +37,22 @@
       "id": "consent-live",
       "fields": [
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "sobretitulo",
+          "label": "Sobretítulo (linha pequena acima do título)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "titulo",
+          "label": "Título"
+        },
+        {
           "component": "richtext",
+          "valueType": "string",
           "name": "texto",
-          "label": "Texto de abertura (opcional)",
-          "valueType": "string"
+          "label": "Texto"
         }
       ]
     }

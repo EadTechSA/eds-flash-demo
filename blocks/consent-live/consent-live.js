@@ -2,10 +2,10 @@
  * Consentimento ao vivo: cascata de rede da própria página (Resource
  * Timing, agrupada nas três fases do EDS), estado gravado, log de eventos
  * e contador de bloqueios. Tudo que é texto vem dos rótulos autorados.
- * Linhas: texto de abertura (1 célula) + rótulos `chave | texto`.
+ * Linhas: abertura (sobretítulo, título, texto) + rótulos `chave | texto`.
  */
 import {
-  agora, categoriasAceitas, el, escolhaGravada, linhas, rotulos, adiar,
+  agora, categoriasAceitas, el, escolhaGravada, rotulos, adiar, abertura, campos,
 } from '../../scripts/demo.js';
 import { revelar } from '../../scripts/motion.js';
 
@@ -81,14 +81,10 @@ function cascata(container, r) {
 }
 
 function montar(block) {
+  const ab = campos(block, 3);
   const r = rotulos(block);
-  const [aberturaCel] = linhas(block).map((c) => c[0]);
   block.textContent = '';
-  if (aberturaCel && aberturaCel.textContent.trim()) {
-    const ab = el('div', 'consent-live-abertura');
-    ab.append(...aberturaCel.childNodes);
-    block.append(ab);
-  }
+  block.append(abertura(ab, 'consent-live-abertura'));
   const grade = el('div', 'consent-live-grade');
 
   // cascata

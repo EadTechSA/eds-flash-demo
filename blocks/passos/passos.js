@@ -2,30 +2,30 @@
  * Passos de autoria e governança numa trilha horizontal fixada: a página
  * rola para baixo, os cartões andam para o lado e a linha de progresso
  * avança. No celular viram uma coluna.
- * Linhas: abertura (1 célula), passos (ícone | título | texto), rótulos.
+ * Linhas: abertura (sobretítulo, título, texto), passos (ícone | título |
+ * texto), rótulos.
  */
 import {
-  el, linhas, rotulos, texto, adiar,
+  el, rotulos, adiar, abertura, campos, campo, conteudo, marcar,
 } from '../../scripts/demo.js';
 import { aoRolar, reduzido } from '../../scripts/motion.js';
 
 function montar(block) {
+  const cabeca = campos(block, 3);
   const r = rotulos(block);
-  const todas = linhas(block);
-  const abertura = todas.find((c) => c.length === 1);
-  const passos = todas.filter((c) => c.length === 3)
-    .map((c) => ({ icone: texto(c[0]), titulo: texto(c[1]), texto: c[2] }));
+  const passos = [...block.children].filter((l) => l.children.length === 3)
+    .map((l) => ({ linha: l, cels: [...l.children] }));
   block.textContent = '';
   const fixo = el('div', 'passos-fixo');
-  const ab = el('div', 'passos-abertura');
-  if (abertura) ab.append(...abertura[0].childNodes);
+  const ab = abertura(cabeca, 'passos-abertura');
   const linha = el('div', 'passos-linha');
   const fill = el('i');
   linha.append(fill);
   const trilha = el('div', 'passos-trilha');
   passos.forEach((p, i) => {
-    const c = el('div', 'passos-cartao');
-    c.append(el('span', 'passos-icone', p.icone), el('span', 'passos-numero', String(i + 1).padStart(2, '0')), el('h3', '', p.titulo), ...p.texto.childNodes);
+    const c = marcar(p.linha, el('div', 'passos-cartao'));
+    c.append(campo(p.cels[0], 'span', 'passos-icone'), el('span', 'passos-numero', String(i + 1).padStart(2, '0')), campo(p.cels[1], 'h3'));
+    conteudo(p.cels[2], c);
     trilha.append(c);
   });
   const dica = el('p', 'passos-dica', r('dica', ''));

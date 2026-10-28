@@ -2,29 +2,30 @@
  * Três fases do carregamento, contadas por rolagem: o bloco fica fixo na
  * tela e um navegador simulado pinta o LCP (eager), depois os blocos
  * (lazy), depois o banner de cookies (delayed), com o relógio em ms.
- * Linhas: abertura (1 célula), fases (sigla | título | texto), rótulos.
+ * Linhas: abertura (sobretítulo, título, texto), fases (sigla | título |
+ * texto), rótulos. Itens e campos ficam editáveis no lugar.
  */
 import {
-  el, linhas, rotulos, texto, adiar,
+  el, rotulos, adiar, abertura, campos, campo, conteudo, marcar,
 } from '../../scripts/demo.js';
 import { aoRolar } from '../../scripts/motion.js';
 
 function montar(block) {
+  const ab = campos(block, 3);
   const r = rotulos(block);
-  const todas = linhas(block);
-  const abertura = todas.find((c) => c.length === 1);
-  const fases = todas.filter((c) => c.length === 3)
-    .map((c) => ({ sigla: texto(c[0]), titulo: texto(c[1]), texto: c[2] }));
+  const fases = [...block.children].filter((l) => l.children.length === 3)
+    .map((l) => ({ linha: l, cels: [...l.children] }));
   block.textContent = '';
 
   const fixo = el('div', 'fases-fixo');
   const txt = el('div', 'fases-texto');
-  if (abertura) txt.append(...abertura[0].childNodes);
+  abertura(ab, txt);
   const passos = fases.map((f, i) => {
-    const d = el('div', `fases-passo${i === 0 ? ' ativo' : ''}`);
+    const d = marcar(f.linha, el('div', `fases-passo${i === 0 ? ' ativo' : ''}`));
     const corpo = el('div');
-    corpo.append(el('h3', '', f.titulo), ...f.texto.childNodes);
-    d.append(el('b', '', f.sigla), corpo);
+    corpo.append(campo(f.cels[1], 'h3'));
+    conteudo(f.cels[2], corpo);
+    d.append(campo(f.cels[0], 'b'), corpo);
     txt.append(d);
     return d;
   });

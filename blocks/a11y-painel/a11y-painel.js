@@ -4,9 +4,11 @@
  * mede, agora, o contraste do texto de cada bloco desta página e diz se o
  * bloco tem regra própria `html.contrast .<bloco>` nas folhas de estilo.
  * Muda o modo, a tabela remede. Nada é simulado: é a página de verdade.
- * Linhas: abertura (1 célula) + rótulos `chave | texto`.
+ * Linhas: abertura (sobretítulo, título, texto) + rótulos `chave | texto`.
  */
-import { el, linhas, rotulos } from '../../scripts/demo.js';
+import {
+  el, rotulos, abertura, campos,
+} from '../../scripts/demo.js';
 import { revelar } from '../../scripts/motion.js';
 
 const FERRAMENTAS = ['a11y-font-increase', 'a11y-font-decrease', 'a11y-contrast', 'a11y-grayscale', 'a11y-invert', 'a11y-links'];
@@ -103,14 +105,10 @@ function blocosComRegra() {
 }
 
 function montar(block) {
+  const ab = campos(block, 3);
   const r = rotulos(block);
-  const [aberturaCel] = linhas(block).map((c) => c[0]);
   block.textContent = '';
-  if (aberturaCel) {
-    const ab = el('div', 'a11y-painel-abertura');
-    ab.append(...aberturaCel.childNodes);
-    block.append(ab);
-  }
+  block.append(abertura(ab, 'a11y-painel-abertura'));
   const grade = el('div', 'a11y-painel-grade');
 
   // alternadores: espelham os botões do widget

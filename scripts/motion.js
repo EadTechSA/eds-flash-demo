@@ -4,7 +4,9 @@
  * Tudo respeita prefers-reduced-motion. Os blocos importam daqui.
  */
 
-export const reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// no editor (author) tudo fica parado e visível: o autor precisa ver e clicar
+const noAuthor = /\.adobeaemcloud\.com$/.test(window.location.hostname);
+export const reduzido = noAuthor || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const largo = () => window.matchMedia('(min-width: 900px)').matches;
 
 const io = ('IntersectionObserver' in window)
@@ -128,7 +130,7 @@ export function aoRolar(pai, fn) {
 /** Pontos laterais: um por seção com id, marcando a seção visível. */
 function pontos(main) {
   const secoes = [...main.querySelectorAll('.section[id]')];
-  if (secoes.length < 3 || !io) return;
+  if (secoes.length < 3 || !io || noAuthor) return;
   const ul = document.createElement('ul');
   ul.classList.add('pontos');
   secoes.forEach((s) => {
