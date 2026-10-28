@@ -35,7 +35,16 @@
   flex-wrap: wrap;
 }
 
-/* palavra rotativa: letra a letra */
+/* palavra rotativa: letra a letra; o leitor de tela ouve o texto fixo ao lado */
+.hero .hero-rotativa-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .hero .hero-rotativa {
   display: inline-grid;
   color: var(--warm);

@@ -44,7 +44,6 @@ function girar(alvo, palavras, intervalo) {
       l.style.setProperty('--i', k);
       novo.append(l);
     });
-    novo.setAttribute('aria-hidden', 'true');
     alvo.textContent = '';
     if (velho && anima) {
       velho.classList.add('saindo');
@@ -54,7 +53,10 @@ function girar(alvo, palavras, intervalo) {
     alvo.append(novo);
   };
   // leitor de tela ouve a frase como está no HTML, sem a troca
-  alvo.setAttribute('aria-label', palavras[0]);
+  const leitor = el('span', 'hero-rotativa-leitor');
+  leitor.textContent = palavras[0];
+  alvo.before(leitor);
+  alvo.setAttribute('aria-hidden', 'true');
   mostrar(palavras[0], false);
   let i = 0;
   setInterval(() => {
