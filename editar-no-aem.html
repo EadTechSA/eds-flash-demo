@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Abrindo no Universal Editor…</title>
+<meta name="robots" content="noindex">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; margin: 0; display: grid; place-items: center; min-height: 100vh; color: #f2f3f5; background: #0b0c0f; }
+  main { max-width: 42ch; padding: 24px; text-align: center; }
+  a { color: #ff6a3d; }
+</style>
+</head>
+<body>
+<main>
+  <p id="mensagem">Abrindo a página no Universal Editor…</p>
+</main>
+<!-- nonce="aem": a entrega troca pelo nonce da pagina. Sem ele a CSP do site
+     (script-src com nonce + strict-dynamic) barra o script e a ponte para no
+     "Abrindo..." (13/09/2026). -->
+<script nonce="aem" type="module">
+  import { urlDoEditor, urlDoConsole } from '/scripts/sidekick-editar.js';
+
+  const referrer = new URLSearchParams(window.location.search).get('referrer');
+  const destino = urlDoEditor(referrer);
+  const mensagem = document.getElementById('mensagem');
+
+  if (destino) {
+    window.location.replace(destino);
+  } else {
+    mensagem.innerHTML = 'Não consegui identificar a página de origem. '
+      + `<a href="${urlDoConsole()}">Abrir o console de Sites</a>.`;
+  }
+</script>
+</body>
+</html>
