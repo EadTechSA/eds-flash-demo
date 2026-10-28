@@ -50,6 +50,7 @@ function montar(block) {
   seg.append(bRaw, bRen);
   h2.append(el('span', '', r('curl-titulo', 'curl')), seg);
   const c = el('pre', 'codigo agentic-curl');
+  c.tabIndex = 0; // rola: precisa de foco pelo teclado
   c.innerHTML = '<span class="cursor"></span>';
   let html = '';
   let plain = '';
