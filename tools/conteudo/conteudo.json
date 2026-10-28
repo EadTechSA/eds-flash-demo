@@ -777,7 +777,7 @@
       "tipo": "edge",
       "rotulo": "Funções serverless · App Builder",
       "texto": "<p>Chamada real, agora: a função roda no Adobe I/O Runtime, busca a PTAX do dólar no Banco Central e guarda 10 minutos. O segredo da função fica no servidor; a resposta só diz o tamanho dele. Numa CDN do cliente, o mesmo papel é de um edge worker.</p>",
-      "dados": "https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/cotacao/usd|Chamar a função",
+      "dados": "Chamar a função|https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/cotacao/usd",
       "largura": "2"
      },
      "item_5": {
@@ -2981,7 +2981,7 @@
       "tipo": "edge",
       "rotulo": "Funciones serverless · App Builder",
       "texto": "<p>Llamada real, ahora: la función corre en Adobe I/O Runtime, busca la PTAX del dólar en el Banco Central de Brasil y la guarda 10 minutos. El secreto de la función queda en el servidor; la respuesta solo dice su tamaño. En la CDN del cliente, el mismo papel lo cumple un edge worker.</p>",
-      "dados": "https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/cotacao/usd|Llamar a la función",
+      "dados": "Llamar a la función|https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/cotacao/usd",
       "largura": "2"
      },
      "item_5": {
@@ -5185,7 +5185,7 @@
       "tipo": "edge",
       "rotulo": "Serverless functions · App Builder",
       "texto": "<p>A real call, right now: the function runs on Adobe I/O Runtime, fetches the USD PTAX rate from Brazil's Central Bank and keeps it for 10 minutes. The function secret stays on the server; the response only states its length. On a client CDN, an edge worker plays the same role.</p>",
-      "dados": "https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/cotacao/usd|Call the function",
+      "dados": "Call the function|https://3763698-creciuploadsdemo-stage.adobeioruntime.net/api/v1/web/demo-ps/cotacao/usd",
       "largura": "2"
      },
      "item_5": {

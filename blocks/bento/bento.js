@@ -96,7 +96,10 @@ const widgets = {
     return c;
   },
   edge(d) {
-    const [url, botao] = d;
+    // a ordem não importa: o que começa com http é o endereço, o resto é o botão
+    // (valor que começa com URL vira link na entrega e pode se perder)
+    const url = d.find((x) => /^https?:\/\//.test(x));
+    const botao = d.find((x) => !/^https?:\/\//.test(x));
     const c = el('pre', 'codigo');
     const b = el('button', 'button', botao || 'GET');
     b.type = 'button';
