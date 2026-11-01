@@ -1,19 +1,19 @@
 {
-  "medidoEm": "2026-10-31T15:54:45.587Z",
+  "medidoEm": "2026-11-01T16:57:12.152Z",
   "url": "https://main--eds-flash-demo--eadtechsa.aem.page/",
   "dispositivo": "mobile",
   "ferramenta": "Lighthouse 12.6.1",
   "notas": {
-    "desempenho": 97,
+    "desempenho": 96,
     "acessibilidade": 100,
     "praticas": 100,
     "seo": 100
   },
   "metricas": {
-    "lcpMs": 1465,
-    "fcpMs": 1165,
-    "tbtMs": 194,
-    "cls": 0.005
+    "lcpMs": 1463,
+    "fcpMs": 1163,
+    "tbtMs": 227,
+    "cls": 0.012
   },
   "observacao": "SEO medido sem a auditoria is-crawlable: o aem.page responde noindex de propósito."
 }
